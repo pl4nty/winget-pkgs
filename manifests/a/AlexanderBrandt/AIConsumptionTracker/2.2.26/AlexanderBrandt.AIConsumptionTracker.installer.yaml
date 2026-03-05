@@ -1,0 +1,39 @@
+# Created with Devicie using komac v2.15.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+
+PackageIdentifier: AlexanderBrandt.AIConsumptionTracker
+PackageVersion: 2.2.26
+ReleaseDate: 2026-02-28
+Installers:
+- Architecture: x86
+  InstallerType: zip
+  InstallerUrl: https://github.com/rygel/AIUsageTracker/releases/download/v2.2.26/AIUsageTracker_v2.2.26_win-x86.zip
+  InstallerSha256: 6E3F467CF827453566EB1FCB302B6CF20BBDC76882BFD8B3CC544D71EEA9B485
+- Architecture: x64
+  InstallerType: zip
+  InstallerUrl: https://github.com/rygel/AIUsageTracker/releases/download/v2.2.26/AIUsageTracker_v2.2.26_win-x64.zip
+  InstallerSha256: 1339B23CDD56D0C9FD5E79281730351BB5B382EEF729CA74040F27944105168E
+- InstallerLocale: en-US
+  Architecture: x86
+  InstallerType: inno
+  Scope: machine
+  InstallerUrl: https://github.com/rygel/AIUsageTracker/releases/download/v2.2.26/AIUsageTracker_Setup_v2.2.26_win-x86.exe
+  InstallerSha256: 29EDC5C117EFA9E54C23B5835B030CA4D9E828D2C2369DDD637891140E65454E
+  ProductCode: '{D3B3E8A1-8E9D-4F6B-A2B3-7C8D9E0F1A2B}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{D3B3E8A1-8E9D-4F6B-A2B3-7C8D9E0F1A2B}_is1'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\AIUsageTracker'
+- InstallerLocale: en-US
+  Architecture: x64
+  InstallerType: inno
+  Scope: machine
+  InstallerUrl: https://github.com/rygel/AIUsageTracker/releases/download/v2.2.26/AIUsageTracker_Setup_v2.2.26_win-x64.exe
+  InstallerSha256: BAF56295DF74E420E5D9143556114984908FBE01D364639397DCE92D15864268
+  ProductCode: '{D3B3E8A1-8E9D-4F6B-A2B3-7C8D9E0F1A2B}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{D3B3E8A1-8E9D-4F6B-A2B3-7C8D9E0F1A2B}_is1'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\AIUsageTracker'
+ManifestType: installer
+ManifestVersion: 1.12.0
