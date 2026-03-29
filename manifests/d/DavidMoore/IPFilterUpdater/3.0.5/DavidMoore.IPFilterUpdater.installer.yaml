@@ -1,0 +1,35 @@
+# Created with Devicie using komac v2.15.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+
+PackageIdentifier: DavidMoore.IPFilterUpdater
+PackageVersion: 3.0.5
+Platform:
+- Windows.Desktop
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ReleaseDate: 2023-08-21
+Installers:
+- Architecture: x86
+  InstallerType: portable
+  InstallerUrl: https://github.com/DavidMoore/ipfilter/releases/download/3.0.5-beta/IPFilter.exe
+  InstallerSha256: ACCDC46A28961FAA504C52072883DB13AEC6B3558C86FBB07E60CEFFBD2CCE47
+- InstallerLocale: en-US
+  Architecture: x86
+  InstallerType: wix
+  InstallerUrl: https://github.com/DavidMoore/ipfilter/releases/download/3.0.5-beta/IPFilter.msi
+  InstallerSha256: 78326C970DF93226C5B57F25873E38E05BE848CDDFEAAB9EC88DDAEDB68E9144
+  ProductCode: '{CB829BF9-482A-4055-88A3-75D8BC0C45AD}'
+  AppsAndFeaturesEntries:
+  - DisplayName: IPFilter 3.0.5-beta
+    Publisher: David Moore
+    DisplayVersion: 3.0.5-beta
+    ProductCode: '{CB829BF9-482A-4055-88A3-75D8BC0C45AD}'
+    UpgradeCode: '{15A0D30B-23CF-400B-AB67-05CA4FC13BDF}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%/IPFilter'
+ManifestType: installer
+ManifestVersion: 1.12.0
