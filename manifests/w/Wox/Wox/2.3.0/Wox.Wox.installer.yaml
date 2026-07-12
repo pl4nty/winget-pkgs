@@ -1,0 +1,18 @@
+# Created by Anthelion using komac v2.16.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+
+PackageIdentifier: Wox.Wox
+PackageVersion: 2.3.0
+Platform:
+- Windows.Desktop
+InstallerType: portable
+InstallModes:
+- silent
+UpgradeBehavior: install
+ReleaseDate: 2026-07-04
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/Wox-launcher/Wox/releases/download/v2.3.0/wox-windows-amd64.exe
+  InstallerSha256: BD4C0D29B6B81B58DDDF36D4770088459C06D1270D1CE150BBA0598464F87446
+ManifestType: installer
+ManifestVersion: 1.12.0
