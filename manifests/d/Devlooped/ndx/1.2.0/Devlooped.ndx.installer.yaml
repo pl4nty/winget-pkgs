@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.1
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Devlooped.ndx
+PackageVersion: 1.2.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: ndx.exe
+InstallModes:
+- silentWithProgress
+UpgradeBehavior: install
+Commands:
+- ndx
+ReleaseDate: 2026-11-05
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/devlooped/ndx/releases/download/v1.2.0/ndx-1.2.0-win-x64.zip
+  InstallerSha256: 66E7E3DCB37DE58D4E1C85A063841FD95616D7EDC88236D1D61C058372206225
+- Architecture: arm64
+  InstallerUrl: https://github.com/devlooped/ndx/releases/download/v1.2.0/ndx-1.2.0-win-arm64.zip
+  InstallerSha256: F4E6047195DAFA96E52D5645B424B5E96C128B3E7B38A8E2D2C1D52149C1BAC8
+ManifestType: installer
+ManifestVersion: 1.28.0
