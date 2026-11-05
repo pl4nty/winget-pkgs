@@ -1,0 +1,134 @@
+# Created by Anthelion using komac v2.17.1
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Bjarneo.Cliamp
+PackageVersion: 2.3.0
+PackageLocale: en-US
+Publisher: Bjarneo
+PublisherUrl: https://github.com/bjarneo
+PublisherSupportUrl: https://github.com/bjarneo/cliamp/issues
+PackageName: Cliamp
+PackageUrl: https://github.com/bjarneo/cliamp
+License: MIT
+LicenseUrl: https://github.com/bjarneo/cliamp/blob/HEAD/LICENSE
+ShortDescription: A retro terminal music player inspired by Winamp
+Tags:
+- cliamp
+- icecast
+- icecast-player
+- m3u
+- music
+- music-player
+- navidrome
+- navidrome-client
+- podcast
+- radio
+- soundcloud
+- spotify
+- stream
+- winamp
+- youtube
+- yt-dlp
+ReleaseNotes: |-
+  What's Changed
+  - ci(release): build the Intel macOS codec libs from source by Bjarne Oeverli (@bjarneo) (d0501a3)
+  - feat(radio): open on the cliamp radio channels as playlists by Bjarne Oeverli (@bjarneo) (30ffcaa)
+  - fix(spotify): stop crashing on tracks without normalisation params (#522) by Lukasz Jagiello (@ljagiello) (eb59f54)
+  - feat(lua): let queue.add take a track table queued as given (#566) by Gjermund Garaba (@gjermundgaraba) (b4689cf)
+  - feat(lua): emit playback.stop when the user stops playback (#536) by Gjermund Garaba (@gjermundgaraba) (2342c0d)
+  - fix(ui): omit repeated show names from podcast episode rows (#564) by David Siegel (@dvdsgl) (d0c4e32)
+  - feat(lua): expose track.is_live for streams with no track boundary (#535) by Gjermund Garaba (@gjermundgaraba) (f85829d)
+  - fix(player): read yt-dlp PCM from a pipe cliamp owns (#561) by Gjermund Garaba (@gjermundgaraba) (276713b)
+  - fix(playback): cancel a scheduled reconnect on stop (#556) by Gjermund Garaba (@gjermundgaraba) (e0559a5)
+  - fix(resolve): mark yt-dlp live streams as realtime (#534) by Gjermund Garaba (@gjermundgaraba) (f00408b)
+  - test(ui): bind a plugin-ownable key in the full-screen visualizer test (#555) by Gjermund Garaba (@gjermundgaraba) (41bab63)
+  - fix(ui): pin favorite marker column to avoid layout shift by Taha Sadough (@tahadx) (06ee7af)
+  - fix(ui): stop showing add/remove favorite notifications in the footer (#440) by Taha Sadough (@tahadx) (903a1ed)
+  - Revert "fix(lua): let plugins bind uppercase keys (#525)" (#547) by bjarneo (@bjarneo) (72d786d)
+  - fix(ui): dispatch plugin keys in the full-screen visualizer (#545) by Gaurab KC (@gaurabxkc) (e5baeae)
+  - fix(lua): let plugins bind uppercase keys (#525) by Gaurab KC (@gaurabxkc) (ac2d1bc)
+  - feat(lua): emit queue.end when playback runs out of tracks (#533) by Gjermund Garaba (@gjermundgaraba) (57ae3ba)
+  - feat(spotify): populate album art for Spotify tracks (#527) by Gaurab KC (@gaurabxkc) (8e27e96)
+  - Merge pull request #532 from gaurabxkc/docs/community-plugins-autoplay-pomodoro by Gaurab KC (@gaurabxkc) (da63f89)
+  - fix(lua): route play_pause, stop, and seek through the model (#500) by Gjermund Garaba (@gjermundgaraba) (ed98f8e)
+  - docs: add discord link to readme by Bjarne Oeverli (@bjarneo) (4dee32c)
+  - feat(site): add discord link to header by Bjarne Oeverli (@bjarneo) (bee3309)
+  - Merge pull request #510 from srgrsj/feat/download-directory by bjarneo (@bjarneo) (4809680)
+  - fix(config): reject relative download directories by Sergei Zhukov (@srgrsj) (ce99ae4)
+  - feat(config): make the track save directory configurable by Sergei Zhukov (@srgrsj) (444105a)
+  - Merge pull request #369 from tharinfernando/feat/spotify-lyrics by Bjarne Oeverli (@bjarneo) (81ec636)
+  - fix(lyrics): gate offset keys on synced lyrics and surface save errors by Bjarne Oeverli (@bjarneo) (9e8be78)
+  - Merge branch 'main' into fix/pr-369 by Bjarne Oeverli (@bjarneo) (06513f2)
+  - Merge pull request #450 from cesarho/fix/resample-headroom-clipping by Bjarne Oeverli (@bjarneo) (ddc53a4)
+  - test(player): prove resampler overshoot with a full-scale source by Bjarne Oeverli (@bjarneo) (5463e95)
+  - Merge branch 'main' into fix/pr-450 by Bjarne Oeverli (@bjarneo) (3a18256)
+  - Merge pull request #439 from wundervrc/feat/spotify-progressive-track-loading by Bjarne Oeverli (@bjarneo) (d877587)
+  - fix(spotify): retire in-flight track pages on wholesale queue replacement by Bjarne Oeverli (@bjarneo) (d40d69b)
+  - Merge branch 'main' into fix/pr-439 by Bjarne Oeverli (@bjarneo) (4fe8948)
+  - Merge pull request #477 from oweneldridge/playlist-queue by Bjarne Oeverli (@bjarneo) (a58017d)
+  - perf(queue): render the inline queue from a bounded window by Bjarne Oeverli (@bjarneo) (cb6ef44)
+  - Merge branch 'main' into fix/pr-477 by Bjarne Oeverli (@bjarneo) (bd202da)
+  - Merge pull request #476 from oweneldridge/podcast-subscriptions by Bjarne Oeverli (@bjarneo) (77f80de)
+  - fix(subs): surface empty shows to the status line from the provider list by Bjarne Oeverli (@bjarneo) (77435a2)
+  - Merge branch 'main' into fix/pr-477 by Bjarne Oeverli (@bjarneo) (0a07865)
+  - Merge branch 'main' into fix/pr-476 by Bjarne Oeverli (@bjarneo) (add62de)
+  - Merge pull request #475 from oweneldridge/podcast-progress by Bjarne Oeverli (@bjarneo) (d9c1e3a)
+  - fix(podcast): scope progress identity to the feed and clear played on restart by Bjarne Oeverli (@bjarneo) (bc5fda5)
+  - Merge branch 'main' into fix/pr-450 by Bjarne Oeverli (@bjarneo) (35aae7a)
+  - Merge branch 'main' into fix/pr-439 by Bjarne Oeverli (@bjarneo) (975586b)
+  - Merge branch 'main' into fix/pr-475 by Bjarne Oeverli (@bjarneo) (7abc2ea)
+  - Merge pull request #438 from RGR09/main by Bjarne Oeverli (@bjarneo) (1f323e8)
+  - Merge pull request #479 from oweneldridge/visualizer-fixes by Bjarne Oeverli (@bjarneo) (0ce5a91)
+  - Merge pull request #505 from legacynode/ci/nix-flake-build by Bjarne Oeverli (@bjarneo) (cdfba47)
+  - fix(queue): never spend the last row on an album header by Owen Eldridge (@oweneldridge) (a4eb17e)
+  - fix(podcast): only providers that list shows get the l and a keys by Owen Eldridge (@oweneldridge) (6361052)
+  - fix(playlists): keep the stored track on prepend, scroll the queue past headers by Owen Eldridge (@oweneldridge) (e8d4608)
+  - fix(podcast): load overlay episodes through the subscription provider; forward F to plugins by Owen Eldridge (@oweneldridge) (9e3201e)
+  - docs(site): mention the queue view and playlist append by Owen Eldridge (@oweneldridge) (c6de2dd)
+  - docs(site): mention the subscriptions overlay by Owen Eldridge (@oweneldridge) (7dbea4f)
+  - feat(queue): keep the playback chrome when the queue is open by Owen Eldridge (@oweneldridge) (659309b)
+  - feat(podcast): append a whole show from the provider list by Owen Eldridge (@oweneldridge) (32ab699)
+  - feat(queue): show the queue the way the playlist is shown by Owen Eldridge (@oweneldridge) (738b794)
+  - feat(podcast): queue the latest episode from the provider list by Owen Eldridge (@oweneldridge) (de64115)
+  - feat(playlists): append a saved playlist to the current one by Owen Eldridge (@oweneldridge) (179259d)
+  - feat(podcast): browse subscribed shows and pull latest episodes by Owen Eldridge (@oweneldridge) (cadecf4)
+  - feat(playlists): add tracks to the start of a saved playlist by Owen Eldridge (@oweneldridge) (c315e1f)
+  - docs(podcast): state the publication-date rule for the URL fallback by Owen Eldridge (@oweneldridge) (5a783ad)
+  - feat(radio): who's listening globe as an easter egg by Bjarne Oeverli (@bjarneo) (4871f0c)
+  - docs: link cliamp mobile from the readme and the site by Bjarne Oeverli (@bjarneo) (5f16265)
+  - fix(yandex): accept string and numeric artist IDs (#509) by Sergei Zhukov (@srgrsj) (f964dd5)
+  - fix(podcast): tell same-titled no-GUID episodes apart by publication date by Owen Eldridge (@oweneldridge) (637e523)
+  - fix(podcast): carry a URL-keyed episode's record across a CDN rewrite by Owen Eldridge (@oweneldridge) (4616ef9)
+  - fix(podcast): refuse a progress file written by a newer cliamp by Owen Eldridge (@oweneldridge) (d2bc19e)
+  - fix(vis): label the playing track's own provider, wrap the save error by Owen Eldridge (@oweneldridge) (1606447)
+  - feat(vis): hide the episode name in the full screen visualizer by Owen Eldridge (@oweneldridge) (2f7e523)
+  - fix(vis): persist the visualizer set over IPC by Owen Eldridge (@oweneldridge) (bc3aab5)
+  - fix(podcast): a short episode counts as played past its midpoint by Owen Eldridge (@oweneldridge) (3d525e0)
+  - fix(podcast): one record per episode, scoped by feed, with title aliases by Owen Eldridge (@oweneldridge) (090c76b)
+  - docs(site): mention episode resume and played state by Owen Eldridge (@oweneldridge) (7ef8c9f)
+  - fix(podcast): keep listening position when a track loses its metadata by Owen Eldridge (@oweneldridge) (bb531ec)
+  - fix(podcast): keep an episode's metadata when it is saved to a playlist by Owen Eldridge (@oweneldridge) (fb42670)
+  - feat(podcast): remember per-episode position and played state by Owen Eldridge (@oweneldridge) (89ea079)
+  - Merge pull request #474 from oweneldridge/podcast-seekable-length by Owen Eldridge (@oweneldridge) (23ddf04)
+  - Preserve symlinks when saving files (#494) by Robert Holak (@rholak) (30e953a)
+  - ci: add Nix flake builds by Neo Lehmann (@legacynode) (bb12801)
+  - fix(setup): name the supported result navigation keys (#496) by Gjermund Garaba (@gjermundgaraba) (a166178)
+  - fix press q to quit on setup (#495) by Diego Dorado (@diegodorado) (d8b24df)
+  - fix(radio): share station favorites with playback (#493) by Gjermund Garaba (@gjermundgaraba) (cac0399)
+  - Merge pull request #480 from legacycode-forks/ci/update-github-actions by bjarneo (@bjarneo) (9864404)
+  - Merge pull request #481 from legacycode-forks/ci/align-local-and-github-checks by bjarneo (@bjarneo) (d792692)
+  - Merge pull request #482 from legacycode-forks/ci/improve-workflow-observability by bjarneo (@bjarneo) (e509c6c)
+  - feat(lua): expose queue.has_next for playback continuation (#488) by Gjermund Garaba (@gjermundgaraba) (ee8e250)
+  - fix(lua): queue.list reported every track as queued (#487) by Gjermund Garaba (@gjermundgaraba) (55d6819)
+  - fix(ui): refuse stale stream starts after a stop (#486) by Gjermund Garaba (@gjermundgaraba) (abad20e)
+  - fix(ui): persist theme picker selection (#483) by legacynode (@legacynode) (f3e7b55)
+  - test(jellyfin): assert MediaBrowser scheme on standard Authorization header (#460) by Dimas Setia Pambudi (@setiapam) (6762dd8)
+  - fix(ui): emit track-change events for yt-dlp sources (#484) by Gjermund Garaba (@gjermundgaraba) (62a102d)
+  - fix(docs): correct docs and seek help that contradict the code (#467) by BAKocska (@BAKocska) (423d9fc)
+  - ci: improve workflow observability by Neo Lehmann (@legacynode) (1ef7eec)
+  - ci: update GitHub Actions by Neo Lehmann (@legacynode) (df14ced)
+  - ci: align local and GitHub checks by Neo Lehmann (@legacynode) (1be0e52)
+  - fix(jellyfin): restore auth and streaming on Jellyfin 12 (#471) by Henrik N (@heggrik) (6c16a71)
+ReleaseNotesUrl: https://github.com/bjarneo/cliamp/releases/tag/v2.3.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
