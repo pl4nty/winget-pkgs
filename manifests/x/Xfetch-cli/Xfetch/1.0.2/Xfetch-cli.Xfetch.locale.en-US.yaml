@@ -1,0 +1,32 @@
+# Created by Anthelion using komac v2.17.1
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Xfetch-cli.Xfetch
+PackageVersion: 1.0.2
+PackageLocale: en-US
+Publisher: Xfetch-cli
+PublisherUrl: https://github.com/xfetch-cli
+PublisherSupportUrl: https://github.com/xfetch-cli/xfetch/issues
+PackageName: xfetch
+PackageUrl: https://github.com/xfetch-cli/xfetch
+License: MIT
+LicenseUrl: https://github.com/xfetch-cli/xfetch/blob/main/LICENSE
+ShortDescription: A fast, customizable system information fetch tool for the terminal
+Moniker: xfetch
+Tags:
+- cli
+- command-line
+- cross-platform
+- fetch
+- hardware
+- neofetch
+- system-information
+- terminal
+- xfetch
+ReleaseNotes: |-
+  What's Changed
+  - chore(deps): update compatible crates and migrate to ureq 3 by @xscriptor in #199
+  - release: v1.0.2 security and dependency update by @xscriptor in #198
+ReleaseNotesUrl: https://github.com/xfetch-cli/xfetch/releases/tag/v1.0.2
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
