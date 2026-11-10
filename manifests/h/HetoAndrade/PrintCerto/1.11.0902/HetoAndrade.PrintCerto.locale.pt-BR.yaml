@@ -1,0 +1,17 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: HetoAndrade.PrintCerto
+PackageVersion: 1.11.0902
+PackageLocale: pt-BR
+Publisher: Hetoandrade
+PublisherUrl: https://www.hetoandrade.com.br/
+PublisherSupportUrl: https://github.com/hetoandrade/hetoandrade.github.io/issues
+PackageName: PrintCerto
+PackageUrl: https://www.hetoandrade.com.br/
+License: Proprietary
+ShortDescription: Captura de tela e anotacoes em imagens.
+ReleaseNotes: Adiciona suporte com e-mail salvo, imagens e log obrigatório para problemas; orienta o envio pelo aplicativo no site.
+ReleaseNotesUrl: https://github.com/hetoandrade/hetoandrade.github.io/releases/tag/printcerto-v1.11.0902
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
