@@ -1,0 +1,17 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: lollapalooza.usage
+PackageVersion: 0.34.16
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: usage-windows\usage.exe
+  PortableCommandAlias: usage
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/aqua5230/usage/releases/download/v0.34.16/usage-windows.zip
+  InstallerSha256: 82934351E89D9758742C6A04131C2227B34FBF28311E17B41BB907910546DE92
+ManifestType: installer
+ManifestVersion: 1.28.0
