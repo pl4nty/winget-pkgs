@@ -1,0 +1,23 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: OwlPlug.OwlPlug
+PackageVersion: 2.1.1
+MinimumOSVersion: 10.0.0.0
+InstallerType: wix
+Scope: machine
+InstallerSwitches:
+  InstallLocation: INSTALLDIR="<INSTALLPATH>"
+ProductCode: '{9D65B3A4-F8FF-3D21-8FF3-3C54C18E6EFB}'
+ReleaseDate: 2026-11-09
+AppsAndFeaturesEntries:
+- ProductCode: '{9D65B3A4-F8FF-3D21-8FF3-3C54C18E6EFB}'
+  UpgradeCode: '{52DF4BF1-394A-34FC-AE0C-D798D0FDC11F}'
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\OwlPlug'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/DropSnorz/OwlPlug/releases/download/2.1.1/OwlPlug-2.1.1-win-x64.msi
+  InstallerSha256: 8C6F42F3E91E11521CE4D832D10DCA32CB4E9542229A9CFBBF8710D5EBA0A7DC
+ManifestType: installer
+ManifestVersion: 1.28.0
