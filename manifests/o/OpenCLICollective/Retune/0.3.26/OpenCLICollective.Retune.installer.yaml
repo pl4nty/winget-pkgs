@@ -1,0 +1,23 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: OpenCLICollective.Retune
+PackageVersion: 0.3.26
+InstallerType: nullsoft
+Scope: user
+ProductCode: Retune
+ReleaseDate: 2026-11-09
+AppsAndFeaturesEntries:
+- Publisher: rianjs
+  ProductCode: Retune
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Retune'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/open-cli-collective/Retune/releases/download/v0.3.26/Retune-0.3.26-windows-x64-setup.exe
+  InstallerSha256: D9BD5BC4B077EF15F1E8CB871443F66F97EF5BEBD356D895397B618D83B8770A
+- Architecture: arm64
+  InstallerUrl: https://github.com/open-cli-collective/Retune/releases/download/v0.3.26/Retune-0.3.26-windows-arm64-setup.exe
+  InstallerSha256: B9FD1067FDD373A73D58B4A9721299D77E8801098BA92740432816D9C8419E19
+ManifestType: installer
+ManifestVersion: 1.28.0
