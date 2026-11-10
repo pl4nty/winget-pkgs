@@ -1,0 +1,32 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Atuinsh.Atuin
+PackageVersion: 18.24.6
+InstallModes:
+- silent
+- silentWithProgress
+Commands:
+- atuin
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerType: wix
+  InstallerUrl: https://github.com/atuinsh/atuin/releases/download/v18.24.6/atuin-x86_64-pc-windows-msvc.msi
+  InstallerSha256: 97E1D91DD91B09F415A0B1072B5B717DD2A9317B0144BD04F09A2BB1F5EA3F6B
+  UpgradeBehavior: install
+  ProductCode: '{DB983279-D60C-4527-B827-5E5AD6FFE6DB}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{DB983279-D60C-4527-B827-5E5AD6FFE6DB}'
+    UpgradeCode: '{313BC66B-8878-40FC-9042-45A787D28E7B}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Atuin\bin'
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: atuin.exe
+  InstallerUrl: https://github.com/atuinsh/atuin/releases/download/v18.24.6/atuin-x86_64-pc-windows-msvc.zip
+  InstallerSha256: D500E0DC85A85BB69513DA6C9D933CF15DBEB2497AB404E0189BA47A5D829FE9
+ManifestType: installer
+ManifestVersion: 1.28.0
