@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Gryt.GrytChat
+PackageVersion: 1.15.9
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- interactive
+- silent
+UpgradeBehavior: install
+ProductCode: 6b194ad8-2c2d-5127-9a5d-67090636e2e2
+ReleaseDate: 2026-11-10
+AppsAndFeaturesEntries:
+- Publisher: Gryt Chat
+  ProductCode: 6b194ad8-2c2d-5127-9a5d-67090636e2e2
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\gryt-chat'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/Gryt-chat/gryt/releases/download/v1.15.9/Gryt-Chat-1.15.9-win-x64.exe
+  InstallerSha256: D4B8117102EB67D8B523DBF6DE4341B9ABB7674A0C532CC1207B8AA6C45F6926
+ManifestType: installer
+ManifestVersion: 1.28.0
