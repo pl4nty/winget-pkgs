@@ -1,0 +1,25 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: rizukirr.Muslimtify
+PackageVersion: 0.4.5
+InstallerType: inno
+Scope: user
+InstallerSwitches:
+  Silent: /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+  SilentWithProgress: /SILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+ProductCode: '{E8A3B2C1-4D5F-6A7B-8C9D-0E1F2A3B4C5D}_is1'
+ReleaseDate: 2026-11-10
+AppsAndFeaturesEntries:
+- ProductCode: '{E8A3B2C1-4D5F-6A7B-8C9D-0E1F2A3B4C5D}_is1'
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\Muslimtify'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/muslimtify-org/muslimtify/releases/download/v0.4.5/muslimtify-0.4.5-setup-x64.exe
+  InstallerSha256: 284F612E5E95534FCF01CD0EFDB294212833343DCE1F7659586C20F23B1D37DF
+- Architecture: arm64
+  InstallerUrl: https://github.com/muslimtify-org/muslimtify/releases/download/v0.4.5/muslimtify-0.4.5-setup-arm64.exe
+  InstallerSha256: D94DC2E798553EB2F7AE2530A18A6CEEB1B9650AB6E812624A6BE38AA0B79135
+ManifestType: installer
+ManifestVersion: 1.28.0
