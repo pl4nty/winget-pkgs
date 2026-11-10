@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: KnightAIAV.TalkDAT
+PackageVersion: 0.4.177-beta
+MinimumOSVersion: 10.0.19041.0
+InstallerType: exe
+Scope: user
+InstallModes:
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: --silent-install --no-launch
+  SilentWithProgress: --silent-install --no-launch
+UpgradeBehavior: install
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/KNIGHT-AI-AV/talk-dat-releases/releases/download/v0.4.177-beta/Talk-Dat-Setup.exe
+  InstallerSha256: 6B405EFFEB43AE5A8239683BC3328E617CD2EFAC42D5419D4A31F4E4D7E382FA
+ManifestType: installer
+ManifestVersion: 1.28.0
