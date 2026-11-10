@@ -1,0 +1,18 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Game1024.OpenSpeedy
+PackageVersion: 3.3.18
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: openspeedy.exe
+  PortableCommandAlias: openspeedy
+ReleaseDate: 2026-11-10
+ArchiveBinariesDependOnPath: true
+Installers:
+- Architecture: neutral
+  InstallerUrl: https://github.com/game1024/OpenSpeedy/releases/download/3.3.18/OpenSpeedy-3.3.18-portable-signed.zip
+  InstallerSha256: D011953BFA0ABCC56E7F439C8957C64E472D812AD812FFB61172F8F1840788AF
+ManifestType: installer
+ManifestVersion: 1.28.0
