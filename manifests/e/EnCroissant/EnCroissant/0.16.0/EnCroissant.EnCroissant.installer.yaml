@@ -1,0 +1,35 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: EnCroissant.EnCroissant
+PackageVersion: 0.16.0
+Scope: user
+InstallModes:
+- interactive
+- silent
+InstallerSwitches:
+  Silent: /S
+  Custom: /S
+UpgradeBehavior: install
+FileExtensions:
+- pgn
+ReleaseDate: 2026-11-10
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\en-croissant'
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  InstallerUrl: https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.16.0/en-croissant_0.16.0_x64-setup.exe
+  InstallerSha256: 7048457F6700B639DA2C844E6E76C9C1E24C01217335DDA6B38E387B0E082DA8
+  ProductCode: en-croissant
+  AppsAndFeaturesEntries:
+  - ProductCode: en-croissant
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: nullsoft
+  NestedInstallerFiles:
+  - RelativeFilePath: en-croissant_0.16.0_x64-setup.exe
+  InstallerUrl: https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.16.0/en-croissant_0.16.0_x64-setup.nsis.zip
+  InstallerSha256: 97593DF07FC99210225A3A344C40144EFD0EBCD09AA3F724ED681C0598665414
+ManifestType: installer
+ManifestVersion: 1.28.0

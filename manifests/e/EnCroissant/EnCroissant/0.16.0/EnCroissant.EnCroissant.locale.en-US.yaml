@@ -1,0 +1,126 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: EnCroissant.EnCroissant
+PackageVersion: 0.16.0
+PackageLocale: en-US
+Publisher: Francisco Salgueiro
+PublisherUrl: https://github.com/franciscoBSalgueiro
+PublisherSupportUrl: https://github.com/franciscoBSalgueiro/en-croissant/issues
+PackageName: en-croissant
+PackageUrl: https://github.com/franciscoBSalgueiro/en-croissant
+License: GPL-3.0
+LicenseUrl: https://github.com/franciscoBSalgueiro/en-croissant/blob/HEAD/LICENSE
+ShortDescription: A Modern Chess Database
+Moniker: encroissant
+Tags:
+- chess
+- chess-database
+- react
+- rust
+- tauri
+ReleaseNotes: |-
+  See the assets to download and install this version.
+  What's Changed
+  - fix: store file lastModified as epoch milliseconds by @felixabeck in #897
+  - fix: restore dropped i18n interpolations in de-DE and ko-KR by @felixabeck in #896
+  - Add missing values to the ko-KR locale by @philosophy-engineer in #819
+  - fix multi-game PGN display by @ApocalypseAPO in #858
+  - fix: bind database title and description instead of interpolating SQL by @felixabeck in #894
+  - chore: correct spelling of "AutoPromotion" in settings translations by @XiaoBuHaly in #879
+  - Add Settings.FlipBoardAfterMove French translation by @Emblaze in #813
+  - fix: hide variation arrows while practicing by @Parzival-Samanyolu in #882
+  - add missing values to zh-CN locale by @zhugeprajna in #902
+  - Fix non-power-of-two thread settings by @spanishmonk in #915
+  - fix: complete Turkish (tr-TR) translations and fix typos by @dbatay in #925
+  - add blue4 board theme by @stanislavcodes in #827
+  - Add engine Elo to PGN headers by @spanishmonk in #916
+  - Fix UTC time loss when editing games by @YiheHuang in #909
+  - feat: implemented a custom url handler for importing games by @deluf in #852
+  - Add 3d chess board& pieces themes just like lichess by @Hizome in #826
+  - Add markdown source editor for annotations by @Spentine in #872
+  - Fix: arrows and circles disappearing on puzzle board when Track Time is on by @BilgeGates in #841
+  - fix: deep-copy settings when duplicating an engine by @poirouxmartin in #941
+  - feat(layout): add toggles for sidebar and tab bar with hotkeys and menu items by @shadowmkj in #970
+  - feat(ui): add responsive compact layout support for boards and analysis by @shadowmkj in #969
+  - fix(chess): disable threat mode when position is in check by @shadowmkj in #975
+  - Fix board square of castling moves with check or mate by @cristianchiriac in #953
+  - Fix/practice log date - small bug fix by @Luc500 in #986
+  - feat: LAN added by @cosminmarina in #859
+  - Fix puzzle board piece destination setting by @z7z8th in #839
+  - fix: generate macOS updater bundles in releases by @ianalitis in #983
+  - fix: preserve unsaved state after PGN write errors by @ianalitis in #985
+  - fix: engine id collisions by @atasoya in #847
+  - fix: antialias the legal-move indicator dots by @lzh0394 in #927
+  - fix: prevent clock crash in untimed PGNs (fixes #908) by @ianalitis in #1016
+  - Add a side-to-move color indicator to puzzles by @palozano in #936
+  - feat: choose the piece animation speed by @Liadini in #973
+  - feat: option to hide the material display by @Liadini in #980
+  - feat: choose which panel tab games and analysis boards open on by @Liadini in #951
+  - Reset report analysis limits when switching mode by @palozano in #939
+  - fix: smooth out switching and closing analysis tabs, and the User page's games bars by @Liadini in #1010
+  - Fix analysis crash when a tablebase request rejects with an Error by @palozano in #935
+  - fix: preserve source analysis when playing from a position by @ianalitis in #982
+  - fix: accept Chess.com accounts without rating deviation by @ianalitis in #1017
+  - fix: contain and serialize manual updater workflows by @ianalitis in #999
+  - fix(i18n): translate the personal ratings panel selectors by @ianalitis in #1030
+  - Database v2 by @franciscoBSalgueiro in #795
+  - fix: classify daily and correspondence time controls by format by @ianalitis in #1023
+  - fix: keep game names when the game list goes past the first page (#737) by @ianalitis in #1024
+  - fix: translate keybind action labels (#767) by @ianalitis in #1032
+  - test(eval): expect the mate sentinel in the rook-stack fixtures (#981) by @ianalitis in #1038
+  - test(eval): follow the pawn value set in e77eba3 by @ianalitis in #1039
+  - test(eval): pin the opera fixtures to the values the search returns by @ianalitis in #1040
+  - fix: preserve selected and saved paths when deleting variations by @ianalitis in #1018
+  - fix: keep the error screen and variation walk alive on missing data by @ianalitis in #1036
+  - fix: preserve and display expired chess clocks by @ianalitis in #1019
+  - Add chessq vision support by @franciscoBSalgueiro in #1052
+  - fix: show downloaded databases as installed in the Add Database dialog by @Liadini in #1002
+  - perf: mount the move menu only after its first right-click by @Luc500 in #1055
+  - perf: show comments without formatting as plain text by @Luc500 in #1054
+  - fix: complete Simplified Chinese (zh-CN) translations by @lzh0394 in #1060
+  - update (i18n): fr-FR.json after #1030 merge by @Emblaze in #1057
+  - fix(i18n): French spelling and grammar fixes by @Kagou2026 in #1076
+  - feat: add Kiwen Suwi piece set (#1061) by @lzh0394 in #1071
+  - fix(i18n): fix French mistranslations in fr-FR.json by @Kagou2026 in #1079
+  - feat/hide practice shapes by @Luc500 in #1067
+  - Fix brief white window flash on startup, even if dark mode is set by @delicatty in #1068
+  - fix: report the final engine state after a fast search by @lzh0394 in #1070
+  - fix: treat unusable PGN rating tags as unrated by @lzh0394 in #1072
+  - fix(i18n): harmonize French terminology and wording in fr-FR.json by @Kagou2026 in #1088
+  - fix: sanitize HTML in PGN comments (thank you Evan D. Schoenberg, M.D.)
+
+  New Contributors
+  - @felixabeck made their first contribution in #897
+  - @philosophy-engineer made their first contribution in #819
+  - @ApocalypseAPO made their first contribution in #858
+  - @XiaoBuHaly made their first contribution in #879
+  - @Parzival-Samanyolu made their first contribution in #882
+  - @zhugeprajna made their first contribution in #902
+  - @spanishmonk made their first contribution in #915
+  - @dbatay made their first contribution in #925
+  - @stanislavcodes made their first contribution in #827
+  - @YiheHuang made their first contribution in #909
+  - @deluf made their first contribution in #852
+  - @Hizome made their first contribution in #826
+  - @Spentine made their first contribution in #872
+  - @BilgeGates made their first contribution in #841
+  - @poirouxmartin made their first contribution in #941
+  - @shadowmkj made their first contribution in #970
+  - @cristianchiriac made their first contribution in #953
+  - @Luc500 made their first contribution in #986
+  - @cosminmarina made their first contribution in #859
+  - @z7z8th made their first contribution in #839
+  - @ianalitis made their first contribution in #983
+  - @atasoya made their first contribution in #847
+  - @lzh0394 made their first contribution in #927
+  - @palozano made their first contribution in #936
+  - @Liadini made their first contribution in #973
+  - @Kagou2026 made their first contribution in #1076
+  - @delicatty made their first contribution in #1068
+ReleaseNotesUrl: https://github.com/franciscoBSalgueiro/en-croissant/releases/tag/v0.16.0
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/franciscoBSalgueiro/en-croissant/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
