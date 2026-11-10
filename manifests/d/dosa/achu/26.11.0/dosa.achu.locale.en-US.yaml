@@ -1,0 +1,30 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: dosa.achu
+PackageVersion: 26.11.0
+PackageLocale: en-US
+Publisher: NaveenKumar Namachivayam
+PublisherUrl: https://github.com/QAInsights
+PublisherSupportUrl: https://github.com/QAInsights/achu/issues
+PackageName: achu
+PackageUrl: https://github.com/QAInsights/achu
+License: MIT
+LicenseUrl: https://github.com/QAInsights/achu/blob/HEAD/LICENSE
+Copyright: Copyright © 2026 NaveenKumar Namachivayam
+ShortDescription: A lightweight Windows desktop application for beautifying screenshots.
+Tags:
+- ai
+- github-issue
+- ocr-recognition
+- productivity
+- screenshot-utility
+- tools
+ReleaseNotes: |-
+  What's Changed
+  - Offer safe original-resolution and smaller-copy screenshot stitching by @QAInsights in #28
+  - Add an on-canvas crop tool by @QAInsights in #29
+  - Add numbered step callout annotations by @QAInsights in #30
+ReleaseNotesUrl: https://github.com/QAInsights/achu/releases/tag/v26.11.00
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
