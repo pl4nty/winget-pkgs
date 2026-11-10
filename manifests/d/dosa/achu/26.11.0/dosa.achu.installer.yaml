@@ -1,0 +1,27 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: dosa.achu
+PackageVersion: 26.11.0
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- silent
+ProductCode: 5cd4f8da-f5b1-5199-8671-64f5614de8d1
+ReleaseDate: 2026-11-05
+AppsAndFeaturesEntries:
+- ProductCode: 5cd4f8da-f5b1-5199-8671-64f5614de8d1
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\achu'
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/QAInsights/achu/releases/download/v26.11.00/achu-Setup-26.11.0.exe
+  InstallerSha256: 719B3FFBC481F89F76CE092A84ABA1148D5AB3E3A22EA42F973B495A31E04976
+- Architecture: x64
+  InstallerUrl: https://github.com/QAInsights/achu/releases/download/v26.11.00/achu-Setup-x64-26.11.0.exe
+  InstallerSha256: ACFC2251120305786E76C35675DC8C083AF34C6533B0A1B1E5FDAF9307EC235C
+- Architecture: arm64
+  InstallerUrl: https://github.com/QAInsights/achu/releases/download/v26.11.00/achu-Setup-arm64-26.11.0.exe
+  InstallerSha256: 70F739B310F633B455F77E24A2C318744BB1603CE77EB9D5F00F1A37BECC2C36
+ManifestType: installer
+ManifestVersion: 1.28.0
