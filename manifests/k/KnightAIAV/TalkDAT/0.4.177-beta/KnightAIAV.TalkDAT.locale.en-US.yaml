@@ -1,0 +1,65 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: KnightAIAV.TalkDAT
+PackageVersion: 0.4.177-beta
+PackageLocale: en-US
+Publisher: Knight AI+AV
+PublisherUrl: https://knightaiav.com/
+PublisherSupportUrl: https://www.talkdat.app/#faq
+PrivacyUrl: https://www.talkdat.app/privacy.html
+Author: Knight AI+AV
+PackageName: Talk DAT!
+PackageUrl: https://www.talkdat.app/
+License: Apache-2.0
+LicenseUrl: https://github.com/KNIGHT-AI-AV/talkdat/blob/main/LICENSE
+Copyright: Copyright (c) Knight AI+AV
+ShortDescription: Free dictation for Windows. Hold a key, talk, and the text appears where you're typing. Speech recognition runs on your PC.
+Description: Talk DAT! is a free, open-source dictation app for Windows and Mac. Hold a key, talk, and the text appears where you're typing, with punctuation, capitals, lists and numbers done for you. Speech recognition runs on your computer with NVIDIA Parakeet by default and works offline after a one-time model download. Whisper models and your own provider key are optional. It also has custom words, two writing styles, local translation, live captions and recording recovery. No account, trial or subscription is needed.
+Moniker: talkdat
+Tags:
+- accessibility
+- dictate
+- dictation
+- local-first
+- offline
+- open-source
+- parakeet
+- push-to-talk
+- speech-recognition
+- speech-to-text
+- stt
+- transcribe
+- transcription
+- voice-to-text
+- voice-typing
+- whisper
+ReleaseNotes: |-
+  The Pill menu, the tray and Settings are laid out again around what you use most, and Ctrl+K finds any action, page or setting.
+  - The Pill menu now starts with Start hands-free dictation, in bold, with its shortcut beside it. Below it are Paste last transcript, History, Scratchpad, Translate and Tools, in your Menu layout order.
+  - Tools on the Pill menu holds Ramble, Scribe, Live captions and Stats.
+  - Speech and Writing style come after the daily rows. Speech holds Local speech, Your key and Speech settings. Writing style, called Formatting before, holds Chill, Executive and Writing settings.
+  - Pause listening is now on the Pill menu as well as the tray, with a check mark while Talk DAT! is paused. Before, the tray said Pause dictation or Resume dictation.
+  - When Talk DAT! is paused, its message now says how to resume: choose Pause listening again in the Pill menu or the tray.
+  - Settings, Help, Restart and Quit stay at the bottom of the Pill menu, and Restart and Quit still ask for a second click. The App controls submenu is gone.
+  - Menu layout in Settings now arranges the daily rows only. Speech, Writing style, Pause listening, Settings, Help, Restart and Quit always stay in place, and a layout you saved in an earlier version keeps your daily order.
+  - Check for updates is now on Home and Help instead of the Pill menu and the tray. When an update is waiting, the Pill menu still shows it first and the tray shows Install update.
+  - On Windows, a submenu on the Pill menu now opens beside the menu, after the pointer rests on its row or at once when you click it, and the menu stays open. Before, the submenu took the menu's place.
+  - The Pill menu has a new look, with tighter rows, smaller icons and thin dividers, and it opens with a short slide from the Pill. It no longer has a title line or a close button.
+  - The Pill menu is as wide as its longest row needs, up to 360 pixels, so Start hands-free dictation and its shortcut usually fit side by side. When they do not, the shortcut is left out rather than cutting the label.
+  - The tray menu is regrouped and its More submenu is gone. Status is now the tray icon's tooltip, Talk DAT!: ready or Talk DAT!: paused, and the Status panel on Help. Stats and Local models are in Settings, and Share an idea is on Help.
+  - Hide overlay in the tray is now Show the Pill, with a check mark while the Pill shows.
+  - Settings has a new sidebar. Each group's pages sit under it on a tree line, a chevron opens or closes a group, and your account is at the bottom. The highlight bar and the page slide that 0.4.176 added are gone: a page now opens in place.
+  - Ctrl+B folds the Settings sidebar to icons, and pointing at an icon shows its name. In a narrow window the sidebar always shows icons.
+  - The top of Settings shows where you are, and the search field shows its Ctrl K shortcut.
+  - In the Talk DAT! window, Ctrl+K or a click in the search opens one list of every action, page and setting, filtered as you type. Up and Down move through it, Enter runs the one you pick, and Esc closes it.
+  - In that list, Restart and Quit ask for a second Enter before they act, as the Pill menu asks for a second click.
+  - Shortcuts is now its own page in Settings, with all 18 keyboard shortcuts in one place, grouped by what they do.
+  - Microphone is now its own page in Settings, with your microphone, its level, quiet mode and the wake word.
+  - Dictation in Settings now holds Pasting, Sounds and Capture, with the capture timing under Advanced.
+  - History in Settings keeps its own settings for saving, its limit and storage. Translate to is now under Translation, and the AI rewrite settings are one section of Formatting.
+  - Ramble and Scribe are now under Tools in Settings, and the Model guide is under Dictation.
+  - The page that was General is now Startup and updates, and the sidebar group that holds it, called Settings before, is now General.
+ReleaseNotesUrl: https://github.com/KNIGHT-AI-AV/talk-dat-releases/releases/tag/v0.4.177-beta
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
