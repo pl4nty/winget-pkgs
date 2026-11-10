@@ -1,0 +1,31 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: RDS.RustDICOMStation
+PackageVersion: 0.12.2
+PackageLocale: en-US
+Publisher: Rust DICOM Station contributors
+PublisherUrl: https://github.com/alexprotom
+PublisherSupportUrl: https://github.com/alexprotom/rust-dicom-station/issues
+PackageName: Rust DICOM Station
+PackageUrl: https://github.com/alexprotom/rust-dicom-station
+License: MIT
+LicenseUrl: https://github.com/alexprotom/rust-dicom-station/blob/main/LICENSE.txt
+Copyright: Copyright (c) 2026 Alexander Pryanichnikov
+ShortDescription: Fast, robust DICOM / RT DICOM viewer in pure Rust (CT/MR volumes, RTSTRUCT, RTDOSE, RTPLAN) with a three-view MPR layout
+Description: 'Open-source DICOM and RT DICOM station for medical imaging, radiotherapy research, analysis and QA: CT/MR volumes with RTSTRUCT, RTDOSE and RTPLAN, registration, contouring, DVH, 4D motion analysis and pure-Rust auto-segmentation. Not a medical device.'
+Moniker: rust-dicom-station
+Tags:
+- dicom
+- dvh
+- medical-imaging
+- radiotherapy
+- rtstruct
+- segmentation
+- viewer
+ReleaseNotes: |-
+  What's Changed
+  - Release 0.12.2 by @alexprotom in #78
+ReleaseNotesUrl: https://github.com/alexprotom/rust-dicom-station/releases/tag/v0.12.2
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
