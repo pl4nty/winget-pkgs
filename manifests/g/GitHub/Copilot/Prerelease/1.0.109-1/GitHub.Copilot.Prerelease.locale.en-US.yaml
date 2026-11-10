@@ -1,0 +1,55 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: GitHub.Copilot.Prerelease
+PackageVersion: 1.0.109-1
+PackageLocale: en-US
+Publisher: GitHub, Inc.
+PublisherUrl: https://github.com/home/
+PublisherSupportUrl: https://support.github.com/
+PrivacyUrl: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+PackageName: Copilot CLI (Preview)
+PackageUrl: https://github.com/github/copilot-cli
+License: Proprietary
+LicenseUrl: https://docs.github.com/en/site-policy/github-terms/github-pre-release-license-terms
+Copyright: Copyright (c) GitHub 2025. All rights reserved.
+CopyrightUrl: https://github.com/github/copilot-cli?tab=License-1-ov-file
+ShortDescription: GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal.
+Description: GitHub Copilot CLI brings AI-powered coding assistance directly to your command line, enabling you to build, debug, and understand code through natural language conversations. Powered by the same agentic harness as GitHub's Copilot coding agent, it provides intelligent assistance while staying deeply integrated with your GitHub workflow.
+Moniker: copilot-prerelease
+Tags:
+- cli
+- copilot
+- github
+ReleaseNotes: |-
+  Added
+  - Add IPv4/IPv6 CIDR support for sandbox host allow and deny rules in settings.
+  - Add support for Claude Fable 5.2 in the model picker under New models
+  Improved
+  - Sandbox path settings support environment variables while preserving authored expressions in settings and the editor.
+  - Use cache-aware background wait timeouts by default in interactive sessions
+  Fixed
+  - copilot help input now says that Backspace at the start of shell input leaves shell mode and keeps the typed text, not only on an empty prompt
+  - /subagents keeps its Overridden and Status columns readable on narrow terminals and aligns agent names with wide characters
+  - Removing a built-in MCP server with copilot mcp remove or /mcp delete explains how to disable it instead
+  - Selecting a directory next to your home directory in /cd ~ or /add-dir ~ uses the correct full path
+  - Trusted-folder and worktree confirmations keep Windows path separators
+  - Hide empty assistant reply bullets when a response contains only whitespace
+  - Choosing "don't ask again" for parallel file operations approves all covered requests without prompting again
+  - Make /terminal-setup configure Shift+Enter in the correct location for VS Code, Cursor, and Windsurf on Linux when XDG_CONFIG_HOME is set
+  - The footer's AI credits now update as soon as /compact finishes instead of after the next turn
+  - Prompt mode with --output-format json emits a final result record with an exit status even when a run fails early
+  - Rate-limit errors now name the same mode as the switch dialog (Copilot Fusion mode or auto mode) instead of "auto model"
+  - In a multi-line prompt, Up and Down now start from the cursor after Left, Right, Backspace, Delete or a similar key that had nothing to act on at the start or end of the text, instead of jumping to the column of the previous Up/Down run
+  - Number keys keep working in shell and URL approval dialogs after pressing the number of the "No, and tell Copilot" option and moving back up
+  - /cd . and /add-dir . now keep the current directory in a git repository instead of selecting .git; the directory picker lists ./ first and still offers hidden directories below it
+  - In ACP mode, a preToolUse hook that answers ask now asks the ACP client to allow or deny the tool call instead of denying it as host policy
+  - /voice immediately reports an overly long socket path and how to fix it, instead of waiting before showing a generic error.
+  - File move permission prompts show both source and destination paths, and pure renames no longer show an empty diff.
+  - Session history keeps every turn when a second window works on a session another window still has open
+ReleaseNotesUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.109-1
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/github/copilot-cli/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
