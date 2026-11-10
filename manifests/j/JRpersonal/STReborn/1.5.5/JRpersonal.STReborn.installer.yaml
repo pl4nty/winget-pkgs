@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: JRpersonal.STReborn
+PackageVersion: 1.5.5
+InstallerType: portable
+Commands:
+- streborn
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/JRpersonal/streborn/releases/download/v1.5.5/STR-Windows.exe
+  InstallerSha256: F32F22B25F63C105D03134AF8E0E49CB6D960A37CA26B2C7FF19E79047BFB87B
+ManifestType: installer
+ManifestVersion: 1.28.0
