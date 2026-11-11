@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
 
 PackageIdentifier: CCPGames.EVEOnline
-PackageVersion: 1.17.6
+PackageVersion: 1.17.8
 PackageLocale: en-US
 Publisher: CCP ehf
 PackageName: eve-online

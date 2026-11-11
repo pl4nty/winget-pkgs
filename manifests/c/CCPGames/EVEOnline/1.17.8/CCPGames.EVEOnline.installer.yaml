@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: CCPGames.EVEOnline
-PackageVersion: 1.17.6
+PackageVersion: 1.17.8
 InstallerType: exe # Squirrel
 Scope: user
 InstallerSwitches:
@@ -10,7 +10,7 @@ InstallerSwitches:
   SilentWithProgress: --silent
 UpgradeBehavior: install
 ProductCode: eve-online
-ReleaseDate: 2026-11-09
+ReleaseDate: 2026-11-11
 AppsAndFeaturesEntries:
 - ProductCode: eve-online
 InstallationMetadata:
@@ -18,6 +18,6 @@ InstallationMetadata:
 Installers:
 - Architecture: x64
   InstallerUrl: https://launcher.ccpgames.com/eve-online/release/win32/x64/eve-online-latest+Setup.exe
-  InstallerSha256: 518C0AEE4C4E477D0FFDB0734F2D7DB59C73C352FA132DED432C5920EE73886E
+  InstallerSha256: B3726498FEE1E5CC1E6A1951EA3652218142D5B1790FAF7CFC2B1E2A667502C9
 ManifestType: installer
 ManifestVersion: 1.28.0
