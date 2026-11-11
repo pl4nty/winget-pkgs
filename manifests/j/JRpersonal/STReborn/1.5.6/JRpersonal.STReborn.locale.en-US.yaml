@@ -1,0 +1,141 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: JRpersonal.STReborn
+PackageVersion: 1.5.6
+PackageLocale: en-US
+Publisher: JRpersonal
+PublisherUrl: https://github.com/JRpersonal
+PublisherSupportUrl: https://github.com/JRpersonal/streborn/issues
+PrivacyUrl: https://st-reborn.de/privacy/
+Author: Jens Roggenfelder
+PackageName: ST Reborn
+PackageUrl: https://st-reborn.de/
+License: Apache-2.0
+LicenseUrl: https://github.com/JRpersonal/streborn/blob/HEAD/LICENSE
+Copyright: Copyright (c) 2026 Jens Roggenfelder
+ShortDescription: Cloud-free revival for Bose SoundTouch speakers. Unofficial community project, not affiliated with Bose.
+Description: |-
+  ST Reborn (STR) brings internet radio, Spotify Connect, the hardware preset keys and multiroom back to Bose SoundTouch speakers after the Bose cloud shutdown. The desktop app installs a small agent onto the speaker over your home network and then controls every speaker running STR, with no Bose cloud and no account.
+  STR is an independent open source project. It is not affiliated with, endorsed by or sponsored by Bose Corporation. Bose and SoundTouch are registered trademarks of Bose Corporation.
+Moniker: st-reborn
+Tags:
+- bose
+- internet-radio
+- multiroom
+- right-to-repair
+- soundtouch
+- speaker
+- spotify-connect
+ReleaseNotes: |-
+  STR v1.5.6
+  Built from commit: 164d98306c7968714b76a5ad55fe2d856f32390f
+  Workflow run: https://github.com/JRpersonal/streborn/actions/runs/42917474345
+
+  What's changed in v1.5.6
+
+  New features
+  - The new layout preview looks calmer, with search next to the title, all six preset keys in one row and one round play button (app)
+
+  Fixes
+  - Settings saved on the speaker survive a power cut that happens right after saving (agent)
+  - The region, Spotify sign-in, streaming quality and stereo pair settings on the speaker survive a power cut (agent)
+  - The speaker remembers the other speakers in your home after a power cut (agent)
+  - A lost connection while STR is being removed no longer leaves the speaker stopped until it is unplugged (app)
+  - A removal of STR that left files behind is no longer headed "STR was removed" (app)
+  - Removing STR from a speaker no longer reports success while files are left behind (app)
+  - Removing STR, a firmware update or a repair that is turned away because the speaker is busy now says so in plain words instead of showing a raw STR_BUSY error (app)
+  - The "still updating" notice shows as a small pill at the bottom of the window instead of a grey bar across the top (app)
+  - The tagline and the room name suggestions no longer fall back to English in Traditional Chinese and Arabic (app)
+  - The track time, the names next to a group's volume sliders and the open-network badge are readable in every theme (app)
+  - A repair over the network can no longer start while an install, update or removal is still running on the same speaker (install)
+  - A single library track shows its artist and album on the phone page (phone)
+  - Ad-break cues such as "adbreak_end" no longer appear under the station name (radio)
+  - After an update that failed without Wi-Fi, the phone no longer says another phone is updating (remote)
+  - Setting a speaker up again no longer interrupts its Wi-Fi when it is already on that network (setup)
+  - Setting up a speaker that is already on the Wi-Fi no longer makes it give up its network address (setup)
+  - Saving the diagnostic file reports an error when the file could not be written completely (support)
+  - The anonymised diagnostic file no longer contains the path of your USB stick (support)
+  - "Update all" no longer sends the Spotify part to the wrong speaker when two speakers swapped addresses while waiting (update)
+  - A speaker that answers on older software after the wait is no longer confirmed late as updated (update)
+  - A speaker that cannot restart after an update accepts updates and Spotify again without being unplugged (update)
+  - A speaker that could not save an update is offered the update once more instead of being left out of Update all (update)
+  - A speaker that falls back to older software while Spotify is being set up is no longer reported as updated (update)
+  - A speaker that reports older software is updated instead of being taken as already up to date (update)
+  - A speaker whose update from the phone did not take gets its Spotify engine back (update)
+  - An install no longer counts Spotify as set up when the Spotify part could not be sent or started (update)
+  - An update that fails while connecting to the speaker shows a readable reason instead of a garbled error text (update)
+  - An update the speaker could not write to its storage is no longer reported as installed (update)
+  - Removing STR or updating the Bose firmware is refused while the same speaker is being installed or updated (update)
+  - The SSH fallback can replace the Spotify engine while it is running (update)
+  - The SSH fallback no longer deletes or refuses the Spotify engine on speakers that have room for it (update)
+
+  Downloads
+  ──────────────────────────────────────┬───────────────────────────
+  Platform                              │File
+  ──────────────────────────────────────┼───────────────────────────
+  Windows desktop app                   │STR-Windows.exe
+  ──────────────────────────────────────┼───────────────────────────
+  macOS desktop app                     │STR-macOS.dmg
+  ──────────────────────────────────────┼───────────────────────────
+  Linux desktop app (x86_64)            │STR-Linux-x64.tar.gz
+  ──────────────────────────────────────┼───────────────────────────
+  Linux desktop app (ARM64)             │STR-Linux-arm64.tar.gz
+  ──────────────────────────────────────┼───────────────────────────
+  Linux .deb (Debian, Ubuntu, x86_64)   │STR-Linux-x64.deb
+  ──────────────────────────────────────┼───────────────────────────
+  Linux .deb (Raspberry Pi OS, ARM64)   │STR-Linux-arm64.deb
+  ──────────────────────────────────────┼───────────────────────────
+  Stick agent (ARMv7l, real target)     │streborn-armv7l
+  ──────────────────────────────────────┼───────────────────────────
+  Stick agent (ARM64, reserve)          │streborn-arm64
+  ──────────────────────────────────────┼───────────────────────────
+  Stick agent (amd64, test rig)         │streborn-amd64
+  ──────────────────────────────────────┼───────────────────────────
+  Spotify sidecar (go-librespot, ARMv7l)│go-librespot-armv7l
+  ──────────────────────────────────────┼───────────────────────────
+  Checksums                             │SHA256SUMS
+  ──────────────────────────────────────┼───────────────────────────
+  Machine-readable                      │manifest.json
+  ──────────────────────────────────────┴───────────────────────────
+  The website at st-reborn.de fetches manifest.json to render the current download links. All file names are stable (no version in the name), so every file, the desktop apps included, has a permanent /releases/latest/download/<file> URL.
+
+  System requirements
+  ───────┬──────────────────────────────────────────────────────────────────────────────────────────────────
+  Windows│Windows 10 or 11, 64-bit. The app uses Microsoft Edge WebView2; Windows 7 and 8 are not supported.
+  ───────┼──────────────────────────────────────────────────────────────────────────────────────────────────
+  macOS  │macOS 12 Monterey or newer.
+  ───────┼──────────────────────────────────────────────────────────────────────────────────────────────────
+  Linux  │64-bit (x86_64) with WebKitGTK (webkit2gtk 4.x) on a current glibc-based distribution.
+  ───────┼──────────────────────────────────────────────────────────────────────────────────────────────────
+  Speaker│Bose SoundTouch 10, 20, 30 or Portable on the final Bose firmware (27.0.6).
+  ───────┴──────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Verify your download
+  Every binary in this release is attested by GitHub's build provenance system.
+  # SHA256 checksum
+  sha256sum -c SHA256SUMS
+  # Sigstore attestation (requires GitHub CLI)
+  gh attestation verify STR-Windows.exe --owner JRpersonal
+
+  Code signing
+  Windows: signed with a Certum Open Source code signing certificate. SmartScreen may still warn while the signature builds download reputation.
+  macOS: signed with a Developer ID certificate and notarized by Apple. The app and the disk image each carry a stapled ticket, so Gatekeeper opens them without a warning, offline included.
+  Any warning you do see, and the exact click path past it, is documented on the website Verify page.
+
+  VirusTotal scan
+  Each binary in this release is uploaded to VirusTotal on build, so the unsigned apps' heuristic false-positives are checkable. Live reports for this exact build:
+  ───────────┬───────────────
+  Platform   │Report
+  ───────────┼───────────────
+  Windows    │VirusTotal
+  ───────────┼───────────────
+  macOS      │VirusTotal
+  ───────────┼───────────────
+  Linux x64  │VirusTotal
+  ───────────┼───────────────
+  Linux ARM64│VirusTotal
+  ───────────┴───────────────
+ReleaseNotesUrl: https://github.com/JRpersonal/streborn/releases/tag/v1.5.6
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
