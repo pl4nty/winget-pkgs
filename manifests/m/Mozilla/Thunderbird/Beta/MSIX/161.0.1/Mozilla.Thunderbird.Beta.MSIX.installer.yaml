@@ -1,0 +1,32 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Mozilla.Thunderbird.Beta.MSIX
+PackageVersion: 161.0.1
+Platform:
+- Windows.Desktop
+MinimumOSVersion: 10.0.17763.0
+InstallerType: msix
+UpgradeBehavior: install
+FileExtensions:
+- eml
+- ics
+PackageFamilyName: MozillaThunderbird.MozillaThunderbirdBeta_jag0gd4e3s9p2
+RestrictedCapabilities:
+- runFullTrust
+ReleaseDate: 2026-11-09
+Installers:
+- Architecture: x86
+  InstallerUrl: https://archive.mozilla.org/pub/thunderbird/releases/161.0b1/win32/multi/Thunderbird%20Setup%20161.0b1.msix
+  InstallerSha256: 7C2624CBD5658CBED26432DE531B02E8CE3C73CF1975561C3C02700E38F5F28E
+  SignatureSha256: 8930E6ABACEDD617F266B3DEC6EB6812446EA6DFE7DBA81B8628F029D5902C7E
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\WindowsApps\MozillaThunderbird.MozillaThunderbirdBeta_161.0.1.0_x86__jag0gd4e3s9p2'
+- Architecture: x64
+  InstallerUrl: https://archive.mozilla.org/pub/thunderbird/releases/161.0b1/win64/multi/Thunderbird%20Setup%20161.0b1.msix
+  InstallerSha256: D2BFC4D2A580ABBB9419F216FE682DF61194ABF7F0AFF57A7ED4092689CF3B4B
+  SignatureSha256: 37ABB1C4C4E0B8EA008459CFE70E592B8F6FE8F5BB9968CD0E2546504F207C22
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\WindowsApps\MozillaThunderbird.MozillaThunderbirdBeta_161.0.1.0_x64__jag0gd4e3s9p2'
+ManifestType: installer
+ManifestVersion: 1.28.0
