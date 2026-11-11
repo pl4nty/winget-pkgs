@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Vyomi.Vyomi
+PackageVersion: 3.0.47
+InstallerType: wix
+Scope: machine
+InstallModes:
+- interactive
+- silent
+UpgradeBehavior: install
+ProductCode: '{149B07EC-A777-4FB7-946B-B5A175880B2E}'
+ReleaseDate: 2026-11-10
+AppsAndFeaturesEntries:
+- ProductCode: '{149B07EC-A777-4FB7-946B-B5A175880B2E}'
+  UpgradeCode: '{7B95B0F4-1E4D-4E0E-9C8D-29D2F1D93A11}'
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\Vyomi'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/vyomi-cloud/appliance/releases/download/v3.0.47/vyomi-3.0.47-x64.msi
+  InstallerSha256: 7A8B5FF106761464F792B346F5BB3F3DE9EF90180F6BFF4D370C7BD7D3109580
+ManifestType: installer
+ManifestVersion: 1.28.0
