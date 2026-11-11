@@ -1,0 +1,47 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: GAM-Team.gam
+PackageVersion: 7.52.00
+PackageLocale: en-US
+Publisher: GAM Team - google-apps-manager@googlegroups.com
+PublisherUrl: https://github.com/GAM-team
+PublisherSupportUrl: https://github.com/GAM-team/GAM/issues
+PackageName: gam
+PackageUrl: https://github.com/GAM-team/GAM
+License: Apache-2.0
+LicenseUrl: https://github.com/GAM-team/GAM/blob/HEAD/LICENSE
+ShortDescription: command line management for Google Workspace
+Tags:
+- gam
+- google
+- google-admin-sdk
+- google-api
+- google-apps
+- google-calendar
+- google-cloud
+- google-drive
+- google-workspace
+- gsuite
+- oauth2
+- oauth2-client
+- python
+ReleaseNotes: |-
+  - 7.52.00
+  Added option update to gam version.
+  Print the current and latest versions of GAM and, if the current version is not the latest version,
+  download the latest version and install it in place of the current version.
+  - Only GAM installed from a release on Linux or MacOS is updated; on Windows, download and run the latest installer from https://github.com/GAM-team/GAM/r\
+    eleases
+  - Update GAM installed with Homebrew with brew upgrade gam, and Python source/library installations with git or pip
+  - The download is verified against the SHA-256 digest published with the release and the new version is run once before any files are replaced
+  - Files that are not part of the GAM release, e.g., oauth2.txt and client_secrets.json, are not changed
+  - If the update fails, the current version is restored
+  Thanks to @seidnerj
+  - See Update History
+ReleaseNotesUrl: https://github.com/GAM-team/GAM/releases/tag/v7.52.00
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/GAM-team/GAM/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
