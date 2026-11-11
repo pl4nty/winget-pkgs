@@ -1,23 +1,22 @@
-# Automatically updated by the winget bot at 2026/Oct/24
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: EmoteInteractive.RemoteMouse
-PackageVersion: '4.727'
-InstallerLocale: en-US
+PackageVersion: '4.728'
 InstallerType: inno
 Scope: machine
+InstallerSuccessCodes:
+- 1
 ProductCode: '{01E4BC6D-3ACC-45E1-8928-C2FF626F63F3}_is1'
-ReleaseDate: 2026-02-28
+ReleaseDate: 2026-11-11
 AppsAndFeaturesEntries:
 - ProductCode: '{01E4BC6D-3ACC-45E1-8928-C2FF626F63F3}_is1'
 ElevationRequirement: elevatesSelf
 InstallationMetadata:
   DefaultInstallLocation: '%ProgramFiles%\Remote Mouse'
-InstallerSuccessCodes:
-- 1
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.remotemouse.net/downloads/RemoteMouse.exe
-  InstallerSha256: 9BE8E06AC3C693B321BB5E1A3BEFF99A9A49AF13B3FD35EE6C887FFAA4C1A6E6
+  InstallerSha256: 41726AB97685867865BCD796818458FEAC0836DB8D168B83CD6B1EBF3B607613
 ManifestType: installer
 ManifestVersion: 1.28.0
