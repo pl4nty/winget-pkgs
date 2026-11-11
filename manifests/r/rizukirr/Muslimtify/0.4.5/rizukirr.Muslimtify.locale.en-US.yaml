@@ -1,0 +1,49 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: rizukirr.Muslimtify
+PackageVersion: 0.4.5
+PackageLocale: en-US
+Publisher: rizukirr
+PublisherUrl: https://github.com/rizukirr
+PublisherSupportUrl: https://github.com/rizukirr/muslimtify/issues
+PackageName: Muslimtify
+PackageUrl: https://github.com/rizukirr/muslimtify
+License: MIT
+LicenseUrl: https://github.com/muslimtify-org/muslimtify/blob/HEAD/LICENSE
+ShortDescription: An Islamic prayer time notification daemon for Windows.
+Tags:
+- c-language
+- cross-platform
+- daemon
+- islam
+- muslim-prayer-times
+- muslims-prayer
+- notification
+- religion
+- windows
+- windows-app
+- windows-desktop
+ReleaseNotes: |-
+  Prebuilt binaries for v0.4.5.
+  Linux (dynamically linked: install libnotify and
+  libcurl from your distro first):
+  - x86_64: muslimtify-*-linux-x86_64.tar.gz
+  - aarch64: muslimtify-*-linux-aarch64.tar.gz
+  Windows, run the installer for your architecture:
+  - x64: muslimtify-*-setup-x64.exe
+  - arm64: muslimtify-*-setup-arm64.exe
+  Verify downloads with sha256sum -c SHA256SUMS.
+  For distro-native installs (Fedora COPR, Debian .deb, winget) see the README.
+  What's Changed
+  - Add LICENSE file by @rizukirr in #105
+  - Change license from MIT to GPLv3 by @rizukirr in #106
+  - feat: add after-adhan reminders (notification --after) by @rizukirr in #108
+  - refactor: reuse shared helpers to remove duplicated code by @rizukirr in #109
+  - chore: bump to v0.4.5 by @rizukirr in #110
+ReleaseNotesUrl: https://github.com/muslimtify-org/muslimtify/releases/tag/v0.4.5
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/rizukirr/muslimtify/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
