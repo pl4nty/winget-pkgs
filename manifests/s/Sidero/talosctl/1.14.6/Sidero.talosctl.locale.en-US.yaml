@@ -1,0 +1,117 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Sidero.talosctl
+PackageVersion: 1.14.6
+PackageLocale: en-US
+Publisher: Sidero Labs
+PublisherUrl: https://www.talos.dev/
+PublisherSupportUrl: https://github.com/siderolabs/talos/issues
+PrivacyUrl: https://www.siderolabs.com/privacy-policy/
+Author: Sidero Labs
+PackageName: talosctl
+PackageUrl: https://www.talos.dev/
+License: Mozilla Public License 2.0
+LicenseUrl: https://github.com/siderolabs/talos/blob/main/LICENSE
+ShortDescription: A command line tool for communicating with a Talos cluster
+Tags:
+- k8s
+- kubernetes
+- talos
+ReleaseNotes: |-
+  Talos 1.14.6 (2026-11-11)
+  Welcome to the v1.14.6 release of Talos!
+  Please try out the release binaries and report any issues at
+  https://github.com/siderolabs/talos/issues.
+
+  Component Updates
+  Linux: 6.18.63
+  Flannel CNI: 0.28.10
+  Talos is built with Go 1.26.11.
+
+  Contributors
+  - Andrey Smirnov
+  - Fábio Matavelli
+  - Jake Watson
+  - Justin Garrison
+  - Mateusz Urbanek
+  - Matthew Kelch
+  - Max Makarov
+  - Noel
+  - Raphaël DUCOM
+  - Scott Vandiver
+  - frauniki
+  - saguila
+  - zavermax
+
+  Changes
+  20 commits
+  - ede45c42d release(v1.14.6): prepare release
+  - b42de4573 fix: update GoBGP library to 4.10.0
+  - 008f6c3de fix: bump Go version in constants
+  - 52417038c chore: rekres
+  - 2b98b3991 fix: update Go dependencies
+  - ba1ae32da fix: wait for control plane static pods during Kubernetes CA rotation
+  - a16555ed5 fix: log lifecycle service actions to console
+  - 8f6c141db fix: don't zero the discovered volume partition offset
+  - 421d1589d fix: give the mdadm runtime map directory a dedicated SELinux type
+  - c106f41fe fix: mask the SideroLink join token
+  - a02b84749 fix: drop architecture constraints from affinity rules
+  - 93b0e406f feat: update pkgs & tools
+  - cc384acab fix: use aescbc provider for AES-CBC key in etcd encryption config
+  - bfc139c8f fix: skip logical links when matching OpenStack interfaces by MAC
+  - e28686aa9 fix: open the files of pkg/xfs roots with O_CLOEXEC
+  - 90bbad2f1 feat: update changed BGP peers
+  - 8a3d3d4b3 fix: reconnect log senders when the receiver closes the connection
+  - e7bcb14fe feat: update Flannel to 0.28.10
+  - c31b89093 feat: include applesmc module
+  - e867b1aba feat: update Go 1.26.11, Linux 6.18.63
+
+  Changes from siderolabs/pkgs
+  11 commits
+  - siderolabs/pkgs@e6ad19d feat: update Linux to 6.18.63
+  - siderolabs/pkgs@28f56b5 feat: enable AMD Pensando ionic and ionic_rdma
+  - siderolabs/pkgs@64ec876 fix: enable BROADCOM PHY on amd64
+  - siderolabs/pkgs@52e7730 feat: enable arm64 SMMUv3 SVA for ATS (NVIDIA Grace Hopper)
+  - siderolabs/pkgs@5645412 feat: update dependencies
+  - siderolabs/pkgs@5255939 feat: enable CONFIG_DRM_ACCEL_AMDXDNA on amd64
+  - siderolabs/pkgs@0190570 feat: update NVIDIA drivers
+  - siderolabs/pkgs@ef77f92 feat: update backportable dependencies
+  - siderolabs/pkgs@6c2142e feat: enable arm64 ff-a tpm crb support
+  - siderolabs/pkgs@e06cc60 feat: enable applesmc on amd64
+  - siderolabs/pkgs@f26bb1b feat: update Go to 1.26.11
+
+  Changes from siderolabs/tools
+  1 commit
+  - siderolabs/tools@5959f76 feat: update Go to 1.26.11
+
+  Dependency Changes
+  - github.com/gopacket/gopacket v1.7.1 -> v1.7.2
+  - github.com/klauspost/compress v1.19.2 -> v1.20.2
+  - github.com/osrg/gobgp/v4 v4.8.0 -> v4.10.0
+  - github.com/siderolabs/pkgs v1.14.0-48-gf4bda77 -> v1.14.0-59-ge6ad19d
+  - github.com/siderolabs/talos/pkg/machinery v1.14.5 -> v1.14.6
+  - github.com/siderolabs/tools v1.14.0-11-g8dad45e -> v1.14.0-12-g5959f76
+  - golang.org/x/net v0.61.0 -> v0.62.0
+  Previous release can be found at v1.14.5
+
+  Images
+  ghcr.io/siderolabs/flannel:v0.28.10
+  registry.k8s.io/coredns/coredns:v1.14.7
+  registry.k8s.io/etcd:v3.7.3
+  registry.k8s.io/pause:3.10.2
+  registry.k8s.io/kube-apiserver:v1.37.1
+  registry.k8s.io/kube-controller-manager:v1.37.1
+  registry.k8s.io/kube-scheduler:v1.37.1
+  registry.k8s.io/kube-proxy:v1.37.1
+  ghcr.io/siderolabs/kubelet:v1.37.1
+  registry.k8s.io/networking/kube-network-policies:v1.1.2
+  ghcr.io/siderolabs/installer-base:v1.14.6
+  ghcr.io/siderolabs/imager:v1.14.6
+  ghcr.io/siderolabs/talos:v1.14.6
+  ghcr.io/siderolabs/talosctl-all:v1.14.6
+  ghcr.io/siderolabs/overlays:v1.14.6
+  ghcr.io/siderolabs/extensions:v1.14.6
+ReleaseNotesUrl: https://github.com/siderolabs/talos/releases/tag/v1.14.6
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
