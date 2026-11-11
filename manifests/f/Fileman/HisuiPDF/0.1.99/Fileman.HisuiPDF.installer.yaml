@@ -1,0 +1,35 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Fileman.HisuiPDF
+PackageVersion: 0.1.99
+Scope: machine
+UpgradeBehavior: install
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerType: wix
+  InstallerUrl: https://github.com/fileman/Hisui.PDF/releases/download/v0.1.99/HisuiPDF-0.1.99-win-x64.msi
+  InstallerSha256: 4EDA6E9E7D519478D6F3D474BA5FA4D8C1E00FB8EA3AC1020CD41649EA41982B
+  InstallerSwitches:
+    InstallLocation: INSTALLFOLDER="<INSTALLPATH>"
+  ProductCode: '{314312CB-A5CB-4990-ADC1-22B8A92E5D50}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{314312CB-A5CB-4990-ADC1-22B8A92E5D50}'
+    UpgradeCode: '{D0D429B5-9CCA-408E-931D-1643E11FE0AD}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Hisui PDF'
+- Architecture: x64
+  InstallerType: burn
+  InstallerUrl: https://github.com/fileman/Hisui.PDF/releases/download/v0.1.99/HisuiPDF-Setup-0.1.99-win-x64.exe
+  InstallerSha256: 158D35998BB4949709A3EE2F131E2DFC87DF9571B0158EDA27A0ACE8158F9249
+  ProductCode: '{0F67D2B8-78A5-47FD-95BC-306FA5D9C914}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{42FB230B-315E-4C4C-AEE2-26A0735760E2}'
+    UpgradeCode: '{6B3E2C1A-5F4D-4E8B-9A7C-2D1F0E3B4A58}'
+    InstallerType: burn
+  - ProductCode: '{314312CB-A5CB-4990-ADC1-22B8A92E5D50}'
+    UpgradeCode: '{D0D429B5-9CCA-408E-931D-1643E11FE0AD}'
+    InstallerType: wix
+ManifestType: installer
+ManifestVersion: 1.28.0
