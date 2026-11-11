@@ -1,0 +1,23 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: StephanOrgiazzi.EverythingNext
+PackageVersion: 0.9.2
+InstallerType: nullsoft
+Scope: machine
+UpgradeBehavior: install
+ProductCode: Everything Next
+ReleaseDate: 2026-11-10
+RequireExplicitUpgrade: true
+AppsAndFeaturesEntries:
+- Publisher: everythingnext
+  ProductCode: Everything Next
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\Everything Next'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/StephanOrgiazzi/EverythingNext/releases/download/v0.9.2/Everything.Next_0.9.2_x64-setup.exe
+  InstallerSha256: 67954BCA3E810EF43BD29F908AD8F1B67578514C4F0A6FFD921EFE3415F8897F
+ManifestType: installer
+ManifestVersion: 1.28.0
