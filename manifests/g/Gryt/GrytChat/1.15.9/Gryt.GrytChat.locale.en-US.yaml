@@ -1,0 +1,72 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Gryt.GrytChat
+PackageVersion: 1.15.9
+PackageLocale: en-US
+Publisher: Gryt
+PublisherUrl: https://gryt.chat/
+PublisherSupportUrl: https://github.com/Gryt-chat/gryt/issues
+PrivacyUrl: https://gryt.chat/privacy
+PackageName: Gryt Chat
+PackageUrl: https://gryt.chat/
+License: AGPL-3.0-or-later
+LicenseUrl: https://raw.githubusercontent.com/Gryt-chat/gryt/main/LICENSE
+Copyright: Copyright (c) Gryt
+ShortDescription: Voice and text chat you host yourself
+Description: |-
+  Gryt is a place a community sits in. The channels and roles stay put, and
+  people drop in when they feel like it.
+
+  You run the server. Point the app at a machine you control, and a spare PC in
+  the corner counts. That is where the messages live, so there is no company
+  holding them and no trial tier that expires.
+
+  Voice goes over WebRTC through an SFU, so one server relays the audio and a
+  call with eight people in it does not turn into eight separate uploads from
+  your laptop. Screen sharing takes the audio with it, and video works the same
+  way.
+
+  Channel messages are stored by the server operator and are not encrypted.
+  Direct messages sent by a client that supports encryption are end-to-end encrypted,
+  although the server can still observe metadata such as participants, timing and file size.
+  Your identity uses a keypair generated and stored on your device, with optional account
+  services available for shared identity and recovery.
+
+  The whole thing is open source under the AGPL: the desktop client, the server,
+  the media server and the docs.
+Moniker: gryt
+Tags:
+- chat
+- open-source
+- screen-sharing
+- self-hosted
+- voice
+- voip
+- webrtc
+ReleaseNotes: |-
+  Gryt v1.15.9
+  Channel: latest
+  What changed since v1.15.8
+
+  Client
+  - Guide owl shows the onboarding tour (GRYT-2041) in Gryt-chat/client#1164
+  - fix(members): bot tag takes its colour from the row it sits on in Gryt-chat/client#1175
+  - chore(deps): react-motion-lightbox 0.9.2 in Gryt-chat/client#1174
+  - Quality and fps pill on share tiles, with stream details on hover (GRYT-2061) in Gryt-chat/client#1173
+  Full changelogs
+  Built from the monorepo with pinned submodule commits. manifest.json below names the exact commit each component was built from.
+
+  Checking this download
+  SHA256SUMS.txt on this release has a hash for every file here.
+  sha256sum --check --ignore-missing SHA256SUMS.txt
+  Every artifact is attested too, so you can check it came out of this
+  repository rather than only that it matches a hash we published
+  ourselves.
+  gh attestation verify <file> --repo Gryt-chat/gryt
+  So is the web client image, which is what you get if you host Gryt
+  yourself rather than installing the app:
+  gh attestation verify oci://ghcr.io/gryt-chat/client:1.15.9 --repo Gryt-chat/gryt
+ReleaseNotesUrl: https://github.com/Gryt-chat/gryt/releases/tag/v1.15.9
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
