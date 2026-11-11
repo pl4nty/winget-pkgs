@@ -1,0 +1,70 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Game1024.OpenSpeedy
+PackageVersion: 3.3.18
+PackageLocale: en-US
+Publisher: Game1024
+PublisherUrl: https://github.com/game1024
+PublisherSupportUrl: https://github.com/game1024/OpenSpeedy/issues
+PackageName: OpenSpeedy
+PackageUrl: https://github.com/game1024/OpenSpeedy
+License: GPL-3.0
+LicenseUrl: https://github.com/game1024/OpenSpeedy/blob/HEAD/LICENSE
+ShortDescription: 🎮 An open-source game speed modifier.[一款开源的游戏变速器]
+Tags:
+- cplusplus
+- gamedev
+- gamemod
+- pc
+- qt
+- speed-engine
+- toolkit
+- windows
+ReleaseNotes: |-
+  3.3.18
+
+  ⌨️ 子配置：不同程序使用不同的快捷键与倍率 @jyy2luck @inuyashajyy
+  现在可以为指定程序单独准备一套快捷键和速度配置：
+  - 设置页左侧新增配置列表，默认是「全局配置」，下面是自建的子配置
+  - 新建子配置时绑定一个或多个进程；已绑定但当前未运行的程序也会保留，等它启动后自动匹配
+  - 当绑定的程序处于前台时，自动切换到该子配置；切到其他窗口后自动恢复全局配置（切换延迟最多约 0.3 秒）
+  - 子配置只需覆盖想改的项目，其余继续继承全局；也可以显式设为「无快捷键」，让这个子配置下不响应某个键
+  - 同一个进程只能属于一个子配置，创建时会直接标出已被其他子配置占用的进程
+  - 当前正在生效的配置在左侧显示绿色「生效中」标记
+  - 在全局视图中，被覆盖的项目会在行名称上显示虚线提示，悬停即可看到是哪些子配置覆盖了它
+  - 两个功能最终落到同一个按键时仍会以红色 ⚠ 标出冲突
+  - 所有配置与其它设置一起保存在 settings.json 中
+
+  🎮 手柄按键可以作为快捷键
+  快捷键输入框现在也接受手柄输入：
+  - 支持 Xbox 手柄，以及 Windows 识别为游戏手柄的大多数 PlayStation / Switch 手柄；其他 HID 控制器上无法命名的按钮也能绑定
+  - 组合键按「按住修饰键 + 按下主键」的方式录制，例如按住 LB 再按 A 得到 LB+A
+  - 组合键有顺序区分：先按 LB 再按 A 与先按 A 再按 LB 是两个不同的键
+  - 录制时手柄按键会实时预览，松开时才写入，避免组合键被提前截断
+  - 录制期间全局快捷键会自动暂停，不会误触发
+  - 「按住」类快捷键同样支持按下生效、松开恢复
+  - 手柄由后台以 16ms 间隔轮询，不会独占设备，游戏仍能正常接收手柄输入
+
+  🔕 开机静默启动 @1012905
+  设置 → 通用 → 开机自启动 下方新增「静默启动」开关：
+  - 开启后，Windows 开机自启动时不显示主窗口，只驻留系统托盘；手动双击启动不受影响，仍会正常打开窗口
+  - 默认为关闭，且只在「开机自启动」开启时可切换
+  - 静默启动失败时不会再弹出错误对话框（错误仍会写入日志）
+  - 自启动注册命令带有专用标记，应用借此区分「开机启动」和「手动启动」
+
+  🎛️ 设置页交互改进
+  - 全局 / 子配置切换从下拉框改为左侧竖向列表，全局配置与子配置用图标和分隔线区分
+  - 当前生效的配置显示绿色「生效中」标签
+  - 继承 / 覆盖提示改为悬停显示，不再占用控件行高，各行高度保持一致
+  - 窗口宽度小于 720px 时自动回退为下拉选择，避免挤压设置表格
+
+  🔗 其他
+  - 关于页社交链接新增 Bilibili 主页
+  - 更新繁体中文界面文案
+ReleaseNotesUrl: https://github.com/game1024/OpenSpeedy/releases/tag/3.3.18
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/game1024/OpenSpeedy/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
