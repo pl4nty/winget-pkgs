@@ -1,0 +1,59 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Talyh.The
+PackageVersion: 1.6.0
+PackageLocale: en-US
+Publisher: Talyh
+PublisherUrl: https://the.talyh.com/
+PublisherSupportUrl: https://the.talyh.com/docs
+PrivacyUrl: https://the.talyh.com/legal/privacy
+Author: Talyh
+PackageName: The
+PackageUrl: https://the.talyh.com/download
+License: Proprietary
+LicenseUrl: https://the.talyh.com/legal/eula
+Copyright: Copyright (c) 2026 Talyh
+CopyrightUrl: https://the.talyh.com/legal
+ShortDescription: A text editor for code, data and documents.
+Description: |-
+  The is a desktop text editor for code, data and documents, built to stay
+  responsive on files far larger than an editor usually accepts. The core and
+  eight bundled plugins are free, with no account and no registration.
+Moniker: the
+Tags:
+- code-editor
+- developer-tools
+- editor
+- large-files
+- logs
+- text-editor
+ReleaseNotes: |-
+  1.6.0
+  current10 November 2026
+  - Structured PDF extraction: Extract now rebuilds headings, bulleted and numbered lists, paragraphs in reading order across columns, bold, italic, underline, strikethrough, links and alignment
+  - Extracted PDFs drop running headers, footers and page numbers, move footnotes to the end, keep the table of contents without page numbers, and keep images with their captions
+  - Extract with images, a new option for PDFs
+  - PDF extraction runs in the background with progress and Cancel, and its warnings are shown in your language
+  - Password prompt when opening a protected PDF
+  - Bookmarks for the headings of an exported PDF, and in-document links that jump to their targets
+  - RTF documents open with their fonts, sizes, colours, paragraph styles, headings, spacing, indents, nested lists, bookmarks and in-document links
+  - Heading 4, 5 and 6 paragraph styles in the rich-text editor, kept by FB2 and RTF
+  - Save As to another rich format turns the tab into a tab of that format, converts its images, and shows one notice when the target cannot keep some formatting
+  - Save As .pdf writes a copy and leaves the current tab as it was
+  - Nested FB2 list items keep their depth as an indent
+  - FB2 books in windows-1251 or KOI8-R open on macOS, and saving one no longer garbles its title, author and other book details
+  - Exported PDFs keep images, Quote and Code blocks, document properties, and links with non-ASCII targets
+  - Images keep their declared size instead of their pixel size
+  - Unsaved changes of a rich tab saved in its own format are recovered again
+  - RTF text colours too faint to read on the current theme are dropped
+  - On macOS, RTF documents no longer lose Cyrillic, accented and other non-ASCII letters
+  - Fixed EPUB images whose path contains special characters or a fragment
+  - A paragraph is shown as Code only when all its text is fixed-pitch
+  - In the PDF viewer, pages stay centred beside a fold-out page
+ReleaseNotesUrl: https://the.talyh.com/changelog
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://the.talyh.com/docs
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
