@@ -1,0 +1,51 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: lollapalooza.usage
+PackageVersion: 0.34.16
+PackageLocale: en-US
+Publisher: lollapalooza
+PublisherUrl: https://github.com/aqua5230
+PublisherSupportUrl: https://github.com/aqua5230/usage/issues
+PackageName: usage
+PackageUrl: https://github.com/aqua5230/usage
+License: AGPL-3.0-only
+LicenseUrl: https://github.com/aqua5230/usage/blob/main/LICENSE
+Copyright: Copyright (c) 2026 lollapalooza (https://github.com/aqua5230)
+ShortDescription: System tray app that pins Claude Code, Codex, and Antigravity quota to the screen
+Moniker: usage
+Tags:
+- antigravity
+- claude
+- claude-code
+- codex
+- quota
+- system-tray
+- usage
+ReleaseNotes: |-
+  Added
+  - The Antigravity status line shows when each quota resets. Next to the 5-hour and weekly percentages it now prints the reset clock time and the time left, for example 18:37(2h30m left), in the same format as the Claude Code status line.
+
+  Changed
+  - The Antigravity status line now uses two lines, like the Claude Code one. Project and quota windows stay on the first line, and the model and context window move to the second, so the reset times still fit in an 80-column terminal instead of being dropped first.
+  - Terse mode keeps replies readable while it shortens them. Its instructions now set a floor: the reader gets each reply in one pass. They ask for common word pairings and the verb near its subject, and keep connecting words such as "because" and "so". This follows a recent study that found pressure to be brief is one cause of hard-to-read AI text.
+
+  Fixed
+  - Codex subagent threads are counted again. A thread started by spawn_agent repeats the parent's session header but no longer its token events, so usage could not match it to the parent and skipped the whole file. These threads are now counted from zero; on the machine where it was found, about 0.4% of Codex tokens had been missing.
+  - Fable 5.2 has an offline price and a short name. Costs for it no longer show as missing when the price table cannot be downloaded, and it appears as Fable 5.2 in tables and charts.
+
+  繁體中文
+
+  新增
+  - Antigravity 狀態列會顯示額度什麼時候重置。 5 小時和本週百分比旁邊多了重置時刻和剩餘時間，例如 18:37(剩2h30m)，格式跟 Claude Code 狀態列一樣。
+
+  變更
+  - Antigravity 狀態列改成兩排，跟 Claude Code 一樣。 第一排放專案和額度，第二排放模型和對話窗。終端機只有 80 格寬時，重置時間也放得下，不會先被砍掉。
+  - 精簡模式縮短回覆時，也顧到好不好讀。 指令多了一條底線：讀一遍就懂。它要求詞語照常見的搭配用、動詞擺在主詞附近，也要保留「因為、所以」這類連接詞。依據是一篇最新研究：要求 AI 寫短，是它的文字難讀的原因之一。
+
+  修正
+  - Codex 子代理的用量重新算進去了。 spawn_agent 開的子代理紀錄會複製父對話的開頭，卻不再複製父對話的 token 紀錄，usage 對不上父對話，就整份跳過。現在這類紀錄從零開始算；在發現問題的那台電腦上，原本少算約 0.4% 的 Codex token。
+  - Fable 5.2 有離線價格和短名稱了。 抓不到價目表時，它的花費不再顯示成缺資料；表格和圖表裡顯示成 Fable 5.2。
+ReleaseNotesUrl: https://github.com/aqua5230/usage/releases/tag/v0.34.16
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
