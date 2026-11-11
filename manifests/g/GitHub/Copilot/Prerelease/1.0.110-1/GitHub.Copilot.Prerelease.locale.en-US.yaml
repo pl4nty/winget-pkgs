@@ -1,0 +1,44 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: GitHub.Copilot.Prerelease
+PackageVersion: 1.0.110-1
+PackageLocale: en-US
+Publisher: GitHub, Inc.
+PublisherUrl: https://github.com/home/
+PublisherSupportUrl: https://support.github.com/
+PrivacyUrl: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+PackageName: Copilot CLI (Preview)
+PackageUrl: https://github.com/github/copilot-cli
+License: Proprietary
+LicenseUrl: https://docs.github.com/en/site-policy/github-terms/github-pre-release-license-terms
+Copyright: Copyright (c) GitHub 2025. All rights reserved.
+CopyrightUrl: https://github.com/github/copilot-cli?tab=License-1-ov-file
+ShortDescription: GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal.
+Description: GitHub Copilot CLI brings AI-powered coding assistance directly to your command line, enabling you to build, debug, and understand code through natural language conversations. Powered by the same agentic harness as GitHub's Copilot coding agent, it provides intelligent assistance while staying deeply integrated with your GitHub workflow.
+Moniker: copilot-prerelease
+Tags:
+- cli
+- copilot
+- github
+ReleaseNotes: |-
+  Fixed
+  - A session reopened with copilot --resume is marked in use as soon as it opens, so copilot -p --resume and a second window no longer write into it while it sits idle
+  - Custom status lines preserve the first row's indentation so all rows align consistently
+  - Show control characters visibly in /settings list items instead of applying terminal styling or hyperlinks
+  - Markdown tables containing the wavy dash and similar wide symbols render with correctly aligned rows
+  - Show the sign-in prompt after /logout removes the last saved account with invalid credentials, without requiring a restart
+  - Wrapped text uses the full width of each row without inserting extra blank lines inside paragraphs
+  - copilot mcp add preserves existing invalid server entries and asks you to remove them before reusing their names
+  - Preserve plugin preferences and settings files at startup when settings.json contains invalid values or cannot be parsed
+  - Shell and Search results show accurate line and file counts and omit model-only cost guidance when an AI-credit limit is set
+  - Vim mode's j/k motions use the current cursor column after gg, ge, operators, or redo
+  - Display custom agent names and models as plain text in /subagents, keeping table columns aligned and preventing embedded terminal formatting or links
+  - A local MCP server whose reply contains a lone UTF-16 surrogate escape (such as a tool description cut inside an emoji) no longer fails after 60 seconds or hangs a tool call for 3 minutes; the reply is read with a replacement character
+  - Plugin toggles now honor repository-controlled live plugin settings and consistently use the same marketplace source across listing and activation.
+ReleaseNotesUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.110-1
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/github/copilot-cli/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
