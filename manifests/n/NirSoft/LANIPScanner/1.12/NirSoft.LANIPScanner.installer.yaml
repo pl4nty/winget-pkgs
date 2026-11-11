@@ -1,18 +1,17 @@
-# Created using wingetcreate 1.12.13.0
-# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: NirSoft.LANIPScanner
-PackageVersion: "1.11"
-InstallerLocale: en-US
+PackageVersion: '1.12'
 InstallerType: zip
 NestedInstallerType: portable
 NestedInstallerFiles:
 - RelativeFilePath: LANIPScanner.exe
   PortableCommandAlias: LANIPScanner
+ReleaseDate: 2026-11-11
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.nirsoft.net/utils/lanipscanner.zip
-  InstallerSha256: 2A5F288D8D39277A34D22F2BC3E046D261B729E51051A8F35430B8914A3D5701
+  InstallerSha256: DE2B959D09B40854BD6D7E56212C0380450904A80D80B836471A53FC847D524F
 ManifestType: installer
-ManifestVersion: 1.12.0
-ReleaseDate: 2026-08-21
+ManifestVersion: 1.28.0
