@@ -1,0 +1,25 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: NZXT.CAM
+PackageVersion: 4.76.7
+MinimumOSVersion: 10.0.0.0
+InstallerType: nullsoft
+Scope: machine
+InstallModes:
+- interactive
+- silent
+UpgradeBehavior: install
+ProductCode: ac0666ae-ee66-5310-ac01-9d6348133b2d
+ReleaseDate: 2026-11-09
+AppsAndFeaturesEntries:
+- ProductCode: ac0666ae-ee66-5310-ac01-9d6348133b2d
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\NZXT CAM'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://nzxt-app.nzxt.com/NZXT%20CAM%20Setup%204.76.7.exe
+  InstallerSha256: C38B0BC00E72EDC096ED6204FF9247E7B893437FF921A482449AD427747A8191
+ManifestType: installer
+ManifestVersion: 1.28.0
