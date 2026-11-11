@@ -1,0 +1,57 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: PowerPlatformToolBox.PowerPlatformToolBox
+PackageVersion: 1.2.8
+InstallModes:
+- interactive
+- silent
+UpgradeBehavior: install
+ReleaseDate: 2026-11-11
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/PowerPlatformToolBox/desktop-app/releases/download/v1.2.8/Power-Platform-ToolBox-1.2.8-x64-win.exe
+  InstallerSha256: FCD26A2B2D27A948861EDBA6B69CDA5E2AB9C55879656EC2951F42C55B09EF21
+  ProductCode: 3fd9544a-2275-5d56-8ad2-4ec68b1021d1
+  AppsAndFeaturesEntries:
+  - ProductCode: 3fd9544a-2275-5d56-8ad2-4ec68b1021d1
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\Power Platform ToolBox'
+- Architecture: x64
+  InstallerType: wix
+  InstallerUrl: https://github.com/PowerPlatformToolBox/desktop-app/releases/download/v1.2.8/Power-Platform-ToolBox-1.2.8-x64-win.msi
+  InstallerSha256: CEF6555FF59D03AEEEA27A01204BFBCB819FECC83174A237E317FC679B909975
+  InstallerSwitches:
+    InstallLocation: APPLICATIONFOLDER="<INSTALLPATH>"
+  ProductCode: '{5AA65A10-9C16-439C-B57A-8C6E4FB27E2B}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{5AA65A10-9C16-439C-B57A-8C6E4FB27E2B}'
+    UpgradeCode: '{BAEA0BB2-06F5-570E-B1FE-610451B3B08A}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\powerplatform-toolbox'
+- Architecture: arm64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/PowerPlatformToolBox/desktop-app/releases/download/v1.2.8/Power-Platform-ToolBox-1.2.8-arm64-win.exe
+  InstallerSha256: 0EA4F1241DD69E57372C660EA9ACAAC0EA560F7CAE2834A3A79C40ECDCD99C02
+  ProductCode: 3fd9544a-2275-5d56-8ad2-4ec68b1021d1
+  AppsAndFeaturesEntries:
+  - ProductCode: 3fd9544a-2275-5d56-8ad2-4ec68b1021d1
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\Power Platform ToolBox'
+- Architecture: arm64
+  InstallerType: wix
+  InstallerUrl: https://github.com/PowerPlatformToolBox/desktop-app/releases/download/v1.2.8/Power-Platform-ToolBox-1.2.8-arm64-win.msi
+  InstallerSha256: 9CE5B7A18CDD4FA86C82C471920A0A34C226F8D721F190B91F981D36950685B7
+  InstallerSwitches:
+    InstallLocation: APPLICATIONFOLDER="<INSTALLPATH>"
+  ProductCode: '{45EA64B1-AC84-48DC-8373-C93B5E8A3CF0}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{45EA64B1-AC84-48DC-8373-C93B5E8A3CF0}'
+    UpgradeCode: '{BAEA0BB2-06F5-570E-B1FE-610451B3B08A}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\powerplatform-toolbox'
+ManifestType: installer
+ManifestVersion: 1.28.0
