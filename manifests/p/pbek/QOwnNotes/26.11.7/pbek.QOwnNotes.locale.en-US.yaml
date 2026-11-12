@@ -1,0 +1,74 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: pbek.QOwnNotes
+PackageVersion: 26.11.7
+PackageLocale: en-US
+Publisher: pbek
+PublisherUrl: https://github.com/pbek/QOwnNotes
+PublisherSupportUrl: https://github.com/pbek/QOwnNotes/issues
+Author: https://github.com/pbek
+PackageName: QOwnNotes
+PackageUrl: https://github.com/pbek/QOwnNotes
+License: GPL-2.0
+LicenseUrl: https://github.com/pbek/QOwnNotes/blob/HEAD/LICENSE
+ShortDescription: QOwnNotes is the open source notepad with markdown support and todo list manager
+Tags:
+- markdown
+- notes
+- notetaking
+- qownnotes
+- todo
+ReleaseNotes: |-
+  26.11.7
+  - Added a Markdown formatting toolbar above the description editors in the Tasks
+    and Nextcloud Deck dialogs (for #3816)
+    - Supports bold, italic, strike-out, inline code, code blocks, quotes, bullet, numbered and
+      checklists, and links, also available in the Format menu of the editor's context menu
+    - Inline formatting and quotes can be removed again with the same button, and the link prompt
+      suggests a selected or copied URL
+    - Ctrl + B, Ctrl + I and Ctrl + L format text or insert a link
+      in the focused description editor without changing the current note
+    - A help button opens the Markdown cheat sheet
+  - Added Manage Nextcloud Deck cards and Recent Deck cards to the system tray menu
+    (for #3832)
+    - The last 10 cards opened, saved or linked in QOwnNotes are remembered locally for each
+      cloud connection, including across restarts, without API requests when opening the menu
+    - Cards can be opened directly without opening the main window; locally deleted or archived
+      cards are removed from the recent list
+  - Added an Allow external symlinks (unsafe) setting for each note folder to show and edit
+    notes and subfolders linked to locations outside the note folder
+    (for #3836)
+    - External links are hidden by default; enable this only for trusted note folders
+    - Other path security checks remain enabled, and deleting a linked subfolder removes only
+      the link, not its target
+  - There was a new release of QOwnNotes for Android,
+    v26.11.0
+    - Use a local folder without Nextcloud, with Markdown files compatible with QOwnNotes desktop
+      note folders, for example synchronized with Syncthing
+      (for #47)
+      - Choose Use a local folder on the setup screen or Add local folder in account management
+      - Supports offline editing, subfolders, images, attachments, audio notes, favorites,
+        notes.sqlite tags and a restorable trash; external changes become conflicts instead of
+        being overwritten
+    - Added Refresh when opening the app, enabled by default, to refresh the active account
+      when opening or returning to the app, with five minutes between attempts; manual refresh
+      remains immediate
+    - Fixed Nextcloud synchronization and account import failing after the Gson update by
+      updating Nextcloud Single Sign-On to 1.3.5
+
+  Released files
+  - QOwnNotes-x86_64.AppImage: Portable Linux AppImage build with Qt 6
+  - QOwnNotes-x86_64.AppImage.sha256sum: SHA-256 checksum for the AppImage
+  - QOwnNotes-amd64.snap: Linux Snap build with Qt 6
+  - QOwnNotes-amd64.snap.sha256sum: SHA-256 checksum for the Qt 6 Snap package
+  - QOwnNotes.zip: Windows ZIP package built with Qt 6
+  - QOwnNotes.zip.sha256: SHA-256 checksum for the Qt 6 Windows ZIP package
+  - QOwnNotes.zip.sha256sum: Alternative SHA-256 checksum file for the Qt 6 Windows ZIP package
+  - QOwnNotes.msi: Windows installer built with Qt 6
+  - QOwnNotes.msi.sha256sum: SHA-256 checksum for the Qt 6 Windows installer
+  - QOwnNotes.dmg: macOS disk image built with Qt 6
+  - QOwnNotesQt5.dmg: macOS disk image built with Qt 5 for older systems
+ReleaseNotesUrl: https://github.com/pbek/QOwnNotes/releases/tag/v26.11.7
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
