@@ -1,0 +1,30 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: REALSIGNAL.PacketCapturePro
+PackageVersion: 3.9.0
+InstallerType: inno
+ProductCode: '{5B599538-42B1-4826-A479-AF079F21A65D}}_is1'
+ReleaseDate: 2026-11-10
+AppsAndFeaturesEntries:
+- ProductCode: '{5B599538-42B1-4826-A479-AF079F21A65D}}_is1'
+ElevationRequirement: elevatesSelf
+Installers:
+- Architecture: x64
+  Scope: user
+  InstallerUrl: https://github.com/REALSIGNAL/packet-capture-pro-app/releases/download/v3.9.0/PacketCapturePro_v3.9.0.exe
+  InstallerSha256: 2DA89279E3E189451F91561DD3FAAB8AB675F420532E38D439067A80E1F314D7
+  InstallerSwitches:
+    Custom: /CURRENTUSER
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\Packet Capture Pro'
+- Architecture: x64
+  Scope: machine
+  InstallerUrl: https://github.com/REALSIGNAL/packet-capture-pro-app/releases/download/v3.9.0/PacketCapturePro_v3.9.0.exe
+  InstallerSha256: 2DA89279E3E189451F91561DD3FAAB8AB675F420532E38D439067A80E1F314D7
+  InstallerSwitches:
+    Custom: /ALLUSERS
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Packet Capture Pro'
+ManifestType: installer
+ManifestVersion: 1.28.0
