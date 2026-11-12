@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Mafold.CLI
+PackageVersion: 0.9.164
+InstallerType: portable
+Commands:
+- mafold
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/mafold-lab/mafold-cli/releases/download/v0.9.164/mafold-x86_64-pc-windows-msvc.exe
+  InstallerSha256: D507C16BE2520359ADC5D9B23640047090622C14C05AC2027C669C662AC7CD1B
+ManifestType: installer
+ManifestVersion: 1.28.0
