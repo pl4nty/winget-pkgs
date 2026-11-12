@@ -1,0 +1,25 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: yhay81.sqrail
+PackageVersion: 0.4.2
+InstallerType: zip
+NestedInstallerType: portable
+Commands:
+- sqrail
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  NestedInstallerFiles:
+  - RelativeFilePath: sqrail-v0.4.2-windows-x86_64\bin\sqrail.exe
+    PortableCommandAlias: sqrail
+  InstallerUrl: https://github.com/yhay81/sqrail/releases/download/v0.4.2/sqrail-v0.4.2-windows-x86_64.zip
+  InstallerSha256: 0E82FCF419195B5F4B11DD7A93CC3B1AB207261D268E566AE858E8509DEA14E6
+- Architecture: arm64
+  NestedInstallerFiles:
+  - RelativeFilePath: sqrail-v0.4.2-windows-arm64\bin\sqrail.exe
+    PortableCommandAlias: sqrail
+  InstallerUrl: https://github.com/yhay81/sqrail/releases/download/v0.4.2/sqrail-v0.4.2-windows-arm64.zip
+  InstallerSha256: AE3211490C1AC2C8A8FF73488B00757EACD22DD3D74F5BAB98C362D338960785
+ManifestType: installer
+ManifestVersion: 1.28.0
