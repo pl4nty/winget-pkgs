@@ -1,0 +1,44 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Issinoho.tvdinner
+PackageVersion: 1.46.2
+PackageLocale: en-US
+Publisher: Iain Smith
+PublisherUrl: https://github.com/issinoho
+PublisherSupportUrl: https://github.com/issinoho/tvdinner/issues
+PackageName: tvdinner
+PackageUrl: https://github.com/issinoho/tvdinner
+License: MIT
+LicenseUrl: https://github.com/issinoho/tvdinner/blob/master/LICENSE
+Copyright: Copyright (c) 2026 Iain Smith
+CopyrightUrl: https://github.com/issinoho/tvdinner/blob/master/LICENSE
+ShortDescription: A command-line IPTV player with a TiviMate-style on-screen programme guide.
+Description: |-
+  A command-line IPTV and media player built on mpv, with a TiviMate-style on-screen
+  program guide, timezone-aware EPG from XMLTV, per-channel clock-correction shifts,
+  recording and scheduled recording, and on-demand browsing for Plex, local files and
+  YouTube. Plays M3U/M3U8 playlists, Xtream Codes panels, Stalker portals, HDHomeRun
+  tuners, and tvtimes accounts. The installer bundles its own mpv, so nothing else is
+  needed.
+Moniker: tvdinner
+Tags:
+- epg
+- hdhomerun
+- iptv
+- m3u
+- media-player
+- mpv
+- playlist
+- tv
+- xmltv
+- xtream
+ReleaseNotes: |-
+  - Remakes now show the right film's details. When several films share a title and the guide gives no year, tvdinner used whichever one TMDB listed first, so Pluto's "The Hound of the Baskervilles" showed the 1988 TV film's year, director and rating next to Hammer's 1959 poster. It now picks the best-known version (most TMDB votes) with that exact title. A year from the guide still takes priority.
+  - The full-screen movie backdrop no longer vanishes after one failed download. A single network error fetching the backdrop left that movie on the plain banner until you restarted. It's now retried after a minute.
+ReleaseNotesUrl: https://github.com/issinoho/tvdinner/releases/tag/v1.46.2
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/issinoho/tvdinner/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
