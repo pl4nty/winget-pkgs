@@ -1,0 +1,68 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: TIANLI0.THRM
+PackageVersion: 3.8.0
+PackageLocale: en-US
+Publisher: TIANLI0
+PublisherUrl: https://github.com/TIANLI0/THRM
+PublisherSupportUrl: https://github.com/TIANLI0/THRM/issues
+Author: TIANLI0
+PackageName: THRM
+PackageUrl: https://github.com/TIANLI0/THRM
+License: MIT
+LicenseUrl: https://github.com/TIANLI0/THRM/blob/main/LICENSE
+Copyright: Copyright © 2026 TIANLI0
+ShortDescription: Flydigi BS-series cooler controller
+Description: Open-source controller for Flydigi BS-series laptop coolers, featuring smart fan curves, hardware monitoring, RGB control, profiles, and Windows/Linux support.
+Moniker: thrm
+Tags:
+- cooling
+- fan-control
+- flydigi
+- hardware-monitoring
+- laptop-cooler
+- rgb
+- system-tray
+- temperature-monitoring
+ReleaseNotes: |-
+  v3.8.0 正式版已发布。BS1 支持 USB 线连接和灯光控制；新增韩语界面，并修复了睡眠唤醒、长时间运行掉线、自定义转速等多处问题。
+  v3.8.0 is now available as a stable release. BS1 gains USB cable connection and lighting control; a Korean interface is added; and a number of issues with sleep and wake, disconnects during long sessions and custom fan speed are fixed.
+  更新亮点 / Highlights
+  - BS1 插上 USB 线即可通过 USB 连接（优先于蓝牙），并能正确显示当前挡位；开放灯光控制，支持单色/多色常亮、旋转、流光、呼吸和亮度调节；先开散热器、后开电脑时也能正常找到设备。
+  - BS1 can now connect over a USB cable (preferred over Bluetooth when plugged in) and shows the current gear correctly. Lighting control is now available, with static single or multi-colour, rotation, flow, breathing and brightness. The cooler is also found when it is switched on before the computer.
+  - 新增韩语界面，托盘菜单、通知和安装程序同步支持韩语。
+  - Added a Korean interface; the tray menu, notifications and installer are translated as well.
+  - Windows 11 上把鼠标悬停在窗口的最大化按钮上，可以调出系统的窗口贴靠布局。
+  - On Windows 11, hovering over the window's maximize button now brings up the system snap layouts.
+
+  修复与改进 / Fixes and Improvements
+  - 睡眠：计划任务、Windows 更新等在无人时自动唤醒电脑时，风扇不会再突然转起来；睡眠唤醒后点击重新连接不会再一直卡住。
+  - Sleep: the fan no longer spins up when the computer wakes on its own for scheduled tasks or Windows Update, and clicking reconnect after waking from sleep no longer hangs.
+  - 长时间运行更稳定：偶尔一条转速指令没有响应时不再直接断开蓝牙，会先确认设备是否仍在线；Windows 上出现通信异常后会干净地重新连接，不再在出错的连接上继续发送。
+  - More stable during long sessions: an occasional unanswered fan-speed command no longer drops the Bluetooth connection straight away; THRM first checks whether the device is still responding. On Windows, a communication error now leads to a clean reconnect instead of continuing on a broken connection.
+  - 智能温控灯效：温度在区间边界附近波动时不再频繁来回切换（新灯效需持续约 3 秒才生效，两次切换至少间隔 5 秒）；相邻区间使用同一灯效时不再重复发送；没有变化的自定义灯效不会重复写入设备。
+  - Smart temperature lighting: the effect no longer flips back and forth when the temperature hovers around a range boundary (a new effect must hold for about 3 seconds, and switches are at least 5 seconds apart). Neighbouring ranges that use the same effect no longer resend it, and an unchanged custom effect is not written to the device again.
+  - 修复应用灯效时偶尔提示"等待响应超时"、但灯光其实已经改变的问题。
+  - Fixed the occasional "response timed out" error when applying a lighting effect even though the lights had already changed.
+  - 自定义转速：修复开启后有时无法关闭的问题，设备未连接时也能关闭；关闭时风扇不再短暂停转；设置失败会显示具体原因。
+  - Custom fan speed: fixed it sometimes being impossible to turn off, and it can now be turned off while the device is disconnected. The fan no longer stops briefly when it is turned off, and failures now show the reason.
+  - 修复风扇从 0 转恢复时偶发转不起来、需要重新给散热器通电的问题。
+  - Fixed the fan occasionally failing to spin up again from 0 RPM until the cooler was power-cycled.
+  - BS2/BS3 不再显示没有对应硬件的灯光效果选项，挡位灯开关保留。
+  - BS2/BS3 no longer show lighting-effect options their hardware doesn't have; the gear light switch remains.
+  - 修复部分 Intel 显卡电脑上温度读取组件崩溃、连 CPU 温度也读不到的问题：遇到这种情况会自动跳过 Intel 显卡监测，其余温度照常读取。
+  - Fixed the temperature reader crashing on some PCs with Intel graphics, which left even the CPU temperature unavailable. THRM now skips Intel graphics monitoring in that case and reads everything else as usual.
+  - 修复 1080p 等 100%/125% 缩放屏幕上文字发虚的问题。
+  - Fixed blurry text on screens at 100% or 125% scaling, such as 1080p displays.
+  - 手动挡位的选中状态更醒目；首页读不到 CPU 温度时会显示原因；曲线页调整窗口大小后温度指示线不再错位。
+  - The selected manual gear is easier to spot, the home page shows why the CPU temperature can't be read, and the temperature marker on the curve page no longer shifts after the window is resized.
+  - 后台占用更低：Windows 上全局快捷键空闲时不再占用 CPU，按住快捷键也不会连续触发；实时数据刷新时界面只重绘需要更新的部分。
+  - Lower background usage: on Windows, global hotkeys no longer use CPU while idle and no longer repeat when held down, and live readings only redraw the parts of the window that change.
+  - Linux：修复 BS2 Pro 通过 USB 线连接时无法正常识别的问题；Linux 版改为基于 GTK4 和 WebKitGTK 6.0，需要系统提供这两个组件。
+  - Linux: fixed BS2 Pro not being recognised correctly over a USB cable. The Linux build is now based on GTK4 and WebKitGTK 6.0, which must be available on the system.
+  感谢 @Bolingboluo 贡献 BS1 的 USB 连接、灯光控制与关机停转功能，感谢 @TongkyakHermit 改进韩语翻译。
+  Thanks to @Bolingboluo for BS1 USB connection, lighting control and the shutdown fan stop, and to @TongkyakHermit for improving the Korean translation.
+ReleaseNotesUrl: https://github.com/TIANLI0/THRM/releases/tag/v3.8.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
