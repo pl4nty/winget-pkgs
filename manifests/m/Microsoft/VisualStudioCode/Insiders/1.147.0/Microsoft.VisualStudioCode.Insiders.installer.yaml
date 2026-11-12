@@ -1,0 +1,52 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Microsoft.VisualStudioCode.Insiders
+PackageVersion: 1.147.0
+InstallerType: inno
+InstallerSwitches:
+  Custom: /mergetasks=!runcode
+Commands:
+- code-insiders
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  Scope: user
+  InstallerUrl: https://vscode.download.prss.microsoft.com/dbazure/download/insider/0f38c8f0ffcd27a721b2927a22f1c02085e2c8a0/VSCodeUserSetup-x64-1.147.0-insider.exe
+  InstallerSha256: 08A9B88CF2F938FD8CB2F8F2344DA6B2F78419FBBA8F5B51A418515001C3CEEC
+  ProductCode: '{217B4C08-948D-4276-BFBB-BEE930AE5A2C}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{217B4C08-948D-4276-BFBB-BEE930AE5A2C}_is1'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\Microsoft VS Code Insiders'
+- Architecture: x64
+  Scope: machine
+  InstallerUrl: https://vscode.download.prss.microsoft.com/dbazure/download/insider/0f38c8f0ffcd27a721b2927a22f1c02085e2c8a0/VSCodeSetup-x64-1.147.0-insider.exe
+  InstallerSha256: A6307B868255FF6A31E1D6B485979EA81EB588FBEF91FCA7242AA0968DC02296
+  ProductCode: '{1287CAD5-7C8D-410D-88B9-0D1EE4A83FF2}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{1287CAD5-7C8D-410D-88B9-0D1EE4A83FF2}_is1'
+  ElevationRequirement: elevatesSelf
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Microsoft VS Code Insiders'
+- Architecture: arm64
+  Scope: user
+  InstallerUrl: https://vscode.download.prss.microsoft.com/dbazure/download/insider/0f38c8f0ffcd27a721b2927a22f1c02085e2c8a0/VSCodeUserSetup-arm64-1.147.0-insider.exe
+  InstallerSha256: 064487C8902A133ACA0D3D9DAD48AAB478D36A27D7D8DA39C9008F804764B19F
+  ProductCode: '{69BD8F7B-65EB-4C6F-A14E-44CFA83712C0}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{69BD8F7B-65EB-4C6F-A14E-44CFA83712C0}_is1'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\Microsoft VS Code Insiders'
+- Architecture: arm64
+  Scope: machine
+  InstallerUrl: https://vscode.download.prss.microsoft.com/dbazure/download/insider/0f38c8f0ffcd27a721b2927a22f1c02085e2c8a0/VSCodeSetup-arm64-1.147.0-insider.exe
+  InstallerSha256: 6CFDD49D754519B7F038708CF87E57A59F4CCE84E7C65D3C1763963E21E51B1B
+  ProductCode: '{0AEDB616-9614-463B-97D7-119DD86CCA64}_is1'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{0AEDB616-9614-463B-97D7-119DD86CCA64}_is1'
+  ElevationRequirement: elevatesSelf
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Microsoft VS Code Insiders'
+ManifestType: installer
+ManifestVersion: 1.28.0
