@@ -1,0 +1,68 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Mun1to.TaskbarGroupsFluent
+PackageVersion: 1.10.0
+PackageLocale: en-US
+Publisher: Munir Torres
+PublisherUrl: https://munito.dev/
+PublisherSupportUrl: https://github.com/Mun1to/TaskbarGroupsFluent/issues
+Author: Munir Torres
+PackageName: Taskbar Groups Fluent
+PackageUrl: https://tbgf.munito.dev/
+License: MIT
+LicenseUrl: https://github.com/Mun1to/TaskbarGroupsFluent/blob/main/LICENSE
+ShortDescription: Group your shortcuts into a single taskbar icon, with a modern Fluent interface.
+Description: |-
+  Taskbar Groups Fluent packs a set of apps into one taskbar button. Click it, or just rest the cursor on it, and a small flyout shows every app in the group, so the taskbar stays tidy and everything is one click away.
+  - A group can show a folder, read again each time it opens: any folder, or a Windows place like the Control Panel, This PC or all your apps.
+  - A group that holds other groups pins them all to the taskbar, one after another, in its order and with its separators.
+  - Groups inside a group open beside the panel, like a submenu.
+  - Keep a group by the clock too, with its own icon in the notification area, and open groups instantly with a panel kept ready.
+  - Separators on the taskbar to space groups out, and inside a panel to split it into sections.
+  - Drag and drop files, folders and shortcuts onto the group editor or an open panel.
+  - Find more installed desktop and Microsoft Store apps with accent-insensitive and executable-name search.
+  - Use an image or a colour emoji as the group icon, with a built-in crop and zoom editor.
+  - Apps, folders and even other groups in the same group.
+  - Real Windows 11 glass, and four panel layouts: grid, horizontal, vertical or list.
+  - Import groups from Taskbar Groups or AppGroup, and export your own to a file.
+  - Follows the Windows theme, accent colour and language (English, Spanish or Russian).
+  It installs for the current user only, so it never asks for administrator rights. The only network request is an update check against GitHub Releases when the app opens; there is no account and no telemetry.
+  Built in WPF and .NET 10 with the Windows 11 look. Some code comes from taskbar-groups and its fork pike-beta, both MIT.
+Moniker: taskbargroupsfluent
+Tags:
+- desktop
+- fluent
+- groups
+- launcher
+- organizer
+- productivity
+- shortcuts
+- taskbar
+- windows-11
+ReleaseNotes: |-
+  New
+  - An icon of its own for each app. An app's options in the group editor now have an Icon section: pick a .png or .ico, or an icon from inside an .exe or .dll, and go back to the automatic one at any time. The picture is kept inside the group, so it survives the file moving and travels with exported groups. (#15)
+  - Browser web apps. A web app installed from Chrome, Edge or another Chromium browser now shows its own icon and name instead of the browser's, and the app picker lists the web apps you have installed. (#15)
+  - A second click closes the group. Clicking a pinned group while its panel is open now closes it, like the Start menu. (#17)
+  - Windows' own menus by the clock. The right-click menus of the icons by the clock are now real Windows menus, the same kind as the other icons there, light or dark. (#17)
+  - A tiny icon size. The group editor has a fourth, Tiny icon size for the panel. (#17)
+  - The Recycle Bin joins the Windows places a group can show. Combined with Also show it by the clock, it puts a bin next to the clock. (#17)
+  - The installer speaks Russian. (#17)
+  - Open on hover with Start11 and StartAllBack. Those taskbars don't tell other programs which button is under the cursor, so open on hover now recognises the group by its icon once the cursor rests. On the standard Windows 11 taskbar nothing changes. (#12)
+
+  Fixed
+  - Saving a group no longer restarts the taskbar for nothing. The app reloaded the taskbar after saving a group so the pinned button would pick up a new icon, and it did so even when the icon looked exactly the same. It now only does it when the icon or the name really changed, and asks first; pick Later and the taskbar shows the new icon the next time you sign in. (#16)
+
+  For the curious
+  Every click on a group now writes one line with how long it took to %TEMP%\TaskbarGroupsFluent-open-times.txt. It holds only times, it stays on your PC, and it keeps the last 40 opens.
+  Thanks to @ProNotion, @mihha, @psych3r and @mihail8059784.
+
+  Install
+  Download TaskbarGroupsFluent-Setup.exe below and run it. If you already have it, the app offers the update when it opens. TaskbarGroupsFluent-Setup-Offline.exe carries the .NET 10 Desktop Runtime inside, for PCs without internet.
+ReleaseNotesUrl: https://github.com/Mun1to/TaskbarGroupsFluent/releases/tag/v1.10.0
+Documentations:
+- DocumentLabel: README
+  DocumentUrl: https://github.com/Mun1to/TaskbarGroupsFluent#readme
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
