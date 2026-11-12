@@ -1,16 +1,21 @@
-# Automatically updated by the winget bot at 2026/Oct/21
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: AdGuard.AdGuardVPN.Beta
-PackageVersion: 2.10.2317.0
+PackageVersion: 2.10.2322.0
 InstallerType: burn
 Scope: machine
 InstallerSwitches:
   Custom: -quiet
 UpgradeBehavior: install
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- DisplayName: AdGuardVPN
+  ProductCode: '{5D96C4C4-48D4-4669-9615-6FF447F1FBA6}'
+  UpgradeCode: '{EC8B6D76-8E51-4BEB-9602-718BE78EB058}'
 Installers:
 - Architecture: x86
   InstallerUrl: https://static.adguard-vpn.com/windows/beta/installer.exe
-  InstallerSha256: 1A22475AEFF00471A22EA09675300BA7413A38EF671FAAB29743A0C94006DD18
+  InstallerSha256: C727E257615512271F735CBAEE44AD720FFABD82CE23E9C94A2C2D5DFCCB6420
 ManifestType: installer
 ManifestVersion: 1.28.0
