@@ -1,0 +1,82 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Builtbybel.FluentCleaner
+PackageVersion: 26.11.01
+PackageLocale: en
+Publisher: Builtbybel
+PublisherUrl: https://github.com/builtbybel
+PublisherSupportUrl: https://github.com/builtbybel/FluentCleaner/issues
+PackageName: FluentCleaner
+PackageUrl: https://github.com/builtbybel/FluentCleaner
+License: MIT
+LicenseUrl: https://github.com/builtbybel/FluentCleaner/blob/HEAD/LICENSE
+ShortDescription: A real WinUI desktop cleaner with terminal control and multi-database support.
+Moniker: fluentcleaner
+Tags:
+- built-with-winui3
+- deaktopcleaner
+- desktop-cleaner
+- fcleaner
+- fluent-cleaner
+ReleaseNotes: |-
+  FluentCleaner 26.11.02 - The Explorer Update
+
+  Two months of silence, and here's the big sign of life
+
+  Short version of where I've been: I got distracted. Somewhere in there I also picked Bloatynosy back up and rebuilt parts of it in WinForms, which is still my all-time favourite framework, nothing beats dragging a button onto a form and being done. Coming back to WinUI 3 after that is a bit of a reality check. I haven't forgotten it, but I won't pretend its become easy for me either. Some of this release took three attempts to get right
+  Anyway. This one is almost entirely about the UI, and it's the biggest visual change FluentCleaner has had so far
+  FluentCleaner.mp4
+
+  The window is now tabbed
+  The hamburger menu and the navigation sidebar are gone. In their place: tabs, exactly like File Explorer.
+  - Tabs across the top. Each tab keeps its own page alive, so switching back to a finished scan doesn't throw the results away.
+  - The + button lets you pick what the new tab should be — Cleaner, Terminal or Custom. Switching between them is now one click instead of a trip through a sidebar.
+  - Settings opens as its own tab, and reuses the one that's already open instead of stacking duplicates.
+  - The last tab can't be closed, because an empty window helps nobody.
+  The point of the tab layout is that the Cleaner is what you see first. It's the reason the app exists, so it gets the front seat, and everything else is one tab away instead of competing with it for attention.
+
+  A real address bar
+  Across the full window width, where Explorer puts it:
+  - Breadcrumb trail that shows where you are, with clickable segments
+  - Back and reload that act on the active tab
+  - Search and the page-actions menu on the right
+  Pages tell the window where they are through a small IAddressBarPage contract, so the breadcrumb is always driven by the page you're actually looking at.
+
+  Everything got tighter
+  This is the part you feel rather than read about. Same window, roughly four times the information:
+  - Result rows: 26px instead of 50
+  - Column headers at 28px, and they sort
+  - A status bar along the bottom with category count, entry count, selection count and total size found — no more hunting for the one line of small print
+  - The old accordion list that filled the pane with collapsed headers is gone; the tree now shows categories and their entries at once
+  Before this release a 900px-wide window showed you 13 collapsed rows and an empty results pane. Now the same window shows the category tree, the entries with their sizes, and the actual file paths side by side.
+
+  Under the hood
+  - Content now sits on LayerOnMicaBaseAltFillColorDefaultBrush, so the active tab merges with the page below it and the tab strip stays on bare Mica, the Explorer look, rather than everything being one flat colour
+  - The title bar is hand-built instead of using the stock TitleBar control, which insisted on putting the app icon to the right of the tabs
+  - Fixed: the row [...] button being clipped by the scrollbar on hover
+
+  Known rough edges
+  - A handful of new UI strings are still English-only. The other 17 languages will catch up in the next build
+  - The tree pane has a fixed width, no splitter yet
+  - Each Cleaner tab loads its own copy of the winapp2 database. Fine for two or three tabs, less fine for ten
+  As always: bugs and ideas go in Issues. If this saved you some disk space, a ⭐ costs nothing
+
+  Two editions, one cleaner
+  Same cleaning engine, two independent releases. Pick the UI and runtime that suit you
+  ─────────────────────────────────────────────────────────┬───────────────────────────┬──────────────────────────────────────────────────────────────────────────────────
+  Edition                                                  │Version                    │Download
+  ─────────────────────────────────────────────────────────┼───────────────────────────┼──────────────────────────────────────────────────────────────────────────────────
+  Modern                                                   │26.11.01                   │⬇ Download Modern
+  WinUI 3 · Windows App SDK                                │                           │WinGet: winget install --id Builtbybel.FluentCleaner --exact
+  ─────────────────────────────────────────────────────────┼───────────────────────────┼──────────────────────────────────────────────────────────────────────────────────
+  Classic                                                  │1.19.269                   │⬇ Download Classic
+  WinForms · .NET Framework 4.8 · tiny and portable        │                           │
+  ─────────────────────────────────────────────────────────┼───────────────────────────┼──────────────────────────────────────────────────────────────────────────────────
+  ❤️ Support development                                   │Built by Belim             │PayPal · Ko-fi
+  ─────────────────────────────────────────────────────────┴───────────────────────────┴──────────────────────────────────────────────────────────────────────────────────
+  Modern vs. Classic: which FluentCleaner do you actually run?
+  #100
+ReleaseNotesUrl: https://github.com/builtbybel/FluentCleaner/releases/tag/26.11.01
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
