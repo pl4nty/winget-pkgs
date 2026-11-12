@@ -1,0 +1,71 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: pbek.QOwnNotes
+PackageVersion: 26.11.8
+PackageLocale: en-US
+Publisher: pbek
+PublisherUrl: https://github.com/pbek/QOwnNotes
+PublisherSupportUrl: https://github.com/pbek/QOwnNotes/issues
+Author: https://github.com/pbek
+PackageName: QOwnNotes
+PackageUrl: https://github.com/pbek/QOwnNotes
+License: GPL-2.0
+LicenseUrl: https://github.com/pbek/QOwnNotes/blob/HEAD/LICENSE
+ShortDescription: QOwnNotes is the open source notepad with markdown support and todo list manager
+Tags:
+- markdown
+- notes
+- notetaking
+- qownnotes
+- todo
+ReleaseNotes: |-
+  26.11.8
+  - The Full layout preset now enables the Document overview minimap between the
+    note editor and preview, using its minimum width of 80 logical pixels
+    - Updated the layout-selection description and preview image to show the new arrangement
+    - Existing saved workspaces are unchanged; select the Full preset to use the new arrangement
+  - Fixed the Document overview panel remaining visible when switching from Full to
+    Minimal or an older saved workspace that does not include the panel
+  - There was a new release of QOwnNotes TUI,
+    v1.3.4
+    - Updated rusqlite and bundled SQLite to prevent memory disclosure from crafted database
+      or WAL files (RUSTSEC-2026-0459,
+      CVE-2026-119375)
+    - Updated Ratatui and lru to address RUSTSEC-2026-0002 and RUSTSEC-2026-0253,
+      removed the unmaintained paste dependency and replaced a yanked clipboard-win release
+    - Building from source now requires Rust 1.89 or newer, up from 1.88
+  - There is an upcoming release of QOwnNotes for Android,
+    v26.11.1
+    - Tap images to view them full screen, zoom, pan and copy them without downloading them again
+      or passing private addresses to another app
+      (for #46)
+      - Annotate images with drawing tools and text, then insert, replace or copy the annotated image;
+        the original file is never overwritten
+    - Added Take photo to the editor toolbar and a Reduce photo resolution setting,
+      enabled by default, with configurable sizes; reduced photos omit location metadata
+      (for #45)
+      - Fixed sideways photos and synchronized photos larger than 5 MB appearing blank
+    - Long-press a task's checkbox to open block actions, including the new Copy block action
+      that preserves nested items and checkbox states; long-pressing task text now selects it
+      (for #53)
+      - Copying selected table content now includes cell text separated by tabs instead of blank lines
+    - Note-list selection now shows checkboxes and announces selection states to screen readers
+      (for #41)
+    - Fixed Deck card loading and error updates running outside the UI thread
+
+  Released files
+  - QOwnNotes-x86_64.AppImage: Portable Linux AppImage build with Qt 6
+  - QOwnNotes-x86_64.AppImage.sha256sum: SHA-256 checksum for the AppImage
+  - QOwnNotes-amd64.snap: Linux Snap build with Qt 6
+  - QOwnNotes-amd64.snap.sha256sum: SHA-256 checksum for the Qt 6 Snap package
+  - QOwnNotes.zip: Windows ZIP package built with Qt 6
+  - QOwnNotes.zip.sha256: SHA-256 checksum for the Qt 6 Windows ZIP package
+  - QOwnNotes.zip.sha256sum: Alternative SHA-256 checksum file for the Qt 6 Windows ZIP package
+  - QOwnNotes.msi: Windows installer built with Qt 6
+  - QOwnNotes.msi.sha256sum: SHA-256 checksum for the Qt 6 Windows installer
+  - QOwnNotes.dmg: macOS disk image built with Qt 6
+  - QOwnNotesQt5.dmg: macOS disk image built with Qt 5 for older systems
+ReleaseNotesUrl: https://github.com/pbek/QOwnNotes/releases/tag/v26.11.8
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
