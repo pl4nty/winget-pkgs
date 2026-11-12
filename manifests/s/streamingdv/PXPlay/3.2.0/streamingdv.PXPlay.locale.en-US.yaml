@@ -1,0 +1,166 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: streamingdv.PXPlay
+PackageVersion: 3.2.0
+PackageLocale: en-US
+Publisher: streamingdv
+PublisherUrl: https://streamingdv.com/
+PublisherSupportUrl: https://github.com/streamingdv/PSPlay-Application-Hosting/issues
+PrivacyUrl: https://streamingdv.github.io/privacy/pxplay_privacy_policy.html
+PackageName: PXPlay
+PackageUrl: https://github.com/streamingdv/PSPlay-Application-Hosting
+License: Proprietary
+LicenseUrl: https://raw.githubusercontent.com/streamingdv/PSPlay-Application-Hosting/main/eula.txt
+ShortDescription: Third-party PlayStation Remote Play streaming client, formerly known as PSPlay.
+Description: PXPlay (formerly PSPlay) is a third-party PlayStation Remote Play streaming client for Windows, Linux, and macOS. It supports PlayStation 4 and 5 consoles with features including custom gamepad button mapping, advanced GPU-accelerated decoding with zero-copy D3D11 and Vulkan rendering, FSR 1.0 spatial upscaling up to 4K, HDR output support, and multi-language UI.
+Moniker: pxplay
+Tags:
+- game-streaming
+- gamestreaming
+- gaming
+- playstation-4
+- playstation-5
+- playstation-remote-play
+- playstation4
+- playstation5
+- playstationremoteplay
+- ps-remote-play
+- ps4
+- ps5
+- psplay
+- psremoteplay
+Agreements:
+- AgreementLabel: EULA
+  AgreementUrl: https://raw.githubusercontent.com/streamingdv/PSPlay-Application-Hosting/main/eula.txt
+- AgreementLabel: Privacy Policy
+  AgreementUrl: https://streamingdv.github.io/privacy/pxplay_privacy_policy.html
+ReleaseNotes: |-
+  🚀📦 PXPlay Multi Platform Release
+
+  PC v3.2.0 • Android v9.0.0
+  PXPlay PC v3.2.0 is now available for Windows, Linux and macOS. This update adds new keyboard and HDR options, improves macOS streaming, and brings fixes for connection stability, controllers and platform compatibility.
+  PXPlay remains one of the best PlayStation Remote Play solutions available, with improvements across PC and Android. The Android version remains on v9.0.0 and is unchanged in this release. Its release notes are included below.
+
+  🖥️ PXPlay PC v3.2.0
+
+  ✨ New
+  - Native keyboard support: Turn off Use keyboard as gamepad to type in PS5 games and text fields, or in PS4 Remote Play text fields.
+  - Force HDR for PS5 streams: Enable 10-bit HDR even when the console's TV is off or doesn't support HDR.
+  - PXPlay-only volume: On-screen volume buttons now change PXPlay's volume. An audio setting switches them back to system volume.
+  - macOS frame presentation: Choose Lowest Latency or Smooth for even frame delivery on 120/240 Hz displays. Available on Apple silicon with macOS 14 or newer.
+
+  🚀 Improved
+  - Smoother macOS streaming: Reworked Metal presentation lowers latency and improves playback on high refresh rate displays. The separate frame pacing setting is no longer needed on macOS.
+  - macOS rendering: Higher stream priority, hardware-decoded Vulkan frames without extra copying, frame generation that follows the window between displays, and better GPU selection on dual-GPU Intel Macs.
+  - Faster stream audio: Audio starts sooner, and stream shutdown is more reliable.
+  - Better network resilience: Fewer lost packets during brief network hiccups and more reliable Remote Play connections over the internet.
+  - More natural rumble: Haptic feedback converted to rumble feels more natural.
+  - Stronger account handling: More secure QR code PSN login and automatic background license renewal.
+
+  🛠️ Fixed
+  - Random PS5 disconnects: Some rumble messages were mistaken for disconnects. This release also includes more stability fixes for the newer PS5 streaming protocol.
+  - Intel GPUs on Windows: Fixed Vulkan hardware decoding failing when a stream started on recent Intel GPUs and drivers, including Core Ultra and Meteor Lake.
+  - Controls after network hiccups: Fixed button presses being ignored after a brief interruption while the sticks still worked.
+  - Stuck PS button: Fixed the console sometimes registering the PS button as held after a controller was switched off.
+  - Local multiplayer controllers: Improved reliability when adding or removing extra controllers.
+  - Windows installer: Smart App Control no longer blocks the installer with error 4551.
+  - Linux navigation: D-pad and keyboard navigation in video settings works again.
+
+  🧪 Experimental Build
+  An update to the experimental build featuring DLSS 5, FSR 4.1 and new Metal upscaling is coming very soon. It will be based on v3.2.0.
+
+  🐛 Bug Reports
+  If you encounter an issue, please include your operating system, GPU and driver, rendering backend, controller and connection type, streaming settings, and log files if possible.
+  Send reports to streamingdv@outlook.com.
+
+  📋 System Requirements
+
+  PC
+  - Windows 10 or 11
+  - Linux x64, such as Ubuntu 20.04 or equivalent
+  - macOS 12.7 or newer
+  - Modern GPU with up-to-date drivers
+
+  Android
+  - Android 7.0 or newer
+  - Minimum 2 GB RAM
+  - Minimum resolution 1024 × 768
+
+  📱 PXPlay Android v9.0.0
+  The Android version remains on v9.0.0 and is unchanged with this release. Its release notes are preserved below.
+  PXPlay Android v9.0.0 is a major update with important improvements to rendering, multiplayer, dual-screen support and the Home experience.
+
+  🎞️ A New Vulkan Rendering Pipeline
+  PXPlay now includes a dedicated modern Vulkan rendering pipeline on supported Android devices.
+  The new renderer is designed to provide a strong foundation for modern GPUs and future rendering improvements while retaining the established OpenGL renderer for compatibility.
+  Users can select the renderer that works best for their device.
+
+  ✨ Video Enhancement Quality
+  A new Video Enhancement Quality setting is available for both the OpenGL and Vulkan renderers.
+  It allows users to choose the preferred balance between enhancement quality and GPU performance, making it easier to adapt PXPlay to anything from efficient mobile devices to powerful gaming handhelds and Android TV hardware. This builds on the existing FSR 1.0 video upscaling to further enhance stream quality, making PXPlay one of the highest-quality PlayStation Remote Play apps available on Android.
+
+  🎮 Local Multiplayer
+  PXPlay Android now supports local multiplayer for PS4 and PS5 Remote Play sessions.
+  Connect multiple compatible controllers and enjoy supported local multiplayer games together through a single PXPlay stream.
+
+  🏠 Recently Played Games
+  The Home view now includes a Recently Played Games section.
+  Recently played titles appear with their artwork and can be launched directly, making it faster to return to a game without first navigating through the console interface.
+
+  📌 Game Widgets
+  Individual games can now be added as widgets to the Android Home screen.
+  This allows a specific game to be launched directly from a widget, providing a quick path from the Android launcher to the selected console and game.
+
+  📱 Better Dual-Screen Support
+  On dual-screen handhelds like the AYN Thor, PXPlay can now show parts of the game picture on the second screen, such as the minimap, a health bar or an ammo counter.
+  Open the cutout editor from the stream and mark up to five areas. Each one appears live in its own box on the second screen. Save layouts for different games and switch between them.
+  Cutouts never hold up the stream. They need the OpenGL ES or Vulkan rendering engine.
+
+  🖥️ Interface Improvements
+  Version 9.0.0 includes numerous updates throughout the Android and Android TV interfaces:
+  - Improved Home view with recently played games.
+  - Direct game launching from recently played game cards.
+  - New game-specific Home-screen widgets.
+  - Better handling of dialogs, sheets and startup messages.
+  - Improved focus behavior and controller navigation on Android TV.
+  - Refined presentation across phones, tablets, foldables, gaming handhelds and TVs.
+  - Additional visual and usability improvements throughout the app.
+
+  🌍 Hebrew Translation
+  PXPlay is now available in Hebrew.
+  The new translation includes right-to-left interface support and extends PXPlay's language coverage to even more users.
+
+  📦 Updates for the Standalone APK
+  The standalone Android APK can now check for new versions and securely install updates directly from PXPlay.
+  - Automatic update checks are performed once per day.
+  - Updates can also be checked manually from the Info view.
+  - Users can choose between updating inside PXPlay or downloading the APK in a browser.
+  - Download progress is shown and downloads can be cancelled.
+  - The downloaded APK is verified before Android is allowed to install it.
+  - PXPlay checks the file, version, Android compatibility and signing certificate.
+  - Updates are never installed while a Remote Play stream is running.
+  - Android TV devices are fully supported.
+  - If Android closes PXPlay while granting installation permission, opening PXPlay again continues the update automatically.
+
+  🛠️ Additional Improvements
+  - Improved stream stability during Android configuration changes.
+  - Better handling of display density, language, layout direction, dark mode and related system changes.
+  - Improved second-display and cutout behavior.
+  - Improved game-widget launch handling.
+  - Improved startup prompt coordination so multiple dialogs do not overlap.
+  - General rendering, controller, interface and stability improvements.
+
+  🔑 Licensing
+  A valid PXPlay license is required.
+  - Purchase: https://streamingdv.com/shop-list-ns.html
+  - Google Play Store: https://play.google.com/store/apps/details?id=psplay.grill.com
+  - iOS App Store: https://apps.apple.com/us/app/pxplay-remote-play/id1638586503
+  Windows, Linux and macOS share the same desktop license key. The Android APK requires a separate license.
+  By downloading PXPlay you agree to the EULA and Privacy Policy:
+  - EULA: https://raw.githubusercontent.com/streamingdv/PSPlay-Application-Hosting/main/eula.txt
+  - Privacy Policy: https://streamingdv.github.io/privacy/pxplay_privacy_policy.html
+  As always thanks for supporting my work and for making PXPlay better every update. Thanks to everyone who reported bugs or requested some features. Stay tuned for the biggest iOS update I have ever released for PXPlay which will hopefully release later this year. <3
+ReleaseNotesUrl: https://github.com/streamingdv/PSPlay-Application-Hosting/releases/tag/v3.2.0_v9.0.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
