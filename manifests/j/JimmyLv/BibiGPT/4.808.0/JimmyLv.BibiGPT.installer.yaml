@@ -1,0 +1,21 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: JimmyLv.BibiGPT
+PackageVersion: 4.808.0
+InstallerType: nullsoft
+Scope: user
+UpgradeBehavior: install
+ProductCode: BibiGPT
+ReleaseDate: 2026-11-11
+AppsAndFeaturesEntries:
+- Publisher: bibigpt
+  ProductCode: BibiGPT
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\BibiGPT'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://bibigpt-apps.oss-cn-beijing.aliyuncs.com/desktop-releases/BibiGPT-4.808.0-windows-x86_64.exe
+  InstallerSha256: 7BBD110991E7C52BBBBFF94A119D0D5AE48983F7B1D7AFF00DB04D969DCD50D8
+ManifestType: installer
+ManifestVersion: 1.28.0
