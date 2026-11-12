@@ -1,8 +1,8 @@
-# Created by Anthelion using komac v2.17.1
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
 
 PackageIdentifier: VK.VKWorkspace
-PackageVersion: 26.4.10.145436
+PackageVersion: 26.4.20.145547
 PackageLocale: ru-RU
 Publisher: VK DIGITAL TECHNOLOGIES LLC
 PublisherUrl: https://workspace.vk.ru/
