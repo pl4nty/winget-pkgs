@@ -1,0 +1,187 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Wasabules.SnmpLens
+PackageVersion: 1.8.0
+PackageLocale: en-US
+Publisher: Wasabules
+PublisherUrl: https://snmplens.com/
+PublisherSupportUrl: https://github.com/Wasabules/SnmpLens/issues
+Author: Geoffrey Lecoq
+PackageName: SnmpLens
+PackageUrl: https://snmplens.com/
+License: MIT
+LicenseUrl: https://github.com/Wasabules/SnmpLens/blob/main/LICENSE
+ShortDescription: Free SNMP MIB browser, trap receiver and alert router. Walk devices over v1, v2c and v3, edit MIBs with diagnostics, chart OIDs and route alerts to syslog, a webhook or email.
+Description: SnmpLens is an open-source SNMP MIB browser for Windows, macOS and Linux, in a single native binary with no runtime and no agent. It walks and sets OIDs over SNMPv1, v2c and v3, renders conceptual tables as tables by splitting the INDEX per RFC 2578, receives traps and INFORMs, charts polled OIDs over time, and routes alerts to syslog over UDP, TCP or TLS, to a webhook, or to email.
+Moniker: snmplens
+Tags:
+- mib
+- mib-browser
+- network-monitoring
+- snmp
+- snmpv3
+- trap-receiver
+ReleaseNotes: |-
+  What's new in v1.8.0
+  A release about supervising without a window, and about the network behind the
+  devices. SnmpLens can now run its monitoring, trap reception, thresholds and
+  notifications as a system service, from the moment the computer starts and with
+  nobody signed in. The Network tab gains a port map and a network map. The
+  configuration can be backed up to one file, and the simulator's devices can be
+  cabled to each other.
+
+  Features
+  SnmpLens as a system service. Under Settings → Background → System
+  service, the supervision moves to a service: the monitoring sessions with their
+  thresholds, the trap listener, the event journal and the notifications.
+  - On Windows it is a Windows service running under the virtual account
+    NT SERVICE\SnmpLens, with its data in %ProgramData%\SnmpLens, readable only
+    by the system, administrators and the service. It needs an all-users install in
+    Program Files, since the service runs that executable as a system account.
+    Installing it adds an inbound UDP firewall rule (domain and private networks), so
+    traps from the network reach a service that has no desktop to show Windows'
+    prompt on. It also adds recovery actions and an event-log source.
+  - On Linux it is a systemd unit, snmplens.service, running as the system user
+    snmplens with CAP_NET_BIND_SERVICE only, which opens port 162 without root.
+    It is hardened (ProtectSystem=strict, NoNewPrivileges and the rest) and keeps
+    its data in /var/lib/snmplens. It is installed from the settings through
+    pkexec, from the installed package. Upgrading the .deb restarts it, and
+    removing the package stops and disables it.
+  - Installing hands the window's supervision over, after one administrator
+    prompt: the sessions with their history, the alert destinations, the trap users
+    and the trap listener's engine ID. The service keeps credentials sealed for the
+    computer rather than for an account.
+  - Removing it can bring everything back to the window, keeping the window's
+    previous database beside the one it gets back.
+  - While the service runs, the window drives it: the same screens, with the
+    window's own supervision closed, so nothing is polled twice, no alert is sent
+    twice and nothing fights for port 162. The account that installed it may drive
+    it, and others are added with Allow this account.
+  - A window that may not drive the service supervises nothing until the service
+    stops: an account that is not allowed, or a copy of another version. That copy
+    is offered Update to this version. Settings and the journal say so.
+  - The installer offers the service too, for an all-users install, or silently with
+    /S /ALLUSERS /SERVICE. The service then starts empty, and the window offers to
+    Hand this window's supervision over.
+  Supervision with no window. SnmpLens --headless [--data-dir DIR] runs the
+  supervision alone, on every platform, in a terminal or under launchd or systemd,
+  until interrupted. One supervision runs per data directory: a second one on the
+  same directory is refused, so no session is polled twice.
+  Port map. Network → Port map shows what is plugged into each port of a
+  switch:
+  - the MAC addresses it learnt on each port;
+  - their IP addresses, from the ARP caches of the switch and of any routers you
+    pick, each asked with its own identifiers;
+  - their names, by reverse DNS;
+  - the LLDP or CDP neighbour on the port.
+  Uplinks are marked. The table filters by port, MAC (in any notation), IP or name,
+  and exports to CSV. Q-BRIDGE-MIB is read first, for the VLAN. Otherwise BRIDGE-MIB
+  is read, and a Cisco switch is read VLAN by VLAN, by community indexing
+  (public@20) or the SNMPv3 context vlan-20. Anonymous mode masks the
+  addresses, the names and the MACs beyond their vendor prefix.
+  Network map. Network → Topology walks the devices you choose and draws the
+  network from what they say of their neighbours:
+  - every device and every LLDP or CDP neighbour is a node;
+  - every neighbour is a link from the port it was heard on.
+  It can follow neighbours to their neighbours, at the management address they
+  give: up to three hops and 64 devices, and the walk can be cancelled. A device
+  named by several others is one node, and a cable reported by both of its ends is
+  one line, though each end spells the port differently. Devices nobody walked and
+  links one end alone reported are drawn dashed. You can drag the nodes, zoom,
+  click a device to see its links, and export the map to SVG.
+  Backup and restore. Settings → Backup saves the configuration to one
+  .snmplens file and restores it, on this machine or another.
+  - What it holds. Targets, groups, credential profiles and settings; saved
+    queries, favourites and MIB folders. Alert destinations and routes, and the
+    monitoring sessions without their samples. Simulated devices and models, presets
+    and map backgrounds, the background-mode preferences and the trap listener's
+    engine ID. Optionally, the MIBs you added. It never holds monitoring history.
+  - Credentials are never in the file in the clear. They are sealed under a
+    passphrase you choose (Argon2id and AES-256-GCM). Without the passphrase,
+    everything else restores.
+  - A restore adds and replaces, and never deletes. A monitoring session that
+    already exists keeps its history. A wrong passphrase changes nothing.
+  - Every restore can be undone. The configuration as it stood is backed up
+    first, and the last five are listed with a Restore button.
+  Simulator: a cabled bench. Simulated devices can be cabled port to port, from
+  a panel under the device list. The devices then agree with each other:
+  - each end of a cable names the other in LLDP, and in CDP between two Ciscos, with
+    the address the other answers on;
+  - each switch learns what is behind each cable, in its VLAN;
+  - the device routing the bench holds every station in its ARP cache, IPv6
+    included.
+  A running device is recabled without a restart, so its uptime and counters
+  continue. Port map and network map can be tried end to end with no hardware.
+  - Three new models, for seventeen in all: a Catalyst 9300-24T layer-3 core, an
+    Aruba 2930F-24G-4SFP+ (Q-BRIDGE-MIB, LLDP only), and a SIP desk phone with a
+    computer behind it.
+  - A simulated Cisco answers BRIDGE-MIB per VLAN, to community@VLAN and to the
+    SNMPv3 context vlan-N, as IOS does.
+  - The neighbours the models invent are one world: one shared core, the access
+    point on the port the switch names, a phone on a desk port, and every invented
+    neighbour learnt on the port it is named on.
+  - Cables are kept with the devices, carried by bench files and backups.
+  Installer.
+  - It asks for its language, keeps it when it relaunches with administrator
+    rights, and remembers it for the uninstaller. Every page of its own is in
+    English, French, German, Spanish and Chinese.
+  - Installing for all users replaces this user's copy: its files, Start menu
+    entries, desktop shortcut and uninstall entry go. Its start at sign-in moves to
+    the new copy, and the settings and history are kept. The mode page says so.
+  - An existing all-users copy is updated where it is, silently too: an
+    unelevated /S asks for the rights and relaunches.
+  - A running service is stopped before the files are replaced, and started
+    again after.
+  - Uninstalling an all-users copy removes the service and deletes its data only
+    if asked.
+
+  Fixes
+  - In background mode, an update hid the window to the tray instead of quitting,
+    and left the process holding the executable.
+  - A portable copy did not reopen after updating itself. It now waits for the
+    old process to exit before opening its window. The hidden .old file Windows
+    leaves behind is removed at the next start.
+  - Start at sign-in, in an all-users install, was a machine-wide, unquoted entry
+    that the application's own toggle could neither see nor remove. It is now the
+    current user's quoted entry, as the toggle writes it, and an update keeps it.
+  - The all-users registry entry was written in the 32-bit view, which the 64-bit
+    updater never saw. It is now written in the 64-bit view, and an older one is
+    found in either view and moved. New all-users copies go to the 64-bit Program
+    Files.
+  - Updating over a running copy sometimes failed with "Error opening file for
+    writing": the installer now waits until the old executable can be replaced.
+  - The finish page started the application elevated after an all-users install.
+    An elevated window refuses drag and drop from Explorer. It is now started as the
+    signed-in user.
+  - The installer's own pages were in English beside translated standard pages.
+  - Discovery said "0 device(s) found" at the end of a sweep, whatever had
+    answered.
+  - Discovery's identifiers list was too narrow and read "Defaul", and its Scan
+    button was not as tall as the fields beside it.
+
+  Security
+  - The .deb installed /usr/local/bin/snmplens owned by the build runner's
+    uid, not root: anyone with that uid on the machine could replace it. The
+    package now installs it owned by root, and the service is installed only from a
+    copy that only root can change.
+  - Wails 2.17.1 fixes GHSA-r5j2-ghh9-2jqw, where a frame inside the window could
+    post to the bridge on Linux. SnmpLens embeds no frame and was not exposed.
+  - golang.org/x/net 0.62.0 fixes GO-2026-6866 and GO-2026-6860 in x/net/html,
+    code that SnmpLens does not call.
+
+  Updating from v1.7.0
+  An update is carried out by the copy it replaces, so this one is run by v1.7.0's
+  updater. The installer and package fixes above apply now. The two update fixes (the
+  update quitting for real, the portable copy reopening) take effect from the next
+  update.
+  - A portable copy may not reopen by itself after this update: start it again.
+    If the previous version stays in the tray, quit it first.
+  - A portable copy kept beside an installed one runs the installer: the
+    installed copy is updated and the portable one is left as it is. Download the
+    portable zip to update it. From v1.8.0 on, such a copy replaces itself.
+
+  Documentation
+ReleaseNotesUrl: https://github.com/SnmpLens/SnmpLens/releases/tag/v1.8.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
