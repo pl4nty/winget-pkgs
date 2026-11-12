@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: GAM-Team.gam
+PackageVersion: 7.52.02
+InstallerType: inno
+Scope: machine
+ProductCode: '{D86B52B2-EFE9-4F9D-8BA3-9D84B9B2D319}_is1'
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- DisplayName: GAM7 version 7.52.02
+  ProductCode: '{D86B52B2-EFE9-4F9D-8BA3-9D84B9B2D319}_is1'
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%SystemDrive%\GAM7'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/GAM-team/GAM/releases/download/v7.52.02/gam-7.52.02-windows-x86_64.exe
+  InstallerSha256: 01B4C416D6A5D2F1155C8D3941EB972BAF7E87AC174A6067F110B7715415CFAD
+- Architecture: arm64
+  InstallerUrl: https://github.com/GAM-team/GAM/releases/download/v7.52.02/gam-7.52.02-windows-arm64.exe
+  InstallerSha256: 43939FF1B38C5212212A8740174D6274FE74BDB32697696D599E54211729E4A1
+ManifestType: installer
+ManifestVersion: 1.28.0
