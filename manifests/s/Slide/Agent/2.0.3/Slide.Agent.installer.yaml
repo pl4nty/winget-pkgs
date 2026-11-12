@@ -1,12 +1,16 @@
-# Automatically updated by the winget bot at 2026/Oct/23
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: Slide.Agent
-PackageVersion: 1.34.2
+PackageVersion: 2.0.3
 InstallerType: nullsoft
+Scope: machine
+ReleaseDate: 2026-11-04
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\Slide\Agent'
 Installers:
 - Architecture: x64
   InstallerUrl: https://update.slide.tech/agent/SlideAgent.exe
-  InstallerSha256: 0D4A71F199945CECCB11E7AF5D4C257E0B002BAD83DE955E9BBC0A418A1161B9
+  InstallerSha256: B216A564212A8121C618C159D6A26AC8465562D1C04F036382F55DB5D69A97F1
 ManifestType: installer
 ManifestVersion: 1.28.0
