@@ -1,0 +1,69 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: RicoSuter.NSwagStudio
+PackageVersion: 14.8.0
+PackageLocale: en-US
+Publisher: Rico Suter
+PublisherUrl: https://github.com/RicoSuter/NSwag
+PublisherSupportUrl: https://github.com/RicoSuter/NSwag/issues
+Author: Rico Suter
+PackageName: NSwagStudio
+PackageUrl: https://github.com/RicoSuter/NSwag
+License: MIT
+LicenseUrl: https://github.com/RicoSuter/NSwag/blob/HEAD/LICENSE.md
+Copyright: Copyright (c) 2021 Rico Suter
+CopyrightUrl: https://raw.githubusercontent.com/RicoSuter/NSwag/master/LICENSE.md
+ShortDescription: The OpenAPI/Swagger API toolchain for .NET and TypeScript
+Moniker: nswagstudio
+Tags:
+- aspnet
+- aspnetcore
+- codegen
+- documention
+- openapi
+- swagger
+- typescript
+- webapi
+ReleaseNotes: |-
+  Important
+  An nswag.json without an explicit runtime field now defaults to Net100 instead of Net80.
+  .NET 8 reached end of life on 2026-11-10, so the default moved to the active LTS. A document that omits runtime and is executed with $(NSwagExe_Net80) or nswag.cmd /runtime:net80 now fails with:
+  InvalidOperationException: The specified runtime in the document (Net100) differs
+  from the current process runtime (Net80).
+  Either pin the runtime in the document ("runtime": "Net80") or move to $(NSwagExe_Net100) / /runtime:Net100. Documents that already specify runtime are unaffected.
+  .NET 11 support
+  .NET 11 reached GA on 2026-11-10 and is now a fully supported NSwag runtime.
+  Runtime support is additive — net8.0, net9.0, net10.0 and net11.0 all ship. Nothing was removed, so every existing NSwagExe_* property and /runtime: value keeps working.
+  - $(NSwagExe_Net110) and $(NSwagDir_Net110) in NSwag.MSBuild
+  - /runtime:Net110 in the command line tool, the nswag NPM package (the legacy --core 11.0 form also works) and NSwagStudio
+  - A Net110 folder in the MSBuild tools/ layout and in the NPM package
+
+  NJsonSchema v11.6.2 (potentially breaking changes)
+  This release bundles NJsonSchema v11.6.2 and Namotion.Reflection v3.5.1. Two changes there can affect generated output:
+  - Swagger2 documents: properties that are both required and nullable now emit x-nullable: true instead of silently losing their declared nullability (NJsonSchema#1931). This applies when the property is marked required by a presence-only marker — the C# required keyword, [JsonRequired], [DataMember(IsRequired = true)] or Newtonsoft Required.AllowNull. [Required] from DataAnnotations is unaffected. C# clients generated from such documents may now produce nullable types where they previously produced non-nullable ones.
+  - UseRequiredKeyword = true: default-value initializers are now suppressed only on the properties that actually receive the required keyword, so optional properties regain their initializers (NJsonSchema#1926). The default (UseRequiredKeyword = false) is unaffected.
+  New C# generator settings also become available: IntegerType, AdditionalPropertiesValueType and PropertyAttributeFactory. See the NJsonSchema v11.6.2 release notes for the full list.
+
+  Dependency and security updates
+  Packages carrying known vulnerability advisories moved to the current servicing release of their line:
+  - Microsoft.AspNetCore.* for net462 / netstandard2.0: 2.3.0 (Kestrel.Core 2.3.6) → 2.3.14
+  - Microsoft.AspNetCore.OpenApi and .TestHost: 8.0.34, 9.0.23, 10.0.15 and 11.0.0 per target framework
+  - Build-only: System.Security.Cryptography.Xml and .Pkcs → 10.0.15
+
+  Other changes
+  - The release binaries (NSwag.zip and NSwagStudio.msi) are now attached to the GitHub release automatically by the tagged build.
+  - A hang in project metadata lookup was fixed: dotnet msbuild --getProperty output was read only after the process exited, which could deadlock, and MSBuild worker nodes kept for reuse could hold the pipes open indefinitely.
+
+  What's Changed
+  - Fix development build dependencies and TypeScript test compiler by @RicoSuter in #5400
+  - docs: add general pull request template by @RicoSuter in #5401
+  - Use NuGet trusted publishing instead of a stored API key by @RicoSuter in #5418
+  - docs: add AGENTS.md with repository instructions for AI coding agents by @RicoSuter in #5420
+  - Add .NET 11 support (v14.8.0) by @RicoSuter in #5419
+ReleaseNotesUrl: https://github.com/RicoSuter/NSwag/releases/tag/v14.8.0
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/RicoSuter/NSwag/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
