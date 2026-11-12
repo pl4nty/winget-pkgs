@@ -1,0 +1,49 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: GitHub.Copilot.Prerelease
+PackageVersion: 1.0.110-3
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.PowerShell
+    MinimumVersion: 7.0.0
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerType: wix
+  InstallerUrl: https://github.com/github/copilot-cli/releases/download/v1.0.110-3/copilot-x64.msi
+  InstallerSha256: 899451E783A034A9DB1322A60757B4A542954240F3DBB2C9513E73A752260DD0
+  ProductCode: '{AA07F838-D185-4FA8-966E-FB13D6024FE4}'
+  AppsAndFeaturesEntries:
+  - DisplayName: GitHub Copilot CLI
+    ProductCode: '{AA07F838-D185-4FA8-966E-FB13D6024FE4}'
+    UpgradeCode: '{E2C3A7F6-1D3A-4E8F-9E5F-8E9D4F9C1234}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\GitHubCopilotCLI'
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: copilot.exe
+  InstallerUrl: https://github.com/github/copilot-cli/releases/download/v1.0.110-3/copilot-win32-x64.zip
+  InstallerSha256: 6308567F88DD48D18BF0A0D2BF3E46EA47E0450E8788E1F7D39937385EC51083
+- Architecture: arm64
+  InstallerType: wix
+  InstallerUrl: https://github.com/github/copilot-cli/releases/download/v1.0.110-3/copilot-arm64.msi
+  InstallerSha256: 72136323E3AF423B3E94E485EFE53D0E51B7B244CF05262C2F7E3B5AE2AC7F77
+  ProductCode: '{5A13E1DA-2316-4078-8C4E-7CFF217E2EF1}'
+  AppsAndFeaturesEntries:
+  - DisplayName: GitHub Copilot CLI
+    ProductCode: '{5A13E1DA-2316-4078-8C4E-7CFF217E2EF1}'
+    UpgradeCode: '{E2C3A7F6-1D3A-4E8F-9E5F-8E9D4F9C1234}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\GitHubCopilotCLI'
+- Architecture: arm64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: copilot.exe
+  InstallerUrl: https://github.com/github/copilot-cli/releases/download/v1.0.110-3/copilot-win32-arm64.zip
+  InstallerSha256: 3317BF17C760364E21EAD2BD8C4D4E4166123D97CA72E4CB99AAB71E62D709BC
+ManifestType: installer
+ManifestVersion: 1.28.0
