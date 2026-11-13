@@ -1,0 +1,27 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: t4t5.caldir
+PackageVersion: 0.14.10
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: caldir-provider-caldav.exe
+  PortableCommandAlias: caldir-provider-caldav
+- RelativeFilePath: caldir-provider-google.exe
+  PortableCommandAlias: caldir-provider-google
+- RelativeFilePath: caldir-provider-icloud.exe
+  PortableCommandAlias: caldir-provider-icloud
+- RelativeFilePath: caldir-provider-outlook.exe
+  PortableCommandAlias: caldir-provider-outlook
+- RelativeFilePath: caldir-provider-webcal.exe
+  PortableCommandAlias: caldir-provider-webcal
+- RelativeFilePath: caldir.exe
+  PortableCommandAlias: caldir
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/t4t5/caldir/releases/download/v0.14.10/caldir-x86_64-pc-windows-msvc.zip
+  InstallerSha256: A56384E4E46B3718C89D9B9600D39C396E373DF64CFDEAA339A6E68FBEE73192
+ManifestType: installer
+ManifestVersion: 1.28.0
