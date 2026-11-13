@@ -1,8 +1,8 @@
-# Automatically updated by the winget bot at 2026/Nov/11
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: CanhCutTeam.CanhCutTeamLauncher
-PackageVersion: 7.0.9
+PackageVersion: 7.1.1
 InstallerType: msi
 Scope: machine
 UpgradeBehavior: install
@@ -10,17 +10,17 @@ Dependencies:
   PackageDependencies:
   - PackageIdentifier: Microsoft.DotNet.DesktopRuntime.8
   - PackageIdentifier: Microsoft.VCRedist.2015+.x64
-ProductCode: '{F5EA1B57-A839-444A-B982-7AE8CD7068C3}'
-ReleaseDate: 2026-11-09
+ProductCode: '{BC8F5938-5C67-4081-B77A-B95131B319CA}'
+ReleaseDate: 2026-11-13
 AppsAndFeaturesEntries:
 - Publisher: CanhCutTeam.Com
-  ProductCode: '{F5EA1B57-A839-444A-B982-7AE8CD7068C3}'
+  ProductCode: '{BC8F5938-5C67-4081-B77A-B95131B319CA}'
   UpgradeCode: '{585925A6-A272-477A-B705-9D05BFA3466A}'
 InstallationMetadata:
   DefaultInstallLocation: '%AppData%\CanhCutTeam_Launcher'
 Installers:
 - Architecture: x64
   InstallerUrl: https://download.canhcutteam.com/Launcher/CanhCutTeam_Setup.msi
-  InstallerSha256: 9AECDD82EFDC8B2E1F5827B181FB43A8E4A5456637F791CDBAF6D8606087D735
+  InstallerSha256: 29FF1750D8E211B65FE6F59B6D029B9D4D1918570DABB697347A3E2259F622D2
 ManifestType: installer
 ManifestVersion: 1.28.0
