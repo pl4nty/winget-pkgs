@@ -1,0 +1,38 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: zhitongblog.Ziplark
+PackageVersion: 0.5.0
+InstallModes:
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/zhitongblog/ziplark/releases/download/v0.5.0/Ziplark_0.5.0_x64-setup.exe
+  InstallerSha256: 23246AB749B8EF44D31619566CBAA86DC77FCD0D542217D40A86AA3F525BD91A
+  ProductCode: Ziplark
+  AppsAndFeaturesEntries:
+  - Publisher: ziplark
+    ProductCode: Ziplark
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Ziplark'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/zhitongblog/ziplark/releases/download/v0.5.0/Ziplark_0.5.0_x64_en-US.msi
+  InstallerSha256: DC31232D851D416FFE27230EBE6C8321581EACE40A075466C7DA8B5513E01D22
+  InstallerSwitches:
+    InstallLocation: INSTALLDIR="<INSTALLPATH>"
+  ProductCode: '{7B275D72-D174-49E9-9A59-2C0AD32EC35C}'
+  AppsAndFeaturesEntries:
+  - Publisher: ziplark
+    ProductCode: '{7B275D72-D174-49E9-9A59-2C0AD32EC35C}'
+    UpgradeCode: '{04834939-F86A-5E8C-8632-8431F61DD55E}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Ziplark'
+ManifestType: installer
+ManifestVersion: 1.28.0
