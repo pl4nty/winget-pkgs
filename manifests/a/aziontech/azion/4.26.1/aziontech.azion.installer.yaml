@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: aziontech.azion
+PackageVersion: 4.26.1
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: azion.exe
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/aziontech/azion/releases/download/4.26.1/azion_4.26.1_windows_386.zip
+  InstallerSha256: F89D65557DA58AD547F3E0EF15939D5F49DE8A568DF99D3DD0DDBE5B68A43594
+- Architecture: x64
+  InstallerUrl: https://github.com/aziontech/azion/releases/download/4.26.1/azion_4.26.1_windows_amd64.zip
+  InstallerSha256: BA2573CC222B5F3C429BBB4CAB34552850117D3B61A74A53D87D5F2C0A340357
+- Architecture: arm64
+  InstallerUrl: https://github.com/aziontech/azion/releases/download/4.26.1/azion_4.26.1_windows_arm64.zip
+  InstallerSha256: 8A46BDA6AD849317FCB955020018125FE7002926118A2CC244C81669B6F7085C
+ManifestType: installer
+ManifestVersion: 1.28.0
