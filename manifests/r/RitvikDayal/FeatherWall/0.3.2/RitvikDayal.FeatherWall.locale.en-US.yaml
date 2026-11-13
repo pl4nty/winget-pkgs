@@ -1,0 +1,61 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: RitvikDayal.FeatherWall
+PackageVersion: 0.3.2
+PackageLocale: en-US
+Publisher: Ritvik Dayal
+PublisherUrl: https://github.com/RitvikDayal
+PublisherSupportUrl: https://github.com/RitvikDayal/featherwall/issues
+PackageName: FeatherWall
+PackageUrl: https://github.com/RitvikDayal/featherwall
+License: MIT
+LicenseUrl: https://github.com/RitvikDayal/featherwall/blob/main/LICENSE
+Copyright: Copyright (c) 2026 Ritvik Dayal
+ShortDescription: A featherweight live-wallpaper engine for Windows.
+Description: |-
+  FeatherWall puts any video or image on your Windows desktop and adds a configurable clock
+  widget over it. It runs as a single process built on raw Win32, Direct3D 11 and
+  DirectComposition, with no browser engine, no launcher and no account.
+
+  It supports both desktop topologies, the classic WorkerW layout and the Windows 11 24H2+
+  raised desktop, and pauses playback when a fullscreen app is in front, the session is locked,
+  the connection is remote, or battery saver is on. A still wallpaper costs about 151 MB and
+  0.03 percent CPU, measured on a 2560x1600 display at 150 percent scaling.
+
+  A built-in gallery offers curated public domain and CC0 wallpapers from NASA and Wikimedia
+  Commons, downloaded directly from the source with no API key and no tracking.
+Moniker: featherwall
+Tags:
+- customization
+- desktop
+- dotnet
+- live-wallpaper
+- wallpaper
+- windows
+ReleaseNotes: |-
+  FeatherWall now comes with an installer, FeatherWall-Setup.exe, alongside the zip.
+  The installer
+  - No unzipping and no admin. Setup.exe installs FeatherWall for your user, adds it to the Start menu and starts it.
+  - .NET included when missing. If the .NET 10 desktop runtime isn't installed, Setup.exe installs it first. That step is Microsoft's own runtime installer and may ask for administrator permission.
+  - A real uninstall. FeatherWall appears in Settings → Apps. Uninstalling it puts your own wallpaper back and removes its Start menu entry and its "Run at startup" entry. Your settings (%APPDATA%\FeatherWall\config.json) are kept, so a reinstall picks up where you left off.
+  The installer is unsigned, like the zip, so SmartScreen warns the first time: click More info, then Run anyway. The zip and winget are unchanged.
+
+  Moving from the zip to the installer
+  1. Right-click the feather in the tray, then Exit FeatherWall. Do this first: while the zip copy runs, Setup only opens that copy's Settings, and the steps below would change the old copy instead of the new one.
+  2. Run FeatherWall-Setup.exe. The Start menu entry now opens the installed copy.
+  3. If you use Run at startup, untick it and tick it again in the installed copy, so Windows starts the new copy rather than the old folder.
+  4. Delete the old folder.
+  Installed with winget? Keep using winget upgrade RitvikDayal.FeatherWall; these steps are for the zip.
+
+  Install
+  Download FeatherWall-Setup.exe below and run it. Or download featherwall-v0.3.2-win-x64.zip, unzip, and run featherwall.exe; the zip needs the .NET 10 desktop runtime. winget serves v0.3.1 for now.
+  Releases are unsigned, so SmartScreen will warn. Check the download against its SHA-256:
+  2563cb4ff96d76bb7f5a0e15e33b6eb7066af91fac27cac837a719def1df5dac  FeatherWall-Setup.exe
+  1ccd202f5358aa5c8175e32225ec18fd7ac5c355d70d4fe0afca1b39239645e6  featherwall-v0.3.2-win-x64.zip
+ReleaseNotesUrl: https://github.com/RitvikDayal/featherwall/releases/tag/v0.3.2
+Documentations:
+- DocumentLabel: Architecture
+  DocumentUrl: https://github.com/RitvikDayal/featherwall/blob/main/docs/architecture.md
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
