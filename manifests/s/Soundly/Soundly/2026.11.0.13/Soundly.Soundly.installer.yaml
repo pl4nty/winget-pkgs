@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Soundly.Soundly
+PackageVersion: 2026.11.0.13
+InstallerType: nullsoft
+Scope: machine
+ProductCode: Soundly
+ReleaseDate: 2026-11-11
+AppsAndFeaturesEntries:
+- ProductCode: Soundly
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles(x86)%\Soundly'
+Installers:
+- Architecture: x86
+  InstallerUrl: https://storage.googleapis.com/soundlyapp/soundly-setup.exe
+  InstallerSha256: E84276E5914A3D3836E7E03E0CDF40C4363C4218217EE9B80B24E3BC0107737D
+ManifestType: installer
+ManifestVersion: 1.28.0
