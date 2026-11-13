@@ -1,0 +1,58 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: JliSoftware.Utterform
+PackageVersion: 1.1.0
+PackageLocale: en-US
+Publisher: JLI Software
+PublisherUrl: https://github.com/jli-software
+PublisherSupportUrl: https://github.com/jli-software/utterform/issues
+PrivacyUrl: https://github.com/jli-software/utterform/blob/v0.7.12/README.md#privacy-model
+PackageName: Utterform
+PackageUrl: https://github.com/jli-software/utterform
+License: MIT
+LicenseUrl: https://github.com/jli-software/utterform/blob/main/LICENSE
+Copyright: Copyright (c) 2026 Jonas
+CopyrightUrl: https://github.com/jli-software/utterform/blob/main/LICENSE
+ShortDescription: Turn speech into useful text.
+Description: Utterform is a lightweight desktop voice-to-text utility. Record a short voice clip, transcribe it with OpenAI GPT Transcribe or local Whisper, optionally transform the text with a built-in or rewritten prompt, and send the result to the clipboard, a TXT/Markdown file, the focused window, or a combination of those. A reserved key combination starts and finishes a recording without raising the window.
+Moniker: utterform
+Tags:
+- dictation
+- productivity
+- speech-to-text
+- transcription
+- voice
+- whisper
+ReleaseNotes: |-
+  The first stable release since 0.8.0. It brings everything of the 1.0.0 release
+  candidate and adds the microphone to the tray menu. There is no separate 1.0.0.
+  Switch the microphone from the tray. The headset for calls is plugged in, but you
+  want to talk to the laptop. Right-click the Utterform icon, open Microphone and pick
+  the laptop's microphone. The next dictation uses it, and it stays chosen until you pick
+  another one. System default follows the microphone your system uses and names it, so
+  you see at a glance which one that is. It is the same setting as Settings → Recording →
+  Microphone; both always agree.
+  Plugging a microphone in or out is noticed: on Windows and macOS the list is read again
+  as the pointer reaches the tray icon, and everywhere when the window opens. A chosen
+  microphone that is unplugged stays in the menu, greyed out, and recordings fall back to
+  the system default until it is back.
+  Everything from 1.0. A first-run assistant, Settings with search and no Save button,
+  text actions on your ChatGPT subscription (experimental), the Context action for the
+  selected text or the clipboard, an action per application and transcription of voice
+  messages and audio files. The details are in the
+  1.0.0 release candidate notes and in the changelog under 0.9.0 to
+  0.14.0.
+  Install
+  Quit Utterform first.
+  - Linux (Omarchy / Arch):
+    curl -fsSL https://github.com/jli-software/utterform/releases/download/v1.1.0/install-linux.sh | sh
+  - Windows (PowerShell):
+    irm https://github.com/jli-software/utterform/releases/download/v1.1.0/install-windows.ps1 | iex
+  - macOS: the DMG,
+    Developer ID signed and notarized.
+  Windows builds remain unsigned and may trigger SmartScreen. Verify downloads against
+  SHA256SUMS.txt.
+ReleaseNotesUrl: https://github.com/jli-software/utterform/releases/tag/v1.1.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
