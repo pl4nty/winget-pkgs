@@ -1,0 +1,18 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: gittuf.gittuf
+PackageVersion: 0.18.0
+InstallerType: portable
+Commands:
+- gittuf
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/gittuf/gittuf/releases/download/v0.18.0/gittuf_0.18.0_windows_amd64.exe
+  InstallerSha256: DE1E53C2D22A3177EBEDE3A829247BCA1E469DF89E8CC7C32A0BAB677B677D23
+- Architecture: arm64
+  InstallerUrl: https://github.com/gittuf/gittuf/releases/download/v0.18.0/gittuf_0.18.0_windows_arm64.exe
+  InstallerSha256: A4E30F29CACAFAB793DA569FE1AAC47214697A0E88D4538B934FEF11B6DFD1F8
+ManifestType: installer
+ManifestVersion: 1.28.0
