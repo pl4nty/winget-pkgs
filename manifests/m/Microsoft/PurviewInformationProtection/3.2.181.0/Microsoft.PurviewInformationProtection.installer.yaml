@@ -1,0 +1,36 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Microsoft.PurviewInformationProtection
+PackageVersion: 3.2.181.0
+Scope: machine
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: /qn
+  SilentWithProgress: /q
+  Custom: /norestart
+ReleaseDate: 2026-11-11
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles(x86)%\Microsoft Purview Information Protection'
+Installers:
+- Architecture: x86
+  InstallerType: wix
+  InstallerUrl: https://download.microsoft.com/download/5e62f7f5-d616-49f8-b506-f1c6b4f79ba7/PurviewInfoProtection.msi
+  InstallerSha256: 4D9F650215960B34279756A0F290A0EC73E4CC0286C3E44147D4EB08EB0F296E
+  ProductCode: '{E289261F-DDAB-430D-89F5-86CB2C9813A0}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{E289261F-DDAB-430D-89F5-86CB2C9813A0}'
+    UpgradeCode: '{5D9EC71D-960E-4E58-ADA1-C43B094DAE72}'
+- Architecture: x86
+  InstallerType: burn
+  InstallerUrl: https://download.microsoft.com/download/5e62f7f5-d616-49f8-b506-f1c6b4f79ba7/PurviewInfoProtection.exe
+  InstallerSha256: BE5C779526CC2CE182AC0410AA6C6D3751C21609699A185255C3EE5CEC5AD303
+  ProductCode: '{3CDA8FE2-209A-42F3-9C03-8026026D0849}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{6DB6E453-FFC6-45A2-95CE-4AE6B13ED2C4}'
+    UpgradeCode: '{5D9EC71D-960E-4E58-ADA1-C43B094DAE72}'
+ManifestType: installer
+ManifestVersion: 1.28.0
