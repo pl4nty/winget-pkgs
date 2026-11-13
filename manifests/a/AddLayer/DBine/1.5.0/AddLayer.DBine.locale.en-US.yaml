@@ -1,0 +1,110 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: AddLayer.DBine
+PackageVersion: 1.5.0
+PackageLocale: en-US
+Publisher: AddLayer
+PublisherUrl: https://dbine.com/
+PublisherSupportUrl: https://github.com/addlayer-io/dbine/issues
+Author: AddLayer
+PackageName: DBine
+PackageUrl: https://dbine.com/
+License: Apache-2.0
+LicenseUrl: https://github.com/addlayer-io/dbine/blob/HEAD/LICENSE
+ShortDescription: Manage SQL, NoSQL and analytical databases in one app
+Description: |-
+  DBine is a desktop database manager for relational, analytical, document, key-value, graph, time-series and search databases. One workbench connects to PostgreSQL, SQL Server, MySQL, MariaDB, SQLite, Oracle, MongoDB, Redis, Cassandra, ClickHouse, DuckDB, Snowflake, BigQuery, Elasticsearch, Neo4j, InfluxDB and many more engines.
+
+  Explore and query:
+  - A tree per connection and database, with saved queries kept inside each database
+  - A SQL editor with each engine's dialect, completion of tables and columns, and script execution
+  - A fast results grid with cell editing, filters, sorting, charts and a JSON tree view
+  - Graphical execution plans, a visual query builder and query optimization hints
+  - Search across object names, columns and stored code, and run code on several databases at once
+
+  Design and move data:
+  - Table designer, ER diagrams and script generation
+  - Compare schemas and data, then migrate, clone or sync databases between engines
+  - Import CSV, JSON, XLSX and XML; export results in many formats; generate test data and data subsets
+  - Rename objects with an impact analysis of everything that depends on them
+
+  Administer:
+  - Server monitor, live processes and a profiler of the queries clients run
+  - Users and permissions, backups, health checks and database properties
+  - SSH tunnels, including chains of bastions and the SSH agent
+  - Read-only connections and production safeguards
+
+  Assistant and integrations:
+  - An AI assistant that writes and explains queries with a local built-in model or Ollama; it never runs anything by itself
+  - A local MCP server so AI coding assistants can work with your connections, with every write approved in DBine
+  - End-to-end encrypted cloud sync of connections, queries and settings to your own account
+  - A script library and projects backed by git
+
+  Passwords are stored encrypted with a key kept in the system keychain, and never go into the state file or the logs.
+Moniker: dbine
+Tags:
+- clickhouse
+- database
+- database-manager
+- duckdb
+- mariadb
+- mongodb
+- mysql
+- nosql
+- oracle
+- postgresql
+- redis
+- sql
+- sql-client
+- sqlite
+- sqlserver
+ReleaseNotes: |-
+  DBine v1.5.0 installers.
+  New
+  - AI in Compare schemas: columns and tables that look renamed are pointed out, so they can be renamed and keep their data instead of being dropped and added, and Find renames with AI finds the ones whose names don't look alike. In the sync dialog, Review with AI has the assistant check the script for what can fail or lose data, measuring it with reads you approve, and Summarize with AI describes the changes for an approval request or a ticket.
+  - AI in Compare data: Explain differences tells what the differences have in common and their likely cause, such as a time zone, a rounding or a sync running late, from counts and typical gaps over all of them. Filter with AI turns a request in words into the column filters and the order, and Suggest key finds the key of a table without a primary key. The AI never gets the rows' values.
+  - Sort and filter in Compare data: with thousands of differences, sort by any column and filter each one from its three dots (equal, different, greater, contains…), or keep only the rows where a column changed. It works on all the rows, not only those on screen, and "All" then marks only the rows that pass.
+  - Result tabs in the query editor: an earlier run's results can stay in a tab of their own, with its query and the time it ran, so you can go back to them without running the query again. Pin a result and later runs open next to it instead of replacing it; Settings › General sets how many unpinned results each editor keeps, and a tab's menu runs its query again, copies it or closes the unpinned ones.
+  - SSH tunnels from ~/.ssh/config: a tunnel can use a Host of your SSH config instead of loading the server by hand. DBine uses what OpenSSH resolves for it (server, user, keys, agent), including ProxyJump chains where each server signs in with its own user and keys, and ProxyCommand, which runs only after you confirm the exact command. It shows the way before you connect.
+  - Contexts for the AI assistant: a new Contexts node on each connection and database holds notes the assistant gets in every chat there, such as what a status code means or how a metric is calculated, so you don't repeat them. Settings › AI assistant has a text for every conversation. The chat shows which ones are in use and can turn one off for that conversation. They guide the assistant; they don't change what it's allowed to do.
+  - KDB+ data sync and clone: Compare data finds and fixes the rows that differ between two kdb+ tables, hashing them on each server so only the changed rows travel, and a migration can clone a kdb+ process into another with its tables, keys, types, attributes, linked columns, functions and views.
+  - KDB+ namespaces as schemas: the explorer groups each namespace's tables, views and functions under it, New schema… and Drop schema… create and drop namespaces, and migrations into kdb+ keep each source schema as a namespace.
+  - KDB+ health check and properties: the health check reads the process itself (memory against the -w limit, garbage collection, interned symbols, slow subscribers, no query timeout, a port without a password, TLS), and Properties shows and changes the settings kdb+ lets you change while it runs (\g, \T, \P, \o, \z, \w).
+  - KDB+ attributes as indexes: s#, u#, p# and g# show in a table's structure and can be set and removed from the table designer, compare and sync; schema conversion turns them into indexes and back.
+  - KDB+ renames: Rename… works on views, functions, variables and namespaces too, besides tables and columns.
+
+  Improvements
+  - Schema compare filters by status: each badge above the list (different, only left, only right, equal) now turns its rows on and off, so you can see only what's equal, or only what's on one side.
+  - KDB+ notebook writes and row counts: a notebook's write cell writes into kdb+ tables in every mode (insert, update by key, insert or update, replace), applied in one step so a failure leaves the table as it was, and the explorer's documentation and migrations get each table's row count without scanning.
+
+  Fixes
+  - Security fix in the built-in SQLite: DBine's own SQLite, used for its settings and for SQLite and libSQL files, is updated to a version that fixes CVE-2026-119375.
+  - Security fixes in two libraries: the Arrow library of the DuckDB driver, and a system library used by DBine and by its DuckDB, SAP HANA and MySQL drivers, are updated to versions that fix memory-safety issues (RUSTSEC-2026-0442, RUSTSEC-2026-0486).
+  - SQL Server Windows sign-in (NTLM): a malicious or intercepted server could make DBine's NTLM answer hide its own MIC flag and service name, or make the SQL Server driver ask for gigabytes of memory. DBine now writes those lengths correctly and checks the server's offsets.
+  - AI assistant and other databases: with Claude Code or Codex, the assistant asks before each structure read the model picks, and it reads another database of the connection only when the connection lists it. Text the server wrote (a table comment, an object's name) can no longer pass itself off as a tool's answer or as your message to the model.
+  - SSH profiles from a backup: saving an SSH profile restored from a backup no longer confirms its command source without asking, and a backup whose profile has an id that isn't a profile's is refused instead of restored.
+  - KDB+ reserved names: DBine never writes into kdb+'s own namespaces (.z, .Q…), the root or a file, also when a malicious server's name comes bare (.z), padded with blanks or as a file handle (:/path), as in a schema compare's sync script.
+  - Sync scripts between engines: numbers read from PostgreSQL went into the script as text, so MongoDB and other engines that keep types could store "9" instead of 9, or refuse the script. Each value is now written the way its target column takes it.
+  - Compare data with booleans across engines: PostgreSQL's true and false didn't match another engine's, so every row of a table with a boolean column showed as different, and the sync script could carry a value the target's column doesn't take. They now compare as what they are.
+  - Compare data on large tables: when a table has more rows than a comparison reads (200,000 per side), each side could read different rows, so a row could show as missing from the other side when it wasn't, and the sync script could delete or insert it. Both sides are now read in key order, and a partial comparison only updates rows found on both sides.
+  - Large results in Databricks: a query whose result passed 25 MiB failed with "Inline byte limit exceeded", even when only its first rows were shown. It now brings the rows you asked for and marks them as partial, and exports and charts read the whole result.
+  - Databricks result downloads: when a part of a result couldn't be downloaded, the error showed its link, which carries a temporary credential. It no longer does.
+  - SSH profile picker: in a connection's SSH tunnel tab, the profile list had shrunk to an empty box. It now takes the row's width and says when the connection uses its own settings.
+  - Schema compare with a schema selected: full-text catalogs and stoplists no longer disappear from the comparison, so their differences show and the script can create the catalog an index needs.
+  - Syncing SQL Server full-text indexes: an index carried to a table whose primary key has another name now uses that table's key, and a difference in that name alone no longer shows as a change. Dropping a full-text catalog or stoplist in schema compare now lists the indexes that use it.
+  - Migrations into KDB+: emptying a kdb+ table to copy it again (or to resume a cut copy) keeps its columns, types and key, instead of leaving it without columns.
+
+  Downloads
+  - Windows: -setup.exe (requires WebView2, included in Windows 10/11).
+  - macOS: .dmg; aarch64 for Apple Silicon, x64 for Intel.
+  - Linux: .AppImage (portable), .deb or .rpm.
+  - Android: the phone app that pairs with DBine on your computer. Install it from dbine.com or with the -android.apk below; the first time, Android asks to allow installing apps from that source (the browser or the files app).
+  - Linux (Flatpak): .flatpak (x86_64 or aarch64), for flatpak install --user ./dbine-….flatpak; it doesn't update itself. Built by the flathub workflow, it appears here a while after the other files.
+  Version 0.1.4 and later receive it through the automatic update.
+  - macOS: signed with an Apple Developer ID and notarized by Apple, so it opens without warnings.
+  - Windows: the -setup.exe installer is signed (Open Source Developer Marcos Panichella, Certum). While the certificate builds its reputation, SmartScreen may still ask for "More info" › "Run anyway".
+  - Each engine's driver (except SQLite) is downloaded the first time you connect.
+ReleaseNotesUrl: https://github.com/addlayer-io/dbine/releases/tag/v1.5.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
