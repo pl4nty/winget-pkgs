@@ -1,0 +1,44 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: TIANLI0.THRM
+PackageVersion: 3.8.1
+PackageLocale: en-US
+Publisher: TIANLI0
+PublisherUrl: https://github.com/TIANLI0/THRM
+PublisherSupportUrl: https://github.com/TIANLI0/THRM/issues
+Author: TIANLI0
+PackageName: THRM
+PackageUrl: https://github.com/TIANLI0/THRM
+License: MIT
+LicenseUrl: https://github.com/TIANLI0/THRM/blob/main/LICENSE
+Copyright: Copyright © 2026 TIANLI0
+ShortDescription: Flydigi BS-series cooler controller
+Description: Open-source controller for Flydigi BS-series laptop coolers, featuring smart fan curves, hardware monitoring, RGB control, profiles, and Windows/Linux support.
+Moniker: thrm
+Tags:
+- cooling
+- fan-control
+- flydigi
+- hardware-monitoring
+- laptop-cooler
+- rgb
+- system-tray
+- temperature-monitoring
+ReleaseNotes: |-
+  v3.8.1 更换了 Windows 安装程序，应用本身的功能与 3.8.0 相同。
+  v3.8.1 replaces the Windows installer; the app itself works as in 3.8.0.
+  更新亮点 / Highlights
+  - Windows 安装程序改用 FluentSetup 制作：Windows 11 风格的安装界面，安装中途出错或取消时自动还原，不会留下装了一半的程序。
+  - The Windows installer is now built with FluentSetup: a Windows 11-style setup that undoes everything if installation fails or is cancelled, so no half-installed copy is left behind.
+
+  修复与改进 / Fixes and Improvements
+  - 从 3.8.0 及更早版本（包括 BS2PRO-Controller 时期的版本）覆盖安装或应用内更新时，沿用原来的安装位置，开机自启保持你在 THRM 中的设置，旧名称留下的卸载项、计划任务和快捷方式会被清理。
+  - Installing over 3.8.0 or earlier (including the BS2PRO-Controller releases), or updating from inside the app, keeps the install location and your autostart setting from THRM, and removes uninstall entries, scheduled tasks and shortcuts left under the old names.
+  - 缺少 WebView2 运行时时自动安装；PawnIO 缺失或版本较旧时安装随附的版本，卸载 THRM 时保留 PawnIO。
+  - The WebView2 runtime is installed when missing; PawnIO is installed when missing or older than the bundled version, and kept when THRM is uninstalled.
+  - 安装包文件名和静默安装方式不变，3.8.0 内的自动更新可以直接升级到本版本。
+  - The installer keeps its file name and silent mode, so the built-in updater of 3.8.0 upgrades to this version directly.
+ReleaseNotesUrl: https://github.com/TIANLI0/THRM/releases/tag/v3.8.1
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
