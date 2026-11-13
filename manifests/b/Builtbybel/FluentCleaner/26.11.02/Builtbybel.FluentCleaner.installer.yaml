@@ -1,0 +1,21 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Builtbybel.FluentCleaner
+PackageVersion: 26.11.02
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: FluentCleaner-win-x64\FCleaner.exe
+  PortableCommandAlias: fcleaner
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.WindowsAppRuntime.2.0
+ReleaseDate: 2026-11-13
+ArchiveBinariesDependOnPath: true
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/builtbybel/FluentCleaner/releases/download/26.11.02/FluentCleaner-win-x64.zip
+  InstallerSha256: 392A8838C56954952894CEA6394BB0E130DFBB483E418D8B68C7AFF58452DAD5
+ManifestType: installer
+ManifestVersion: 1.28.0
