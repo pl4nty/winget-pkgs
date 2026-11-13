@@ -1,0 +1,23 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: r2cuerdame.WSLPad
+PackageVersion: 1.2.0
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ProductCode: 4b0f5bf7-4ad7-59f8-bc01-96341d55d5ff
+ReleaseDate: 2026-11-13
+AppsAndFeaturesEntries:
+- ProductCode: 4b0f5bf7-4ad7-59f8-bc01-96341d55d5ff
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\wslpad'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/r2cuerdame/WSLPad/releases/download/v1.2.0/WSLPad-Setup-1.2.0.exe
+  InstallerSha256: 007FBEB09DEC3E4C2D29135716F2DFDAF8EA0CE47ADFF6B522D8A3183C808261
+ManifestType: installer
+ManifestVersion: 1.28.0
