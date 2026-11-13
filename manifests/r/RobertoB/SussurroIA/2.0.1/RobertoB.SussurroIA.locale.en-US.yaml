@@ -1,0 +1,97 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: RobertoB.SussurroIA
+PackageVersion: 2.0.1
+PackageLocale: en-US
+Publisher: RobertoB
+PublisherUrl: https://github.com/robyberre-code
+PublisherSupportUrl: https://github.com/robyberre-code/sussurro-ia/issues
+Author: RobertoB
+PackageName: Sussurro IA
+PackageUrl: https://github.com/robyberre-code/sussurro-ia
+License: Proprietary
+LicenseUrl: https://github.com/robyberre-code/sussurro-ia/blob/main/CONDIZIONI.md
+Copyright: Copyright (c) 2026 RobertoB. All rights reserved.
+ShortDescription: Voice dictation for Windows that types into the field you are already using.
+Description: |-
+  Sussurro IA is a voice dictation tool for Windows. Hold a global shortcut, speak, release, and the transcribed text is inserted directly into whatever field had focus — an email, a search box, a terminal, a comment box in another application. There is no scratchpad to copy from.
+  A second shortcut delivers the same dictation translated into English, Spanish or German, or rewritten as a well-formed prompt for a language model.
+  Dictation is in Italian. Transcription runs either in the cloud, with your own API key for Groq or any OpenAI-compatible endpoint, or on your own computer with a built-in whisper.cpp engine and a model you choose to download — in that case the audio never leaves the machine. Translation, prompt mode and text polishing send the transcribed text, not the audio, to Groq. Nothing is sent to the author of the program: there is no telemetry, no usage statistics and no update check.
+  Spoken commands turn words into what they represent: say "a capo" for a line break, "nuovo paragrafo" for a blank line, "emoji sorriso" for an emoji. A personal dictionary helps with names and technical terms.
+  This is beta software, free to use and not open source. It is not code-signed, so Windows SmartScreen shows a warning on first run.
+Tags:
+- dictation
+- groq
+- italian
+- offline
+- productivity
+- speech-to-text
+- transcription
+- voice
+- whisper
+ReleaseNotes: |-
+  La novità più grande: le note. Si dettano con la scorciatoia tradotta, si ordinano da sole, ricordano le scadenze e, se vuoi, partono verso un altro sistema. Poi la pillola si sposta col mouse.
+  Note e promemoria
+  La scorciatoia tradotta (Ctrl+Shift+Win) ha un quinto modo, note: sigla NT sulla pillola, «salva come nota» nella pagina 04 testo. In quel modo ciò che detti non viene scritto in nessun campo: Groq lo ordina in una o più note (titolo, dettagli, categoria e, se l'hai detta, la scadenza), che ritrovi nella nuova pagina 07 note del cruscotto.
+  - Più cose in una dettatura diventano più note. «Ricordami di pagare il bollo entro venerdì e di chiamare l'idraulico» sono due note, una sola con la scadenza.
+  - Le date vengono controllate. Una data che non esiste o è già passata viene tolta, la nota resta. «Ogni mese il cinque» diventa una nota che si ripete.
+  - La nota non si perde mai. Senza risposta da Groq, o senza chiave, si salva la trascrizione così com'è, marcata da riordinare.
+  - Promemoria come notifiche di Windows: uno al giorno per le note in scadenza (da quanti giorni prima lo scegli tu), uno all'orario se la nota ne ha uno, e un riepilogo settimanale delle note senza data. Si possono rimandare di un'ora, a domani o di tre giorni.
+  - Le note si scrivono anche a mano, si cercano, si filtrano per categoria e si esportano negli appunti. Restano sul computer, in %APPDATA%\com.sussurroia.app
+  ote.json.
+
+  Invio delle note a un altro sistema
+  Facoltativo e spento di default. Nella pagina 07 note, sotto invio a un altro sistema, indichi un indirizzo https:// (la chiave, se serve, va dentro l'indirizzo, per esempio …?code=<chiave>). Da lì a ogni nota creata, cambiata, fatta, riaperta o eliminata parte un POST con questo JSON:
+  {
+    "event": "note.created",
+    "event_id": "d71bd0d6-2052-4384-a93e-84de62f8cf9f",
+    "occurred_at": "2026-11-12T23:11:07+01:00",
+    "source": {
+      "app": "Sussurro IA",
+      "version": "2.0.1",
+      "device_id": "b0d4c90d-5f3e-4a52-9a43-0c6f2e1d7b88"
+    },
+    "note": {
+      "id": 5,
+      "title": "Portare la macchina dal gommista",
+      "text": "",
+      "category": "Auto",
+      "due_date": "2026-11-20",
+      "due_time": null,
+      "repeat": null,
+      "done": false,
+      "done_at": null,
+      "created_at": "2026-11-12T23:11:07+01:00",
+      "updated_at": "2026-11-12T23:11:07+01:00",
+      "transcript": "devo portare la macchina dal gommista entro il 20 novembre",
+      "needs_review": false
+    }
+  }
+  - event: note.created, note.updated, note.done, note.reopened, note.deleted, oppure test (dal tasto salva e prova, senza note).
+  - Ogni campo c'è sempre, null quando non ha valore. Le date sono ISO 8601 con fuso; due_date è AAAA-MM-GG, due_time è HH:MM, repeat vale giorno, settimana, mese o anno.
+  - note.id è il numero della nota su quel computer: insieme a source.device_id (casuale, fisso per installazione) la identifica fra un evento e l'altro. transcript è null per le note scritte a mano.
+  - Intestazioni: Content-Type: application/json; charset=utf-8, User-Agent: SussurroIA/2.0.1, X-Sussurro-Event (uguale a event) e Idempotency-Key (uguale a event_id).
+  - Basta rispondere 2xx. Con 408, 425, 429, 5xx o rete assente l'evento resta in coda e si ritenta, da un minuto a un'ora; con ogni altro codice l'invio si ferma e lo dice nel cruscotto. Gli eventi partono in ordine; uno ritentato può arrivare due volte, e si riconosce da event_id. I reindirizzamenti non vengono seguiti.
+  Campo per campo, la descrizione completa è nel README.
+
+  La pillola si sposta
+  Afferrala in un punto qualsiasi che non sia un comando e trascinala dove preferisci: resta lì anche ai prossimi avvii, e non esce mai dall'area di lavoro. Trascinarla non le dà il fuoco, quindi il campo in cui stavi scrivendo resta attivo. «In alto» o «in basso» nella pagina 02 microfono la rimettono sul bordo.
+
+  Anche
+  - Il modello che trascrive nel cloud si sceglie ora nella pagina 01 trascrizione, accanto al motore; la pagina 04 testo tiene solo il modello del testo.
+  - Il cruscotto passa a otto pagine: la diagnostica diventa la 08.
+
+  Prima di installare
+  - Serve Windows 10 o 11 a 64 bit e un microfono.
+  - Con il motore cloud serve una chiave API Groq, gratuita e senza carta di credito — la procedura è nel README. Con il motore sul computer serve solo per traduzione, modo prompt, perfezionamento e per ordinare le note.
+  - Sblocca il file dopo il download: tasto destro → Proprietà → «Annulla blocco». Evita l'avviso di SmartScreen, che compare perché l'app non è firmata. Con winget non serve, appena la 2.0.1 sarà approvata nel catalogo.
+  - È una versione beta: leggi le condizioni d'uso, aggiornate per le note e per l'invio a un altro sistema.
+
+  SHA256
+  86EE32ECFB74296185528432E51894650275C50F6B6718E32ED20E556E9DA1A8  Sussurro.IA_2.0.1_x64-setup.exe
+  6D187734C6DDA3F4727A541ECEC26352075483A709FBC226E16B4C1F93C13103  Sussurro.IA_2.0.1_x64_it-IT.msi
+  4EA77897D5F0E6DF3CBF34B42E0236532D3D1377B493CAFCFD0C2F3996FB8F00  sussurro.exe
+ReleaseNotesUrl: https://github.com/robyberre-code/sussurro-ia/releases/tag/v2.0.1
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
