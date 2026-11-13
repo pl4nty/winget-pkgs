@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Verizon.VerizonCloud
+PackageVersion: 26.11.0.3
+InstallerType: wix
+Scope: machine
+InstallerSwitches:
+  InstallLocation: APPLICATIONROOTDIRECTORY="<INSTALLPATH>"
+ProductCode: '{2B893AEA-A027-4EE3-9273-14D1A05E8F41}'
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- ProductCode: '{2B893AEA-A027-4EE3-9273-14D1A05E8F41}'
+  UpgradeCode: '{1750D746-841F-4A27-A0BA-661B093DAC23}'
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\Verizon Cloud'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://mediamanagerpc.vzw.com/pc-software/vzcloud/pc/pc-vzcloud-install.msi
+  InstallerSha256: DA714FB1F24AF5BD2A411EDF64DDEF60D2D9D52AB5183E45F8EF3765AADA0869
+ManifestType: installer
+ManifestVersion: 1.28.0
