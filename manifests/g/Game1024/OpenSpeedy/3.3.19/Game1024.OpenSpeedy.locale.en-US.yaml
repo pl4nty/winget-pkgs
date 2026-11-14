@@ -1,0 +1,51 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Game1024.OpenSpeedy
+PackageVersion: 3.3.19
+PackageLocale: en-US
+Publisher: Game1024
+PublisherUrl: https://github.com/game1024
+PublisherSupportUrl: https://github.com/game1024/OpenSpeedy/issues
+PackageName: OpenSpeedy
+PackageUrl: https://github.com/game1024/OpenSpeedy
+License: GPL-3.0
+LicenseUrl: https://github.com/game1024/OpenSpeedy/blob/HEAD/LICENSE
+ShortDescription: 🎮 An open-source game speed modifier.[一款开源的游戏变速器]
+Tags:
+- cplusplus
+- gamedev
+- gamemod
+- pc
+- qt
+- speed-engine
+- toolkit
+- windows
+ReleaseNotes: |-
+  🛠️ 修复：英文界面冷启动后托盘图标消失
+  使用英文界面时，如果开启了「关闭时隐藏到托盘」，冷启动应用后再关闭主窗口，
+  进程还在后台运行，但托盘里没有图标，也就无法把窗口重新打开。
+  原因是托盘只在语言切换事件里创建，而启动语言本来就是英文时不会触发这个事件。
+  现在改为 useTray 挂载时主动初始化托盘：仍然等待启动语言加载完成，并复用同一个
+  创建过程，不会重复创建，也不会出现菜单语言错误。
+  如果你使用了静默启动，这个修复尤其重要——之前英文界面下静默启动会出现
+  「没有窗口、托盘也没有图标」的情况。
+
+  🔤 修正：明确「隐藏到托盘」文案
+  - 简体中文：隐藏托盘 → 隐藏到托盘
+  - 繁体中文：關閉至系統匣 → 隱藏至系統匣
+  原文案容易被理解成「隐藏托盘图标」，和开关状态组合后看起来像逻辑写反了。
+  其他语言保持原有的简短文案：设置项列宽有限，过长的补充说明在窄窗口下显示效果差。
+
+  🧹 进程列表不再显示应用自身的辅助进程
+  bridge32.exe / bridge64.exe 是 OpenSpeedy 自己启动的加速桥接进程，之前会出现在：
+  - 「变速」页的进程列表中
+  - 子配置的「绑定进程」列表中
+  现在两处都会过滤掉，避免误选，也让列表更干净。如果旧配置里已经绑定了这两个进程，
+  编辑并保存该子配置时会自动移除。
+ReleaseNotesUrl: https://github.com/game1024/OpenSpeedy/releases/tag/3.3.19
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/game1024/OpenSpeedy/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
