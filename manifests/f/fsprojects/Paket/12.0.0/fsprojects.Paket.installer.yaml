@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: fsprojects.Paket
+PackageVersion: 12.0.0
+InstallerType: portable
+Commands:
+- paket
+ReleaseDate: 2026-11-11
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/fsprojects/Paket/releases/download/12.0.0/paket.exe
+  InstallerSha256: 737D57B0126B27535A5D003D41F907B33B5F35C3176317EFFD7F6A3A23B45C9B
+ManifestType: installer
+ManifestVersion: 1.28.0
