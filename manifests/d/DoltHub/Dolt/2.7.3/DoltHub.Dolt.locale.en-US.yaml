@@ -1,0 +1,91 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: DoltHub.Dolt
+PackageVersion: 2.7.3
+PackageLocale: en-US
+Publisher: DoltHub
+PublisherUrl: https://github.com/dolthub/dolt
+PublisherSupportUrl: https://github.com/dolthub/dolt/issues
+Author: DoltHub
+PackageName: Dolt
+PackageUrl: https://www.dolthub.com/
+License: Apache-2.0
+LicenseUrl: https://github.com/dolthub/dolt/blob/HEAD/LICENSE
+CopyrightUrl: https://raw.githubusercontent.com/dolthub/dolt/master/LICENSE
+ShortDescription: Dolt is a SQL database that you can fork, clone, branch, merge, push and pull just like a git repository.
+Description: |-
+  Dolt is a SQL database that you can fork, clone, branch, merge, push and pull just like a git repository.
+  Connect to Dolt just like any MySQL database to run queries or update the data using SQL commands.
+  Use the command line interface to import CSV files, commit your changes, push them to a remote, or merge your teammate's changes.
+Moniker: dolt
+Tags:
+- cli
+- data
+- git-for-data
+- versioning
+ReleaseNotes: |-
+  Merged PRs
+
+  dolt
+  - 12429: Add store hooks for Dolt Enterprise to nbs
+    Stacked on #12418. Replaces #12419 with a much smaller change.
+    Dolt Enterprise's encryption at rest edits nbs/store.go in 14 places today. Dolt changes that file often, so those edits cause most of Enterprise's merge conflicts. This PR adds the hooks those edits need, so Enterprise no longer edits store.go.
+  - 12423: multi-merge same table added
+    Fixes: #12421
+  - 12420: Fix ssh remotes whose path contains ..
+    A push to or clone from an ssh remote whose path has a .. component fails:
+    $ dolt remote add origin "ssh://localhost$PWD/../bare"
+    $ dolt push origin main
+    failed to get remote db; ... failed to create chunk store: remote: server error: EOF
+    The ssh client sends the URL's path to dolt transfer as the repository path, and the server refuses a path with a .. component
+  - 12414: Defer materializing table writer edits until the working set is read
+    #12184 rebased onto the session lifecycle stack (#12413). Table writers leave the edits of completed statements pending, and they're materialized when the working set is read or the transaction commits.
+    - Port of #12184 (first commit, squashed). A write session's owner now holds its working set, so materializing publishes to the owner. detach / carryOverPending are gone: a branch state can't be dropped with open writers (#12400). IsWritingDatabase counts pending edits, which #12376's restore check needs.
+    - Reading the working set materializes. branchState.WorkingSet(ctx) materializes pending edits, so GetRoot, GetRoots, GetWorkingSet and the root setters see them without an explicit call. Table resolution and schema reads opt out through SessionState.UnmaterializedWorkingRoot (schemaRoot, DoltTable.workingRoot), which takes the explicit materialize call sites from 26 to 3. A missed opt-out costs performance rather than reading stale rows; TestReadsLeaveEditsPending pins that ordinary statements stay deferred.
+    - Deferral regardless of autocommit. The autocommit gate worked around the #7737 stale-writer bug, which ER 1422 and #12400 rule out. Every write in the engine tests now runs deferred.
+    - Reading pending edits while they're being materialized is an error (a panic under dynamic asserts) instead of a silent stale read. SequenceTracker.validateBounds did this and deadlocked once the read materialized; it now reads only the schema.
+      Tested locally with dynamic asserts: the sqle, merge and prolly Go suites pass. Bats, go-sql-server-driver and Doltgres haven't been run. Not done yet: the GC hazards from the #12184 review, a system variable to turn deferral off, and a TPCC run.
+  - 12413: Read a branch state's working set only through methods that take a context
+    Reads of a branch state's working set go through WorkingSet(ctx), WorkingRoot(ctx) and roots(ctx). Only setters, GC and metadata reads (workingSetRef(), a detached head) use the field directly. Deferred write materialization (#12184) can then materialize in that read path, so every read sees pending edits unless it opts out.
+    SessionState's WorkingSet and WorkingRoot now take a context and return an error. Doltgres needs a two-line change (core/context.go, core/relations.go) with the bump.
+  - 12412: Have a DoltTransaction own the branch states it loads
+    Each DoltTransaction holds the branch states it loads. Those loaded while the session's transaction isn't a DoltTransaction (between transactions under autocommit, after dolt_commit ends one partway through a statement, TransactionsDisabled) go in the session's noTxBranches. DoltSession.SetTransaction is the one place they're dropped, and it checks that none has open table writers. clear() is gone.
+    - Between transactions, lookups load from the database instead of reusing the last transaction's branch states.
+    - commitBranchStates' refresh loop was dead and is removed: GMS starts a new transaction before each procedure statement after a commit.
+    - A database's temp table directory and its temp tables' GC roots come from the session-scoped DatabaseSessionState (tmpFileDir, new ddb), so they don't depend on a branch state being loaded. #12403 adds the same ddb field on main.
+      The first commit is #12410, which the stricter drop check needs. Doltgres's regression suite is clean against this with doltgresql#3799 and go-mysql-server#4136.
+  - 12411: Keep a session's branch states in a container that each transaction replaces
+    Moves the per-database branch state maps out of DatabaseSessionState into a branchStates container. DatabaseSessionState keeps only what lasts the whole session (checkedOutRevSpec, headCache, tmpFileDir, globalState). clear() swaps in a new container instead of deleting entries, and a branch state is current only while it's in the session's container.
+    No behavior change. The next PR moves the container onto DoltTransaction.
+  - 12410: Drain TestDropPks's setup queries
+    They were never run, and the setup INSERT's table writer stayed open.
+  - 12408: go/cmd/dolt: Stop opening sql-server databases in runMain.
+    Part of removing the process-global store cache in dbfactory/file.go, so that every DoltDB has one owner that closes it. This change stands alone.
+    runMain built a MultiRepoEnv for every command, so for sql-server each database was opened once there and again by the server's own MultiRepoEnv. The second open only worked through the singleton cache. sql-server now joins commandsSkippingDBLoad, and buildLateBinder returns a binder that errors if a command that skipped the load tries to run a query (sql-server never does).
+    Release note: dolt --use-db <db> sql-server no longer errors when <db> does not exist; the server starts, as it does without --use-db. Behaviour is otherwise unchanged across --help, no repo in cwd, config data_dir, --data-dir, root plus sub-databases, and corrupt databases.
+    Tests: go-sql-server-driver TestServerInMultiDatabaseDirectory starts a server in a directory with several databases and no root .dolt and writes to each. With the cache disabled it fails without this change.
+  - 12407: go/libraries/doltcore/sqle/dprocedures: Read config without opening a database in loadConfig.
+    Part of removing the process-global store cache in dbfactory/file.go, so that every DoltDB has one owner that closes it. This change stands alone.
+    loadConfig, used by dolt_push, dolt_branch and dolt_checkout of a remote branch, called env.Load on the process cwd just to read config. That opened (and leaked) the store in the cwd whenever there was one, and only the singleton cache kept it from waiting 100ms on the journal lock and falling back to read-only. Its callers use only .Config, so it now uses env.LoadWithoutDB.
+    Release note: dolt_push, dolt_branch and dolt_checkout no longer open the database in the server's working directory to read its config.
+    Tests: TestLoadConfigDoesNotOpenDatabase checks the config is read and nothing is written under .dolt/noms.
+  - 12404: go: Continue system variable refactoring. Migrate off deprecated AssignSystemVariables and AssignValuesWithContext calls.
+  - 12403: Keep temporary tables' GC roots after ROLLBACK
+    visitTempTableGCRoots took the database's DoltDB from a loaded branch state, and ROLLBACK leaves none until the session's next statement.
+  - 12401: Have write sessions use their branch state's working set instead of a copy
+    A branch's write session kept its own copy of the working set, synced by SetWorkingSet, and flushed through a setter that looked up its branch state by name. So after a transaction boundary it could write into a different branch state. It now reads and writes its branch state's working set directly. DoltSession.SetWorkingSet resets the writers when the working root changes.
+    - Table rewrites and the workspace table start ahead of the branch state. They get a fork from DoltSession.ForkWorkingSet, which is bound to the branch state it was created from. A flush into a dropped branch state fails, and so does a flush into one that changed since the fork, because the fork replaces the whole root.
+    - Temp tables and the binlog applier keep a private copy via NewDetachedWriteSession.
+    - User-space system tables (dolt_ignore, dolt_docs, ...) create their table through the writer instead of pushing the write session ahead, so a failed first write no longer leaves an empty table for the next flush to publish.
+  - 12400: Refuse to drop a branch state while its write session has open table writers
+    Dropping a branch state (clear(), RemoveDbState, RemoveBranchState) while one of its table writers is still open would lose that writer's edits or flush them into the next transaction. This returns ErrOpenTableWriters instead, and panics under dynamic asserts. A writer is open from GetTableWriter until Close. The forced dolt_backup restore check from #12376 now checks for open writers.
+    After ER 1422 (previous PR), no SQL path should reach this state. With dynamic asserts on, the sqle suites, bats and go-sql-server-driver don't trip it. The first commit fixes the one leak it found, in auto_increment bookkeeping.
+  - 12399: Reject calls in triggers to Dolt procedures that end the transaction
+    Dolt's half of dolthub/go-mysql-server#4131. The Dolt procedures that end the transaction (dolt_commit, dolt_branch, dolt_merge, ...) are marked NotAllowedInSubStatement, so calling one from a trigger, directly or through a procedure, fails with ER 1422 instead of losing the firing statement's rows. Committing from a sub-statement also fails, as a backstop.
+    The skipped #7737 test now asserts ER 1422. Also adds regression tests for #12356.
+  - 12398: Fix main build: pass valDesc to NewMergeArtifactSerializer in ArtifactFlusher
+    #12334 added a value descriptor parameter to message.NewMergeArtifactSerializer. #12335 merged after it with a call that still used the old signature, so go/store/prolly doesn't compile on main. This passes mut.valDesc, as the other call sites do.
+ReleaseNotesUrl: https://github.com/dolthub/dolt/releases/tag/v2.7.3
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
