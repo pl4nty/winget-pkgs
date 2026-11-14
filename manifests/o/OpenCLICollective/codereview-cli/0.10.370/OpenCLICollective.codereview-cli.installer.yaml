@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: OpenCLICollective.codereview-cli
+PackageVersion: 0.10.370
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: cr.exe
+  PortableCommandAlias: cr
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/open-cli-collective/codereview-cli/releases/download/v0.10.370/cr_v0.10.370_windows_amd64.zip
+  InstallerSha256: 929C2E3C3AB59C7A85C8E95B3DCDF6F63F000C3EA18E9A7BD9F23506EA97D816
+- Architecture: arm64
+  InstallerUrl: https://github.com/open-cli-collective/codereview-cli/releases/download/v0.10.370/cr_v0.10.370_windows_arm64.zip
+  InstallerSha256: D853AF7489CCDB96BD8B602A252ADA2A67032809095AA42D2AB7FC7686054AA2
+ManifestType: installer
+ManifestVersion: 1.28.0
