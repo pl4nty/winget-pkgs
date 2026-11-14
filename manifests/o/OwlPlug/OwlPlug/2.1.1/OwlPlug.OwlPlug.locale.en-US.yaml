@@ -1,0 +1,43 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: OwlPlug.OwlPlug
+PackageVersion: 2.1.1
+PackageLocale: en-US
+Publisher: OwlPlug
+PublisherUrl: https://github.com/DropSnorz/OwlPlug
+PublisherSupportUrl: https://github.com/DropSnorz/OwlPlug/issues
+Author: OwlPlug
+PackageName: OwlPlug
+PackageUrl: https://github.com/DropSnorz/OwlPlug
+License: GPL-3.0
+LicenseUrl: https://github.com/DropSnorz/OwlPlug/blob/master/LICENSE
+CopyrightUrl: https://github.com/DropSnorz/OwlPlug/blob/master/LICENSE
+ShortDescription: Audio plugin manager. Small tool to manage VST / AU plugins on Windows
+Tags:
+- audio-plugin
+- audio-unit
+- java
+- javafx
+- juce
+- lv2
+- manager
+- vst
+ReleaseNotes: |-
+  Misc and bugfixes
+  - The main window can now be resized down to 800×600 (previously 1200×820) to fit smaller and portrait displays, and the empty header area can be used again to drag the window in #555 (closes #553, #554)
+  - Audio Units are now installed directly in the Components directory, without any subfolder, so macOS can load them. AU and VST3 bundles are also no longer unwrapped when they are the only entry of a package archive in #557 (closes #556)
+  - Fixed installation of packages distributed as .tar.xz archives (missing XZ compression support) in #562
+  - Fixed extraction of tar archives containing a ./ root entry, which were wrongly rejected as unsafe in #563
+
+  Dependencies
+  - Guava upgraded to 33.7.1 in #558
+
+  New Contributors
+  - @zophiezlan made their first contribution in #555
+ReleaseNotesUrl: https://github.com/DropSnorz/OwlPlug/releases/tag/2.1.1
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/DropSnorz/OwlPlug/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
