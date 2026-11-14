@@ -1,0 +1,100 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: UniClipboard.UniClipboard
+PackageVersion: 1.6.2
+PackageLocale: en-US
+Publisher: UniClipboard
+PublisherUrl: https://github.com/UniClipboard
+PublisherSupportUrl: https://github.com/UniClipboard/UniClipboard/issues
+PackageName: UniClipboard
+PackageUrl: https://github.com/UniClipboard/UniClipboard
+License: AGPL-3.0 License
+LicenseUrl: https://github.com/UniClipboard/UniClipboard/blob/HEAD/LICENSE
+ShortDescription: Real-time clipboard sync across all your devices — local-first, peer-to-peer, and end-to-end encrypted. No account. No cloud dependency. No central server.
+Tags:
+- clipboard-manager
+- clipboard-sync
+- clipboardsync
+- cross-platform
+- e2ee
+- efficientnet
+- linux
+- local-first
+- macos
+- p2p
+- tauri-app
+- tauri2
+- tools
+- windows
+ReleaseNotes: |-
+  1.6.2 - 2026-11-12
+
+  Features
+  - View release announcements for your installed version from the sidebar or Settings (#2219)
+
+  Fixes
+  - Show the first preview as soon as the quick panel opens, without the previous delay (#2233)
+  Changelog Files
+  - English changelog: 1.6.2.md
+  - 中文变更日志: 1.6.2.zh.md
+
+  ⚠️ Windows packages are not code-signed
+  The Windows installer, portable zip and CLI archive in this release are not code-signed. Windows SmartScreen or antivirus software may warn about them. Verify the downloads against SHA256SUMS.txt (and SHA256SUMS.txt.minisig). In-app updates are still verified with the updater signature.
+
+  App Installation
+  ────────┬──────────────────────────────────────────────────┬──────────────────────────────────────────
+  Platform│Architecture                                      │Download
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  macOS   │Apple Silicon                                     │UniClipboard_1.6.2_aarch64.dmg
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  macOS   │Intel                                             │UniClipboard_1.6.2_x64.dmg
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Linux   │Debian/Ubuntu x86_64 (.deb)                       │UniClipboard_1.6.2_amd64.deb
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Linux   │Debian/Ubuntu aarch64 (.deb)                      │UniClipboard_1.6.2_arm64.deb
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Linux   │Fedora/RHEL x86_64 (.rpm)                         │UniClipboard-1.6.2-1.x86_64.rpm
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Linux   │Fedora/RHEL aarch64 (.rpm)                        │UniClipboard-1.6.2-1.aarch64.rpm
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Linux   │AppImage x86_64                                   │UniClipboard_1.6.2_amd64.AppImage
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Linux   │AppImage aarch64                                  │UniClipboard_1.6.2_aarch64.AppImage
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Windows │x86_64 (Installer)                                │UniClipboard_1.6.2_x64-setup.exe
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Windows │ARM64 (Installer)                                 │UniClipboard_1.6.2_arm64-setup.exe
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Windows │x86_64 (Portable)                                 │UniClipboard_1.6.2_x64-portable.zip
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Windows │ARM64 (Portable)                                  │UniClipboard_1.6.2_arm64-portable.zip
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  iOS     │Public Beta (TestFlight)                          │Join the public beta
+  ────────┼──────────────────────────────────────────────────┼──────────────────────────────────────────
+  Android │APK (arm64-v8a / armeabi-v7a / x86_64 / universal)│Latest release
+  ────────┴──────────────────────────────────────────────────┴──────────────────────────────────────────
+
+  CLI Downloads
+  ────────┬─────────────┬─────────────────────────────────────────────────────────────
+  Platform│Architecture │Download
+  ────────┼─────────────┼─────────────────────────────────────────────────────────────
+  macOS   │Apple Silicon│uniclipboard-cli-1.6.2-aarch64-apple-darwin.tar.gz
+  ────────┼─────────────┼─────────────────────────────────────────────────────────────
+  macOS   │Intel        │uniclipboard-cli-1.6.2-x86_64-apple-darwin.tar.gz
+  ────────┼─────────────┼─────────────────────────────────────────────────────────────
+  Linux   │x86_64       │uniclipboard-cli-1.6.2-x86_64-unknown-linux-musl.tar.gz
+  ────────┼─────────────┼─────────────────────────────────────────────────────────────
+  Linux   │aarch64      │uniclipboard-cli-1.6.2-aarch64-unknown-linux-musl.tar.gz
+  ────────┼─────────────┼─────────────────────────────────────────────────────────────
+  Windows │x86_64       │uniclipboard-cli-1.6.2-x86_64-pc-windows-msvc.zip
+  ────────┴─────────────┴─────────────────────────────────────────────────────────────
+
+  Verification
+  All releases are signed. .sig files are provided for verification.
+
+  New Contributors
+  - @thanhtrung5763 made their first contribution in #2233
+ReleaseNotesUrl: https://github.com/UniClipboard/UniClipboard/releases/tag/v1.6.2
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
