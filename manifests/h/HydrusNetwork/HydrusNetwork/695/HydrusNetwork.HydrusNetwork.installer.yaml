@@ -1,0 +1,26 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: HydrusNetwork.HydrusNetwork
+PackageVersion: '695'
+MinimumOSVersion: 10.0.0.0
+InstallerType: inno
+Scope: machine
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ProductCode: Hydrus Network_is1
+ReleaseDate: 2026-11-11
+AppsAndFeaturesEntries:
+- ProductCode: Hydrus Network_is1
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%SystemDrive%\Hydrus Network'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/hydrusnetwork/hydrus/releases/download/v695/Hydrus.Network.695.-.Windows.-.Installer.exe
+  InstallerSha256: BD7A4EE2C30639306720EF2FFE450F5DD6C31F82B53104B7950232604731FA3B
+ManifestType: installer
+ManifestVersion: 1.28.0
