@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: kanywst.y509
+PackageVersion: 1.16.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: y509.exe
+ReleaseDate: 2026-11-13
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/kanywst/y509/releases/download/v1.16.0/y509-1.16.0-windows-amd64.zip
+  InstallerSha256: 7619388EB8FB6A2154A0F6DB5008A6C9EA6B1BD4DA617157D670635CC6F8E3B8
+- Architecture: arm64
+  InstallerUrl: https://github.com/kanywst/y509/releases/download/v1.16.0/y509-1.16.0-windows-arm64.zip
+  InstallerSha256: 26830955C7EF6922C65A62EF0D114C421106047AE59BE9CEA6DA035FE6BD21D3
+ManifestType: installer
+ManifestVersion: 1.28.0
