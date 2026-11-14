@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: TIANLI0.THRM
+PackageVersion: 3.8.1
+InstallerType: exe
+Scope: machine
+ProductCode: THRM
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- DisplayVersion: 3.7.3
+  ProductCode: THRM
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\THRM'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/TIANLI0/THRM/releases/download/v3.8.1/THRM-amd64-installer.exe
+  InstallerSha256: BEE292D06AA8D9553658B039B70AE2AD8612A6051D9299EE1E4AD80C7C87AF11
+ManifestType: installer
+ManifestVersion: 1.28.0
