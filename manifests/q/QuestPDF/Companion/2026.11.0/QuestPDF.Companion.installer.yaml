@@ -1,0 +1,35 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: QuestPDF.Companion
+PackageVersion: 2026.11.0
+Platform:
+- Windows.Desktop
+MinimumOSVersion: 10.0.17763.0
+InstallerType: msix
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: /VERYSILENT
+  SilentWithProgress: /SILENT
+UpgradeBehavior: install
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.VCRedist.2015+.x64
+PackageFamilyName: com.flutter.questpdfcompanion_hhzhscs3vn2va
+RestrictedCapabilities:
+- runFullTrust
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- Publisher: QuestPDF; Marcin Ziąbek CodeFlint
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\WindowsApps\com.flutter.questpdfcompanion_2026.11.0.0_x64__hhzhscs3vn2va'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/QuestPDF/QuestPDF.CompanionApp/releases/download/2026.11.0/questpdf_companion-2026.11.0-windows.msix
+  InstallerSha256: 482524D3E4F35C004A32AB28DEC2C9F0734A122DED83E51F4ECE10C688B0A08C
+  SignatureSha256: 9A4992FD509C554489F3CCB8F75219FE025A965F7C399288D484AB1BAA806DA8
+ManifestType: installer
+ManifestVersion: 1.28.0
