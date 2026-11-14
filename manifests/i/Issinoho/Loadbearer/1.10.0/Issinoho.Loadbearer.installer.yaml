@@ -1,0 +1,17 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Issinoho.Loadbearer
+PackageVersion: 1.10.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: loadbearer-1.10.0-x86_64-pc-windows-msvc\loadbearer.exe
+  PortableCommandAlias: loadbearer
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/issinoho/loadbearer/releases/download/v1.10.0/loadbearer-1.10.0-x86_64-pc-windows-msvc.zip
+  InstallerSha256: 778331978434A9D5B1EDF25F02D543283C3CB672C655EDD15A622C56AC1F0E5A
+ManifestType: installer
+ManifestVersion: 1.28.0

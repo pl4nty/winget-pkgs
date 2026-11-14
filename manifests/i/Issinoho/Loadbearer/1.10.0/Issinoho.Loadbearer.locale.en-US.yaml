@@ -1,0 +1,60 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Issinoho.Loadbearer
+PackageVersion: 1.10.0
+PackageLocale: en-US
+Publisher: Iain Smith
+PublisherUrl: https://github.com/issinoho
+PublisherSupportUrl: https://github.com/issinoho/loadbearer/issues
+Author: Iain Smith
+PackageName: loadbearer
+PackageUrl: https://github.com/issinoho/loadbearer
+License: MIT
+LicenseUrl: https://github.com/issinoho/loadbearer/blob/main/LICENSE
+Copyright: Copyright (c) Iain Smith
+CopyrightUrl: https://github.com/issinoho/loadbearer/blob/main/LICENSE
+ShortDescription: CLI system-assessment tool that benchmarks CPU, memory, disk, network and GPU and grades the machine on an S-F scale.
+Description: |-
+  loadbearer benchmarks a machine's CPU, memory, disk and network stack - and its
+  GPU where there is one - scores every measurement against a shared reference
+  baseline, and grades each component and the whole machine on an S-to-F scale.
+  compare mode reads two result files and reports which machine wins, by how much,
+  and why. A sustained-load test shows how much speed a machine keeps once it
+  throttles. Single self-contained binary, no runtime, no network calls.
+Moniker: loadbearer
+Tags:
+- benchmark
+- cli
+- cpu
+- disk
+- gpu
+- hardware
+- memory
+- performance
+- system-information
+ReleaseNotes: |-
+  The opt-in categories reach soak and info --config. What 1.9.0 gave
+  run with --collect now works the same way for a soak and when info reads
+  a config file. No measurement changes, nothing is collected that was not
+  asked for, and both schemas keep their names.
+  - info --config. info reads the config file's collect list the way
+    run does (--config FILE, no default path), so it shows the opt-in
+    categories a run with that file would collect; --collect adds to it, as
+    on run. With neither, info prints nothing from those categories, as
+    before.
+  - soak --collect. soak takes --collect uptime,elevation,security and
+    --config FILE (it reads only the collect list), through the same code as
+    run. machine.boot and machine.security go in the soak document's
+    machine block, and a new optional run block holds collect and
+    elevated, as in a result file but without a run ID or timing. With
+    nothing asked the document is unchanged. The schema stays
+    loadbearer.soak/1.
+  What's Changed
+  - --collect for soak, and info --config by @issinoho in #15
+ReleaseNotesUrl: https://github.com/issinoho/loadbearer/releases/tag/v1.10.0
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/issinoho/loadbearer/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
