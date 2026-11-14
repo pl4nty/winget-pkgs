@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: Softplicity.TotalMailConverter
-PackageVersion: 6.2.0.251
+PackageVersion: 6.2.0.253
 InstallerType: inno
 Scope: machine
 InstallModes:
@@ -11,13 +11,13 @@ InstallModes:
 - silentWithProgress
 UpgradeBehavior: install
 ProductCode: Total Mail Converter_is1
-ReleaseDate: 2026-11-09
+ReleaseDate: 2026-11-13
 AppsAndFeaturesEntries:
 - ProductCode: Total Mail Converter_is1
 ElevationRequirement: elevatesSelf
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.coolutils.com/Downloads/TotalMailConverter.exe
-  InstallerSha256: 4C787E5C08127C68C1F659D73F2CD82E3A935409C5065C877E550FE639E32289
+  InstallerSha256: 066796C3BB5C1554B79BD49CC40C45C12B1CCE06F9BEE7246793B14BAAD58288
 ManifestType: installer
 ManifestVersion: 1.28.0
