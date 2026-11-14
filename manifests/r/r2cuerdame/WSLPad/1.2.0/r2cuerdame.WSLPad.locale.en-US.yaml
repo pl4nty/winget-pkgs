@@ -1,0 +1,52 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: r2cuerdame.WSLPad
+PackageVersion: 1.2.0
+PackageLocale: en-US
+Publisher: r2cuerdame
+PublisherUrl: https://github.com/r2cuerdame
+PublisherSupportUrl: https://github.com/r2cuerdame/WSLPad/issues
+PackageName: WSLPad
+PackageUrl: https://github.com/r2cuerdame/WSLPad
+License: MIT
+LicenseUrl: https://github.com/r2cuerdame/WSLPad/blob/v1.1.2/LICENSE
+ShortDescription: A small Windows companion for WSL.
+Description: WSLPad is a Windows tray companion that makes hidden WSL state visible. It includes a dashboard, a dual-pane Windows and WSL file explorer, an interactive terminal, a dedicated Recovery workspace, environment health diagnostics, developer profiles, USB device inspection, and a read-only MCP server. System-changing commands are review-only or copy-only and never run automatically.
+Moniker: wslpad
+Tags:
+- developer-tools
+- file-manager
+- linux
+- system-monitor
+- terminal
+- windows
+- wsl
+- wsl2
+ReleaseNotes: |-
+  WSLPad is an open-source WSL GUI, dashboard, Windows/WSL file manager and troubleshooting tool for Windows 10/11. It helps diagnose WSL2 networking and ports, .wslconfig, VHDX storage, Docker and developer tools, and includes a read-only MCP server for Claude and Codex.
+  WSLPad 1.2.0
+
+  Highlights & Changes
+  - Stop Console Window Flashing on Windows 11 (Windows Terminal Default Terminal):
+    - Coalesced per-tick in-distro collector scripts (WslRunner.coalesced()) into a single wsl.exe invocation with per-script timeout isolation and tail re-dispatch so wslhost.exe console allocations drop from 6+ per fast tick to 1.
+    - Added src/main/hidden-process.ts as the single child-process launch gateway enforcing windowsHide: true, piped/ignored stdio (inherit disallowed), shell: false, detached: false, and POWERSHELL_HIDDEN_ARGS (-NoProfile -NonInteractive -WindowStyle Hidden), guarded by ESLint no-restricted-imports and test/unit/main/hidden-process.test.ts.
+    - Stretched background polling intervals (POLL_BACKGROUND_MS: 1 min / 5 min / 15 min) while the window is minimized, hidden, or in the tray, resuming configured intervals and refreshing stale tiers immediately when the window returns on screen.
+    - Reused recent in-distro answers in place of redundant liveness probes, cached wsl --list --verbose (60 s), shared one tasklist snapshot between Windows ports and VM memory, and cached firewall/portproxy (5 min), Windows DNS (2 min), and Defender/elevation (10 min).
+  - Developer Environment Context & MCP:
+    - Added versioned Developer Environment Context shared by Copy for LLM → Agent context and MCP (GetDeveloperEnvironmentContext, GetEnvironmentDoctor).
+  - Explorer, Console & Diagnostics Fixes:
+    - Preserved console scrollback across window re-opens and synced working directory on active sessions (#291).
+    - Isolated per-distro Explorer and Console state across distro switches (#288).
+    - Normalized symlinked and device-prefixed paths across Explorer and slow-path warnings (#284, #286).
+
+  Verification
+  - Canonical source CI (main @ 4376127a055a6aea7916126e5ab83615447cd520): https://github.com/r2cuerdame/WSLPad/actions/runs/43393441570
+  - Typecheck (npm run typecheck): passed
+  - Lint (npm run lint): passed
+  - Unit/integration (npm run test): Test Files 106 passed | 2 skipped (108), Tests 2063 passed | 11 skipped (2074)
+  - Playwright E2E (npm run test:e2e): 57 passed (1.5m)
+  - Installer (WSLPad-Setup-1.2.0.exe): SHA-256 007FBEB09DEC3E4C2D29135716F2DFDAF8EA0CE47ADFF6B522D8A3183C808261
+ReleaseNotesUrl: https://github.com/r2cuerdame/WSLPad/releases/tag/v1.2.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
