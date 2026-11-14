@@ -1,0 +1,36 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: QuestPDF.Companion
+PackageVersion: 2026.11.0
+PackageLocale: en-US
+Publisher: QuestPDF
+PublisherUrl: https://github.com/QuestPDF
+PublisherSupportUrl: https://github.com/QuestPDF/QuestPDF.Companion/issues
+PackageName: QuestPDF.Companion
+PackageUrl: https://github.com/QuestPDF/QuestPDF.Companion
+License: MIT
+LicenseUrl: https://github.com/QuestPDF/QuestPDF.Companion/blob/HEAD/LICENSE.md
+Copyright: Title, ownership rights, and intellectual property rights in and to the Software shall remain with QuestPDF. The Software is protected by the international copyright laws. Title, ownership rights, and intellectual property rights in and to the content accessed through the Software is the property of the applicable content owner and may be protected by applicable copyright or other law. This License gives you no rights to such content.
+ShortDescription: QuestPDF is a modern open-source .NET library for PDF document generation. Offering comprehensive layout engine powered by concise and discoverable C# Fluent API.
+Description: The QuestPDF Companion application is a tool designed to simplify and speed up your development lifecycle. First, it shows a preview of your document. But the real magic starts with the hot-reload capability! It observes your code and updates the preview every time you change the implementation. Get real-time results without the need of code recompilation. Save time and enjoy the task!
+Moniker: questpdf
+Tags:
+- companion
+- dotnet
+- pdf
+- questpdf
+- questpdfcompanion
+ReleaseNotes: |-
+  - Refreshed the entire app with a cleaner, calmer look in both light and dark themes.
+  - Navigate the preview without leaving the keyboard: pan with the arrow keys and zoom with Ctrl/⌘ and +/−. Scrolling also feels more natural, especially on a trackpad.
+  - Finding elements is quicker: search is easier to drive from the keyboard and stays available when the hierarchy panel is hidden.
+  - Exceptions are easier to read: stack traces show the method names you wrote and open at your own code first.
+  - The preview stays in place while your application restarts, so short rebuilds no longer throw you back to the welcome screen.
+  - A second or forgotten application can no longer take over the preview you are working with.
+  - Connection problems are easier to spot: when the port is busy, the app tells you and keeps retrying on its own.
+  - The shortcut that shows or hides the hierarchy panel is now Ctrl/⌘+B.
+  - Improved stability and responsiveness with large documents, plus a number of smaller fixes.
+ReleaseNotesUrl: https://github.com/QuestPDF/QuestPDF.CompanionApp/releases/tag/2026.11.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
