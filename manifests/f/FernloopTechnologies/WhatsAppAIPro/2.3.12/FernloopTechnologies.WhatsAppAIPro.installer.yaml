@@ -1,0 +1,28 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: FernloopTechnologies.WhatsAppAIPro
+PackageVersion: 2.3.12
+MinimumOSVersion: 10.0.0.0
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: /S
+  SilentWithProgress: /S
+UpgradeBehavior: install
+ProductCode: 0e11ef54-7db6-5c68-a26b-5e856e20bd9a
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- ProductCode: 0e11ef54-7db6-5c68-a26b-5e856e20bd9a
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\WhatsApp AI Pro'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://cdn.whatsappaipro.com/WhatsApp-AI-Pro-Setup-2.3.12.exe
+  InstallerSha256: 8B078D081035F2F52430B56FAA30CF26A7B878C3F51AF60B346449CD24702956
+ManifestType: installer
+ManifestVersion: 1.28.0
