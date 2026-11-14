@@ -1,0 +1,38 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: ProtagonistLabs.FileLabs
+PackageVersion: 1.0.73
+PackageLocale: en-US
+Publisher: Protagonist Labs
+PublisherUrl: https://protagonistlabs.app/
+PublisherSupportUrl: https://github.com/limburatorul/file-labs/issues
+PackageName: File Labs
+PackageUrl: https://protagonistlabs.app/filelabs/
+License: MIT
+LicenseUrl: https://github.com/limburatorul/file-labs/blob/main/LICENSE
+ShortDescription: A dual-pane file manager for Windows 11 with tabs, Quick View, and copies that list every conflict up front and show their speed.
+Tags:
+- explorer
+- file-manager
+- productivity
+ReleaseNotes: |-
+  The same buttons on Linux
+  Two fixes for the Linux version. Nothing changes on Windows.
+  On Linux
+  - The buttons under the sidebar match Windows: the Drop bin box, the sync arrows for updates, the megaphone for What's new, the question mark and the gear, in the same order. The pizza is drawn like the other icons instead of the desktop's colour emoji. Trash stays in the sidebar's Favorites.
+  - After the AppImage updates itself, the old version closes completely. Before, the restarted copy inherited two open handles from the old one, which kept the old image mounted in the background until you quit.
+  Get it
+  - filelabs-1.0.73-x86_64.AppImage: chmod +x it and run it. 1.0.72 offers this update by itself.
+  - filelabs-1.0.73-linux-x64.tar.gz: the same build unpacked.
+  - Windows: FileLabs-1.0.73-setup.exe.
+
+  How it was tested
+  - Self-test of both builds (Windows exe, Linux AppImage): passed.
+  - On CachyOS (KDE Plasma, Wayland): a build carrying the fix updated itself to the published 1.0.72 and left one mounted image, against two before the fix. The new bottom row, checked on screen.
+
+  Not tested
+  - The update from 1.0.72 to 1.0.73 still runs 1.0.72's code, so the old image stays mounted once more, until you close File Labs.
+ReleaseNotesUrl: https://github.com/limburatorul/file-labs/releases/tag/v1.0.73
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
