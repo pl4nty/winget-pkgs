@@ -1,0 +1,27 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: wwb.BingWallpaper
+PackageVersion: 0.3.0
+MinimumOSVersion: 10.0.17763.0
+InstallerType: inno
+Scope: user
+InstallModes:
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+  SilentWithProgress: /SILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+UpgradeBehavior: install
+ProductCode: '{B7C0D7A5-6B73-4D6F-A1A0-9B7C9F6F1C32}_is1'
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- ProductCode: '{B7C0D7A5-6B73-4D6F-A1A0-9B7C9F6F1C32}_is1'
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\Bing Wallpaper'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/wwbgo/bing-wallpaper/releases/download/v0.3.0/BingWallpaperSetup-0.3.0.exe
+  InstallerSha256: 036469535E1F8FDF883450C6B8F9B52862FF13B2EDF68098278870F700B2D788
+ManifestType: installer
+ManifestVersion: 1.28.0
