@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: Softplicity.TotalImageConverter
-PackageVersion: 8.5.0.365
+PackageVersion: 8.5.0.366
 InstallerType: inno
 Scope: machine
 InstallModes:
@@ -19,13 +19,13 @@ FileExtensions:
 - TGA
 - TIFF
 ProductCode: Total Image Converter_is1
-ReleaseDate: 2026-11-09
+ReleaseDate: 2026-11-13
 AppsAndFeaturesEntries:
 - ProductCode: Total Image Converter_is1
 ElevationRequirement: elevatesSelf
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.coolutils.com/Downloads/TotalImageConverter.exe
-  InstallerSha256: 541D87E6AB1BA81C3FE56DD76E9AE87AB7E3543A595D308242AF84FBD22ABF64
+  InstallerSha256: 32EF53E7DAEB452A44129545B5A2DDF6B6F8937614887FBCA23A278FCE705965
 ManifestType: installer
 ManifestVersion: 1.28.0
