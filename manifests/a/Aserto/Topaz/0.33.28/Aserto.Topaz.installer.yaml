@@ -1,0 +1,31 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Aserto.Topaz
+PackageVersion: 0.33.28
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/aserto-dev/topaz/releases/download/v0.33.28/topaz_windows_amd64.msi
+  InstallerSha256: 675E438F53D16C37EA261EEC2E510C76D478C0537FBE920CA5AFA0617892D062
+  InstallerSwitches:
+    InstallLocation: INSTALLDIR="<INSTALLPATH>"
+  ProductCode: '{15B7FAC2-87C9-46DD-ADC6-6ED6BF1705F1}'
+  AppsAndFeaturesEntries:
+  - DisplayName: Topaz CLI
+    ProductCode: '{15B7FAC2-87C9-46DD-ADC6-6ED6BF1705F1}'
+    UpgradeCode: '{77A61504-E94D-42FF-BE69-AA055F0153ED}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Topaz CLI'
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: topaz.exe
+    PortableCommandAlias: topaz
+  InstallerUrl: https://github.com/aserto-dev/topaz/releases/download/v0.33.28/topaz_windows_amd64.zip
+  InstallerSha256: 1E4F90EC5EBC00A18849B7DF811E3E8626DF51D3E12C00CCADE660BB73A8D9E3
+ManifestType: installer
+ManifestVersion: 1.28.0
