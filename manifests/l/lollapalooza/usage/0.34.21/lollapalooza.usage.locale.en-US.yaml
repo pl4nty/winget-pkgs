@@ -1,0 +1,37 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: lollapalooza.usage
+PackageVersion: 0.34.21
+PackageLocale: en-US
+Publisher: lollapalooza
+PublisherUrl: https://github.com/aqua5230
+PublisherSupportUrl: https://github.com/aqua5230/usage/issues
+PackageName: usage
+PackageUrl: https://github.com/aqua5230/usage
+License: AGPL-3.0-only
+LicenseUrl: https://github.com/aqua5230/usage/blob/main/LICENSE
+Copyright: Copyright (c) 2026 lollapalooza (https://github.com/aqua5230)
+ShortDescription: System tray app that pins Claude Code, Codex, and Antigravity quota to the screen
+Moniker: usage
+Tags:
+- antigravity
+- claude
+- claude-code
+- codex
+- quota
+- system-tray
+- usage
+ReleaseNotes: |-
+  Fixed
+  - The Codex card shows 100% used once Codex refuses a request for hitting its limit. Current Codex CLI no longer logs quota after a refused run, so the card kept the last reading, such as 99% from hours earlier, with an "about N hours ago" warning. A refusal newer than that reading now marks the refused window as 100% used, keeps its reset time, and counts the data's age from the refusal. Once that window resets, the card goes back to the normal reading instead of moving the 100% to the other window. A refusal in another session is found even when a different session was modified more recently.
+  - The Set Up Status Line button now also sets up the Antigravity and Grok status lines. The button only set up Claude Code; the Antigravity and Grok CLI status lines were added on the next app launch or by turning the status line switch off and on. They are now set up right away when those CLIs are installed, on macOS and Windows.
+
+  繁體中文
+
+  修正
+  - Codex 因額度用完拒絕請求後，卡片會顯示 100% 已用。 現在的 Codex CLI 被拒時不再記錄額度，所以卡片一直停在最後一筆讀數（例如幾小時前的 99%），旁邊掛著「約 N 小時前更新」。現在只要有比這筆讀數更新的拒絕紀錄，被拒的窗口就會顯示 100% 已用，重置時間照舊，資料新舊從被拒那一刻算起。那個窗口重置後，卡片會回到正常讀數，不會把 100% 移到另一個窗口。別的 session 比較晚修改時，也找得到另一個 session 裡的拒絕紀錄。
+  - 「設定狀態列」按鈕也會一併設定 Antigravity 與 Grok 的狀態列。 這顆按鈕原本只設定 Claude Code；Antigravity 與 Grok CLI 的狀態列要等下次開 app，或把狀態列開關關掉再打開才會裝上。現在只要裝了這兩個 CLI，按下按鈕就會馬上設定好，macOS 與 Windows 都一樣。
+ReleaseNotesUrl: https://github.com/aqua5230/usage/releases/tag/v0.34.21
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
