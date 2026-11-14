@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: WebCatalogLtd.Switchbar
+PackageVersion: 34.1.0
+InstallerType: nullsoft
+Scope: user
+ProductCode: b130ab35-9c9c-5fec-a754-546f900521f2
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- ProductCode: b130ab35-9c9c-5fec-a754-546f900521f2
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\Switchbar'
+Installers:
+- Architecture: x86
+  InstallerUrl: https://cdn-2.webcatalog.io/switchbar/Switchbar%20Setup%2034.1.0.exe
+  InstallerSha256: D719643719F4F8D83880FFBDC1B714B6554F27DCEC078603305112738CA2E334
+ManifestType: installer
+ManifestVersion: 1.28.0
