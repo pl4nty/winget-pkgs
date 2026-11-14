@@ -1,0 +1,37 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: NormLanguage.Norm
+PackageVersion: 0.27.31
+PackageLocale: en-US
+Publisher: NormLanguage
+PublisherUrl: https://github.com/normlanguage
+PublisherSupportUrl: https://github.com/normlanguage/Norm/issues
+PackageName: Norm
+PackageUrl: https://github.com/normlanguage/Norm
+License: MPL-2.0
+LicenseUrl: https://github.com/normlanguage/Norm/blob/v0.24.0/LICENSE
+ShortDescription: Statically typed programming language and toolchain
+Moniker: norm
+Tags:
+- compiler
+- language-server
+- norm
+- programming-language
+- statically-typed
+- truffle
+ReleaseNotes: |-
+  Version record: https://normlanguage.github.io/Norm/versions/0.27
+  The Windows and macOS binaries are not code-signed yet, so the operating system may display an origin warning. Verify downloads against SHA256SUMS and the attached build provenance.
+  What's Changed
+  - Coalesce identical Java calls when building a native registry by @w0fv1 in #142
+  - perf: cache object state schemas per aggregate revision by @w0fv1 in #143
+  - build(deps-dev): bump @vscode/vsce from 4.0.0 to 4.1.0 in /cli/extensions/vscode by @dependabot[bot] in #139
+  - build(deps): align VS Code API types and minimum engine version by @dependabot[bot] in #140
+  - build(deps-dev): bump @types/node from 26.6.5 to 26.6.6 in /cli/extensions/vscode by @dependabot[bot] in #141
+  - build(deps): bump com.diffplug.spotless from 8.10.4 to 8.11.0 by @dependabot[bot] in #138
+  - fix(native): retain runtime platform character sets by @w0fv1 in #146
+  - Document Norm 0.27.31 native build fixes by @w0fv1 in #147
+ReleaseNotesUrl: https://github.com/normlanguage/Norm/releases/tag/v0.27.31
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
