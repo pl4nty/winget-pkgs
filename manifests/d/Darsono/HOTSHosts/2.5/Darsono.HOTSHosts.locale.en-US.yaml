@@ -1,0 +1,46 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Darsono.HOTSHosts
+PackageVersion: '2.5'
+PackageLocale: en-US
+Publisher: Darsono
+PublisherUrl: https://hotstools.com/
+PublisherSupportUrl: https://github.com/darsono6/HOTS/issues
+Author: Darsono
+PackageName: HOTS Hosts
+PackageUrl: https://hotstools.com/hosts/
+License: GPL-3.0
+LicenseUrl: https://www.gnu.org/licenses/gpl-3.0
+Copyright: Copyright (c) Darsono 2026
+ShortDescription: Free, open-source hosts file editor with parental controls, privacy tools and malware diagnostics.
+Description: HOTS Hosts is a free, open-source Windows app for editing the hosts file. It includes parental controls, telemetry-blocking privacy tools, automatic backups and malware diagnostics.
+Moniker: hots-hosts
+Tags:
+- hosts
+- parental-control
+- privacy
+- windows
+ReleaseNotes: |-
+  What's new in 2.5
+  - Internet blocking: a new option for parents on the Parental Protection page. One switch cuts off internet access on the whole computer, over Wi-Fi and cable, while the local network keeps working. The block stays on after a restart until you unblock it in the app; set a password in Options so that only someone who knows it can unblock.
+  - New visual effects: Acrylic material next to Mica, a glow effect with adjustable strength (transparency in Acrylic mode), and a switch to turn window effects off. Acrylic needs Windows 11 22H2 or newer.
+  - New accent color: Graphite joins the existing five, so there are now 6 accent colors.
+  - Rebuilt Options page: expandable cards for Language and Appearance, plus Updates (check for updates on startup, manual check), About and Support.
+  - License information: the About page now opens the full license and the third-party notices.
+  - Updates: clicking an available update now downloads the installer directly, instead of only opening the repository page.
+  - Copy diagnostics: a new button on the About page copies anonymized system and program information to the clipboard, ready to paste into a bug report.
+  - Improved blocking of your own domains: the feature has been reworked to work better.
+  - Several smaller fixes and improvements throughout the application.
+
+  Install
+  Download the installer below, run it and follow the setup wizard. Windows will ask for Administrator permission, which the app needs to edit the hosts file and system settings.
+  Requires: Windows 10 or 11, 64-bit.
+  If Windows shows a "Windows protected your PC" warning, click More info, then Run anyway. This is normal for a small independent project without a paid certificate.
+  Bug reports: open an issue and paste About → Copy diagnostics.
+ReleaseNotesUrl: https://github.com/darsono6/HOTS/releases/tag/v2.5
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/darsono6/HOTS/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
