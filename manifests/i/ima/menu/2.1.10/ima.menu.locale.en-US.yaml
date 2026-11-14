@@ -1,0 +1,28 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: ima.menu
+PackageVersion: 2.1.10
+PackageLocale: en-US
+Publisher: iMA
+PublisherUrl: https://github.com/iMAboud
+PublisherSupportUrl: https://github.com/iMAboud/iMA-Menu/issues
+PackageName: iMA Menu
+PackageUrl: https://github.com/iMAboud/iMA-Menu
+License: Proprietary
+LicenseUrl: https://github.com/iMAboud/iMA-Menu/blob/HEAD/LICENSE
+ShortDescription: A modern context menu for Windows.
+Description: iMA Menu is a fast, modern, and highly customizable context menu shell extension for Windows.
+Moniker: ima.menu
+Tags:
+- context-menu
+- customization
+- shell-extension
+- windows-10
+- windows-11
+ReleaseNotes: |-
+  - Added a "new" dot indicator to highlight newly added plugins, themes, and cursor packs.
+  - UI enhancements and performance fixes.
+ReleaseNotesUrl: https://github.com/iMAboud/iMA-Menu/releases/tag/2.1.10
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
