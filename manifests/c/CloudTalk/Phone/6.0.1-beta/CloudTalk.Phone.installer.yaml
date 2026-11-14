@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: CloudTalk.Phone
+PackageVersion: 6.0.1-beta
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- silent
+UpgradeBehavior: install
+ProductCode: 5d636ab1-c7e3-59bd-8112-ba32183ccaab
+ReleaseDate: 2026-11-13
+AppsAndFeaturesEntries:
+- ProductCode: 5d636ab1-c7e3-59bd-8112-ba32183ccaab
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\cloudtalk-phone-desktop'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://cloudtalk-phone-app-distribution.s3.amazonaws.com/CloudTalk-Phone-6.0.1-beta-win.exe
+  InstallerSha256: 9443A5A001664784645DEBDDCCFBD81363AEC39DE0D0BCF032E6472A0BFF22C5
+ManifestType: installer
+ManifestVersion: 1.28.0
