@@ -1,0 +1,29 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Devlikebear.Linetta
+PackageVersion: 1.24.0
+PackageLocale: en-US
+Publisher: devlikebear
+PublisherUrl: https://github.com/devlikebear
+PublisherSupportUrl: https://github.com/devlikebear/linetta/issues
+PrivacyUrl: https://github.com/devlikebear/linetta/blob/v1.6.0/docs/privacy-policy.md
+Author: devlikebear
+PackageName: Linetta
+PackageUrl: https://github.com/devlikebear/linetta
+License: AGPL-3.0-only
+LicenseUrl: https://github.com/devlikebear/linetta/blob/v1.6.0/LICENSE
+ShortDescription: Local-first desktop writing app for long-form fiction.
+Moniker: linetta
+Tags:
+- desktop
+- fiction
+- writing
+ReleaseNotes: |-
+  What's Changed
+  - feat(agent): 생각 깊이 설정과 백그라운드 패스 모델 분리 by @devlikebear in #380
+  - feat(agent): 에이전트 요청마다 캐시를 포함한 토큰 사용량을 기록하고 설정에 보여 준다 by @devlikebear in #381
+  - chore: release v1.24.0 by @devlikebear in #382
+ReleaseNotesUrl: https://github.com/devlikebear/linetta/releases/tag/v1.24.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0

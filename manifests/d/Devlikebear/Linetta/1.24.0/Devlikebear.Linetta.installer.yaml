@@ -1,0 +1,33 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Devlikebear.Linetta
+PackageVersion: 1.24.0
+UpgradeBehavior: install
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/devlikebear/linetta/releases/download/v1.24.0/Linetta_1.24.0_x64-setup.exe
+  InstallerSha256: 944EFC0555467E392D8762228215ABC9F453C1253E1A9D99D8B1EA1C3488A4BE
+  ProductCode: Linetta
+  AppsAndFeaturesEntries:
+  - ProductCode: Linetta
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Linetta'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/devlikebear/linetta/releases/download/v1.24.0/Linetta_1.24.0_x64_en-US.msi
+  InstallerSha256: D18F0D33B8DF5B9A1C2DA880159910DD07D89D4C191B8A7069BEC522CA885633
+  InstallerSwitches:
+    InstallLocation: INSTALLDIR="<INSTALLPATH>"
+  ProductCode: '{FEDF2756-FA05-42C0-9ED4-B67896DBD3DA}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{FEDF2756-FA05-42C0-9ED4-B67896DBD3DA}'
+    UpgradeCode: '{C5563E48-36A1-5925-B6E0-52F8820C2851}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Linetta'
+ManifestType: installer
+ManifestVersion: 1.28.0
