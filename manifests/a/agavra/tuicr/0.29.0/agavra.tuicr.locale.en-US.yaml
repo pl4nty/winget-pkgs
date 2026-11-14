@@ -1,0 +1,169 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: agavra.tuicr
+PackageVersion: 0.29.0
+PackageLocale: en-US
+Publisher: Almog Gavra
+PublisherUrl: https://github.com/agavra
+PublisherSupportUrl: https://github.com/agavra/tuicr/issues
+Author: Almog Gavra
+PackageName: tuicr
+PackageUrl: https://tuicr.dev/
+License: MIT
+LicenseUrl: https://github.com/agavra/tuicr/blob/HEAD/LICENSE
+Copyright: Copyright (c) 2025 tuicr contributors
+CopyrightUrl: https://github.com/agavra/tuicr/blob/main/LICENSE
+ShortDescription: A code review TUI with vim keybindings. Export to GitHub, GitLab, Bitbucket, or clipboard.
+Description: |-
+  tuicr is a terminal code review tool with vim keybindings. It shows a GitHub-style continuous diff
+  so you can scroll through every changed file in one stream, and supports pull request style comments
+  at the line, range, file, and review level. Review progress is tracked at file or hunk granularity and
+  persisted across sessions. Finished reviews can be pushed to GitHub, GitLab, or Bitbucket, copied to
+  the clipboard as structured markdown, or piped to stdout. It works with git, jj, and mercurial, and can
+  review uncommitted changes, commit ranges, or an existing GitHub PR, GitLab MR, or Bitbucket PR.
+Moniker: tuicr
+Tags:
+- cli
+- code-review
+- diff
+- git
+- review
+- rust
+- terminal
+- tui
+- vim
+ReleaseNotes: |-
+  What's Changed
+
+  Forges: GitHub, GitLab, Gitea, Bitbucket, Azure DevOps, Gerrit
+  - feat(azure): support self-hosted Azure DevOps Server / TFS by @Chusiksmirnov in #796
+  - fix(gerrit): show your drafts after submitting a review as Draft by @nigelgbanks in #825
+  - fix(bitbucket): recognize ssh.bitbucket.org remotes by @andyjbas in #847
+  - fix(gitlab): paginate merge request picker beyond API limit by @pcbeingused333 in #864
+  - feat(bitbucket): support request-changes and draft submits by @grundew in #849
+  - fix(gitlab): strip a relative-URL install's subfolder from API project ids by @sillydomnom in #862
+  - fix(gerrit): take thread resolution from the latest reply and fix root-revision and detail fetches by @martintrojer in #884
+  - fix(slug): parse forge paths with .git suffixes and Gerrit a/ projects by @martintrojer in #886
+  - fix(gitlab): mark outdated discussions and keep replied general comments by @martintrojer in #891
+  - fix(bitbucket): keep file-level comments and replies to deleted roots by @martintrojer in #892
+  - fix(forge): parse Azure/Gerrit PR URLs with query strings, fragments and path prefixes by @martintrojer in #897
+  - fix(gitea): take commit-range paths from git, not patch headers by @martintrojer in #903
+  - fix(forge): resolve SSH aliases before host matching and route GitLab subgroup targets by @martintrojer in #910
+  - fix(github): pass repository coordinates to gh api as strings by @martintrojer in #915
+  - fix(gitea): keep the decisive review vote and fetch PR details once by @martintrojer in #914
+  - fix(forge): fetch every page of commits, threads and PR lists by @martintrojer in #917
+  - fix(azure): anchor inline comments to the reviewed iteration by @martintrojer in #918
+
+  Pull request review, threads and submit
+  - perf(pr): skip the fork-parent lookup when the target names its repository by @MrCliff in #843
+  - perf(pr): read every changed file's line count in one batch on open by @MrCliff in #844
+  - feat(pr): show the last commit time on GitHub pull request rows by @sdi2200262 in #858
+  - feat(pr): collapse the PR description with r by @sdi2200262 in #857
+  - feat(pr): add a GitHub scope for PRs requesting you by name by @sdi2200262 in #855
+  - diff: show commit messages on pull requests by @JamesC1305 in #848
+  - fix(pr): tidy and harden commit messages on pull requests (#848 follow-up) by @martintrojer in #867
+  - fix(pr): keep the cumulative PR diff cache fresh and submit what is displayed by @martintrojer in #868
+  - fix(forge): read submitted drafts back on Gitea and GitLab by @martintrojer in #876
+  - fix(forge): encode file paths in forge content requests and keep Unix backslashes by @martintrojer in #878
+  - fix(pr): drop late reload, range and submit results that belong to another PR by @martintrojer in #879
+  - fix(pr): reject a PR open when the head moved between metadata and diff requests by @martintrojer in #893
+  - fix(forge): keep receipts for comments that posted before a submit failed by @martintrojer in #898
+  - fix(submit): accept old-side context lines in range comments and share the type-label resolver by @martintrojer in #902
+  - fix(selector): keep loaded PR rows when load-more fails by @martintrojer in #908
+  - fix(export): escape remote comment bodies and replies by @martintrojer in #913
+
+  Sessions and persistence
+  - fix(app): keep reviewed marks when narrowing commits and merge external hunk marks by @martintrojer in #912
+  - fix(persistence): include the forge host in PR session identity, with a safe migration by @martintrojer in #925
+  - fix(persistence): write session edits back to the referenced file and recover a corrupt manifest by @martintrojer in #930
+  - fix(app): never discard a session with agent-added comments on quit, and make ZZ fail like :wq by @martintrojer in #932
+
+  Diff view, comments and UI
+  - fix(ui): match the single-file hints to what j/k actually do by @itsmunzir in #811
+  - fix: allow deleting local comments from summary by @DS-argus in #813
+  - feat(comments): prefill suggestions from visual code selections by @thedadams in #793
+  - fix(ui): show remote comments on lines outside the diff hunks by @zerone0x in #828
+  - fix(ui): keep cycled commits visible in the inline selector by @hydraxman in #835
+  - fix(clipboard): prefer OSC 52 in Rex sessions by @cor in #837
+  - fix(comments): show tabs in suggestions and comments by @thedadams in #839
+  - feat(editor): open fresh and flow at the cursor line by @thedadams in #836
+  - feat(syntax): load user grammars from the config syntaxes directory by @MrCliff in #792
+  - fix(ui): do not leave a blank row when a wrapped word does not fit after the indent by @pcbeingused333 in #820
+  - fix(ui): draw the change bar on the row's background by @nick4eva in #861
+  - feat(ui): add a <leader>p file picker popup by @sdi2200262 in #859
+  - feat(ui): add file_list_position config to show the file list on the right by @sdi2200262 in #856
+  - fix(editor): keep PR snapshots in a private directory keyed by the full head by @martintrojer in #880
+  - fix(ui): drop stale file-list hit areas and map partly visible wrapped lines by @martintrojer in #881
+  - fix(input): keep visual selections in one file and guard comment edits and gap jumps by @martintrojer in #885
+  - fix(ui): show old-side comments on side-by-side context rows by @martintrojer in #887
+  - fix(ui): scroll and fill by display width in the diff and file tree by @martintrojer in #888
+  - fix(input): route keys to the open file-tree prompt and paste only where text is accepted by @martintrojer in #900
+  - fix(ui): clamp help scroll after a resize by @martintrojer in #905
+  - fix(ui): measure comment input, titles, filters and branch chips by display width by @martintrojer in #906
+  - fix(syntax): color container grammars for --file reviews and skip malformed user grammars by @martintrojer in #907
+  - fix(ui): lay out the PR info panel at the real width and cache its rows by @martintrojer in #904
+  - fix(theme): preview and apply themes fully, including transparent backgrounds by @martintrojer in #901
+  - fix(ui): scroll the submit resolver so the selected row and footer stay visible by @martintrojer in #911
+  - fix(config): default wrap to false, as documented by @martintrojer in #924
+
+  Local VCS: git, jj, hg and commit selection
+  - fix: preserve working-tree review for empty ranges by @dajiaohuang in #804
+  - fix(git): detect renames in libgit2 reviews by @MattKotsenas in #838
+  - fix(git): resolve worktree for separate git dirs by @doitian in #819
+  - feat(commits): Enter in the inline commit selector selects only that commit by @20vision in #851
+  - fix(git): reload the index in the libgit2 backend and fix EOF/binary/symlink handling by @martintrojer in #870
+  - fix(hg): pair Mercurial file metadata with its patch by path by @martintrojer in #875
+  - fix(app): reset the commit pane when switching local targets and on session resume by @martintrojer in #896
+  - fix(git): harden the git CLI diff adapter (color config, merge conflicts, unborn HEAD, untracked symlinks) by @martintrojer in #899
+  - fix(app): restore the local VCS after leaving PR mode by @martintrojer in #916
+
+  CLI, install, update and agent skills
+  - feat(skills): add a Rex wrapper for launching tuicr by @joshgummersall in #821
+  - fix(skills): wait for a running tuicr instead of exiting 0 by @nick4eva in #840
+  - fix(skills): read Rex block ref from JSON and document :q to quit by @joshgummersall in #829
+  - fix(cli): re-check option conflicts after merging subcommand flags by @martintrojer in #869
+  - fix(update): detect Cargo installs behind symlinked homes and send a tuicr User-Agent by @martintrojer in #909
+
+  End-to-end test suite
+  - test(e2e): add a tmux-driven end-to-end suite with fake forges by @martintrojer in #923
+  - test(e2e): rename the cumfresh fixture and stop committing Windows-invalid file names by @martintrojer in #927
+  - test(e2e): make the self-test robust on slow CI runners by @martintrojer in #931
+  - test(e2e): Python driver beside the bash library, with a ported self-test by @martintrojer in #933
+  - test(e2e): port the diff tree input theme ui help syntax scenarios to Python by @martintrojer in #934
+  - test(e2e): port the cli export scenarios to Python by @martintrojer in #937
+  - test(e2e): port the pr gitlab gitea bitbucket gerrit azure scenarios to Python by @martintrojer in #938
+  - test(e2e): port the local review comments scenarios to Python by @martintrojer in #936
+  - test(e2e): ruff check/format and ty check for the Python e2e code, with type annotations by @martintrojer in #935
+  - test(e2e): remove the bash scenario library; Python only by @martintrojer in #939
+
+  Docs
+  - README: add Home Manager install and config examples by @pedromiguelvc in #863
+  - docs(agents): compress AGENTS.md by @martintrojer in #877
+  - docs: require an e2e scenario for user-visible fixes; point contributors at the e2e suite by @martintrojer in #926
+
+  Build, refactors and cleanup
+  - refactor(forge): share remote URL, SSH and detail helpers across backends by @martintrojer in #920
+  - refactor(ui): share the review-comments section and EOF culling between renderers by @martintrojer in #919
+  - refactor(ui): share the file preamble, inter-hunk gap and EOF-gap blocks between renderers by @martintrojer in #922
+  - chore: remove dead code and duplicated forge range-diff helpers by @martintrojer in #921
+  - build: release profile with fat LTO, one codegen unit and stripped symbols by @martintrojer in #929
+
+  Other
+  - release: v0.29.0 by @github-actions[bot] in #940
+
+  New Contributors
+  - @dajiaohuang made their first contribution in #804
+  - @Chusiksmirnov made their first contribution in #796
+  - @DS-argus made their first contribution in #813
+  - @nigelgbanks made their first contribution in #825
+  - @zerone0x made their first contribution in #828
+  - @cor made their first contribution in #837
+  - @doitian made their first contribution in #819
+  - @pedromiguelvc made their first contribution in #863
+  - @andyjbas made their first contribution in #847
+  - @grundew made their first contribution in #849
+  - @20vision made their first contribution in #851
+ReleaseNotesUrl: https://github.com/agavra/tuicr/releases/tag/v0.29.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
