@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: WebCatalogLtd.WebCatalog
+PackageVersion: 82.1.0
+InstallerType: nullsoft
+Scope: user
+ProductCode: b01e1943-3cfe-5544-b2f5-e3a47fbf35a6
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- DisplayName: WebCatalog 82.1.0
+  ProductCode: b01e1943-3cfe-5544-b2f5-e3a47fbf35a6
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\WebCatalog'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://cdn-2.webcatalog.io/webcatalog/WebCatalog%20Setup%2082.1.0.exe
+  InstallerSha256: 3AED0ED08A1D807879351E1F4EEB2B01FB5F52DCFD08ABD567AB519C0DD7B340
+ManifestType: installer
+ManifestVersion: 1.28.0
