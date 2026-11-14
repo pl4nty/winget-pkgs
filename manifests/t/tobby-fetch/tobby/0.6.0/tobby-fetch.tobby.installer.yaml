@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: tobby-fetch.tobby
+PackageVersion: 0.6.0
+MinimumOSVersion: 10.0.14393.0
+InstallerType: portable
+Commands:
+- tobby
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/tobby-fetch/tobby-fetch/releases/download/v0.6.0/tobby-windows-amd64.exe
+  InstallerSha256: 312DB707A18393A7BEBB876B9B8A62A79E555A7D0DAEC96311DF0521CEFD75D2
+- Architecture: arm64
+  InstallerUrl: https://github.com/tobby-fetch/tobby-fetch/releases/download/v0.6.0/tobby-windows-arm64.exe
+  InstallerSha256: 011673CC4428BB8F436B42A5B1F5AD3EBEE94832C68C0440F1077FD0A40F900F
+ManifestType: installer
+ManifestVersion: 1.28.0
