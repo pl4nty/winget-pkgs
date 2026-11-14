@@ -1,0 +1,25 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Mozilla.jsshell
+PackageVersion: '160.0'
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: js.exe
+FileExtensions:
+- xdr
+ReleaseDate: 2026-11-09
+ArchiveBinariesDependOnPath: true
+Installers:
+- Architecture: x86
+  InstallerUrl: https://archive.mozilla.org/pub/firefox/releases/160.0/jsshell/jsshell-win32.zip
+  InstallerSha256: DFF734EDC9CBFF8B82BFD818564B8A80DAC303E7908167D7CEB81B7BD024E7CB
+- Architecture: x64
+  InstallerUrl: https://archive.mozilla.org/pub/firefox/releases/160.0/jsshell/jsshell-win64.zip
+  InstallerSha256: 03BFAC8214A8E9A381AF34BD274AA74335AD68281651D3B02EB428756C3CB397
+- Architecture: arm64
+  InstallerUrl: https://archive.mozilla.org/pub/firefox/releases/160.0/jsshell/jsshell-win64-aarch64.zip
+  InstallerSha256: 67EA2BCC9049EEE62BE0D553EC80F4B2C3ABE3F538EEA08AFCBB17EBDB1C0115
+ManifestType: installer
+ManifestVersion: 1.28.0
