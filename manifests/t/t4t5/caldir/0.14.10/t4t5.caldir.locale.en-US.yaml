@@ -1,0 +1,36 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: t4t5.caldir
+PackageVersion: 0.14.10
+PackageLocale: en-US
+Publisher: t4t5
+PublisherUrl: https://github.com/t4t5
+PublisherSupportUrl: https://github.com/t4t5/caldir/issues
+PackageName: caldir
+PackageUrl: https://caldir.org/
+License: MIT
+LicenseUrl: https://github.com/t4t5/caldir/blob/main/LICENSE
+ShortDescription: Store your calendar as a directory of ICS files and sync it with Google Calendar, iCloud, Outlook, CalDAV and webcal feeds.
+Moniker: caldir
+Tags:
+- caldav
+- calendar
+- cli
+- ics
+- sync
+ReleaseNotes: |-
+  What's Changed
+  - Add TermCal to ecosystem apps by @deighne in #91
+  - Add --description to caldir new by @larskarbo in #92
+  - Allow organizers to RSVP to their own events by @deighne in #94
+  - Google: recover instance origin from event id when Google omits it by @lcd1232 in #96
+  - Give connect six minutes instead of the default 15 seconds by @akaready in #90
+
+  New Contributors
+  - @deighne made their first contribution in #91
+  - @lcd1232 made their first contribution in #96
+  - @akaready made their first contribution in #90
+ReleaseNotesUrl: https://github.com/t4t5/caldir/releases/tag/v0.14.10
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
