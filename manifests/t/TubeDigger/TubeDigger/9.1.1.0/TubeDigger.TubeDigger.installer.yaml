@@ -1,0 +1,17 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: TubeDigger.TubeDigger
+PackageVersion: 9.1.1.0
+InstallerType: inno
+ProductCode: '{1E3745C1-674D-4B2E-B8F7-3F4088950ED7}_is1'
+ReleaseDate: 2026-11-13
+AppsAndFeaturesEntries:
+- ProductCode: '{1E3745C1-674D-4B2E-B8F7-3F4088950ED7}_is1'
+ElevationRequirement: elevatesSelf
+Installers:
+- Architecture: x86
+  InstallerUrl: https://www.tubedigger.com/TubeDigger_Install.exe
+  InstallerSha256: BDBE0EF39DC62C357C0C73162D853EBF76485D9EB7F7BFCFF7002AA56D9C6E6A
+ManifestType: installer
+ManifestVersion: 1.28.0
