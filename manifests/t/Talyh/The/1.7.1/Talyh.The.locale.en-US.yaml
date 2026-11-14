@@ -1,0 +1,44 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Talyh.The
+PackageVersion: 1.7.1
+PackageLocale: en-US
+Publisher: Talyh
+PublisherUrl: https://the.talyh.com/
+PublisherSupportUrl: https://the.talyh.com/docs
+PrivacyUrl: https://the.talyh.com/legal/privacy
+Author: Talyh
+PackageName: The
+PackageUrl: https://the.talyh.com/download
+License: Proprietary
+LicenseUrl: https://the.talyh.com/legal/eula
+Copyright: Copyright (c) 2026 Talyh
+CopyrightUrl: https://the.talyh.com/legal
+ShortDescription: A text editor for code, data and documents.
+Description: |-
+  The is a desktop text editor for code, data and documents, built to stay
+  responsive on files far larger than an editor usually accepts. The core and
+  eight bundled plugins are free, with no account and no registration.
+Moniker: the
+Tags:
+- code-editor
+- developer-tools
+- editor
+- large-files
+- logs
+- text-editor
+ReleaseNotes: |-
+  1.7.1
+  current12 November 2026
+  - A damaged or crafted document cache record, such as one inside a cloned repository's `.the/cache`, no longer freezes the editor: it is refused and rebuilt
+  - Word wrap in a large file shows the right number of rows when it was turned on while the file was still being indexed, now and on later opens
+  - A project reached through a symbolic link to its folder keeps its document cache in the project's `.the/cache` instead of the user cache
+  - Two documents closed at the same time both keep their cache records
+  - The document cache never reads or writes through a symbolic link placed where a cache record belongs
+ReleaseNotesUrl: https://the.talyh.com/changelog
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://the.talyh.com/docs
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
