@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: Softplicity.PDFCombine
-PackageVersion: 8.1.0.25
+PackageVersion: 8.1.0.26
 InstallerType: inno
 Scope: machine
 InstallModes:
@@ -13,13 +13,13 @@ UpgradeBehavior: install
 FileExtensions:
 - PDF
 ProductCode: PDF Combine_is1
-ReleaseDate: 2026-11-09
+ReleaseDate: 2026-11-13
 AppsAndFeaturesEntries:
 - ProductCode: PDF Combine_is1
 ElevationRequirement: elevatesSelf
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.coolutils.com/Downloads/PDFCombine.exe
-  InstallerSha256: 3BC2F05A622BE9156349563899489096EC931B964639EA05BD99610DFA3F78E2
+  InstallerSha256: 26082D525BDFEFBFAD232B47DBFB0A0BE5AB284C1A42387AD539D699F5F9B652
 ManifestType: installer
 ManifestVersion: 1.28.0
