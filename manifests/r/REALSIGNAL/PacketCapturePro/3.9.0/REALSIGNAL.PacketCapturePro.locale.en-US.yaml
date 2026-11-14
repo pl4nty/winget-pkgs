@@ -1,0 +1,37 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: REALSIGNAL.PacketCapturePro
+PackageVersion: 3.9.0
+PackageLocale: en-US
+Publisher: REALSIGNAL PTE. LTD.
+PublisherUrl: https://github.com/REALSIGNAL
+PublisherSupportUrl: https://github.com/REALSIGNAL/packet-capture-pro-app/issues
+PackageName: Packet Capture Pro
+PackageUrl: https://github.com/REALSIGNAL/packet-capture-pro-app
+License: Proprietary
+ShortDescription: HTTP/HTTPS packet capture and API debugging proxy
+Tags:
+- android-app
+- capture
+- debugging-tool
+- desktop-app
+- http
+- https
+- ios-app
+- packetcapture
+- websocket
+ReleaseNotes: |-
+  Windows & macOS
+
+  What's New
+  - ✨ [OPT] Enhanced multi-device packet capture. Connect your desktop to multiple mobile devices simultaneously for faster packet capture and network debugging.
+  - ✨ [OPT] Improved the packet capture list with customizable columns and column sorting for more efficient data review and analysis.
+
+  更新内容
+  - ✨ [OPT] 升级协同抓包，电脑端支持同时连接多台移动设备，提升多设备抓包与网络调试效率。
+  - ✨ [OPT] 优化抓包数据列表，支持自定义展示字段及按表头排序，让数据查看与分析更高效。
+  📖 Official Website
+ReleaseNotesUrl: https://github.com/REALSIGNAL/packet-capture-pro-app/releases/tag/v3.9.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
