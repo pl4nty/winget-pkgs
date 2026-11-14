@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: LinklyAI.LinklyAI
+PackageVersion: 1.5.0
+InstallerType: nullsoft
+Scope: user
+UpgradeBehavior: install
+Protocols:
+- linkly-ai
+ProductCode: Linkly AI
+ReleaseDate: 2026-11-11
+AppsAndFeaturesEntries:
+- ProductCode: Linkly AI
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Linkly AI'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://updater.linkly.ai/v3/v1.5.0/Linkly%20AI_1.5.0_x64-setup.exe
+  InstallerSha256: 189737BC0EDAAEB94214FD6A83F914F60344E65D440A422F6A08BDFB7F78043D
+ManifestType: installer
+ManifestVersion: 1.28.0
