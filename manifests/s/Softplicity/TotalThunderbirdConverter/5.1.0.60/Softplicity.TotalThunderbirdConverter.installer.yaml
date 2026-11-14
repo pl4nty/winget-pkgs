@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: Softplicity.TotalThunderbirdConverter
-PackageVersion: 5.1.0.58
+PackageVersion: 5.1.0.60
 InstallerType: inno
 Scope: machine
 InstallModes:
@@ -11,13 +11,13 @@ InstallModes:
 - silentWithProgress
 UpgradeBehavior: install
 ProductCode: Total Thunderbird Converter_is1
-ReleaseDate: 2026-11-09
+ReleaseDate: 2026-11-14
 AppsAndFeaturesEntries:
 - ProductCode: Total Thunderbird Converter_is1
 ElevationRequirement: elevatesSelf
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.coolutils.com/Downloads/TotalThunderbirdConverter.exe
-  InstallerSha256: 24C8F2A3FE4665F27092A1AF1B40189BD4668C6856C6B2CA67B489EE928F97CC
+  InstallerSha256: 24FA59172095DDD716E8F4BBE1B9BBD688918AD09D2AF8A1408F6D3FD1854302
 ManifestType: installer
 ManifestVersion: 1.28.0
