@@ -1,0 +1,60 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Vyomi.Vyomi
+PackageVersion: 4.0.0
+PackageLocale: en-US
+Publisher: Vyomi Cloud
+PublisherUrl: https://vyomi.cloud/
+PublisherSupportUrl: https://github.com/vyomi-cloud/appliance/issues
+Author: Vyomi Cloud
+PackageName: Vyomi
+PackageUrl: https://vyomi.cloud/
+License: BUSL-1.1
+LicenseUrl: https://github.com/vyomi-cloud/appliance/blob/main/LICENSE
+Copyright: Copyright (c) 2026 Vyomi Cloud
+CopyrightUrl: https://github.com/vyomi-cloud/appliance/blob/main/LICENSE
+ShortDescription: Local multi-cloud simulator (AWS/GCP/Azure) with real backends
+Description: |-
+  Vyomi gives you AWS, GCP, and Azure-like experiences on your laptop.
+  Standard provider SDKs (boto3, google-cloud-*, azure-sdk-*) and CLIs
+  (aws, gcloud, az, terraform) work natively against the simulator by
+  overriding the endpoint URL — no shim required.
+
+  The MSI installs the `vyomi` launcher; the full simulator stack runs
+  inside a Multipass VM that `vyomi up` provisions.
+Moniker: vyomi
+Tags:
+- aws
+- azure
+- cloud
+- cloud-simulator
+- developer-tools
+- gcp
+- localstack-alternative
+- multi-cloud
+- testing
+ReleaseNotes: |-
+  See CHANGELOG.md
+  Artifacts
+  - SHA256SUMS
+  - cloud-learn-4.0.0.tar.gz
+  - services.json
+  - vyomi-4.0.0-1.noarch.rpm
+  - vyomi-4.0.0-x64.msi
+  - vyomi-4.0.0-x64.msi.sha256
+  - vyomi-4.0.0.tar.gz
+  - vyomi-docker-4.0.0-1.noarch.rpm
+  - vyomi-docker_4.0.0_all.deb
+  - vyomi-mcp-4.0.0-darwin-amd64
+  - vyomi-mcp-4.0.0-darwin-arm64
+  - vyomi-mcp-4.0.0-linux-amd64
+  - vyomi-mcp-4.0.0-linux-arm64
+  - vyomi-mcp-4.0.0-windows-amd64.exe
+  - vyomi_4.0.0_all.deb
+  Docker image: docker pull vyomi/appliance:4.0.0
+  Install: curl -fsSL https://raw.githubusercontent.com/vyomi-cloud/appliance/main/install.sh | bash
+  SHA256 checksums: see SHA256SUMS in attached artifacts.
+ReleaseNotesUrl: https://github.com/vyomi-cloud/appliance/releases/tag/v4.0.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
