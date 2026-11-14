@@ -1,0 +1,32 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: sacloud.usacloud
+PackageVersion: 1.22.12
+PackageLocale: ja-JP
+Publisher: sacloud
+PublisherUrl: https://github.com/sacloud
+PublisherSupportUrl: https://github.com/sacloud/usacloud/issues
+PackageName: usacloud
+PackageUrl: https://github.com/sacloud/usacloud
+License: Apache-2.0
+LicenseUrl: https://github.com/sacloud/usacloud/blob/main/LICENSE.txt
+ShortDescription: さくらのクラウド用CLIクライアント
+Description: usacloudは、さくらのクラウドIaaSプラットフォーム用のCLIクライアントです。サーバー、ディスク、ネットワークなどのクラウドリソースを管理するコマンドを提供します。
+Tags:
+- cli
+- cloud
+- iaas
+- sacloud
+- sakura-cloud
+ReleaseNotes: |-
+  What's Changed
+
+  🚀 Changes
+  - ci: resolve GoReleaser to the latest 2.x release by @tokuhirom in #1366
+ReleaseNotesUrl: https://github.com/sacloud/usacloud/releases/tag/v1.22.12
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://docs.usacloud.jp/usacloud
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
