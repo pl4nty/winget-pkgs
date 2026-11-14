@@ -1,0 +1,78 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Mozilla.Firefox.ESR.skr
+PackageVersion: 153.7.0
+Scope: machine
+InstallerSwitches:
+  Silent: /S /PreventRebootRequired=true
+  SilentWithProgress: /S /PreventRebootRequired=true
+  InstallLocation: /InstallDirectoryPath="<INSTALLPATH>"
+UpgradeBehavior: install
+Protocols:
+- http
+- https
+- mailto
+FileExtensions:
+- avif
+- htm
+- html
+- pdf
+- shtml
+- svg
+- webp
+- xht
+- xhtml
+ReleaseDate: 2026-11-09
+Installers:
+- Architecture: x86
+  InstallerType: nullsoft
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/firefox/releases/153.7.0esr/win32/skr/Firefox%20Setup%20153.7.0esr.exe
+  InstallerSha256: 70177258261CC83362F2EBED01699F56EFB1EE46FED7D0F12059B5F8E9C2F075
+  ProductCode: Mozilla Firefox
+  AppsAndFeaturesEntries:
+  - ProductCode: Mozilla Firefox
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles(x86)%\Mozilla Firefox'
+- Architecture: x86
+  InstallerType: wix
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/firefox/releases/153.7.0esr/win32/skr/Firefox%20Setup%20153.7.0esr.msi
+  InstallerSha256: 11CB55884F908802841E3904C15C08A80DE7AF5D7D1093BAA9F1AC2E1B8E7A48
+  ProductCode: '{1294A4C5-9977-480F-9497-C0EA1E630130}'
+  AppsAndFeaturesEntries:
+  - DisplayName: Mozilla Firefox 153.7.0esr x86 skr
+    ProductCode: '{1294A4C5-9977-480F-9497-C0EA1E630130}'
+    UpgradeCode: '{3118AB4C-B433-4FBB-B9FA-8F9CA4B5C103}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%Temp%'
+- Architecture: x64
+  InstallerType: nullsoft
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/firefox/releases/153.7.0esr/win64/skr/Firefox%20Setup%20153.7.0esr.exe
+  InstallerSha256: 6BE885B439777FCA081AB3C0508E4A84AC519EE36FDDEC4ADC5F4183081F3034
+  ProductCode: Mozilla Firefox
+  AppsAndFeaturesEntries:
+  - ProductCode: Mozilla Firefox
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Mozilla Firefox'
+- Architecture: x64
+  InstallerType: wix
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/firefox/releases/153.7.0esr/win64/skr/Firefox%20Setup%20153.7.0esr.msi
+  InstallerSha256: 93D7D339750DC758E63319A3A33E52427C7A4D5010727A450CEA663682658DA0
+  ProductCode: '{1294A4C5-9977-480F-9497-C0EA1E630130}'
+  AppsAndFeaturesEntries:
+  - DisplayName: Mozilla Firefox 153.7.0esr x64 skr
+    ProductCode: '{1294A4C5-9977-480F-9497-C0EA1E630130}'
+    UpgradeCode: '{3118AB4C-B433-4FBB-B9FA-8F9CA4B5C103}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%Temp%'
+- Architecture: arm64
+  InstallerType: nullsoft
+  InstallerUrl: https://download-installer.cdn.mozilla.net/pub/firefox/releases/153.7.0esr/win64-aarch64/skr/Firefox%20Setup%20153.7.0esr.exe
+  InstallerSha256: 9EAF9BFABFFA48E42FC166E0D518B441E6D93B2F49482F59C893731985B8BE63
+  ProductCode: Mozilla Firefox
+  AppsAndFeaturesEntries:
+  - ProductCode: Mozilla Firefox
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Mozilla Firefox'
+ManifestType: installer
+ManifestVersion: 1.28.0
