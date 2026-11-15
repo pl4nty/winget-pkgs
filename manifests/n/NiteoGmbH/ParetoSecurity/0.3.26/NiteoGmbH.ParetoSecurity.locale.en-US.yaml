@@ -1,0 +1,31 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: NiteoGmbH.ParetoSecurity
+PackageVersion: 0.3.26
+PackageLocale: en-US
+Publisher: Niteo GmbH
+PublisherUrl: https://github.com/ParetoSecurity
+PublisherSupportUrl: https://github.com/ParetoSecurity/agent/issues
+PackageName: ParetoSecurity
+PackageUrl: https://github.com/ParetoSecurity/agent
+License: GPL-3.0
+LicenseUrl: https://github.com/ParetoSecurity/agent/blob/HEAD/LICENSE
+ShortDescription: Automatically audit your device for basic security hygiene.
+ReleaseNotes: |-
+  Release 0.3.26
+
+  Installing on Linux (Debian, Fedora, ArchLinux, NixOS, etc.)
+  curl -sL pkg.paretosecurity.com/install.sh | sudo bash
+
+  Installing on Windows (Windows 10, Windows 11)
+  Download the 0.3.26 release from here
+
+  Changelog
+  - 562bcb9 fix: Name hanging checks, stop commands after 30s, fail on Flatpak errors (#657)
+  - ddfeee6 fix: Report root check execution errors (#659)
+  - be70307 fix: Skip snap packages when snapd is inactive (#658)
+  - 3794ccb fix: Version Arch repository package filenames (#660)
+ReleaseNotesUrl: https://github.com/ParetoSecurity/agent/releases/tag/0.3.26
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
