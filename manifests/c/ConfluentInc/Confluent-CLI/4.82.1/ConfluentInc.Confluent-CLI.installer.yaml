@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: ConfluentInc.Confluent-CLI
+PackageVersion: 4.82.1
+ReleaseDate: 2026-11-12
+Installers:
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: confluent\confluent.exe
+  InstallerUrl: https://github.com/confluentinc/cli/releases/download/v4.82.1/confluent_4.82.1_windows_amd64.zip
+  InstallerSha256: CCE9E01D0231B3384A6AC421C25235E732278D9CC07EF257838712386C52D3BF
+- Architecture: x64
+  InstallerType: portable
+  InstallerUrl: https://github.com/confluentinc/cli/releases/download/v4.82.1/confluent_4.82.1_windows_amd64.exe
+  InstallerSha256: 5875D4EE60CDD03649E93CF2C976881F1F14254A40440CDF06FDE430FD2B33EB
+ManifestType: installer
+ManifestVersion: 1.28.0
