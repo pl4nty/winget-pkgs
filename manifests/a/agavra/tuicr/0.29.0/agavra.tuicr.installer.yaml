@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: agavra.tuicr
+PackageVersion: 0.29.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: tuicr.exe
+  PortableCommandAlias: tuicr
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.VCRedist.2015+.x64
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/agavra/tuicr/releases/download/v0.29.0/tuicr-0.29.0-x86_64-pc-windows-msvc.zip
+  InstallerSha256: 45A616ACCF2660376A5BC7D0EB9441E55E08BC572B1D3AAEDFFEB3A2905281A4
+ManifestType: installer
+ManifestVersion: 1.28.0
