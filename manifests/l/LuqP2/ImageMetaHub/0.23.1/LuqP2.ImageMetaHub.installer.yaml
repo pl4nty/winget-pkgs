@@ -1,0 +1,29 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: LuqP2.ImageMetaHub
+PackageVersion: 0.23.1
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: /S
+  SilentWithProgress: /S
+UpgradeBehavior: install
+Protocols:
+- imagemetahub
+ProductCode: 3c4185f0-d2ca-5561-b7be-39c1c9e9f907
+ReleaseDate: 2026-11-15
+AppsAndFeaturesEntries:
+- ProductCode: 3c4185f0-d2ca-5561-b7be-39c1c9e9f907
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\Image MetaHub'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/LuqP2/Image-MetaHub/releases/download/v0.23.1/ImageMetaHub-Setup-0.23.1.exe
+  InstallerSha256: EEA82189055C4E6A2DEC729A1BC734AA4A8E22B01CFD7CCA77E34EBFDD3ABBF6
+ManifestType: installer
+ManifestVersion: 1.28.0
