@@ -1,0 +1,85 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: HydrusNetwork.HydrusNetwork
+PackageVersion: '695'
+PackageLocale: en-US
+Publisher: Hydrus Network
+PublisherUrl: https://github.com/hydrusnetwork/hydrus
+PublisherSupportUrl: https://github.com/hydrusnetwork/hydrus/issues
+PrivacyUrl: https://hydrusnetwork.github.io/hydrus/privacy.html
+Author: Hydrus Network
+PackageName: Hydrus Network
+PackageUrl: https://github.com/hydrusnetwork/hydrus
+License: WTFPL
+LicenseUrl: https://github.com/hydrusnetwork/hydrus/blob/HEAD/LICENSE
+Copyright: Copyright (C) 2011 Hydrus Developer
+CopyrightUrl: https://github.com/hydrusnetwork/hydrus/blob/master/LICENSE
+ShortDescription: A personal booru-style media tagger that can import files and tags from your hard drive and popular websites. Content can be shared with other users via user-run servers.
+Description: |-
+  The hydrus network client is an application written for Anon and other internet-fluent media nerds who have large image/swf/webm collections.
+  It browses with tags instead of folders, a little like a booru on your desktop. Advanced users can share tags and files anonymously through custom servers that any user may run.
+  Everything is free and privacy is the first concern. Executable releases are available for Windows, Linux, and macOS.
+  The program is in python, so you can also run it straight from the source code.
+Moniker: hydrus-network
+Tags:
+- booru
+- cross-platform
+- image-database
+ReleaseNotes: |-
+  Important
+  AI recently discovered an important security flaw in hydrus. If you are running v691 or earlier you should update to v692 or later, such as today's release. Check here for more details.
+  seekbar
+  - to relieve the 'oh my click did something else because I didn't notice the tiny gap below the seekbar in fullscreen mode' issue, if the current media has a seekbar and it is wide but not quite tall enough for the window--think a vid like 1920x1078 in fullscreen--hydrus now drops that media the couple pixels down so the seekbar is flush with the bottom edge whenever 'centering' that media. you can change the pixel gap threshold for this (default 20) or turn it off entirely, under options->media playback
+  - this 'move down' mode should work well in UI scales larger than 100%, but you will still sometimes get videos with a little gap at the bottom when the height of the media matches the height of the window; there are no easy and excellent technical solutions for this right now, but if you want me to add an option to always drop it a virtual pixel and thus always leave a little gap at the top, I can do it
+  - fixed an issue where in fullscreen borderless in some UI scales, the seekbar does not pop up to full size if the mouse is at the bottom of the screen
+  - UI scales greater than 100% should draw the border around the scanbar a little better. not perfect yet
+
+  more memory-efficient duplicate work
+  - a user did some great memory and CPU profiling on larger potential duplicate pair filtering and found bloat due to massed primitive object duplication. I have worked on this and potential duplicate filtering should now use at least 67% less memory, and in complicated situations 90%+
+  - specifically, the core search atom of this system is now completely deduplicated in all cases, so any new search is pointing to the same memory store, and only containers need be recreated
+  - further, I reworked a rich index used to search these guys at the object level to now use these new objects, compressing used data a bit more, particularly in search spaces of millions of rows
+  - when you do hit large search spaces, I think this compressed tech will also save a bunch of CPU when updating and re-initialising searches. let me know how it goes
+  - also fixed a bug in 'group mode' potential duplicate pair search that wasted a little CPU and in very very rare cases might deliver a pair with a file outside the group
+  - also, the 'clear search context' signal, which happens when a user purges all potential dupes from the db, is better about clearing out data here
+
+  exe manager
+  - the new and still-under-testing 'get metadata for a single file' job type under options->external programs now shows a 'result parsing' box with the same basic UI as in 'manage parsers'. write up a json or html parser for whatever you are getting back on stdout or stderr, and the newly updated test panel will show your raw and parsed output!
+  - next step here is to migrate the legacy 'file lookup scripts' tag suggestions box to be a 'go ask external thing for tag suggestions' guy, and then you'll be able to pipe whatever ai model or script you can think of that eats a file reference and generates tags right into 'manage tags'
+
+  misc
+  - fixed some crazy, probably truncated animated gifs that were raising errors when Pillow tried to iterate through their num_frames
+
+  patreon
+  - nothing bad is happening, but my personal situation is changing a little and I will be closing my Patreon page later this month. the links and pages in the help are removed today to prep for this
+  - I expect to keep working on hydrus just like normal, with regular schedule
+  - thank you to everyone who supported over the years. I really appreciate it!
+
+  environment stuff
+  - for advanced source users, the setup_venv.py now tentatively supports python 3.15, with the proviso that you need to select advanced/test on everything and you will not get lz4 (some memory savings) or jxl (the filetype) support yet
+  - removed the 'openssl' version line from help->about. this wraps the system version, not anything the python venv actually controls, and isn't particularly helpful. the old-date-despite-being-updated is sometimes confusing/worrying for users, too. EDIT: ironically, we ended up looking at openssl versions despite it being non-python this week when we went through some dll fun. I'll bring this back, and other versions we can see, in a new about tab
+
+  boring stuff
+  - fixed a double-layout-set on the main gui that was raising a warning in PyQt6
+  - a routine that streams blocks of data from external executable calls (for ffmpeg video rendering and silent audio checks) now does a CPU-efficient sleep (this continues some CPU-thrashing code cleanup work I started a few months ago)
+  - the fast event processor 'job schedulers' are optimised a little and have less per-loop overhead
+  - when thread slots are saturated (this happens in the downloader system when there are lots of downloaders waiting to work) downloader jobs now back off on reattempts, slowly moving from 10 second to 180 second waits
+  - I wrenched the parser edit ui's edit and test panels apart--very ugly decoupling, and there is more to do--so I could embed the edit UI in the executable callable panel
+  - the edit parser panel now has a nicer Qt update signal on any changes
+  - a bunch of list handling tools (mass unions, iterator reshapers, some auto-throttling chunkers) have nice type hints, so all callers know the shape of what they are getting back based on what they are giving
+  - bit of misc linting
+
+  boring mainloop refactoring
+  - I did a KISS and merge pass on my manager daemons, such as the things that run file maintenance, sibling/parent calc, and subscriptions. a bunch of timing/waiting code is more solid, but I may need to revisit this to check on some edge cases, particularly around a remaining ugly knot of when new jobs come in while a daemon is cleaning up what it thinks is the final job. I'll keep pushing on this
+  - the parent class of mainloops now handles the pausing between loops; every subclass now receives desired work period and returns 'still work to do' status, and the parent makes waiting decisions based on this, in a unified way
+  - forced wait times are also now handled by the parent class
+  - the separate idle/work waits are merged and wakes are handled instead by current work state logic
+  - the top mainloop now handles most 'check if shutting down' calls
+  - all nine mainloop managers now do CPU-efficient sleeps when not working, which should reduce some thrashing in busy clients
+ReleaseNotesUrl: https://github.com/hydrusnetwork/hydrus/releases/tag/v695
+PurchaseUrl: https://hydrusnetwork.github.io/hydrus/support.html
+Documentations:
+- DocumentLabel: FAQ
+  DocumentUrl: https://hydrusnetwork.github.io/hydrus/faq.html
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
