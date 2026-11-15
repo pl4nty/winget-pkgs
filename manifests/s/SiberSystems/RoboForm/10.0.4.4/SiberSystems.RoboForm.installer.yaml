@@ -1,8 +1,8 @@
-# Created by Anthelion using komac v2.17.1
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: SiberSystems.RoboForm
-PackageVersion: 10.0.3.3
+PackageVersion: 10.0.4.4
 InstallerType: msi
 Scope: user
 ProductCode: '{D9379E21-D1A6-40E0-8F78-561289BDA28E}'
@@ -12,6 +12,6 @@ AppsAndFeaturesEntries:
 Installers:
 - Architecture: x86
   InstallerUrl: https://services.roboform.com/dist/RoboForm-vsub-Enterprise.msi
-  InstallerSha256: A648943B8716C05306442F3EB4975C7C3F92D620F8226FA420EDE922B8CAF108
+  InstallerSha256: D68243A7FEB7607798796C2A644F1D95364060187E65E6017B15F4298E614ADB
 ManifestType: installer
 ManifestVersion: 1.28.0
