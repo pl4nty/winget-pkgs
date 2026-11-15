@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: UniClipboard.UniClipboard
+PackageVersion: 1.6.2
+InstallerType: nullsoft
+Scope: user
+ProductCode: UniClipboard
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- ProductCode: UniClipboard
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\UniClipboard'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/UniClipboard/UniClipboard/releases/download/v1.6.2/UniClipboard_1.6.2_x64-setup.exe
+  InstallerSha256: 135C55B28D73799CB989175CBB15FAA5176856917927A1B951C8742AD2E69CE5
+- Architecture: arm64
+  InstallerUrl: https://github.com/UniClipboard/UniClipboard/releases/download/v1.6.2/UniClipboard_1.6.2_arm64-setup.exe
+  InstallerSha256: 24686225324422AA86F007E61C3B457EC1B686A369E027E39883D49B2F7FC45A
+ManifestType: installer
+ManifestVersion: 1.28.0
