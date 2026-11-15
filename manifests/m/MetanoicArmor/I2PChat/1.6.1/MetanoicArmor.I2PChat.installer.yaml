@@ -1,0 +1,23 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: MetanoicArmor.I2PChat
+PackageVersion: 1.6.1
+MinimumOSVersion: 10.0.17763.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: I2PChat\I2PChat-tui.exe
+  PortableCommandAlias: i2pchat-tui
+- RelativeFilePath: I2PChat\I2PChat.exe
+  PortableCommandAlias: i2pchat
+InstallModes:
+- interactive
+- silent
+ReleaseDate: 2026-11-10
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/MetanoicArmor/I2PChat-ng/releases/download/v1.6.1/I2PChat-windows-x64-winget-v1.6.1.zip
+  InstallerSha256: CFAC97AB8B0748AE6799178A28B6C3DE87A728D77B881D201FE2E59E3357650D
+ManifestType: installer
+ManifestVersion: 1.28.0
