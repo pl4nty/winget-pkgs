@@ -1,0 +1,55 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: ast-grep.ast-grep
+PackageVersion: 0.51.2
+PackageLocale: en-US
+Publisher: ast-grep
+PublisherUrl: https://github.com/ast-grep
+PublisherSupportUrl: https://github.com/ast-grep/ast-grep/issues
+PackageName: ast-grep
+PackageUrl: https://ast-grep.github.io/
+License: MIT
+LicenseUrl: https://github.com/ast-grep/ast-grep/blob/HEAD/LICENSE
+ShortDescription: A fast and polyglot tool for code searching, linting, rewriting at large scale.
+Tags:
+- ast
+- babel
+- codemod
+- codereview
+- command-line
+- command-line-tool
+- grep
+- linter
+- refactoring
+- rust
+- search
+- static-analysis
+- structural-search
+- tree-sitter
+- typescript
+ReleaseNotes: |-
+  - chore(deps): update rust crate tree-sitter-scala to v0.26.10 #3085
+  - feat(language): define feature-gated languages with macros #3081
+  - docs: fix dead wasm-pack installer link in the wasm crate README #3084
+  - chore(deps): update dependency oxlint to v1.93.0 #3082
+  - fix(config): do not split words at digits in convert transform #3070
+  - chore(deps): update dependency web-tree-sitter to v0.27.2 #3075
+  - chore(deps): update dependency node to v26 #3069
+  - chore(deps): update rust crate toml_edit to v0.25.19 #3071
+  - chore(deps): update rust crate tree-sitter-scala to v0.26.9 #3072
+  - chore(deps): update dependency oxlint to v1.92.0 #3074
+  - chore(deps): update rust crate smallvec to v1.16.5 #3073
+  - chore(deps): update rust crate tree-sitter to v0.27.2 #3076
+  - test(cli): verify npm packages on all platforms daily #3068
+  - feat(cli): distribute musl Linux binaries #3067
+  - Fail ast-grep test for unmatched IDs or when no tests run #3065
+  - chore(deps): update dependency @napi-rs/cli to v3.10.12 #3057
+  - chore(deps): update rust crate serde-saphyr to v2.1.1 #3062
+  - chore(deps): update rust crate toml_edit to v0.25.18 #3063
+  - fix(lsp): report columns in UTF-16 code units #3060
+  - chore(deps): update dependency oxlint to v1.91.0 #3061
+  - chore(deps): update dependency @ast-grep/napi to v0.51.1 #3055
+ReleaseNotesUrl: https://github.com/ast-grep/ast-grep/releases/tag/0.51.2
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
