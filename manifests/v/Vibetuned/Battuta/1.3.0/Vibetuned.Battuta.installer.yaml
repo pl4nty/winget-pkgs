@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Vibetuned.Battuta
+PackageVersion: 1.3.0
+InstallerType: nullsoft
+Scope: user
+ProductCode: battuta
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- ProductCode: battuta
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\battuta'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/vibetuned/battuta/releases/download/v1.3.0/battuta_1.3.0_x64-setup.exe
+  InstallerSha256: 5BAD3D708207783A405D18006CF45706FB1DF9F7B19455608133D0CD388297AE
+ManifestType: installer
+ManifestVersion: 1.28.0
