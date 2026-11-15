@@ -1,0 +1,41 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: rexenv.rexenv
+PackageVersion: 0.9.8
+PackageLocale: en-US
+Publisher: rexenv
+PublisherUrl: https://github.com/rexenv
+PublisherSupportUrl: https://github.com/rexenv/rexenv/issues
+PackageName: rexenv
+PackageUrl: https://github.com/rexenv/rexenv
+License: Apache-2.0
+LicenseUrl: https://github.com/rexenv/rexenv/blob/master/LICENSE
+ShortDescription: A native, lightweight, no-Docker local development environment for web & WordPress developers.
+Description: rexenv runs the whole local stack — edge proxy with auto-HTTPS, shared web server, multi-version PHP, MySQL/PostgreSQL, one-click WordPress, .rex DNS, mail catching, tunnels — from one window, with native binaries and no Docker.
+Moniker: rexenv
+Tags:
+- laravel
+- local-development
+- php
+- wordpress
+ReleaseNotes: |-
+  New
+  - A site switcher. On a site's page, Sites / name ▾ lists every site with a search box, and choosing one keeps the tab you were on. ⌘K (macOS) or Ctrl+K (Windows, Linux) opens it from every screen.
+  - Pinned and recently opened sites. Pin a site and it leads the switcher, the Sites list, the sidebar and the menu-bar / tray menu, in the same order everywhere; the sites you opened last follow.
+  - A quieter Sites list. Every row always shows Open in browser, Magic Login and the editor — no hover needed, at every window width. Status is written out only when a site is not simply serving. The ⋮ button and a right-click open the same menu, and the list keeps its filter, search, sort and scroll position while you visit a site.
+  - "Start & open" and "Start & Magic Login". With rexenv's services off, the two buttons start the services, wait until that site answers, then open it. A start that fails opens nothing, and a site you stopped yourself is never started for you.
+  - A tidier site page. Each action has one place: the Quick links card is gone, the editor is a button in the header, Site info moved to Overview, and Duplicate and Delete work from the site page too.
+  Fixes
+  - macOS, Linux: when another program holds port 443, Start all now names the port and how to free it before it asks for your password. Before, it asked first and then blamed a busy machine.
+  - macOS: a program that took port 443 before rexenv's HTTPS server started is now reported as that — by name with the command that stops it, or with a command that lists what is listening. rex doctor no longer suggests a command that would stop rexenv's own HTTPS server.
+  - A share (public tunnel) that ended while rexenv was closed is now shown as ended at the next launch, instead of still reading as public.
+  - A site page no longer shows a tab that site does not have (a Laravel site opened at a WordPress address drew the WordPress manager).
+  - A site you stopped is no longer offered "Start site and services" while every service is running.
+  - Keyboard focus on a Sites row is visible on the light theme, and a right-click no longer selects the word under the pointer.
+  - Web UI: a large upload to a database console that breaks off is no longer reported as too large, and sessions keep their time limits across the computer's sleep.
+  Note
+  - This version upgrades rexenv's database. After updating, an older rexenv will not open it — do not go back to 0.9.7 or earlier on the same data.
+ReleaseNotesUrl: https://github.com/rexenv/rexenv/releases/tag/v0.9.8
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0

@@ -1,0 +1,27 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: rexenv.rexenv
+PackageVersion: 0.9.8
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+InstallerSwitches:
+  Silent: /S
+  SilentWithProgress: /S
+UpgradeBehavior: install
+ProductCode: rexenv
+ReleaseDate: 2026-11-15
+AppsAndFeaturesEntries:
+- ProductCode: rexenv
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\rexenv'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/rexenv/rexenv/releases/download/v0.9.8/rexenv_0.9.8_x64-setup.exe
+  InstallerSha256: FF8BF4FBB516BB61091FA6DE37BF624B31EF727C82E5C6DB22882E305E078C6D
+ManifestType: installer
+ManifestVersion: 1.28.0
