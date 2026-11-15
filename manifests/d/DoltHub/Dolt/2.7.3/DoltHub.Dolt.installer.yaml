@@ -1,0 +1,21 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: DoltHub.Dolt
+PackageVersion: 2.7.3
+InstallerType: wix
+Scope: machine
+UpgradeBehavior: install
+ProductCode: '{46A894C2-7E7E-4646-B8F9-12C3B20A6597}'
+ReleaseDate: 2026-11-11
+AppsAndFeaturesEntries:
+- ProductCode: '{46A894C2-7E7E-4646-B8F9-12C3B20A6597}'
+  UpgradeCode: '{6BC40754-759D-4899-9FD3-E6BE1823CACD}'
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\Dolt'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/dolthub/dolt/releases/download/v2.7.3/dolt-windows-amd64.msi
+  InstallerSha256: E22DE9CC94742FCE415171CC5DFF5123FB45AEA9ABD9C5C514E9CB44544FB6EF
+ManifestType: installer
+ManifestVersion: 1.28.0
