@@ -1,0 +1,25 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: yt-dlp.yt-dlp.nightly
+PackageVersion: 2026.11.14.232655
+InstallerType: portable
+Commands:
+- yt-dlp
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: DenoLand.Deno
+  - PackageIdentifier: yt-dlp.FFmpeg
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2026.11.14.232655/yt-dlp_x86.exe
+  InstallerSha256: 901BA6466FA795CF4E5EA54C71F4AFDDFEDB546420062017CA9B62368AA30264
+- Architecture: x64
+  InstallerUrl: https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2026.11.14.232655/yt-dlp.exe
+  InstallerSha256: 32828116BA75C083B33792791DC2E158DD9DC8F600DAA3C3450C3A2E5FAD4FCE
+- Architecture: arm64
+  InstallerUrl: https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/download/2026.11.14.232655/yt-dlp_arm64.exe
+  InstallerSha256: 30F238C0AC6830CB7EB120B43A8D0A9D3BC81A18EFE8A6D73AEF12D8188DECD6
+ManifestType: installer
+ManifestVersion: 1.28.0
