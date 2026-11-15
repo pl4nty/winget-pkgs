@@ -1,0 +1,37 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: DonutWare.Fladder.Nightly
+PackageVersion: 0.12.0
+InstallerType: inno
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.VCRedist.2015+.x64
+ProductCode: '{D573EDD5-117A-47AD-88AC-62C8EBD11DC7}_is1'
+ReleaseDate: 2026-11-15
+AppsAndFeaturesEntries:
+- DisplayName: Fladder
+  ProductCode: '{D573EDD5-117A-47AD-88AC-62C8EBD11DC7}_is1'
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\Fladder'
+Installers:
+- Architecture: x64
+  Scope: user
+  InstallerUrl: https://github.com/DonutWare/Fladder/releases/download/nightly/Fladder-Windows-0.12.0-nightly-Setup.exe
+  InstallerSha256: DA9698B7871FB653AD247A9D2A90D150FA3C822D4C00D98E4A857C103EA3B792
+  InstallerSwitches:
+    Custom: /CURRENTUSER
+- Architecture: x64
+  Scope: machine
+  InstallerUrl: https://github.com/DonutWare/Fladder/releases/download/nightly/Fladder-Windows-0.12.0-nightly-Setup.exe
+  InstallerSha256: DA9698B7871FB653AD247A9D2A90D150FA3C822D4C00D98E4A857C103EA3B792
+  InstallerSwitches:
+    Custom: /ALLUSERS
+ManifestType: installer
+ManifestVersion: 1.28.0
