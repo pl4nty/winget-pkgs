@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: SunJary.NetAssistant
+PackageVersion: 1.4.2
+InstallerType: inno
+Scope: user
+ProductCode: '{E0A6C7F4-9D6B-4A1E-B8C3-4F7D2A9B5E1C}_is1'
+ReleaseDate: 2026-11-10
+AppsAndFeaturesEntries:
+- ProductCode: '{E0A6C7F4-9D6B-4A1E-B8C3-4F7D2A9B5E1C}_is1'
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\NetAssistant'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/SunJary/NetAssistant/releases/download/v1.4.2/netassistant-windows-x86_64-setup.exe
+  InstallerSha256: 049DE0F558C72426D140353AF9C488F43363ACFDC9730629D4161D7FF4CEE9D3
+ManifestType: installer
+ManifestVersion: 1.28.0
