@@ -1,0 +1,23 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Talyh.The
+PackageVersion: 1.7.1
+MinimumOSVersion: 10.0.17763.0
+InstallerType: burn
+Scope: machine
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- Publisher: Talyh Studio
+  ProductCode: '{18DEE7BC-EC9F-4E2E-8B4C-A60DE74529E5}'
+  UpgradeCode: '{19C593D6-AD43-400E-8AC5-BCC470830C09}'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://downloads.talyh.com/releases/1.7.1/The-1.7.1-setup.exe
+  InstallerSha256: 3911BE57C6A2E97D2194C58CEBAB183A75B2132BD19CFF80070FDD21EE52341B
+ManifestType: installer
+ManifestVersion: 1.28.0
