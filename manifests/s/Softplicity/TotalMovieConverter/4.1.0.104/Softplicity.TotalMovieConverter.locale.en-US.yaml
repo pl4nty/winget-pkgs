@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
 
 PackageIdentifier: Softplicity.TotalMovieConverter
-PackageVersion: 4.1.0.103
+PackageVersion: 4.1.0.104
 PackageLocale: en-US
 Publisher: Softplicity, Inc.
 PublisherUrl: https://www.coolutils.com/
