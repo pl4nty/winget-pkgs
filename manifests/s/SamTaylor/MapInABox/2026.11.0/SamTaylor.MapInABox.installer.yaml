@@ -1,0 +1,30 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: SamTaylor.MapInABox
+PackageVersion: 2026.11.0
+InstallerType: inno
+ProductCode: Map in a Box_is1
+ReleaseDate: 2026-11-11
+AppsAndFeaturesEntries:
+- ProductCode: Map in a Box_is1
+ElevationRequirement: elevatesSelf
+Installers:
+- Architecture: x64
+  Scope: user
+  InstallerUrl: https://github.com/sjtaylor82/MapInABox/releases/download/v2026.11.0/MapInABox-2026.11.0-setup.exe
+  InstallerSha256: 2139A163C902D5400CAECF28A312CF5965DCD102A32092FBFDC47FAA15601B8B
+  InstallerSwitches:
+    Custom: /CURRENTUSER
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\Map in a Box'
+- Architecture: x64
+  Scope: machine
+  InstallerUrl: https://github.com/sjtaylor82/MapInABox/releases/download/v2026.11.0/MapInABox-2026.11.0-setup.exe
+  InstallerSha256: 2139A163C902D5400CAECF28A312CF5965DCD102A32092FBFDC47FAA15601B8B
+  InstallerSwitches:
+    Custom: /ALLUSERS
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Map in a Box'
+ManifestType: installer
+ManifestVersion: 1.28.0
