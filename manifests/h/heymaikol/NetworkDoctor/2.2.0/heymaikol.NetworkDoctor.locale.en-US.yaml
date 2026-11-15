@@ -1,0 +1,71 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: heymaikol.NetworkDoctor
+PackageVersion: 2.2.0
+PackageLocale: en-US
+Publisher: Michael Placzek
+PublisherUrl: https://github.com/heymaikol
+PublisherSupportUrl: https://github.com/heymaikol/network-doctor/issues
+PackageName: Network Doctor
+PackageUrl: https://heymaikol.github.io/network-doctor/
+License: Apache-2.0
+LicenseUrl: https://github.com/heymaikol/network-doctor/blob/HEAD/LICENSE
+ShortDescription: Terminal UI that diagnoses network connectivity and explains where the connection breaks
+Moniker: network-doctor
+Tags:
+- cli
+- diagnostics
+- network
+ReleaseNotes: |-
+  Network Doctor v2.2.0
+  Network Doctor v2.2.0 improves diagnostic accuracy across IPv4, IPv6, QUIC, direct connectivity, and network simulation. It also strengthens regression testing, supply-chain checks, and development infrastructure.
+  This release includes important corrections to how Network Doctor interprets incomplete network evidence. In particular, a working connection over one address family no longer automatically proves that the other address family works.
+
+  Diagnosis improvements
+  - Address-family-aware diagnosis (#481). Reference connectivity is now evaluated against the address family actually used to reach the target. When the available evidence cannot distinguish a local IPv4 or IPv6 path failure from a target problem, Network Doctor can report the new family_reachability_unlocalized finding instead of incorrectly attributing the failure to the service.
+  - More accurate QUIC analysis (#484). QUIC comparisons now account for the address families actually attempted. Failed and timed-out QUIC attempts retain additional evidence, avoiding misleading UDP/443 conclusions when reference connectivity succeeds only over another address family.
+  - More careful direct-egress explanations (#467). Diagnostic summaries, remediation guidance, and fix hints describe what was observed during the current run rather than assuming a permanent network restriction. Affected explanations recommend running the check again.
+  - IPv6 zone preservation (#476). Profile reports retain the interface zone of scoped IPv6 targets, including link-local addresses.
+
+  Network simulation and Hunt
+  - Correct DNS expectations (#468). Hunt now applies DNS name-level expectations only to explicitly absolute names, consistent with Network Doctor's existing DNS privacy and comparison policy. This corrects recurring false findings involving relative hostnames without changing production DNS diagnosis.
+  - Endpoint-specific TCP reset attribution (#469). Hunt now associates injected TCP resets with probes that actually attempted the affected endpoint. Unobserved resets no longer produce misleading tcp_reset_not_distinguished findings. Canonical simulation results retain additional endpoint and address-alias evidence.
+  - More accurate recovery analysis (#470). A recovery involving an unrelated endpoint no longer explains away a persistent target_tcp failure. The comparison considers the addresses and port actually attempted.
+  - Isolated Challenge Mode regression test (#474). The leftover-workspace test now uses its own temporary environment, preventing unrelated simulator runs from causing false failures.
+
+  Security, reliability, and development
+  - Updated the required Go version to 1.27.4, including the security-related toolchain update.
+  - Updated Go dependencies, including golang.org/x/sys v0.50.0, and refreshed container base images and GitHub Actions dependencies.
+  - Added automated OpenSSF Scorecard analysis, with published results and GitHub Code Scanning integration (#446).
+  - Strengthened namespace and FRR testing and continued work on the isolated FRR correlation supervisor and capture infrastructure. This infrastructure remains under development and does not enable a new production FRR importer or forwarding-verification capability.
+  - Updated the contributor validation command to scripts/check.sh, retaining a compatibility wrapper (#450).
+  - Changed GitHub Pages deployment to require an explicit manual dispatch rather than publishing automatically on every push (#460).
+  - Improved homepage media playback controls and separated demo media publication from release-tag pushes (#445, #466).
+
+  Compatibility notes
+  - Diagnosis results: Family-scoped reachability analysis can change the reported finding, confidence, and verdict for affected networks. Consumers should rely on structured diagnostic fields rather than matching explanation text.
+  - Diagnostic wording: Several direct-egress summaries, fix hints, and remediation messages have changed. Scripts matching those strings may need updating.
+  - JSON reports: Profile targets may now include an optional zone field for scoped IPv6 addresses. Existing targets without a zone remain unchanged.
+  - Simulation results: Canonical Hunt data now includes additional address and alias evidence. Generate and merge Hunt shards using the same netdoc-sim version.
+  - Go builds: Building from source requires Go 1.27.4 or later.
+
+  Known limitations
+  - Direct-egress wording is more cautious, but a single reference check still cannot establish whether an observed failure is temporary or persistent. Some probe details and interface labels retain older wording. See #438.
+  - Recovery attribution is improved for target_tcp, but related limitations for other checks remain. See #437.
+  - Hunt's TCP reset analysis cannot detect resets that Network Doctor does not record as probe observations, including certain captive-portal reads. Some reset misclassifications still require direct diagnostic regression tests.
+  - DNS comparisons for relative names remain deliberately conservative. This preserves the privacy and evidence policy introduced before this release.
+  - Some timing-sensitive integration and simulation tests remain under investigation. Their known intermittent failures have not been attributed to the changes in this release.
+
+  Installation
+  Network Doctor remains available for Linux, macOS, and Windows through its existing distribution channels. The Linux-only netdoc-sim companion and published container image support the network simulation workflows.
+  See the installation documentation for platform-specific instructions.
+
+  Distribution status
+  Prebuilt Linux RPM packages are available through GitHub Releases. The Fedora
+  COPR repository has not published v2.2.0 because its Rawhide build environments
+  do not yet provide the required Go 1.27.4 toolchain. The COPR distribution
+  will remain unavailable for this version unless rebuilt separately.
+ReleaseNotesUrl: https://github.com/heymaikol/network-doctor/releases/tag/v2.2.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
