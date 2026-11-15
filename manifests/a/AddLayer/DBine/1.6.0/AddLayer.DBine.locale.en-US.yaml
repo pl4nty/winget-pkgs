@@ -1,0 +1,99 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: AddLayer.DBine
+PackageVersion: 1.6.0
+PackageLocale: en-US
+Publisher: AddLayer
+PublisherUrl: https://dbine.com/
+PublisherSupportUrl: https://github.com/addlayer-io/dbine/issues
+Author: AddLayer
+PackageName: DBine
+PackageUrl: https://dbine.com/
+License: Apache-2.0
+LicenseUrl: https://github.com/addlayer-io/dbine/blob/HEAD/LICENSE
+ShortDescription: Manage SQL, NoSQL and analytical databases in one app
+Description: |-
+  DBine is a desktop database manager for relational, analytical, document, key-value, graph, time-series and search databases. One workbench connects to PostgreSQL, SQL Server, MySQL, MariaDB, SQLite, Oracle, MongoDB, Redis, Cassandra, ClickHouse, DuckDB, Snowflake, BigQuery, Elasticsearch, Neo4j, InfluxDB and many more engines.
+
+  Explore and query:
+  - A tree per connection and database, with saved queries kept inside each database
+  - A SQL editor with each engine's dialect, completion of tables and columns, and script execution
+  - A fast results grid with cell editing, filters, sorting, charts and a JSON tree view
+  - Graphical execution plans, a visual query builder and query optimization hints
+  - Search across object names, columns and stored code, and run code on several databases at once
+
+  Design and move data:
+  - Table designer, ER diagrams and script generation
+  - Compare schemas and data, then migrate, clone or sync databases between engines
+  - Import CSV, JSON, XLSX and XML; export results in many formats; generate test data and data subsets
+  - Rename objects with an impact analysis of everything that depends on them
+
+  Administer:
+  - Server monitor, live processes and a profiler of the queries clients run
+  - Users and permissions, backups, health checks and database properties
+  - SSH tunnels, including chains of bastions and the SSH agent
+  - Read-only connections and production safeguards
+
+  Assistant and integrations:
+  - An AI assistant that writes and explains queries with a local built-in model or Ollama; it never runs anything by itself
+  - A local MCP server so AI coding assistants can work with your connections, with every write approved in DBine
+  - End-to-end encrypted cloud sync of connections, queries and settings to your own account
+  - A script library and projects backed by git
+
+  Passwords are stored encrypted with a key kept in the system keychain, and never go into the state file or the logs.
+Moniker: dbine
+Tags:
+- clickhouse
+- database
+- database-manager
+- duckdb
+- mariadb
+- mongodb
+- mysql
+- nosql
+- oracle
+- postgresql
+- redis
+- sql
+- sql-client
+- sqlite
+- sqlserver
+ReleaseNotes: |-
+  DBine v1.6.0 installers.
+  New
+  - Server jobs: Scheduled now has two sections: In DBine, the tasks DBine runs, and On the servers, the jobs each database server runs on its own. Those include SQL Server Agent jobs, Oracle DBMS_SCHEDULER, pg_cron, pgAgent and TimescaleDB jobs, Snowflake tasks, Databricks jobs, MySQL events, BigQuery scheduled queries, Couchbase backups, CouchDB replications and more. Each job shows its schedule, steps and run history with messages, and offers Run now, Stop, Enable / Disable and View script where the engine allows them. Jobs that come with the engine are hidden until you show them, and read-only connections only show jobs. Server jobs on a connection's menu opens its group.
+  - Results kept when DBine closes: each query editor's result tabs are saved to an encrypted file on your computer, so after closing DBine, or a crash, every editor shows them again as they were, pinned ones included, without running anything. The key never leaves your computer and user; Settings › General sets the space they may take, clears them, or turns it off.
+  - Monitor metrics that explain themselves: every metric on the Monitor dashboard says what it measures, how to read it, and the view, query or API field its value comes from. Metrics picks which ones show, remembered per engine, and clicking a metric enlarges it to its last hour on a timeline you can zoom.
+  - Scheduler designer: Scheduled › On the servers now manages each server's scheduler whole. Every object it has, such as SQL Server Agent jobs, schedules, operators, alerts, proxies and categories, Oracle DBMS_SCHEDULER jobs, programs, schedules, chains and windows, pg_cron, pgAgent and TimescaleDB jobs, events, tasks, transforms and refreshable views, is created, edited and deleted in a designer made for its engine, and the script is shown before anything runs. An edit changes only what changed, in place where the engine allows it; when a change has to recreate an object or loses its history, DBine says so and asks before going on. Where the engine has them, a job can start at one of its steps and have its history cleared, each kind of object has its own actions (run now, open a window, refresh a view…), and the scheduler's own log can be read. The objects the engine owns are protected, and read-only connections show the forms and scripts but change nothing.
+  - Named results: a line comment right above a statement (-- Customer summary) names its result. Each named statement gets its own result tab, whether the whole script, a selection or that statement runs, and running it again refreshes that tab in place; the kept-results limit never closes it. A result tab can also be renamed with a double click.
+  - Run a single statement from the editor: when the editor holds two or more statements, a small ▶ Run (and Plan, where the engine has plans) sits above each one, with its name if it has one, and runs only that statement. It can be turned off in Settings › General. On Elasticsearch, OpenSearch, Solr, CouchDB, MongoDB, Redis, Valkey, Dragonfly, etcd, KDB+, Cassandra, Neo4j, Cosmos DB, InfluxDB 1 and DynamoDB the editor finds each statement the way the engine runs it, such as a console request with its body or one command per line, so ▶ Run and running the statement at the cursor work there too.
+  - Scheduler actions that ask for values: some actions on Scheduled › On the servers open a form before their script. BigQuery transfers run for past dates, Databricks jobs run with other parameters, TDengine streams recalculate a time range, Oracle running chains change or stop a step, Couchbase merges the backups of a date range, Snowflake tasks run once with another configuration, Elasticsearch transforms start from a time and watches acknowledge only the chosen actions, and OpenSearch monitors acknowledge the chosen alerts. As with every action, the script is shown and confirmed before it runs.
+  - Function completion for every engine: the editor suggests the functions of the connection's engine and version, with their arguments, return type and, when the server gives one, its description; picking one writes name() with the cursor inside. Most engines list them from the server, so extensions and your own functions are included; the rest use the functions their documentation lists for that version. Languages without SQL functions get what plays their part: Redis, Valkey, Dragonfly and etcd commands, MongoDB and CouchDB operators, Solr function queries, Cypher and Flux functions, and the SQL lines of the Elasticsearch, OpenSearch and Solr consoles. DataFrame SQL notebook cells get DuckDB's.
+  - Power BI and Microsoft Fabric semantic models: a new engine. Sign in with your Microsoft account (or a service principal), browse workspaces and models with their tables, columns, measures, relationships, hierarchies and roles, and query them in DAX with highlighting and completion, on Pro, Premium Per User and Fabric capacity. Results export and chart like any other. The model's refreshes are server jobs: history, refresh now and the schedule. Model permissions, name, description and deletion are managed from DBine, with the script shown before anything runs.
+  - Code quality and Optimize query for DAX: on Power BI, the editor flags the well-known DAX pitfalls, such as FILTER over a whole table in CALCULATE, IFERROR and ISERROR, / instead of DIVIDE, SUMMARIZE with calculated columns and TOPN without ORDER BY. Optimize query offers a rewrite for most of them, marked to compare first where the result can change.
+  - Compare the results of two queries: Compare data can now compare two queries instead of two tables, on any engines and across them, such as a Power BI measure against a SUM on the source database. Whole results are compared, with a numeric tolerance for rounding; it opens from the compare view or with Compare with… in the query editor and on a result.
+
+  Improvements
+  - Testing a connection: when Test connection fails, the error shows next to the button, and What's wrong… explains it (firewall, timeout, DNS, TLS or credentials) as it does for a saved connection.
+  - Monitor processes: the selected session opens in a panel next to the list, which stays where it was, with its whole statement and Analyze, which takes it to the optimizer, besides cancelling it or ending the session. The arrow keys move between sessions.
+  - Execution plans: Full screen shows the plan over the whole window, and Esc brings it back.
+  - AI conversations and notebook drafts encrypted: the AI assistant's conversation and history can quote rows it read, and an untitled notebook's draft holds chart points and cell outputs. Both are now kept in encrypted files on your computer, with the key in DBine's vault, instead of in the app's local storage in the clear. What earlier versions kept is moved over on the first start.
+  - Apache Drill transfers from servers before 1.19: the rows that wait for their column types once they no longer fit in memory now go to an encrypted temporary file, whose key exists only in memory, instead of a plain one. A file left behind if DBine closes mid-transfer can't be read.
+  - Schemas in Compare data: each side picks its schema in a list of its own, then a table of that schema, which helps on servers with many schemas.
+
+  Fixes
+  - Monitor CPU on Oracle and SQL Server: the database's CPU is now a share of all the server's CPUs. With several busy cores it read over 100 %, such as 500 % with five.
+  - Monitor CPU over 100 % on more engines: on MySQL, MongoDB, ClickHouse, SAP HANA, Redis, Dragonfly, Elasticsearch, OpenSearch, Solr, InfluxDB, Neo4j, Couchbase, IoTDB, etcd, CockroachDB, openGauss, Trino, Db2, SAP ASE, SQL Anywhere and Informix, the CPU was a share of one core and could read several hundred percent. It's now a share of all the CPUs the server may use.
+  - Monitor figures that were off: TDengine and IoTDB disk and network rates were 1024 times too high or too low, and TDengine 3.3.6 left the connection limit and the databases table empty. SQL Server's storage now counts tempdb at its current size and doesn't count a session once per request. H2's cache and storage sizes are now right, and so are OrientDB's record totals and ClickHouse's cache, which no longer includes the S3 disk cache. Exasol shows the RAM in use instead of the compressed data size, Couchbase's cache ratio counts disk fetches, and counts that stopped at 200 rows now count every row.
+  - Comparing data on big tables: Compare data… now compares whole tables, millions of rows on every engine, instead of stopping at 200,000 rows a side. Large tables go through an encrypted local copy that's deleted when the comparison ends. The comparison shows how many rows it has read and can be cancelled, and its counts always add up: rows past the other side's last read row no longer show as only on one side.
+  - Pasting a connection string: a SQL Server or ODBC connection string whose last value was a lone quote or brace (Password=") made the import fail; it's now read as that character.
+  - Scripts with escaped names: on ClickHouse and BigQuery, a name with a backslash-escaped backtick no longer splits a script into separate statements when it's opened in a query.
+  - openGauss jobs: enabling a job, or running its script, no longer fails or brings the server down.
+  - Dremio reflection scripts: they wrote DISTRIBUTE BY after PARTITION BY, which Dremio refuses; the order is now the one Dremio takes.
+  - pgAgent jobs: a user without access to the pgagent schema no longer gets "permission denied for schema pgagent" when listing jobs.
+  - Snowflake task graphs: a graph's finalizer was listed as a separate job; it's now part of its root's job.
+  - Choosing the key in Compare data: after a comparison, picking other tables left the key list with the previous comparison's columns; it now offers the new table's, and a result is dropped as soon as either side changes.
+ReleaseNotesUrl: https://github.com/addlayer-io/dbine/releases/tag/v1.6.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
