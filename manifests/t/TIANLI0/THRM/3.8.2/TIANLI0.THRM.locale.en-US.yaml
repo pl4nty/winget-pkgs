@@ -1,0 +1,38 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: TIANLI0.THRM
+PackageVersion: 3.8.2
+PackageLocale: en-US
+Publisher: TIANLI0
+PublisherUrl: https://github.com/TIANLI0/THRM
+PublisherSupportUrl: https://github.com/TIANLI0/THRM/issues
+Author: TIANLI0
+PackageName: THRM
+PackageUrl: https://github.com/TIANLI0/THRM
+License: MIT
+LicenseUrl: https://github.com/TIANLI0/THRM/blob/main/LICENSE
+Copyright: Copyright © 2026 TIANLI0
+ShortDescription: Flydigi BS-series cooler controller
+Description: Open-source controller for Flydigi BS-series laptop coolers, featuring smart fan curves, hardware monitoring, RGB control, profiles, and Windows/Linux support.
+Moniker: thrm
+Tags:
+- cooling
+- fan-control
+- flydigi
+- hardware-monitoring
+- laptop-cooler
+- rgb
+- system-tray
+- temperature-monitoring
+ReleaseNotes: |-
+  本次更新主要为日常维护与稳定性改进。
+  This update mainly contains routine maintenance and stability improvements.
+  更新亮点 / Highlights
+  - 本次无明显的新功能变化 / No notable new features in this build.
+
+  修复与改进 / Fixes and Improvements
+  - 常规维护与稳定性优化 / General maintenance and stability improvements.
+ReleaseNotesUrl: https://github.com/TIANLI0/THRM/releases/tag/v3.8.2
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
