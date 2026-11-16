@@ -1,0 +1,79 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: skyjake.Lagrange
+PackageVersion: 2.0.3
+PackageLocale: en-US
+Publisher: skyjake
+PublisherUrl: https://github.com/skyjake/lagrange
+PublisherSupportUrl: https://github.com/skyjake/lagrange/issues
+Author: skyjake
+PackageName: Lagrange
+PackageUrl: https://github.com/skyjake/lagrange
+License: BSD 2-Clause License
+LicenseUrl: https://raw.githubusercontent.com/skyjake/lagrange/dev/LICENSE.md
+Copyright: Copyright 2020 Jaakko Keränen (jaakko.keranen@iki.fi)
+CopyrightUrl: https://raw.githubusercontent.com/skyjake/lagrange/dev/LICENSE.md
+ShortDescription: Lagrange is a desktop GUI client for browsing the Geminispace web protocol.
+Tags:
+- client
+- gemini-protocol
+- gemini-web-protocol
+- geminiprotocol
+- geminiwebprotocol
+- gui
+ReleaseNotes: |-
+  - Added Preferences > Appearance > Square corners.
+  - Contents of sensitive input prompts are not backed up or remembered for restoring later.
+  - Identity files (certificates) are forced to owner-only file permissions (600).
+  - Identities: Certificates expiring in year 9999+ are treated as never expiring.
+  - Improved text contrast of inactive tab bar buttons.
+  - Feeds: "Read All" buttons switches to "Refresh" when there are no unread entries.
+  - Minor fine-tuning of document theme colors.
+  - Fixed: Feeds list scrolls to the current entry.
+  - Fixed: Books sidebar shows stale content after updating a book.
+  - Fixed: Occasional glitch when scrolling with a regular stepped mouse wheel.
+  - Fixed: Active tab button in the inactive split has the wrong color.
+  - Fixed: Link background misaligned behind the link icon.
+  - Fixed: Potential crash in text renderer due to unexpected C0 control characters.
+  - macOS: Fixed the input field cursor being drawn in the wrong place when the insertion point is the start of a wrapped line.
+  - Linux: Improved system dark mode detection.
+  - Linux: Enable per-pixel scroll events (already handled on macOS), e.g., for trackpads.
+  - Linux: Potential workaround for a rare Wayland glitch where keys get repeated unexpectedly.
+  - Haiku: Keybindings will be reset when upgrading. The Alt key is now the default primary modifier. The user's system-level modifier settings can override this.
+  - Haiku: Alt+W closes a tab, not the window. Alt+Q quits the app.
+  - Haiku: Default UI appearance is "Light".
+  - Haiku: Attempt to keep the window hidden during startup, as on other platforms.
+  What's new in v2.0?
+  ───────────────┬──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  OS             │Download                  │Details
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Linux Desktop  │x86_64 AppImage           │Built on Ubuntu 22.04. (sig) (zsync)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │aarch64 AppImage          │Built on Debian 13 (Trixie). (sig) (zsync)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │armhf AppImage            │Built on Raspbian 10 (Buster). (sig) (zsync)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  macOS Desktop  │Apple arm64               │Requires macOS 11.0 or later. (sig)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │Intel x86_64              │Requires macOS 10.13 or later. (sig)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Windows Desktop│setup.exe (64‑bit)        │Requires 64-bit Windows 7 or later. (sig)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │portable.zip (64‑bit)     │Requires 64-bit Windows 7 or later. Can be extracted and run as-is — user files will be stored under the "userdata" subdirectory. (sig)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Linux Terminal │x86_64 AppImage           │Curses-based text UI. Built on Ubuntu 22.04. (sig) (zsync)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │aarch64 AppImage          │Curses-based text UI. Built on Debian 13 (Trixie). (sig) (zsync)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │armhf AppImage            │Curses-based text UI. Built on Raspbian 10 (Buster). (sig) (zsync)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  macOS Terminal │Apple arm64               │Curses-based text UI. Installs to "/usr/local/bin/clagrange". Requires macOS 11.0 or later. (sig)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                 │Intel x86_64              │Curses-based text UI. Installs to "/usr/local/bin/clagrange". Requires macOS 10.13 or later. (sig)
+  ───────────────┼──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Any            │Source tarball            │Contains all the required source files including dependencies. This is recommended for source builds. (sig)
+  ───────────────┴──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ReleaseNotesUrl: https://github.com/skyjake/lagrange/releases/tag/v2.0.3
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
