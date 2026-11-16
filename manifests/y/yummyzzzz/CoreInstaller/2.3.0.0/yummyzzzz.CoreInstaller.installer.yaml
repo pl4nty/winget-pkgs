@@ -1,0 +1,18 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: yummyzzzz.CoreInstaller
+PackageVersion: 2.3.0.0
+InstallerType: exe
+InstallerSwitches:
+  Silent: --silent
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.VCRedist.2015+.x64
+ReleaseDate: 2026-08-02
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/yummyzzzz/CoreInstaller/releases/download/CoreInstaller/CoreInstaller.exe
+  InstallerSha256: B51A7AC53C13F27FE3296477C9EF7319FED3FDDF56825EA5CDDD0668C82198D9
+ManifestType: installer
+ManifestVersion: 1.28.0
