@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: VoodooSoft.CyberLock
+PackageVersion: '9.15'
+InstallerType: inno
+Scope: machine
+ProductCode: '{2C5A38DA-386D-43F3-B979-A5AA8A772E59}_is1'
+ReleaseDate: 2026-09-16
+AppsAndFeaturesEntries:
+- ProductCode: '{2C5A38DA-386D-43F3-B979-A5AA8A772E59}_is1'
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\CyberLock'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://cyberlock.global/downloads/InstallCyberLock.exe
+  InstallerSha256: 050A944F915D46B55981ACD16F9F8DC9443BAE7B7C6C44736EA04A3121A2E631
+ManifestType: installer
+ManifestVersion: 1.28.0
