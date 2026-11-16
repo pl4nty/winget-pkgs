@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: NormLanguage.Norm
+PackageVersion: 0.27.31
+InstallerType: portable
+Commands:
+- norm
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/normlanguage/Norm/releases/download/v0.27.31/norm.exe
+  InstallerSha256: 19EF439E85B47714F2BFCDCD41E84F5C089DC12EF372861FC827BA5E0C913AF8
+ManifestType: installer
+ManifestVersion: 1.28.0
