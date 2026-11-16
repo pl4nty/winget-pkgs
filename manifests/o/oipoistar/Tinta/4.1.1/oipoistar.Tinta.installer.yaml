@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: oipoistar.Tinta
+PackageVersion: 4.1.1
+InstallerType: portable
+Commands:
+- tinta
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/oipoistar/tinta/releases/download/v4.1.1/tinta.exe
+  InstallerSha256: ED176D56C5D86565767802DDE1DB2FE8A2F4D90AC8BF5723D197DF5C86245585
+ManifestType: installer
+ManifestVersion: 1.28.0
