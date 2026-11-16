@@ -1,0 +1,53 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: havurgiray.aht
+PackageVersion: 0.17.0
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerType: inno
+  Scope: user
+  InstallerUrl: https://github.com/havurgiray/agent-history-tether/releases/download/v0.17.0/aht-setup-0.17.0-windows-x64.exe
+  InstallerSha256: EBE1E2B971A1CC7D9AD178961A7AF1D1283DAD10562C65D0E68CD749875FE297
+  ProductCode: '{B3D9504B-56FA-4E4C-B91B-2DBA1B6A3542}_is1'
+  AppsAndFeaturesEntries:
+  - DisplayName: aht
+    Publisher: aht (agent-history-tether)
+    ProductCode: '{B3D9504B-56FA-4E4C-B91B-2DBA1B6A3542}_is1'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\aht'
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: aht-tray.exe
+    PortableCommandAlias: aht-tray
+  - RelativeFilePath: aht.exe
+    PortableCommandAlias: aht
+  InstallerUrl: https://github.com/havurgiray/agent-history-tether/releases/download/v0.17.0/aht-0.17.0-windows-x64.zip
+  InstallerSha256: B64C6A6D8ADD1D49A576BD54DECAE14CFEEADB53837BE093AFEE7A8B162C1787
+- Architecture: arm64
+  InstallerType: inno
+  Scope: user
+  InstallerUrl: https://github.com/havurgiray/agent-history-tether/releases/download/v0.17.0/aht-setup-0.17.0-windows-arm64.exe
+  InstallerSha256: FDAAC271BE1D85D93CBE03147B4CB133619284ED43C805F7B681CABA882142A1
+  ProductCode: '{B3D9504B-56FA-4E4C-B91B-2DBA1B6A3542}_is1'
+  AppsAndFeaturesEntries:
+  - DisplayName: aht
+    Publisher: aht (agent-history-tether)
+    ProductCode: '{B3D9504B-56FA-4E4C-B91B-2DBA1B6A3542}_is1'
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Programs\aht'
+- Architecture: arm64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: aht-tray.exe
+    PortableCommandAlias: aht-tray
+  - RelativeFilePath: aht.exe
+    PortableCommandAlias: aht
+  InstallerUrl: https://github.com/havurgiray/agent-history-tether/releases/download/v0.17.0/aht-0.17.0-windows-arm64.zip
+  InstallerSha256: 5AD18789BA82A2AD957018F1D4A2C3914DABB95132D7131285A2AE204D1C1C76
+ManifestType: installer
+ManifestVersion: 1.28.0
