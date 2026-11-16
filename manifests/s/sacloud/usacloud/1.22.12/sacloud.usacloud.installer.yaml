@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: sacloud.usacloud
+PackageVersion: 1.22.12
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: usacloud.exe
+ReleaseDate: 2026-11-13
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/sacloud/usacloud/releases/download/v1.22.12/usacloud_windows-386.zip
+  InstallerSha256: 9C187B0BECAFA1FD788205BB4DC28C4EDCCDDDEA14ECE96E2907F12BC045E9CD
+- Architecture: x64
+  InstallerUrl: https://github.com/sacloud/usacloud/releases/download/v1.22.12/usacloud_windows-amd64.zip
+  InstallerSha256: 663126681B8D1A95705A30DF750B75B9765D8CF4C183F11C6286B2CB3F7226F1
+- Architecture: arm64
+  InstallerUrl: https://github.com/sacloud/usacloud/releases/download/v1.22.12/usacloud_windows-arm64.zip
+  InstallerSha256: B348B35D110A82B582C3D10C4584C88F2F2FEBBB0928158B75F0084C3A3D804C
+ManifestType: installer
+ManifestVersion: 1.28.0
