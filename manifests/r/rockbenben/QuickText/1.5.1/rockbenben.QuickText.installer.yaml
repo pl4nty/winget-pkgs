@@ -1,0 +1,16 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: rockbenben.QuickText
+PackageVersion: 1.5.1
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: QuickText.exe
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/rockbenben/QuickText/releases/download/v1.5.1/QuickText-v1.5.1-win-x64.zip
+  InstallerSha256: 84B4D7C8ADA2B1C566CCB37476169E8F3472B744B9A890633DED15D3C14AFA3F
+ManifestType: installer
+ManifestVersion: 1.28.0
