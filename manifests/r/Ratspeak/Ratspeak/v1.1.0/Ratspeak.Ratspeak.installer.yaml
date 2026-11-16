@@ -1,0 +1,35 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Ratspeak.Ratspeak
+PackageVersion: v1.1.0
+InstallModes:
+- silent
+InstallerSwitches:
+  InstallLocation: INSTALLDIR="<INSTALLPATH>"
+UpgradeBehavior: uninstallPrevious
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/ratspeak/Ratspeak/releases/download/v1.1.0/Ratspeak-v1.1.0-windows-x64-setup.exe
+  InstallerSha256: 2742CBC71C4A749B643A8660641D6D1D376562F27827E4BD160464DFEF559094
+  ProductCode: Ratspeak
+  AppsAndFeaturesEntries:
+  - ProductCode: Ratspeak
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Ratspeak'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/ratspeak/Ratspeak/releases/download/v1.1.0/Ratspeak-v1.1.0-windows-x64.msi
+  InstallerSha256: E4641B01B104145C5724ED9113D5F0D527C0FE5487994068BEF8075DF6BD62DF
+  ProductCode: '{BB29F959-8EC6-4C2D-A7BA-2C9DC0E8A2E9}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{BB29F959-8EC6-4C2D-A7BA-2C9DC0E8A2E9}'
+    UpgradeCode: '{A3360DE7-B884-5F05-91C9-B14A55D17949}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Ratspeak'
+ManifestType: installer
+ManifestVersion: 1.28.0
