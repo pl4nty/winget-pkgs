@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: DMM.GamePlayer
+PackageVersion: 5.5.26
+MinimumOSVersion: 10.0.0.0
+InstallerType: nullsoft
+Scope: machine
+ProductCode: 4f611540-42ad-5bdd-87fd-c415b0bdbb3e
+ReleaseDate: 2026-11-13
+AppsAndFeaturesEntries:
+- ProductCode: 4f611540-42ad-5bdd-87fd-c415b0bdbb3e
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\DMMGamePlayer'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://dlapp-dmmgameplayer.games.dmm.com/DMMGamePlayer-Setup-5.5.26.exe
+  InstallerSha256: 866801082FDF06CB93508594A030C571E18895B251C254FD977B95EA667D6F1E
+ManifestType: installer
+ManifestVersion: 1.28.0
