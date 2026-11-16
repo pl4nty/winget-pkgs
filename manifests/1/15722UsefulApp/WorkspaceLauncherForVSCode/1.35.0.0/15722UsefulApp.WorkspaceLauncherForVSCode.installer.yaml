@@ -1,0 +1,37 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: 15722UsefulApp.WorkspaceLauncherForVSCode
+PackageVersion: 1.35.0.0
+Platform:
+- Windows.Desktop
+- Windows.Universal
+MinimumOSVersion: 10.0.17763.0
+InstallerType: msix
+UpgradeBehavior: install
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.WindowsAppRuntime.1.6
+PackageFamilyName: 15722UsefulApp.WorkspaceLauncherforVSCode_s4b834ss2syh6
+Capabilities:
+- internetClient
+RestrictedCapabilities:
+- runFullTrust
+ReleaseDate: 2026-11-12
+AppsAndFeaturesEntries:
+- DisplayVersion: 1.34.0.0
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/tanchekwei/VisualStudioCodeForCommandPalette/releases/download/v1.35.0.0/15722UsefulApp.WorkspaceLauncherforVSCode_1.35.0.0_x64__s4b834ss2syh6.Msix
+  InstallerSha256: 4CF46EA7BA53D7CFDD4181E74A68D5D2FB70AA3D9FAB2043CCC258851CA9FA58
+  SignatureSha256: 88502B10BF93069CC3022639E48F65659D3C592995DE5704844EB65D5CBBF4C8
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\WindowsApps\15722UsefulApp.WorkspaceLauncherforVSCode_1.35.0.0_x64__s4b834ss2syh6'
+- Architecture: arm64
+  InstallerUrl: https://github.com/tanchekwei/VisualStudioCodeForCommandPalette/releases/download/v1.35.0.0/15722UsefulApp.WorkspaceLauncherforVSCode_1.35.0.0_arm64__s4b834ss2syh6.Msix
+  InstallerSha256: AC720B3F6F4AB2591D4C12ACE14C8CE810E6D19A881D948815DA0AD1CDDE63B3
+  SignatureSha256: 6E4144912F0FAD3DBEC2E5A15DCA21132D42A3FA50D63D2D188F3C49CA5E689A
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\WindowsApps\15722UsefulApp.WorkspaceLauncherforVSCode_1.35.0.0_arm64__s4b834ss2syh6'
+ManifestType: installer
+ManifestVersion: 1.28.0
