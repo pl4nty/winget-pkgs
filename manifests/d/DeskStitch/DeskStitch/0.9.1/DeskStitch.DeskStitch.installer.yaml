@@ -1,0 +1,28 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: DeskStitch.DeskStitch
+PackageVersion: 0.9.1
+InstallerType: inno
+Scope: machine
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ProductCode: '{3D6A1F0E-8B2C-4C7D-9A5E-1F2B3C4D5E6F}_is1'
+ReleaseDate: 2026-11-16
+AppsAndFeaturesEntries:
+- ProductCode: '{3D6A1F0E-8B2C-4C7D-9A5E-1F2B3C4D5E6F}_is1'
+ElevationRequirement: elevatesSelf
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\DeskStitch'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/jonseoane/deskstitch-releases/releases/download/v0.9.1/DeskStitch-Setup-0.9.1-x64.exe
+  InstallerSha256: 30EDFDEC549C30A3A3159E4CCB044BE2ABDA8364709D475FCAC7327EDA6C35F4
+- Architecture: arm64
+  InstallerUrl: https://github.com/jonseoane/deskstitch-releases/releases/download/v0.9.1/DeskStitch-Setup-0.9.1-arm64.exe
+  InstallerSha256: B38B7138984290C62056D012BFA75C3C86E8970EE445692D4DF2DD2186EB1A7E
+ManifestType: installer
+ManifestVersion: 1.28.0
