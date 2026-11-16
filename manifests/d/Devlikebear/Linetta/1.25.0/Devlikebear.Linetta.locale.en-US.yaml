@@ -1,0 +1,34 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Devlikebear.Linetta
+PackageVersion: 1.25.0
+PackageLocale: en-US
+Publisher: devlikebear
+PublisherUrl: https://github.com/devlikebear
+PublisherSupportUrl: https://github.com/devlikebear/linetta/issues
+PrivacyUrl: https://github.com/devlikebear/linetta/blob/v1.6.0/docs/privacy-policy.md
+Author: devlikebear
+PackageName: Linetta
+PackageUrl: https://github.com/devlikebear/linetta
+License: AGPL-3.0-only
+LicenseUrl: https://github.com/devlikebear/linetta/blob/v1.6.0/LICENSE
+ShortDescription: Local-first desktop writing app for long-form fiction.
+Moniker: linetta
+Tags:
+- desktop
+- fiction
+- writing
+ReleaseNotes: |-
+  What's Changed
+  - fix: 회차 본문 복사가 렌더러 허용 목록에 막히던 문제와 회차 검수 안내 문구를 바로잡는다 by @devlikebear in #388
+  - feat(agent): 모델이 도구 호출을 쓰는 동안 어떤 도구를 준비하는지 패널에 보여 준다 by @devlikebear in #389
+  - feat(agent): 체험 공급자 Phase 2 — linetta-trial 엔진 공급자 by @devlikebear in #390
+  - feat(trial): 체험 공급자 Phase 3 — 앱 온보딩과 문서 by @devlikebear in #392
+  - feat(search): 원고 검색 결과가 장면 안의 문단 범위까지 가리킨다 (#384 1단계) by @devlikebear in #391
+  - feat(editor): 연속성 점검의 ¶ 표시를 누르면 장면의 그 문단으로 가서 인용을 강조한다 (#385 1단계) by @devlikebear in #393
+  - feat(trial): 체험 상위 모델을 Claude Haiku 5.5로 바꾸고 Anthropic 클라이언트로 프록시를 부른다 by @devlikebear in #394
+  - chore: release v1.25.0 by @devlikebear in #395
+ReleaseNotesUrl: https://github.com/devlikebear/linetta/releases/tag/v1.25.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
