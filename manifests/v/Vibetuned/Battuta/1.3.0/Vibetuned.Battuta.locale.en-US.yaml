@@ -1,0 +1,16 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Vibetuned.Battuta
+PackageVersion: 1.3.0
+PackageLocale: en-US
+Publisher: Vibetuned
+PublisherUrl: https://github.com/vibetuned
+PublisherSupportUrl: https://github.com/vibetuned/battuta/issues
+PackageName: Battuta
+PackageUrl: https://github.com/vibetuned/battuta
+License: AGPL
+LicenseUrl: https://github.com/vibetuned/battuta/blob/HEAD/LICENSE
+ShortDescription: A local-first MEI score editor that treats notation the way a text editor treats text
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
