@@ -1,0 +1,18 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: r2cuerdame.CodeSampleX
+PackageVersion: 0.2.26
+InstallerType: portable
+Commands:
+- csx
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/r2cuerdame/CodeSampleX/releases/download/v0.2.26/csx-windows-amd64.exe
+  InstallerSha256: 955164EC399AB28BC0CDE0D0F76B06AD5265F097F390EDDC0A49C767A060EB16
+- Architecture: arm64
+  InstallerUrl: https://github.com/r2cuerdame/CodeSampleX/releases/download/v0.2.26/csx-windows-arm64.exe
+  InstallerSha256: 5F9E1ACBEAF298CA30EF128E576F411EBE4D9F0A1F32AEE50C8041DBF2C6AE07
+ManifestType: installer
+ManifestVersion: 1.28.0
