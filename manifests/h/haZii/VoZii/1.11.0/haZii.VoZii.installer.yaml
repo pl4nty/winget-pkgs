@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: haZii.VoZii
+PackageVersion: 1.11.0
+InstallerType: portable
+Commands:
+- vozii
+ReleaseDate: 2026-11-15
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/haZiinstinct/VoZii/releases/download/v1.11.0/VoZii.exe
+  InstallerSha256: 0ADF23B54C589C3F5DCD1ECD84A7FA6F09B5439B93742E49C7E0404FF70DC660
+ManifestType: installer
+ManifestVersion: 1.28.0
