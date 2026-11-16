@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: RSSNext.Folo
+PackageVersion: 1.18.0
+InstallerType: portable
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+Commands:
+- Folo
+ProductCode: Folo
+ReleaseDate: 2026-11-15
+AppsAndFeaturesEntries:
+- ProductCode: Folo
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/RSSNext/Folo/releases/download/desktop/v1.18.0/Folo-1.18.0-windows-x64.exe
+  InstallerSha256: 91E081D1EE5411F874DAB826ABA1DAD28BBB4BB21F7D38D4545DA2CA0EF7A411
+ManifestType: installer
+ManifestVersion: 1.28.0
