@@ -1,0 +1,28 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: MullvadVPN.MullvadVPN.beta
+PackageVersion: 2026.6-beta1
+InstallerType: nullsoft
+Scope: machine
+InstallModes:
+- interactive
+- silent
+UpgradeBehavior: install
+ProductCode: 2A356FD4-03B7-4F45-99B4-737BE580DC82
+ReleaseDate: 2026-11-16
+AppsAndFeaturesEntries:
+- ProductCode: 2A356FD4-03B7-4F45-99B4-737BE580DC82
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/mullvad/mullvadvpn-app/releases/download/2026.6-beta1/MullvadVPN-2026.6-beta1_x64.exe
+  InstallerSha256: 0DDA2B8C17757C5B179A0D6BE8D296B7A4F1D2DB1852E1B668CD0548D56BB9ED
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Mullvad VPN'
+- Architecture: arm64
+  InstallerUrl: https://github.com/mullvad/mullvadvpn-app/releases/download/2026.6-beta1/MullvadVPN-2026.6-beta1_arm64.exe
+  InstallerSha256: 7274C92D33F532E4345B7B2B38EEF72F19D9DC0CD211227104269B9D66CABC67
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles(x86)%\Mullvad VPN'
+ManifestType: installer
+ManifestVersion: 1.28.0
