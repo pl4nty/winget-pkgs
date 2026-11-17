@@ -1,0 +1,43 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Devlikebear.Linetta
+PackageVersion: 1.26.0
+PackageLocale: en-US
+Publisher: devlikebear
+PublisherUrl: https://github.com/devlikebear
+PublisherSupportUrl: https://github.com/devlikebear/linetta/issues
+PrivacyUrl: https://github.com/devlikebear/linetta/blob/v1.6.0/docs/privacy-policy.md
+Author: devlikebear
+PackageName: Linetta
+PackageUrl: https://github.com/devlikebear/linetta
+License: AGPL-3.0-only
+LicenseUrl: https://github.com/devlikebear/linetta/blob/v1.6.0/LICENSE
+ShortDescription: Local-first desktop writing app for long-form fiction.
+Moniker: linetta
+Tags:
+- desktop
+- fiction
+- writing
+ReleaseNotes: |-
+  What's Changed
+  - feat(agent): 원고 답의 출처를 확인하는 linetta_cite_sources와 출처 전달 경로 (#385 2단계) by @devlikebear in #396
+  - feat(agent): 원고에 묻는 질문 모드와 출처 카드 (#385 3단계) by @devlikebear in #397
+  - feat(export): 작품·회차·장면을 DOCX와 TXT로 내보내는 창 (#383 1단계) by @devlikebear in #398
+  - feat(proposals): 제안함에 원장 항목 제안과 organize 목적을 더한다 (#387 1단계 앞부분) by @devlikebear in #400
+  - feat(story-world): 원장의 갚을 것을 회차 축에 그리는 복선 지도 (#386 A단계) by @devlikebear in #399
+  - feat(proposals): 거절한 이름을 기억하고 비슷한 이름을 표시한다 (#387 1단계 뒷부분) by @devlikebear in #401
+  - feat(export): 작품·회차·장면을 한글(HWPX)로 내보낸다 (#383 2단계) by @devlikebear in #402
+  - feat(relationship): 관계가 회차에 따라 바뀌는 시간 축과 change_relationship (#386 B1a) by @devlikebear in #403
+  - feat(export): DOCX·HWPX에 삽화 그림과 표지·차례를 넣는다 (#383 3단계) by @devlikebear in #404
+  - feat(relationship): 엔티티 시트의 관계 이력과 장면에서 관계 변화 기록 (#386 B1b) by @devlikebear in #405
+  - feat(relationship): 회차 슬라이더로 그 시점의 관계를 보는 관계도 (#386 B2) by @devlikebear in #406
+  - feat(agent): 직접 요청으로 회차를 읽어 정리 제안을 받는 organize 패스 (#387 2단계) by @devlikebear in #407
+  - feat(agent): 회차를 옮기거나 오래 쉬면 정리 제안이 스스로 돈다 (#387 3단계) by @devlikebear in #408
+  - feat(search): 기기 안의 모델로 문단을 임베딩하는 의미 검색 엔진 (#384 2단계) by @devlikebear in #409
+  - feat(search): 검색 창의 뜻/단어 전환과 설정의 뜻으로 찾기 (#384 3단계) by @devlikebear in #410
+  - chore(search): 의미 검색 평가 세트를 저장소에 두고 회귀 테스트로 고정한다 (#384, #411) by @devlikebear in #412
+  - chore: release v1.26.0 by @devlikebear in #413
+ReleaseNotesUrl: https://github.com/devlikebear/linetta/releases/tag/v1.26.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
