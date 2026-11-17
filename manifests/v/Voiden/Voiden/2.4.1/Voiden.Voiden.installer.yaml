@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Voiden.Voiden
+PackageVersion: 2.4.1
+InstallerType: nullsoft
+Scope: machine
+ProductCode: f04c0dc9-0645-59a4-af03-e4d9891b1b61
+ReleaseDate: 2026-11-16
+AppsAndFeaturesEntries:
+- ProductCode: f04c0dc9-0645-59a4-af03-e4d9891b1b61
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles%\Voiden'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/VoidenHQ/voiden/releases/download/v2.4.1/Voiden.Setup.2.4.1.exe
+  InstallerSha256: 466F37601E5A81FDA03A3CFB6F71DED65B7F37EDE78F36DE52F68A6006263E6C
+ManifestType: installer
+ManifestVersion: 1.28.0

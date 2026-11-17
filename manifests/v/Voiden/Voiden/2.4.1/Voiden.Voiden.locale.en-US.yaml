@@ -1,0 +1,84 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Voiden.Voiden
+PackageVersion: 2.4.1
+PackageLocale: en-US
+Publisher: Voiden
+PublisherUrl: https://voiden.md/
+PublisherSupportUrl: https://github.com/VoidenHQ/voiden/issues
+PackageName: Voiden
+PackageUrl: https://voiden.md/
+License: Apache-2.0
+LicenseUrl: https://github.com/VoidenHQ/voiden/blob/HEAD/LICENSE
+ShortDescription: Build, Test, Document & Collaborate. Streamline your API development process with Voiden
+Tags:
+- api-client
+- automation
+- bruno-alternative
+- cli
+- curl-alternative
+- http-client
+- insomnia-alternative
+- offline-first
+- openapi
+- openapi3
+- opensource
+- postman-alternative
+- rest-api
+- scripting
+- testing
+- websocket
+ReleaseNotes: |-
+  Stable: New Start Tab, Guided Tour and Import Flow
+  Stable release rolling up v2.4.1-beta.1 plus newer onboarding changes: a new Start tab, a guided playground tour that now covers the block menu, committing to Git and plugins, one import dialog for Postman, OpenAPI, Insomnia, Bruno, HAR and curl, cursor memory and a vertical left-panel tab bar.
+
+  Added
+  - A new Start tab replaces the Welcome screen, with quick actions and recent projects
+  - A guided playground project walks through a first request, environments, headers, the block menu and reusable blocks
+  - Coach tips guide each tour step, with a Getting Started checklist that folds into a small pill while you edit
+  - The tour shows how to open any block's menu with ⋮⋮ or Cmd/Ctrl+.
+  - The tour covers opening a plugin and enabling, disabling or uninstalling it
+  - Source Control can link a remote repository and publish the branch to it, right after Initialize
+  - The tour can be run again from the start once every step is done
+  - One import dialog for Postman, OpenAPI, Insomnia, Bruno, HAR and curl files
+  - A pasted curl command can move its secrets into private environment variables on import
+  - Set up a project from existing files: OpenAPI specs and .env templates found in the folder
+  - Left panel tabs can sit in a vertical bar beside the panel, set in Settings or the command palette
+  - Each file reopens with the cursor where you left it
+
+  Improved
+  - Tour tips are one short line each, with the details kept in the playground file
+  - The Getting Started checklist animates between the pill and the full list
+  - Playground steps explain private environment variables and browsing a file's blocks with Space after @
+  - Form upload and binary body files stay in the playground as extra examples
+  - Typing }} inside {{variable}} steps over the auto-inserted braces instead of doubling them
+
+  Fixed
+  - The default shell select in Settings no longer squeezes its label
+  - The @ file picker and / command menus no longer stay on screen after switching tabs
+  - A plugin's details page stays open after disabling or uninstalling it
+  - The playground form example points to the right binary body file
+
+  What's Changed
+  - Main to beta merge by @phurpa-tsering in #615
+  - Fix blank window after using File > Open Recent by @simranxdhindsa in #611
+  - Diff viewer: show .void files as native Voiden blocks by @simranxdhindsa in #606
+  - Resolve .void merge conflicts as blocks, plus Source Control enhancements by @simranxdhindsa in #607
+  - Terminal command install on all Macs, with a copyable command by @simranxdhindsa in #613
+  - Show images and other binary files properly in diffs, previews and conflicts by @simranxdhindsa in #614
+  - feat(ui): add color support for HTTP QUERY method by @muhammadlutf1 in #599
+  - Send the install code with update checks by @phurpa-tsering in #616
+  - Main to beta merge by @phurpa-tsering in #617
+  - Stop the loader flash when switching files in Commit History by @simranxdhindsa in #618
+  - Feature/variable provider api by @phurpa-tsering in #621
+  - fix: keep template variables intact when prettifying a JSON body by @RagedPanda in #624
+  - Beta to main by @phurpa-tsering in #627
+  - feat(onboarding): new Start tab, guided playground tour and import flow by @phurpa-tsering in #629
+  - Beta to main: Voiden 2.4.1 by @phurpa-tsering in #631
+
+  New Contributors
+  - @RagedPanda made their first contribution in #624
+ReleaseNotesUrl: https://github.com/VoidenHQ/voiden/releases/tag/v2.4.1
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
