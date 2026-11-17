@@ -1,0 +1,37 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: AddLayer.DBine
+PackageVersion: 1.6.2
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/addlayer-io/dbine/releases/download/v1.6.2/DBine_1.6.2_x64-setup.exe
+  InstallerSha256: 0F7E29AC685A664CBB228A965CB60460F583F876CDFD6AAF04014B4515AE1665
+  ProductCode: DBine
+  AppsAndFeaturesEntries:
+  - ProductCode: DBine
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\DBine'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/addlayer-io/dbine/releases/download/v1.6.2/DBine_1.6.2_x64_en-US.msi
+  InstallerSha256: D9FAC63FEA2C5E20E2B3C1A0B8F9305AF599EADD06850538C1DE26113F1F9309
+  InstallerSwitches:
+    InstallLocation: INSTALLDIR="<INSTALLPATH>"
+  ProductCode: '{AD680BDA-9A92-4FA1-BCC3-44E00A44E384}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{AD680BDA-9A92-4FA1-BCC3-44E00A44E384}'
+    UpgradeCode: '{2F919208-3148-582D-886D-2113E8BF292D}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\DBine'
+ManifestType: installer
+ManifestVersion: 1.28.0
