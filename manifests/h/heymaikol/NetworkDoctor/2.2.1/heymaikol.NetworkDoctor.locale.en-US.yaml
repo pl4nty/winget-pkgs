@@ -1,0 +1,45 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: heymaikol.NetworkDoctor
+PackageVersion: 2.2.1
+PackageLocale: en-US
+Publisher: Michael Placzek
+PublisherUrl: https://github.com/heymaikol
+PublisherSupportUrl: https://github.com/heymaikol/network-doctor/issues
+PackageName: Network Doctor
+PackageUrl: https://heymaikol.github.io/network-doctor/
+License: Apache-2.0
+LicenseUrl: https://github.com/heymaikol/network-doctor/blob/HEAD/LICENSE
+ShortDescription: Terminal UI that diagnoses network connectivity and explains where the connection breaks
+Moniker: network-doctor
+Tags:
+- cli
+- diagnostics
+- network
+ReleaseNotes: |-
+  New: --watch-interval
+  Sets the pause between -watch passes. The default is 5s, the same pause as before, and the minimum is 1s. The pause is measured from the end of one pass to the start of the next, so a slow pass is never overlapped.
+  - Requires -watch. Without it, or with a value under 1s, netdoc exits with status 2.
+  - Works in the TUI, with -json -watch, and with -watch -profile. The TUI context strip shows the interval in use.
+  Example: netdoc -watch -watch-interval 30s example.com
+
+  Fixes
+  - Link-local IPv6 sources bind through their interface, so a reachable scoped peer is no longer reported as unreachable. If the same address is held by more than one interface, netdoc refuses rather than guessing.
+  - A link-local destination no longer also tries IPv4 in generic TCP and UDP checks.
+  - Profile runs no longer start new acquisitions after you cancel.
+  - Cancelled or timed-out SSH startups report "interrupted" or "timed out" instead of "could not run ssh". Exit codes are unchanged.
+  - Remote runs report output a worker wrote after a failed request. A clean answer after a failed request is not accepted. A cancellation or deadline is reported even when the answer had already arrived.
+  - OSC 52 clipboard notices say "copy requested (OSC 52)", because the terminal confirms receipt, not that the clipboard changed. A failed write is reported as "copy failed".
+
+  Security
+  - Updated golang.org/x/crypto to fix GO-2026-5932.
+  - Narrowed the demo workflow's token permissions (#497). Its token is now read-only by default, and only its manual publish job can write.
+
+  Changes to distribution
+  - Automatic Fedora COPR publishing is discontinued. This release does not publish COPR packages. Install from the .rpm, .deb, or .apk attached to this release, or use Homebrew or Scoop.
+  - Homebrew and Scoop continue to receive every release.
+  - No existing flag was removed or renamed, and the default watch pause is unchanged.
+ReleaseNotesUrl: https://github.com/heymaikol/network-doctor/releases/tag/v2.2.1
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0

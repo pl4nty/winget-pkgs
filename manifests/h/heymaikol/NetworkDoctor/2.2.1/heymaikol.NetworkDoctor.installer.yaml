@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: heymaikol.NetworkDoctor
+PackageVersion: 2.2.1
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: netdoc.exe
+  PortableCommandAlias: netdoc
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/heymaikol/network-doctor/releases/download/v2.2.1/netdoc_2.2.1_windows_amd64.zip
+  InstallerSha256: DF8FBE6DAE3E0BAB1C1E0425D2EA2ED3FE08E296292ECF3F58FFF46F30FA5C27
+- Architecture: arm64
+  InstallerUrl: https://github.com/heymaikol/network-doctor/releases/download/v2.2.1/netdoc_2.2.1_windows_arm64.zip
+  InstallerSha256: 2625D70D1A537267984203779A75EEAD83C438F017FA44486DCDEA694E5C0C29
+ManifestType: installer
+ManifestVersion: 1.28.0
