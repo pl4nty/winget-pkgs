@@ -1,0 +1,15 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: dasimon.CubeScope
+PackageVersion: 0.21.0
+InstallerType: portable
+Commands:
+- cubescope
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/dasimon/CubeScope/releases/download/v0.21.0/cubescope.exe
+  InstallerSha256: 66A5539B6B665F84E2CC7F5104AF2BFBB3F54881C6187643D1125FAED8D221BB
+ManifestType: installer
+ManifestVersion: 1.28.0
