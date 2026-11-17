@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: PDFMarin.PDFMarin
+PackageVersion: 0.4.4
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ProductCode: c047670e-e7e7-506a-9ff5-19d3318f6c22
+ReleaseDate: 2026-11-15
+AppsAndFeaturesEntries:
+- ProductCode: c047670e-e7e7-506a-9ff5-19d3318f6c22
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\PDF MARIN'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/pdf-marin/pdf-marin.github.io/releases/download/v0.4.4/PDF-MARIN-Setup-0.4.4.exe
+  InstallerSha256: EA2E5A8A22A94693F39DD546CDBBDE0D2CE33FA0711B33EEF3C6D95FD1D61838
+ManifestType: installer
+ManifestVersion: 1.28.0
