@@ -1,0 +1,34 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: TomasBruckner.dbc
+PackageVersion: 0.44.0
+PackageLocale: en-US
+Publisher: Tomáš Bruckner
+PublisherUrl: https://github.com/tomasbruckner
+PublisherSupportUrl: https://github.com/tomasbruckner/dbc/issues
+PrivacyUrl: https://github.com/tomasbruckner/dbc/blob/main/PRIVACY.md
+Author: Tomáš Bruckner
+PackageName: dbc
+PackageUrl: https://github.com/tomasbruckner/dbc
+License: MIT
+LicenseUrl: https://github.com/tomasbruckner/dbc/blob/main/LICENSE
+Copyright: © Tomáš Bruckner
+ShortDescription: Database client for SQL Server, PostgreSQL, SQLite and DuckDB
+Description: 'Native Windows database client: SQL editor with completion, result grids, query history, execution plans, server monitoring, backups and schema comparison. Passwords stay in a local encrypted vault. Ships a command-line client (dbc.exe) and an MCP server for AI tools (dbc-mcp.exe). The user interface is in Czech or English. The app updates itself from GitHub Releases.'
+Moniker: dbc
+Tags:
+- database
+- duckdb
+- mssql
+- postgresql
+- sql
+- sql-server
+- sqlite
+ReleaseNotes: |-
+  Ctrl+C copies the name of whatever is selected.
+  Added
+  - Ctrl+C copies the selected item's name in the sidebar tree (connection, database, schema, table, column, script…), in Server administration (role, schema) and in the ER diagram (table)
+ReleaseNotesUrl: https://github.com/tomasbruckner/dbc/releases/tag/v0.44.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
