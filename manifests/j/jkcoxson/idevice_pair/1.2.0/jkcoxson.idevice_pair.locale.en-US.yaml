@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: jkcoxson.idevice_pair
+PackageVersion: 1.2.0
+PackageLocale: en-US
+Publisher: jkcoxson
+PublisherUrl: https://github.com/jkcoxson
+PublisherSupportUrl: https://github.com/jkcoxson/idevice_pair/issues
+PackageName: idevice_pair
+PackageUrl: https://github.com/jkcoxson/idevice_pair
+License: MIT
+ShortDescription: A cross-platform GUI for creating iOS pairing files, over USB or over Wi-Fi.
+ReleaseNotes: |-
+  - Promptless RPPairings
+  - Lots of optimization and fixes
+ReleaseNotesUrl: https://github.com/jkcoxson/idevice_pair/releases/tag/v1.2.0
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
