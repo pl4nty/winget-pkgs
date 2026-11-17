@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: maze-mei.DXManager
+PackageVersion: 3.0.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: DX Manager v3.0.0\DXManager.exe
+  PortableCommandAlias: dxmanager
+Commands:
+- dxmanager
+ReleaseDate: 2026-11-14
+ArchiveBinariesDependOnPath: true
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/maze-mei/DX-Manager/releases/download/v3.0.0/DX-Manager-win-x64.zip
+  InstallerSha256: BC82B14764A66B49B5B4255C8B54A5E1E6D20AD7F5C566CECB6C6D28F83E8389
+ManifestType: installer
+ManifestVersion: 1.28.0
