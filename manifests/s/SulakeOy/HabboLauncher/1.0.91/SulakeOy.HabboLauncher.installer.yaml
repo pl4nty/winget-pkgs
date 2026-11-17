@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: SulakeOy.HabboLauncher
+PackageVersion: 1.0.91
+InstallerType: nullsoft
+Scope: user
+ProductCode: b0f95613-ac52-59ec-900c-d7a2b2d9c05d
+ReleaseDate: 2026-11-16
+AppsAndFeaturesEntries:
+- ProductCode: b0f95613-ac52-59ec-900c-d7a2b2d9c05d
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\habbo-electron-launcher'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://images.habbo.com/habbo-native-clients/launcher/HabboLauncher-Setup-1.0.91.exe
+  InstallerSha256: B27ED332715EB0C5B5A60AFB9401058A86BAB2A5918080279FB82F50EE27DE0A
+ManifestType: installer
+ManifestVersion: 1.28.0
