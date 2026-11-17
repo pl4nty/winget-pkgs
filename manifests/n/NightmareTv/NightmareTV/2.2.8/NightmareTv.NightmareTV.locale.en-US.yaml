@@ -1,0 +1,68 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: NightmareTv.NightmareTV
+PackageVersion: 2.2.8
+PackageLocale: en-US
+Publisher: NightmareTv
+PublisherUrl: https://nightmaretv.net/
+PublisherSupportUrl: https://nightmaretv.net/support
+PrivacyUrl: https://nightmaretv.net/privacy
+PackageName: Nightmare TV
+PackageUrl: https://nightmaretv.net/
+License: Proprietary
+Copyright: Copyright (c) 2026 Nightmare TV
+ShortDescription: Media player for your own M3U playlists and Xtream Codes logins. Ships no channels or content.
+Description: |-
+  Nightmare TV is a media player. It does not provide, host, sell, link to or
+  recommend any channels, streams, playlists or subscriptions. You bring your
+  own legally obtained M3U playlist or Xtream Codes login; the app is the
+  playback engine and nothing else.
+
+  It runs on a native libmpv engine rather than a generic framework player:
+
+  - Real BT.2390 HDR tone-mapping with per-frame peak detection
+  - Dolby Atmos, DTS-X and TrueHD passthrough over HDMI on capable devices
+  - 4K HEVC Main10, AV1 and VP9 hardware decode
+  - Recording and scheduled DVR on a single provider connection
+  - Multi-day XMLTV guide, catch-up, live rewind and multiview
+  - Automatic picture tier: measures what the device can sustain and steps
+    down by itself if it detects real stutter
+
+  Also available for macOS, Android, Android TV and Fire TV. A 7-day trial
+  needs no card and no account and starts at your first playback.
+Moniker: nightmare-tv
+Tags:
+- m3u
+- media-player
+- player
+- video
+- xtream
+ReleaseNotes: |-
+  Nightmare TV 2.2.8
+  Edit your Home screen and player bar, per-profile settings and more control over playback.
+  - Home screen: move, hide and reorder sections in place (Settings, Edit Home screen).
+  - Player bar: choose which buttons appear and in what order.
+  - Profiles: each profile can keep its own picture, audio and subtitle settings. Off by default.
+  - Sports Desk and Multi-view: on an account with fewer connections than windows, windows can take turns on the same connection. If your provider does not allow this, one window plays at a time and you switch with OK, Enter or a click.
+  - Android: playback continues in a small window when you leave the app.
+  - Playlists: the refresh interval can be set for each playlist.
+  - TV guide: choose how many days of guide data to keep.
+  - Volume boost.
+  - Restart the current channel from the player menu.
+  - Even volume between channels: switching channels keeps loudness at a similar level. On by default.
+  - When a channel does not play, the player says in plain words where the problem is and what to try next.
+  - TV: pay with your phone. Scan the code on the plan screen and finish the purchase on your phone.
+  - TV guide: the playlist time shift (tvg-shift) is now applied.
+  - Windows: the window can be moved by its top edge while a channel is playing.
+  - Windows: adjustments for a smoother picture.
+  - The trial length is shown only after the server confirms it.
+  - A version that is no longer supported now shows a clear update screen.
+  - Fixed: a red banner saying the format is not supported could appear on a live channel that was playing normally.
+  - Fixed: overlapping programmes in the TV guide.
+  - Fixed: phone screens no longer mention the remote.
+  - Fixed: the picture could freeze for several seconds while recording a live channel.
+  - Fixed: pressing Stop during a recording could leave the recording running.
+ReleaseNotesUrl: https://github.com/zeze89/nightmare-tv-releases/releases/tag/v2.2.8
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
