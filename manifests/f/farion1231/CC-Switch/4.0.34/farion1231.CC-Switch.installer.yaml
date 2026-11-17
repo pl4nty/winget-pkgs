@@ -1,0 +1,36 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: farion1231.CC-Switch
+PackageVersion: 4.0.34
+InstallerType: wix
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+InstallerSwitches:
+  InstallLocation: INSTALLDIR="<INSTALLPATH>"
+UpgradeBehavior: install
+ReleaseDate: 2026-11-17
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\CC Switch'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/farion1231/cc-switch/releases/download/v4.0.34/CC-Switch-v4.0.34-Windows.msi
+  InstallerSha256: 2355E004324BB5AF7ACA28213230A678A1DD08FD284E7ED72E265B11257DCC35
+  ProductCode: '{A8B97B80-A6F3-42B3-A628-1BB752C67BFB}'
+  AppsAndFeaturesEntries:
+  - Publisher: ccswitch
+    ProductCode: '{A8B97B80-A6F3-42B3-A628-1BB752C67BFB}'
+    UpgradeCode: '{55F90CA4-617A-5350-A7CF-F6F24252866B}'
+- Architecture: arm64
+  InstallerUrl: https://github.com/farion1231/cc-switch/releases/download/v4.0.34/CC-Switch-v4.0.34-Windows-arm64.msi
+  InstallerSha256: E311C9BEE96CF803B9A08752044856DDFA740655FDFF0659DE52B300E2F4C2F6
+  ProductCode: '{0124D81D-AAE6-4634-9026-81B8DED2B7DB}'
+  AppsAndFeaturesEntries:
+  - Publisher: ccswitch
+    ProductCode: '{0124D81D-AAE6-4634-9026-81B8DED2B7DB}'
+    UpgradeCode: '{55F90CA4-617A-5350-A7CF-F6F24252866B}'
+ManifestType: installer
+ManifestVersion: 1.28.0
