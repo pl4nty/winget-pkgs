@@ -1,0 +1,26 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: yummyzzzz.CoreInstaller
+PackageVersion: 2.3.0.0
+PackageLocale: en-US
+Publisher: yummyzzzz
+PublisherUrl: https://github.com/Yummyzzzz
+PublisherSupportUrl: https://github.com/yummyzzzz/CoreInstaller/issues
+PackageName: CoreInstaller.exe
+PackageUrl: https://github.com/Yummyzzzz/CoreInstaller
+License: The Core Framework Open Source & Acceptable Use License v1.0
+LicenseUrl: https://github.com/yummyzzzz/CoreInstaller/blob/HEAD/LICENSE.txt
+Copyright: THE CORE FRAMEWORK OPEN SOURCE & ACCEPTABLE USE LICENSE (C) 2026
+ShortDescription: Installer for the CoreFramework Components
+ReleaseNotes: |-
+  CoreInstaller Download
+  Easy to use Repair & Installation Tool for the CoreFramework
+  REQUIRES A STABLE INTERNET CONNECTION
+  CoreInstaller is ALWAYS up-to-date, meaning there won't be old Releases because of security Reasosn & Bugs.
+  FEATURES
+  - Arguments - CoreInstaller accepts arguments such as: --silent, --uninstall and more in the Future.
+  NOTE: CoreInstaller is developed by Hyper Core Studios, that's why the Installer might be called 'HyperInstaller' in the Description.
+ReleaseNotesUrl: https://github.com/Yummyzzzz/CoreInstaller/releases/tag/CoreInstaller
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
