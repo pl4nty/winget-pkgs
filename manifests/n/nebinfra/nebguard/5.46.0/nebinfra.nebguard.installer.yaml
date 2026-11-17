@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: nebinfra.nebguard
+PackageVersion: 5.46.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: nebguard.exe
+  PortableCommandAlias: nebguard
+Commands:
+- nebguard
+ReleaseDate: 2026-11-14
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/nebinfra/nebguard-dist/releases/download/v5.46.0/nebguard_5.46.0_windows_amd64.zip
+  InstallerSha256: A563EECFD66287230C82EC919D4575ED7D0D4BCD081DAE42AEAD1644370610C2
+- Architecture: arm64
+  InstallerUrl: https://github.com/nebinfra/nebguard-dist/releases/download/v5.46.0/nebguard_5.46.0_windows_arm64.zip
+  InstallerSha256: 4BE19F3CB74D93ACA4A69DBCF95AAB903AD3AF39F760860A482621511D071066
+ManifestType: installer
+ManifestVersion: 1.28.0
