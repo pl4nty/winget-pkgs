@@ -1,0 +1,48 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: r2cuerdame.CodeSampleX
+PackageVersion: 0.2.26
+PackageLocale: en-US
+Publisher: r2cuerdame
+PublisherUrl: https://github.com/r2cuerdame
+PublisherSupportUrl: https://github.com/r2cuerdame/CodeSampleX/issues
+PackageName: CodeSampleX
+PackageUrl: https://codesamplex.dev/
+License: Apache-2.0
+LicenseUrl: https://github.com/r2cuerdame/CodeSampleX/blob/main/LICENSE
+ShortDescription: An open compatibility testing network for developer libraries and runtimes
+Description: CodeSampleX is an open compatibility testing network for developer libraries, runtimes, and toolchains. It records what real builds actually did in recorded environments, answering whether an API runs on your version, OS, and runtime with real build evidence and verified contracts.
+Moniker: csx
+Tags:
+- cli
+- compatibility
+- developer-tools
+- go
+- mcp
+- testing
+ReleaseNotes: |-
+  What's Changed
+  - fix(deploygate): admit reviewed 0051/0052 queue indexes exactly by @r2cuerdame in #741
+  - [loop] #742 Deploy gate tokenizer differs from migrator: quoted /* hides statements from the gate by @r2cuerdame in #749
+  - PD daily 보고 2026-11-14 by @r2cuerdame in #792
+  - PD daily 보고 2026-11-15 by @r2cuerdame in #793
+  - [loop] #737 명령 실패 뒤 자동 조회에서 관련 결과가 가려지고 부적합 후보가 적중으로 기록되는 문제 수정 by @r2cuerdame in #743
+  - [loop] #738 [SLO] p95 violation: /v1/stats by @r2cuerdame in #745
+  - [loop] #747 Rust 커버리지 도구를 cargo가 실행하는 형태로 부르면 테스트 실행이 기록되지 않는 문제 수정 by @r2cuerdame in #750
+  - [loop] #752 Go 테스트를 실제로 돌리지 않는 호출이 테스트 통과로 기록되는 문제 수정 by @r2cuerdame in #753
+  - [loop] #755 Python 테스트를 실제로 돌리지 않는 호출이 테스트 통과로 기록되는 문제 수정 by @r2cuerdame in #756
+  - [loop] #759 Python 잠금 파일에서 패키지 사이의 의존 관계가 누락되거나 잘못 연결되는 문제 수정 by @r2cuerdame in #762
+  - [loop] #765 Node 잠금 파일에서 무의존성 선언과 외부 설치본 의존 관계가 잘못 판정되는 문제 수정 by @r2cuerdame in #766
+  - [loop] #769 Go 패키지에 자체 설정 파일이 없을 때 무의존성 패키지로 잘못 기록되는 문제 수정 by @r2cuerdame in #770
+  - [loop] #772 Rust 프로젝트에서 공개 저장소에 없는 패키지의 의존 관계가 공개 패키지 것으로 잘못 기록되는 문제 수정 by @r2cuerdame in #773
+  - [loop] #775 Rust 프로젝트에서 같은 이름의 다른 버전 패키지가 직접 고른 패키지로 잘못 기록되는 문제 수정 by @r2cuerdame in #776
+  - [loop] #779 Python 잠금 파일에서 패키지 출처가 다른 줄의 주소 때문에 공개·비공개로 잘못 판정되는 문제 수정 by @r2cuerdame in #780
+  - [loop] #783 Node 테스트 도구를 실제로 돌리지 않는 호출이 테스트 통과로 기록되는 문제 수정 by @r2cuerdame in #784
+  - [loop] #786 Rust 코드의 메모 글과 따옴표 문장이 사용 기능으로 잘못 기록되거나 실제 기능이 빠지는 문제 수정 by @r2cuerdame in #787
+  - docs: AGENTS.md에 코드를 설명하는 문서와 주석 금지 원칙 반영 (nocomment-rule-1116) by @r2cuerdame in #796
+  - [loop] #791 Python 코드의 메모 글과 설명 문장이 사용 기능으로 잘못 기록되거나 실제 기능이 빠지는 문제 수정 by @r2cuerdame in #798
+  - fix(windows): mcp·daemon 실행 시 콘솔 창 억제 및 스테일 런처 자동 갱신 (#797) by @r2cuerdame in #799
+ReleaseNotesUrl: https://github.com/r2cuerdame/CodeSampleX/releases/tag/v0.2.26
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
