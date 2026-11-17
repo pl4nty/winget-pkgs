@@ -1,0 +1,26 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: ast-grep.ast-grep
+PackageVersion: 0.51.3
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: sg.exe
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.VCRedist.2015+.x64
+ReleaseDate: 2026-11-16
+ArchiveBinariesDependOnPath: true
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/ast-grep/ast-grep/releases/download/0.51.3/app-i686-pc-windows-msvc.zip
+  InstallerSha256: 1D472DB8F7CAF27971A357A8FD052112D0AC87E66E242F44B8CFDD73B122C7C9
+- Architecture: x64
+  InstallerUrl: https://github.com/ast-grep/ast-grep/releases/download/0.51.3/app-x86_64-pc-windows-msvc.zip
+  InstallerSha256: 1F27FF60EE033BDFE5D7EA781A869E410B2D882D6C84A6AFEA8280FC4BBF0716
+- Architecture: arm64
+  InstallerUrl: https://github.com/ast-grep/ast-grep/releases/download/0.51.3/app-aarch64-pc-windows-msvc.zip
+  InstallerSha256: 6A0F389CD8BBF15FF29231FEDF728C08E1BE414FFC88389D03732415C4110C5E
+ManifestType: installer
+ManifestVersion: 1.28.0
