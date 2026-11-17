@@ -1,0 +1,83 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: lollapalooza.usage
+PackageVersion: 0.34.22
+PackageLocale: en-US
+Publisher: lollapalooza
+PublisherUrl: https://github.com/aqua5230
+PublisherSupportUrl: https://github.com/aqua5230/usage/issues
+PackageName: usage
+PackageUrl: https://github.com/aqua5230/usage
+License: AGPL-3.0-only
+LicenseUrl: https://github.com/aqua5230/usage/blob/main/LICENSE
+Copyright: Copyright (c) 2026 lollapalooza (https://github.com/aqua5230)
+ShortDescription: System tray app that pins Claude Code, Codex, and Antigravity quota to the screen
+Moniker: usage
+Tags:
+- antigravity
+- claude
+- claude-code
+- codex
+- quota
+- system-tray
+- usage
+ReleaseNotes: |-
+  Fixed
+  - The Windows tray tooltip no longer lists a tool you hid under Hide Sections. Claude and Codex were always listed, even when hidden, and their lines could push the last tools past Windows' 127-character tooltip limit. A hidden tool's line is now left out; the tool chosen as Tray Display Source stays, because the icon shows its number.
+  - Menu bar icons are visible again on a dark menu bar. The Claude, Codex, Antigravity, Grok, and Muse icons were drawn black even when the menu bar was dark, so on macOS Tahoe they disappeared against it. They now follow the menu bar's text color in light and dark. Reported in #352.
+  - The Antigravity card no longer goes stale when only its weekly reading is carried over. When the weekly reading could not be refreshed, the whole card was marked stale, which stopped the 5-hour burn rate, notifications, and the window keeper. Now only the weekly row shows its age, and the 5-hour row keeps working.
+  - Quota notifications no longer use a reading from before the window reset. After the reset time passed, the old percentage could still send a "used up" notification or block the next window's notifications. On macOS and Windows, a window past its reset time now ends quietly.
+  - Projects that use only unpriced models show "—" instead of $0.00 in the report, including after date filtering.
+  - The Windows tray now reports a failed status line toggle or hook install instead of failing silently.
+  - GPT-OSS, which Antigravity retires on 2026-11-18, was removed from the Claude and GPT model group, and Antigravity group models with hyphenated names now match your usage logs.
+  - Gemini 4 Carbon now shows as "Carbon 4".
+  - Switching to an account without a 5-hour limit no longer keeps the previous account's 5-hour usage. The status line and quota-aware mode filled the missing window from the old account, so they could show 99% used on an account that has no 5-hour limit. A missing window is now filled only from the same account. The status-line hook updates to 1.19 and the quota-aware hook to 1.17.
+  - The status line switch shows as on when only Grok uses it beside your own Claude Code status line. It showed as off, and turning it on installed the status line again instead of turning Grok's off.
+  - Quota-aware mode no longer announces a Codex model a second time when you first use it. A model already recorded from the Codex catalog was announced again from your usage logs.
+  - New Antigravity models are announced even when every model in the first scan was already known from other tools. usage did not record that Antigravity had been scanned, so later new models were treated as part of the first scan and not announced.
+  - The offline check works when NO_PROXY excludes Google. With a proxy set, usage assumed it was online even when Google's sign-in host bypassed the proxy, so it could run the Antigravity CLI while offline and mark you as signed out.
+  - Offline prices for Claude Mythos 5 and Mythos 5.2 were added, and the price-table check now covers Mythos models.
+  - A refusal from a separate Codex limit no longer shows your regular Codex quota as 100% used. When a dedicated limit such as Codex Spark or a premium model refused a request, the card marked the regular weekly window as full. Only a refusal of the regular Codex limit does that now.
+  - Reopening an old Codex session no longer hides newer quota from your other sessions. After a refusal in a resumed old session, the card kept that session's old reading and skipped newer readings from other sessions. It now takes the newest reading, then applies the refusal.
+  - The Codex disk cache is no longer rewritten on every refresh when you have forked or subagent sessions. Those sessions were dropped each time the cache was saved, so the cache was rewritten and they were read again.
+  - Opening the report no longer leaves the menu bar or tray app about 150 MB larger. The report was built inside the app, which loaded your full history a second time and kept that memory until restart. It is now built in a separate process that frees the memory when it exits.
+  - The report is built faster. It reads Claude Code logs once instead of twice and no longer runs git for project folders that were deleted. On one large history it went from 47 to 32 seconds, with identical numbers.
+  - Days you used Claude Code count as active in the report even when their conversation files are gone. Claude Code deletes conversation files after 30 days by default, so those days counted as idle and broke your streak. Active days and streaks now count them, and the heatmap shows them in its lightest shade. The appendix, now titled "How the numbers are calculated", lists those dates under "Usage not included".
+  - Older Antigravity history no longer lists one model twice or leaves it unpriced in the report. History saved before model IDs were cleaned up kept raw IDs such as gemini-3.8-flash-n, which left billions of tokens priced at $0. They are now merged with the clean name and priced.
+  - Usage saved only as daily totals no longer ranks as your top project or tool. Usage from before August 2026 has no project or tool, and the report listed it as the top "unknown" project and tool at $0.00. It now shows as a grey "Old records (totals only)" row at the bottom with an unknown cost, and the trend legend uses the same name. Percentages are unchanged.
+  - Dispatch conversations started with a slash command get a real title in the report instead of text like "The command below".
+  - The Antigravity status line shows the Argon quota for Gemini 4 Argon and Orchestrator (Argon). It showed the Claude and GPT group or the Gemini group instead.
+  - Auto-start 5-hour Session is renamed Auto-start 5-hour timer. It sat under Launch at login and read like a second launch option; it starts the 5-hour timer right after a reset. Behavior and settings are unchanged.
+
+  繁體中文
+
+  修正
+  - Windows 系統匣的提示文字不再列出你在「隱藏區塊」隱藏的工具。 Claude 與 Codex 原本就算隱藏了也一律列出，還可能把排在後面的工具擠出 Windows 的 127 字元上限。現在被隱藏的工具不會列出；選為「系統匣顯示來源」的那個工具會保留，因為圖示顯示的是它的數字。
+  - 深色選單列上又看得到選單列圖示了。 Claude、Codex、Antigravity、Grok 與 Muse 的圖示在深色選單列上仍畫成黑色，所以在 macOS Tahoe 上會跟背景融在一起看不見。現在圖示會跟著選單列的文字顏色，淺色、深色都看得到。回報於 #352。
+  - Antigravity 只有週額度沿用舊讀數時，整張卡不再被標成過期。 週額度更新失敗時，整張卡會被標成過期，5 小時的燃燒率、通知和窗口保持功能都會停住。現在只有週額度那一列顯示資料多舊，5 小時那一列照常運作。
+  - 額度通知不再拿重置前的讀數判斷。 過了重置時間後，舊的百分比仍可能發出「已用完」通知，或擋住下一個窗口的通知。現在 macOS 與 Windows 上，過了重置時間的窗口會安靜結束。
+  - 只用到未定價模型的專案，在報表裡顯示「—」而不是 $0.00， 用日期篩選後也一樣。
+  - Windows 系統匣切換狀態列或安裝 hook 失敗時會顯示錯誤， 不再悄悄失敗。
+  - 從 Claude 與 GPT 模型群組拿掉 Antigravity 將於 2026-11-18 下架的 GPT-OSS， 名稱帶連字號的 Antigravity 群組模型也對得上你的用量紀錄。
+  - Gemini 4 Carbon 顯示為「Carbon 4」。
+  - 換到沒有 5 小時額度的帳號後，不再沿用前一個帳號的 5 小時用量。 狀態列與額度感知模式會拿舊帳號的數字補上缺的窗口，所以沒有 5 小時額度的帳號也可能顯示 99% 已用。現在只會用同一個帳號的資料補窗口。狀態列 hook 更新為 1.19，額度感知 hook 更新為 1.17。
+  - Claude Code 用你自己的狀態列、只有 Grok 用 usage 的狀態列時，狀態列開關會顯示開啟。 原本會顯示關閉，按下去還會重新安裝狀態列，而不是關掉 Grok 的狀態列。
+  - 額度感知模式第一次用到 Codex 模型時，不再重複提醒新模型。 Codex 模型目錄已經記錄過的模型，會從用量紀錄再被提醒一次。
+  - 第一次掃描時 Antigravity 的模型都已從其他工具認得，之後的新模型照樣會提醒。 usage 沒記下 Antigravity 已經掃描過，之後的新模型會被當成第一次掃描的一部分，不會提醒。
+  - NO_PROXY 排除 Google 時，離線檢查照常運作。 設了 proxy 時，即使 Google 的登入主機不走 proxy，usage 也當成有網路，可能在離線時執行 Antigravity CLI，並把你標成已登出。
+  - 補上 Claude Mythos 5 與 Mythos 5.2 的離線價格， 價目表檢查也涵蓋 Mythos 模型。
+  - Codex 的獨立額度拒絕請求時，一般 Codex 額度不再顯示 100% 已用。 像 Codex Spark 或 premium 模型這類獨立額度被拒時，卡片會把一般的週額度標成用完。現在只有一般 Codex 額度被拒才會這樣顯示。
+  - 重開舊的 Codex 對話後，不再擋掉其他對話較新的額度。 重開的舊對話被拒後，卡片停在那個對話的舊讀數，跳過其他對話較新的讀數。現在會先取最新的讀數，再套用被拒紀錄。
+  - 有分支或子代理對話時，Codex 的磁碟快取不再每次重新整理都重寫。 每次存快取時這些對話都會被丟掉，所以快取每次都重寫，這些對話也每次重讀。
+  - 打開報表後，選單列或系統匣 app 不再多佔約 150 MB 記憶體。 報表原本在 app 裡產生，會把完整歷史再讀一次，那些記憶體要重開 app 才會還。現在改在另一個行程產生，結束時就還回記憶體。
+  - 報表產生得更快。 Claude Code 的紀錄改成只讀一次，已刪除的專案資料夾也不再跑 git。一份大量歷史實測從 47 秒降到 32 秒，數字完全相同。
+  - 用過 Claude Code 的日子，即使對話檔已被刪掉，報表也算成活躍日。 Claude Code 預設 30 天後刪除對話檔，所以那些日子被當成沒用，連續天數也跟著斷掉。現在活躍日和連續天數都會算進去，熱力圖用最淺的顏色標示。附錄改名「數字怎麼算的」，在「沒算到的用量」列出這些日期。
+  - 舊的 Antigravity 歷史在報表裡不再把同一個模型列兩次，也不再漏算價格。 模型 ID 整理之前存下的歷史仍是 gemini-3.8-flash-n 這類原始 ID，有數十億 token 被算成 $0。現在會併到整理後的名稱並計價。
+  - 只存了每日總量的用量，不再排成第一名的專案或工具。 2026 年 8 月以前的用量沒有專案和工具資料，報表把它當成「unknown」排第一，金額寫 $0.00。現在改成最下面一列灰色的「舊紀錄（只剩總數）」，金額顯示未知，趨勢圖圖例也用同一個名稱。百分比不變。
+  - 用斜線指令開頭的派工對話，在報表裡有正常標題， 不再顯示「The command below」這類文字。
+  - 用 Gemini 4 Argon 和 Orchestrator (Argon) 時，Antigravity 狀態列顯示 Argon 的額度。 原本會顯示 Claude 與 GPT 群組或 Gemini 群組。
+  - 「自動啟動 5 小時計時」改名為「5 小時自動開始計時」。 它排在「登入時啟動」下面，看起來像第二個開機啟動選項；它其實是在重置後馬上開始 5 小時計時。行為和設定都不變。
+ReleaseNotesUrl: https://github.com/aqua5230/usage/releases/tag/v0.34.22
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
