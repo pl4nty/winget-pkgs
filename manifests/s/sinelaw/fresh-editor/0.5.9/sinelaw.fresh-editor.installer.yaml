@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: sinelaw.fresh-editor
+PackageVersion: 0.5.9
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: fresh.exe
+  PortableCommandAlias: fresh
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/sinelaw/fresh/releases/download/v0.5.9/fresh-editor-x86_64-pc-windows-msvc.zip
+  InstallerSha256: DBC6B71E493E187694B527245361E3E1B56E2D2459F7354B758B49199688C685
+- Architecture: arm64
+  InstallerUrl: https://github.com/sinelaw/fresh/releases/download/v0.5.9/fresh-editor-aarch64-pc-windows-msvc.zip
+  InstallerSha256: 5F463993F1D106886DF23EED52689626DA4B91F6BA25D915E0D2EE6CFFC301BB
+ManifestType: installer
+ManifestVersion: 1.28.0
