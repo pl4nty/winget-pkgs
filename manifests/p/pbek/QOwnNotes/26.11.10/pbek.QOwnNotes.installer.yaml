@@ -1,0 +1,28 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: pbek.QOwnNotes
+PackageVersion: 26.11.10
+ReleaseDate: 2026-11-15
+Installers:
+- Architecture: neutral
+  InstallerType: wix
+  InstallerUrl: https://github.com/pbek/QOwnNotes/releases/download/v26.11.10/QOwnNotes.msi
+  InstallerSha256: C01376996880DEF41975F8CFC09372DA52719D40C2A831E836D68A379076CD44
+  ProductCode: '{8F443B4F-FD7E-41DD-9B5C-94097801BC92}'
+  AppsAndFeaturesEntries:
+  - Publisher: Patrizio Bekerle
+    ProductCode: '{8F443B4F-FD7E-41DD-9B5C-94097801BC92}'
+    UpgradeCode: '{B54EFB98-5068-4979-BC71-57C1E0318C24}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\QOwnNotes'
+- Architecture: neutral
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: QOwnNotes.exe
+    PortableCommandAlias: qownnotes.exe
+  InstallerUrl: https://github.com/pbek/QOwnNotes/releases/download/v26.11.10/QOwnNotes.zip
+  InstallerSha256: 5E02B33A9E5EF8123C45EEA7F4841ACFE5D3C88C2BCFACCE5EA39C123B1F7E3E
+ManifestType: installer
+ManifestVersion: 1.28.0
