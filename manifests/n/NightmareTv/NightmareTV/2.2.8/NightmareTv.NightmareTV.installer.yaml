@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: NightmareTv.NightmareTV
+PackageVersion: 2.2.8
+InstallerType: inno
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ProductCode: '{9F3C1B84-6A2E-4E77-9E4B-0C6E4F5A21D7}_is1'
+ReleaseDate: 2026-11-16
+AppsAndFeaturesEntries:
+- ProductCode: '{9F3C1B84-6A2E-4E77-9E4B-0C6E4F5A21D7}_is1'
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\Nightmare TV'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/zeze89/nightmare-tv-releases/releases/download/v2.2.8/Nightmare-2.2.8-Setup.exe
+  InstallerSha256: 9E85AAF7DEB3EE32F572E237F630B9B52804994A9F96A746965DD0AFC11E659E
+ManifestType: installer
+ManifestVersion: 1.28.0
