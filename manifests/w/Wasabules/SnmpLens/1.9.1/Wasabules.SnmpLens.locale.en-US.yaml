@@ -1,0 +1,55 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: Wasabules.SnmpLens
+PackageVersion: 1.9.1
+PackageLocale: en-US
+Publisher: Wasabules
+PublisherUrl: https://snmplens.com/
+PublisherSupportUrl: https://github.com/Wasabules/SnmpLens/issues
+Author: Geoffrey Lecoq
+PackageName: SnmpLens
+PackageUrl: https://snmplens.com/
+License: MIT
+LicenseUrl: https://github.com/Wasabules/SnmpLens/blob/main/LICENSE
+ShortDescription: Free SNMP MIB browser, trap receiver and alert router. Walk devices over v1, v2c and v3, edit MIBs with diagnostics, chart OIDs and route alerts to syslog, a webhook or email.
+Description: SnmpLens is an open-source SNMP MIB browser for Windows, macOS and Linux, in a single native binary with no runtime and no agent. It walks and sets OIDs over SNMPv1, v2c and v3, renders conceptual tables as tables by splitting the INDEX per RFC 2578, receives traps and INFORMs, charts polled OIDs over time, and routes alerts to syslog over UDP, TCP or TLS, to a webhook, or to email.
+Moniker: snmplens
+Tags:
+- mib
+- mib-browser
+- network-monitoring
+- snmp
+- snmpv3
+- trap-receiver
+ReleaseNotes: |-
+  What's new in v1.9.1
+  A fix for credentials that SnmpLens reported as refused although they were intact.
+
+  Fixes
+  - "windows-dpapi refused to open the stored credentials", with nothing wrong.
+    SnmpLens keeps the key that seals the credentials in its settings in the
+    operating system's store, which every copy on the account shares. Before that
+    key moved there, each copy kept a key of its own beside its settings. A copy is
+    told apart by its executable's name: the installed SnmpLens.exe, a renamed
+    copy, a development build. The first copy to start a version with the store
+    hands its key over. Any other one was refused, so its credentials stayed sealed
+    under a key the store did not hold. They were reported as refused at every
+    start, and could not be saved again. Its key is now kept beside the store's, and its
+    credentials open at the next start. The key is then deleted from beside the
+    settings, and the next save seals them under the store's key. This applies on
+    every platform: the store is the Keychain on macOS and a protected file on
+    Linux.
+
+  Under the hood
+  - The store's own key is never replaced: a key kept beside it only opens what it
+    sealed, a value no key opens is still refused, and Reset settings forgets
+    both.
+  Binaries ship with an Ed25519-signed SnmpLens-checksums.txt, verified by the
+  in-app auto-updater before anything is applied. The manifest names the tag it
+  belongs to, so an older signed manifest cannot be replayed in place of this one.
+  Every asset carries attested build provenance:
+  gh attestation verify SnmpLens-windows-amd64.exe --repo SnmpLens/SnmpLens
+ReleaseNotesUrl: https://github.com/SnmpLens/SnmpLens/releases/tag/v1.9.1
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
