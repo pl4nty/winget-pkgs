@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: Softplicity.TotalXMLConverter
-PackageVersion: 3.2.0.162
+PackageVersion: 3.2.0.163
 InstallerType: inno
 Scope: machine
 InstallModes:
@@ -13,13 +13,13 @@ UpgradeBehavior: install
 FileExtensions:
 - XML
 ProductCode: Total XML Converter_is1
-ReleaseDate: 2026-11-09
+ReleaseDate: 2026-11-13
 AppsAndFeaturesEntries:
 - ProductCode: Total XML Converter_is1
 ElevationRequirement: elevatesSelf
 Installers:
 - Architecture: x86
   InstallerUrl: https://www.coolutils.com/Downloads/TotalXMLConverter.exe
-  InstallerSha256: 7182DF68228EDADF49E540AB7B4F891360341A140CC835696A660C354CA89723
+  InstallerSha256: 6BFB1705ADB3E13613E854AF31C1F2B6F067F76AE26EA182D4372524ACDC3464
 ManifestType: installer
 ManifestVersion: 1.28.0
