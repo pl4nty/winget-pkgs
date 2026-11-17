@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: zyno-io.sp2p
+PackageVersion: 0.7.2
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: sp2p.exe
+  PortableCommandAlias: sp2p
+ReleaseDate: 2026-11-17
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/zyno-io/sp2p/releases/download/v0.7.2/sp2p_windows_amd64.zip
+  InstallerSha256: BD08197D434A50776C5DE791D7B42852719A8F8A5CD37B0C8AA98E4DFF77FF0C
+- Architecture: arm64
+  InstallerUrl: https://github.com/zyno-io/sp2p/releases/download/v0.7.2/sp2p_windows_arm64.zip
+  InstallerSha256: 30428DFB72AF7C53D727D0078D6E7DB7C161E06DCBD7785F331CCB6691A5BCEF
+ManifestType: installer
+ManifestVersion: 1.28.0
