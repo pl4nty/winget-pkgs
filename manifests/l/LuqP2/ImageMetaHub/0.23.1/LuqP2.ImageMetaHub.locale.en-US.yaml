@@ -1,0 +1,76 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: LuqP2.ImageMetaHub
+PackageVersion: 0.23.1
+PackageLocale: en-US
+Publisher: LuqP2
+PublisherUrl: https://github.com/LuqP2
+PublisherSupportUrl: https://github.com/LuqP2/Image-MetaHub/issues
+PackageName: Image MetaHub
+PackageUrl: https://www.imagemetahub.com/
+License: MPL-2.0
+LicenseUrl: https://github.com/LuqP2/Image-MetaHub/blob/main/LICENSE
+ShortDescription: Local-first search & organizer for AI-generated images (prompt, model, LoRA, seed, ComfyUI workflow). Fully offline.
+Description: Image MetaHub is a free, local-first desktop application for browsing, searching, and organizing AI-generated images. It reads the generation metadata embedded in files produced by ComfyUI, Stable Diffusion, and similar tools (prompt, model, LoRA, seed, sampler, and full workflow) and lets you filter and search your entire library instantly. Built for large collections, it runs completely offline and never uploads your images or data.
+Moniker: imagemetahub
+Tags:
+- ai
+- comfyui
+- image-viewer
+- metadata
+- organizer
+- stable-diffusion
+ReleaseNotes: |-
+  Image MetaHub v0.23.1
+
+  [0.23.1] - [2026-11-15]
+
+  Fixed
+  - Windows Drag-and-Drop: Fixed a crash when dragging image thumbnails from the Library into external applications, including ComfyUI running in a web browser. Dragging now works seamlessly across external applications and internal destinations, including folders, Canvas, and the ComfyUI Workspace, while preserving multi-selection where applicable.
+  - Linux Drag-and-Drop: Fixed image thumbnails dragged from the Library into ComfyUI not being received on Linux, including Wayland environments. Native file dragging now starts immediately, using the same approach as the image viewer and Windows implementation. Internal drag-and-drop and multi-selection are preserved.
+  - Image-to-Image Lineage: Fixed missing source image thumbnails in the image viewer, including detached viewer windows. Source images can now be opened directly from lineage cards, even when they are outside the currently active Library filter.
+  - ComfyUI Workflow Clipboard: Fixed copying ComfyUI workflows from the image viewer and preview sidebar. The original embedded workflow is now copied to the clipboard, including when cached metadata has been compacted, preserving the original node graph and layout. Images without an original embedded workflow now display an appropriate error message.
+
+  Downloads
+  Choose the appropriate installer for your operating system:
+
+  Windows
+  - Installer: ImageMetaHub-Setup-0.23.1.exe
+  - Format: NSIS installer with desktop and start menu shortcuts
+  - Size: ~85MB
+
+  macOS
+  - Intel Macs: ImageMetaHub-0.23.1.dmg
+  - Apple Silicon: ImageMetaHub-0.23.1-arm64.dmg
+  - Format: DMG packages with proper entitlements
+  - Requirements: macOS 13 (Ventura) or later
+
+  Linux
+  - Universal: ImageMetaHub-0.23.1.AppImage
+  - Format: Portable AppImage (no installation required)
+  - Dependencies: None (fully self-contained)
+
+  System Requirements
+  - OS: Windows 10+, macOS 13 (Ventura) or later, Ubuntu 18.04+ (or equivalent)
+  - RAM: 4GB minimum, 8GB recommended
+  - Storage: 100MB for application + space for your image collections
+
+  Documentation
+  - README
+  - Architecture
+  - Changelog
+
+  Known Issues
+  - Safari, Firefox, and Brave browsers don't support the File System Access API on macOS
+  - Use Chrome, Vivaldi, Edge, or the Desktop App for full functionality
+
+  Feedback
+  Found a bug or have a feature request? Open an issue!
+  Released on 2026-11-15
+ReleaseNotesUrl: https://github.com/LuqP2/Image-MetaHub/releases/tag/v0.23.1
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/LuqP2/Image-MetaHub/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
