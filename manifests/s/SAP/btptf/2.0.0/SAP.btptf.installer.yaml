@@ -1,0 +1,18 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: SAP.btptf
+PackageVersion: 2.0.0
+InstallerType: portable
+Commands:
+- btptf
+ReleaseDate: 2026-11-17
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/SAP/terraform-exporter-btp/releases/download/v2.0.0/btptf_2.0.0_windows_amd64.exe
+  InstallerSha256: B3600616E6F650E15F3AA00E3EB3DD277F030F9AB2E08BAFC0EF9B271AA6B7EB
+- Architecture: arm64
+  InstallerUrl: https://github.com/SAP/terraform-exporter-btp/releases/download/v2.0.0/btptf_2.0.0_windows_arm64.exe
+  InstallerSha256: BCB5DF788F247A7C95B2A1D3037A0FCA38764FD5F9B4F139FC5DEAC66999DCBB
+ManifestType: installer
+ManifestVersion: 1.28.0

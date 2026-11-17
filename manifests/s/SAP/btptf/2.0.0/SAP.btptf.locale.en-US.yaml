@@ -1,0 +1,74 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: SAP.btptf
+PackageVersion: 2.0.0
+PackageLocale: en-US
+Publisher: SAP SE
+PublisherUrl: https://github.com/SAP
+PublisherSupportUrl: https://github.com/SAP/terraform-exporter-btp/issues
+PackageName: btptf
+PackageUrl: https://sap.github.io/terraform-exporter-btp/
+License: Apache-2.0
+LicenseUrl: https://github.com/SAP/terraform-exporter-btp/blob/HEAD/LICENSE
+Copyright: Copyright © 2025
+ShortDescription: A Terraform/OpenTofu exporter for SAP BTP resources.
+Description: |-
+  Terraform exporter for SAP BTP (btptf CLI) is a tool that helps you integrate existing SAP BTP resources into Terraform/OpenTofu, 
+  facilitating a seamless adoption of Infrastructure-as-Code practices.
+Tags:
+- btp
+- cf
+- cloudfoundry
+- iac
+- opentofu
+- sap
+- terraform
+- tf
+ReleaseNotes: |-
+  What's Changed
+
+  Breaking Changes 🛠
+  - feat: Terraform Exporter version 2 by @lechnerc77 in #647
+
+  Exciting New Features 🚀
+  - feat: update provider versions and add new service instance improvement logic by @lechnerc77 in #592
+  - feat: add btp CLI login reuse for authentication by @lechnerc77 in #593
+
+  Bug Fixes 🐞
+  - fix: strip colors from Terraform command executions by @lechnerc77 in #599
+
+  Dependencies 🔗
+  - chore(deps): bump github.com/go-git/go-git/v5 from 5.17.2 to 5.18.0 in the misc group by @dependabot[bot] in #581
+  - chore(deps): bump github.com/jedib0t/go-pretty/v6 from 6.7.9 to 6.7.10 in the misc group by @dependabot[bot] in #583
+  - chore(deps): bump github.com/go-git/go-git/v5 from 5.18.0 to 5.19.0 in the misc group by @dependabot[bot] in #588
+  - chore(deps): bump github.com/go-git/go-git/v5 from 5.19.0 to 5.19.1 in the misc group by @dependabot[bot] in #591
+  - chore(deps): bump github.com/jedib0t/go-pretty/v6 from 6.7.10 to 6.8.0 in the misc group by @dependabot[bot] in #602
+  - chore(deps): bump github.com/jedib0t/go-pretty/v6 from 6.8.0 to 6.8.1 in the misc group by @dependabot[bot] in #603
+  - chore(deps): bump the misc group across 1 directory with 2 updates by @dependabot[bot] in #608
+  - chore(deps): bump golang.org/x/net from 0.53.0 to 0.55.0 by @dependabot[bot] in #611
+  - chore(deps): bump golang.org/x/crypto from 0.51.0 to 0.52.0 by @dependabot[bot] in #613
+  - chore(deps): bump github.com/cloudfoundry/go-cfclient/v3 from 3.0.0-alpha.21 to 3.0.0-beta.1 in the misc group by @dependabot[bot] in #614
+  - chore(deps): bump github.com/jedib0t/go-pretty/v6 from 6.8.2 to 6.8.3 in the misc group by @dependabot[bot] in #618
+  - chore(deps): bump github.com/go-git/go-git/v5 from 5.19.1 to 5.19.2 in the misc group by @dependabot[bot] in #621
+  - chore(deps): bump github.com/stretchr/testify from 1.11.1 to 1.12.0 in the misc group by @dependabot[bot] in #630
+  - chore(deps): bump github.com/stretchr/testify from 1.12.0 to 1.12.1 in the misc group by @dependabot[bot] in #632
+  - chore(deps): bump github.com/hashicorp/hcl/v2 from 2.24.0 to 2.25.0 in the terraform group by @dependabot[bot] in #638
+  - chore(deps): bump github.com/hashicorp/go-uuid from 1.0.3 to 1.0.4 in the terraform group by @dependabot[bot] in #640
+  - chore(deps): bump github.com/go-git/go-git/v5 from 5.19.2 to 5.19.3 in the misc group by @dependabot[bot] in #643
+  - chore(deps): bump github.com/spf13/pflag from 1.0.10 to 1.1.0 in the cobra group by @dependabot[bot] in #650
+  - chore(deps): bump github.com/cloudfoundry/go-cfclient/v3 from 3.0.0-beta.1 to 3.0.0-beta.2 in the misc group by @dependabot[bot] in #656
+  - chore(deps): bump github.com/zclconf/go-cty from 1.19.0 to 1.20.0 in the terraform group across 1 directory by @dependabot[bot] in #655
+  - chore(deps): bump github.com/jedib0t/go-pretty/v6 from 6.8.3 to 6.9.1 in the misc group by @dependabot[bot] in #663
+
+  Other Changes
+  - chore: Update brew formula to v1.6.0 by @github-actions[bot] in #580
+
+  New Contributors
+  - @sp1goyal made their first contribution in #597
+ReleaseNotesUrl: https://github.com/SAP/terraform-exporter-btp/releases/tag/v2.0.0
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://sap.github.io/terraform-exporter-btp/
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
