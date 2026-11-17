@@ -1,0 +1,24 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: DigitalOcean.Doctl
+PackageVersion: 2.5.2
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: doctl.exe
+FileExtensions:
+- json
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/digitalocean/doctl/releases/download/v2.5.2/doctl-2.5.2-windows-386.zip
+  InstallerSha256: F95E11F7A996FCB11E0BE25726FF92E944CF97E6CD1356C9889FE2CF9ADF3BCF
+- Architecture: x64
+  InstallerUrl: https://github.com/digitalocean/doctl/releases/download/v2.5.2/doctl-2.5.2-windows-amd64.zip
+  InstallerSha256: 44C50FA25113DAC6C1D57A0AED35EC72DCF07B214CEBB1A9E43B0B2328ACB0AA
+- Architecture: arm64
+  InstallerUrl: https://github.com/digitalocean/doctl/releases/download/v2.5.2/doctl-2.5.2-windows-arm64.zip
+  InstallerSha256: ADAD0AE5114FF7E0BDE7CD1CF2731A5DB2C808B5B8D9447B85EC578A56EF9D6A
+ManifestType: installer
+ManifestVersion: 1.28.0
