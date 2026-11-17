@@ -1,0 +1,25 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: NoRiskClient.Launcher
+PackageVersion: 0.6.30
+InstallerType: nullsoft
+Scope: user
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ProductCode: NoRisk Launcher
+ReleaseDate: 2026-11-15
+AppsAndFeaturesEntries:
+- DisplayName: NoRisk Launcher
+  ProductCode: NoRisk Launcher
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\NoRisk Launcher'
+Installers:
+- Architecture: x86
+  InstallerUrl: https://github.com/NoRiskClient/noriskclient-launcher/releases/download/v0.6.30/NoRiskClient-Windows-setup.exe
+  InstallerSha256: 9A9CC78702D4085E9F503105500D7D27FA3D1ABA24D6109AE4B2DA9EA6805BE1
+ManifestType: installer
+ManifestVersion: 1.28.0
