@@ -1,0 +1,36 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: SureshJanakiReddy.GeminiDesktop
+PackageVersion: 0.7.1
+Commands:
+- gemini-desktop
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/sureshjsreddy/gemini-desktop/releases/download/v0.7.1/Gemini.Desktop_0.7.1_x64-setup.exe
+  InstallerSha256: BCE152D1081D04CE4195B6E8FF0C69C464529B8ED5E61C1299574DEDF2B39B55
+  ProductCode: Gemini Desktop
+  AppsAndFeaturesEntries:
+  - Publisher: geminidesktop
+    ProductCode: Gemini Desktop
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Gemini Desktop'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/sureshjsreddy/gemini-desktop/releases/download/v0.7.1/Gemini.Desktop_0.7.1_x64_en-US.msi
+  InstallerSha256: EFFF653E0391FF927BA559F0CAB818A82316E77DEEFCC55CA419D790C5A379FE
+  InstallerSwitches:
+    InstallLocation: INSTALLDIR="<INSTALLPATH>"
+  ProductCode: '{8E8BE195-E607-4814-8CA8-93779673EDE9}'
+  AppsAndFeaturesEntries:
+  - Publisher: geminidesktop
+    ProductCode: '{8E8BE195-E607-4814-8CA8-93779673EDE9}'
+    UpgradeCode: '{985AFC27-7B36-5C34-AD21-7F9C5862BA55}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Gemini Desktop'
+ManifestType: installer
+ManifestVersion: 1.28.0

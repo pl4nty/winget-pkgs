@@ -1,0 +1,35 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: SureshJanakiReddy.GeminiDesktop
+PackageVersion: 0.7.1
+PackageLocale: en-US
+Publisher: Suresh Janaki Reddy
+PublisherUrl: https://github.com/sureshjsreddy
+PublisherSupportUrl: https://github.com/sureshjsreddy/gemini-desktop/issues
+Author: Suresh Janaki Reddy
+PackageName: Gemini Desktop
+PackageUrl: https://github.com/sureshjsreddy/gemini-desktop
+License: MIT
+LicenseUrl: https://github.com/sureshjsreddy/gemini-desktop/blob/main/LICENSE
+ShortDescription: Modern native desktop client for Gemini CLI via Agent Client Protocol (ACP)
+Description: A modern, blazing-fast native desktop application for interacting with the Gemini CLI via the Agent Client Protocol (ACP) over standard I/O (JSON-RPC). Built with Tauri v2, Rust, and SvelteKit.
+Tags:
+- acp
+- agent
+- ai
+- desktop
+- gemini
+- google-gemini
+- llm
+- tauri
+ReleaseNotes: |-
+  Automated release build of Gemini Desktop.
+  - Gemini.Desktop_0.2.31_x64_en-US.msi: Official Windows WiX Installer (installs to Program Files).
+  - Setup (.exe / .msi): Standard Windows setup installers.
+ReleaseNotesUrl: https://github.com/sureshjsreddy/gemini-desktop/releases/tag/v0.7.1
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/sureshjsreddy/gemini-desktop/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
