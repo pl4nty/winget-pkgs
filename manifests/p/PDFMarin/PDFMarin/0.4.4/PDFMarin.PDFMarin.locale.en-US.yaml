@@ -1,0 +1,46 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: PDFMarin.PDFMarin
+PackageVersion: 0.4.4
+PackageLocale: en-US
+Publisher: PDF MARIN
+PublisherUrl: https://pdf-marin.github.io/
+PublisherSupportUrl: https://pdf-marin.github.io/#report
+PrivacyUrl: https://pdf-marin.github.io/terms.html
+PackageName: PDF MARIN
+PackageUrl: https://pdf-marin.github.io/
+License: Proprietary
+LicenseUrl: https://pdf-marin.github.io/terms.html
+Copyright: PDF MARIN
+ShortDescription: A free PDF editor for Windows with true redaction that removes the pixels, plus page editing, drawing measurement, watermarks, page numbers, passwords and compression.
+Description: |-
+  PDF MARIN is a free desktop PDF editor for Windows. It redacts text and images by
+  removing the underlying content rather than drawing a black box over it, and it can
+  extract, reorder, rotate and merge pages, measure dimensions on drawings with a
+  calibrated scale, add watermarks and page numbers, set or remove passwords, and
+  compress files. The user interface is in Japanese.
+Moniker: pdf-marin
+Tags:
+- editor
+- japanese
+- merge
+- page-numbers
+- password
+- pdf
+- pdf-editor
+- redact
+- redaction
+- split
+- viewer
+- watermark
+ReleaseNotes: |-
+  下のファイルタブを作り直し、長い名前は中ほどを省き、入りきらない分は［+N］にまとめ、隠れた未保存の書類は点でお知らせするようにしました。my注釈は入口を1つのドックにまとめ、マスの横の吹き出しで色や太さをその場で直せ、「‹ 名前 ›」でタブを切り替えられます。プレゼンモードには、帯を好きな所へ動かして覚える機能、スポットライト、一時ぼかし、ペン、拡大、全ページの一覧、持ち時間、発表者メモの帯を加えました。新しく、文字や図面の四角にリンクを付ける機能、フローチャートの［＋］で次の箱を作る機能、重ねて比較の自動合わせと違いの一覧を加えました。段落の縦中横・箇条の印・枠線の種類、寸法値を線に沿わせる機能、傾き補正の［他のソフトでもくっきり］、焼き込みを別ファイル「_確定」で保存する機能も加えました。大きいファイルの結合や、閉じた後のメモリの使い方を改善し、墨消しが紙の外の字にも届くようにし、文字の書き換えで隣の字が消える件、印刷後にページが黒くなる件、Word ファイルの変換で裏に Word が残ることがある件、［終了時に更新］で更新されないことがある件など、多くの不具合を直しました。
+  0.4.3 をお使いの方へ：0.4.3 の［終了時に更新］では今回の更新が入らないことがあります。更新のお知らせが出たら［今すぐ更新］を選んでください。
+  The file tabs at the bottom were rebuilt: long names are shortened in the middle, tabs that do not fit are grouped under [+N], and a dot shows when a hidden document has unsaved changes. My annotation box is now a single dock where you can change color and thickness in a bubble next to each cell and switch tabs with "‹ name ›". Presentation mode gains a movable toolbar that remembers its place, spotlight, temporary blur, pen, zoom, a page overview, a timer and a presenter-notes strip. New: links on text or on a rectangle in scanned drawings, a [+] button that adds the next flowchart box, and automatic alignment with a list of differences in overlay compare. Also new: tate-chu-yoko numbers, bullet and border styles in paragraphs, dimension labels along the line, "Sharp in other apps" for deskew, and saving a flattened copy as "_確定". Merging large files and memory use after closing documents were improved, redaction now reaches text outside the page box, and many bugs were fixed, including neighbouring letters disappearing when editing text, pages turning black after printing, Word staying open in the background after converting Word files, and updates that sometimes did not install after choosing [Update on exit].
+  If you are using 0.4.3: [Update on exit] in 0.4.3 may not install this update. When the update notice appears, please choose [Update now].
+  ファイルのSHA256は添付の SHA256SUMS.txt で確認できます。
+  File hashes are provided in SHA256SUMS.txt.
+ReleaseNotesUrl: https://github.com/pdf-marin/pdf-marin.github.io/releases/tag/v0.4.4
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
