@@ -1,0 +1,20 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: PrivacyPal.AI
+PackageVersion: 1.9.74
+InstallerType: nullsoft
+Scope: user
+ProductCode: 5635a83f-faa4-5ada-bd4d-3f9a8d857893
+ReleaseDate: 2026-11-17
+AppsAndFeaturesEntries:
+- DisplayName: PrivacyPal 1.9.74
+  ProductCode: 5635a83f-faa4-5ada-bd4d-3f9a8d857893
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\PrivacyPal'
+Installers:
+- Architecture: x64
+  InstallerUrl: https://privacypal-production-desktop-596719033801.s3.us-east-1.amazonaws.com/proxy/windows/PrivacyPal-Setup-1.9.74.exe
+  InstallerSha256: C610AE0FF7FAC76BB157B5F242B0DEFBC62D9EAD7CF88513E50DFE2F421CFD7C
+ManifestType: installer
+ManifestVersion: 1.28.0
