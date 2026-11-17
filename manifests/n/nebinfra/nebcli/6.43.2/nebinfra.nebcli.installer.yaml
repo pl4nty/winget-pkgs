@@ -1,0 +1,22 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: nebinfra.nebcli
+PackageVersion: 6.43.2
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+- RelativeFilePath: nebcli.exe
+  PortableCommandAlias: nebcli
+Commands:
+- nebcli
+ReleaseDate: 2026-11-16
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/nebinfra/nebcli-dist/releases/download/v6.43.2/nebcli_6.43.2_windows_amd64.zip
+  InstallerSha256: 220A2ECAFA7DFF183D6D25D67F6917B80BF9A8F24722EF2C0F5D5C01F74E0FB3
+- Architecture: arm64
+  InstallerUrl: https://github.com/nebinfra/nebcli-dist/releases/download/v6.43.2/nebcli_6.43.2_windows_arm64.zip
+  InstallerSha256: 97FDCC7FF711514D6FBCEBD08EFBE4A4C3EDECC39AAE4906E7A35C94B5F4AE69
+ManifestType: installer
+ManifestVersion: 1.28.0
