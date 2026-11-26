@@ -1,0 +1,36 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: Aburousan.Hilbert
+PackageVersion: 0.2.12
+InstallModes:
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+ReleaseDate: 2026-11-24
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/aburousan/hilbert-editor/releases/download/tauri-v0.2.12/Hilbert_0.2.12_x64-setup.exe
+  InstallerSha256: AE8E93907A909B0E84AFDE87C43468DF941579BDB9B0C4F79DFF993507149E71
+  ProductCode: Hilbert
+  AppsAndFeaturesEntries:
+  - ProductCode: Hilbert
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Hilbert'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/aburousan/hilbert-editor/releases/download/tauri-v0.2.12/Hilbert_0.2.12_x64_en-US.msi
+  InstallerSha256: A7C9D7D3BA617CE2D37CD596BF24DC1390C34E50D2D6CB806D96B9ABD8F1F3D9
+  InstallerSwitches:
+    InstallLocation: INSTALLDIR="<INSTALLPATH>"
+  ProductCode: '{6EAD9CD1-54F7-4EF0-86F8-F9FA5C91EE9D}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{6EAD9CD1-54F7-4EF0-86F8-F9FA5C91EE9D}'
+    UpgradeCode: '{4B9D554D-22F0-5691-8E55-8FFDFDF87051}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\Hilbert'
+ManifestType: installer
+ManifestVersion: 1.28.0
