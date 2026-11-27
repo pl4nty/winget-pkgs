@@ -1,0 +1,19 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: MAILPLUGInc.MAILPLUGMessengerDesktop
+PackageVersion: 2.8.0
+InstallerType: nullsoft
+Scope: machine
+ProductCode: 7e2c46ad-f8a5-5b51-905f-d65b7e456695
+ReleaseDate: 2026-11-25
+AppsAndFeaturesEntries:
+- ProductCode: 7e2c46ad-f8a5-5b51-905f-d65b7e456695
+InstallationMetadata:
+  DefaultInstallLocation: '%ProgramFiles(x86)%\MAILPLUG Inc\MAILPLUG Messenger Desktop'
+Installers:
+- Architecture: x86
+  InstallerUrl: https://static.mailplug.com/messenger/setup/prod/MAILPLUG%20Messenger%20Desktop-Windows-Setup.exe
+  InstallerSha256: 34EEF5D6C6F3C14DC0836DCED9FA5F6D684D523770926451DD33AF8AD41481BF
+ManifestType: installer
+ManifestVersion: 1.28.0
