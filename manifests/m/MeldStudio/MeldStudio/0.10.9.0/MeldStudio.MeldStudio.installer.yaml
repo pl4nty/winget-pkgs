@@ -1,0 +1,32 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+
+PackageIdentifier: MeldStudio.MeldStudio
+PackageVersion: 0.10.9.0
+ReleaseDate: 2026-11-25
+Installers:
+- Platform:
+  - Windows.Desktop
+  MinimumOSVersion: 10.0.19041.0
+  Architecture: x64
+  InstallerType: msix
+  InstallerUrl: https://packages.streamwithmeld.com/MeldStudio-0.10.9.0.msix
+  InstallerSha256: 86071DAF30C629416567C8AD23D53F7C7FE11761E7AF15F2E6073701B63C54A0
+  SignatureSha256: 8EC96A1A9EEFCFA244C29B0DE1A91C3AA2B0F468D6422C56B496F7164678EC51
+  UpgradeBehavior: install
+  PackageFamilyName: MeldStudioInc.MeldStudio_p4ys3j8y0dd7r
+  RestrictedCapabilities:
+  - runFullTrust
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%\WindowsApps\MeldStudioInc.MeldStudio_0.10.9.0_x64__p4ys3j8y0dd7r'
+- Architecture: x64
+  InstallerType: zip
+  NestedInstallerType: portable
+  NestedInstallerFiles:
+  - RelativeFilePath: MeldStudio.exe
+    PortableCommandAlias: meldstudio
+  InstallerUrl: https://packages.streamwithmeld.com/MeldStudio-0.10.9.0.msix?p
+  InstallerSha256: 86071DAF30C629416567C8AD23D53F7C7FE11761E7AF15F2E6073701B63C54A0
+  ArchiveBinariesDependOnPath: true
+ManifestType: installer
+ManifestVersion: 1.28.0
