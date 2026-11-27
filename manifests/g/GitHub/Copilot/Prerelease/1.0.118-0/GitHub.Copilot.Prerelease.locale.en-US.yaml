@@ -1,0 +1,43 @@
+# Created by Anthelion using komac v2.17.2
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+
+PackageIdentifier: GitHub.Copilot.Prerelease
+PackageVersion: 1.0.118-0
+PackageLocale: en-US
+Publisher: GitHub, Inc.
+PublisherUrl: https://github.com/home/
+PublisherSupportUrl: https://support.github.com/
+PrivacyUrl: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+PackageName: Copilot CLI (Preview)
+PackageUrl: https://github.com/github/copilot-cli
+License: Proprietary
+LicenseUrl: https://docs.github.com/en/site-policy/github-terms/github-pre-release-license-terms
+Copyright: Copyright (c) GitHub 2025. All rights reserved.
+CopyrightUrl: https://github.com/github/copilot-cli?tab=License-1-ov-file
+ShortDescription: GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal.
+Description: GitHub Copilot CLI brings AI-powered coding assistance directly to your command line, enabling you to build, debug, and understand code through natural language conversations. Powered by the same agentic harness as GitHub's Copilot coding agent, it provides intelligent assistance while staying deeply integrated with your GitHub workflow.
+Moniker: copilot-prerelease
+Tags:
+- cli
+- copilot
+- github
+ReleaseNotes: |-
+  Fixed
+  - Show paths to additional CA certificates trusted by the sandbox in /sandbox policy, including certificates from managed settings.
+  - Show reasoning effort and context tier in the /tasks footer for subagents that start their own subagents.
+  - The detailed transcript shows match counts for grep and rg searches with automatically corrected flags, and shows clean results when expanded.
+  - Copilot Fusion shows shell commands interrupted with Ctrl+C as aborted instead of pending, including after you resume the session.
+  - Organization custom agents use their configured model when it is available and you haven't specified a model with --model.
+  - The Issues and Pull requests tabs become available without restarting Copilot CLI when you add a GitHub remote to the current repository
+  - Fix interactive turns failing when an MCP tool advertises a null anyOf in its output schema.
+  - Keep Git configuration and hooks read-only in sandboxed repositories granted write access through readwritePaths, even when automatic working directory access is disabled
+  - Git authentication for plugin marketplaces no longer opens an extra console window on Windows
+  - On Linux with non-setuid Bubblewrap 0.11 or later, sandboxed commands can start when a denied path under a read-only mount does not yet exist.
+  - Keep the current CLI session signed out after /logout instead of automatically signing back in with another available credential.
+  - Keep newer notifications in /settings visible for their full duration when an older notification expires.
+ReleaseNotesUrl: https://github.com/github/copilot-cli/releases/tag/v1.0.118-0
+Documentations:
+- DocumentLabel: Wiki
+  DocumentUrl: https://github.com/github/copilot-cli/wiki
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0
