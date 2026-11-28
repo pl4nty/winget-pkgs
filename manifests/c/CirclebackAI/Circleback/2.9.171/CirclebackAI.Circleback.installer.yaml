@@ -1,22 +1,24 @@
-# Created using wingetcreate 1.28.1.0
+# Created by Anthelion using komac v2.17.2
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
 
 PackageIdentifier: CirclebackAI.Circleback
-PackageVersion: 2.9.170
-InstallerLocale: en-US
+PackageVersion: 2.9.171
 InstallerType: nullsoft
+Scope: user
 InstallModes:
 - interactive
 - silent
 UpgradeBehavior: install
 ProductCode: baffa12c-9c44-5c54-938b-0f0bab38132a
+ReleaseDate: 2026-11-28
 AppsAndFeaturesEntries:
-- DisplayName: Circleback 2.9.29
-  Publisher: Circleback
+- Publisher: Circleback
   ProductCode: baffa12c-9c44-5c54-938b-0f0bab38132a
+InstallationMetadata:
+  DefaultInstallLocation: '%LocalAppData%\Programs\@circlebackdesktop'
 Installers:
 - Architecture: x64
   InstallerUrl: https://download.circleback.ai/windows/nsis/x64
-  InstallerSha256: 558EE72FF3FBFEBFEA4775E0A6F1DA738DDB5DE069AD22C06708642E0DDDB008
+  InstallerSha256: A9471C897A3FF58C5B3E37817DB0B2BF3A05EB3D27D3A77D61434E5CA8D8F1EA
 ManifestType: installer
 ManifestVersion: 1.28.0
